@@ -1,2 +1,2 @@
-# dnx.utils.strings
-.NET String Extensions
+# DNX.Helpers
+.NET Extensions

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>Martin Smith</authors>
+    <owners>DNX Solutions Ltd</owners>
+	<!--
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+	-->
+    <projectUrl>https://github.com/martinsmith1968/DNX.Helpers</projectUrl>
+    <iconUrl>http://www.dnx-solutions.co.uk/favicon-32x32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2016 DNX Solutions Ltd</copyright>
+    <tags>string array linq helpers extensions</tags>
+  </metadata>
+</package>

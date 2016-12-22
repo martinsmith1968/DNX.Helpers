@@ -1,4 +1,5 @@
-﻿using DNX.Helpers.Strings;
+﻿using System.Globalization;
+using DNX.Helpers.Strings;
 using NUnit.Framework;
 
 namespace Test.DNX.Helpers.Strings
@@ -135,7 +136,7 @@ namespace Test.DNX.Helpers.Strings
         [TestCase(null, new[] { 'a', 'e', 'i', 'o', 'u' }, ExpectedResult = null)]
         [TestCase("aeiou", new char[] { }, ExpectedResult = "aeiou")]
         [TestCase("aeiou", null, ExpectedResult = "aeiou")]
-        //[TestCase("obviously this piece of text contains at least one of every vowel", new[] { 'a', 'e', 'i', 'o', 'u' }, ExpectedResult = "bvsly ths pc f txt cntns t lst n f vry vwl")]
+        [TestCase("obviously this piece of text contains at least one of every vowel", new[] { 'a', 'e', 'i', 'o', 'u' }, ExpectedResult = "bvsly ths pc f txt cntns t lst n f vry vwl")]
         [TestCase("123,456,789.00", new [] { ',', '.' }, ExpectedResult = "12345678900")]
         public string Test_RemoveAny_char_array(string text, char[] charsToRemove)
         {
@@ -152,6 +153,35 @@ namespace Test.DNX.Helpers.Strings
         public string Test_RemoveAnyExcept(string text, string charsToKeep)
         {
             var result = text.RemoveAnyExcept(charsToKeep);
+
+            return result;
+        }
+
+        // GB
+        [TestCase("0", "en-gb", ExpectedResult = true)]
+        [TestCase("1", "en-gb", ExpectedResult = true)]
+        [TestCase("-1", "en-gb", ExpectedResult = true)]
+        [TestCase("+1", "en-gb", ExpectedResult = true)]
+        [TestCase("123.72", "en-gb", ExpectedResult = true)]
+        [TestCase("-123.72", "en-gb", ExpectedResult = true)]
+        [TestCase("+123.72", "en-gb", ExpectedResult = true)]
+        [TestCase("3,123.451", "en-gb", ExpectedResult = true)]
+        [TestCase("-3,123.451", "en-gb", ExpectedResult = true)]
+        [TestCase("+3,123.451", "en-gb", ExpectedResult = true)]
+        [TestCase("3412123.76543", "en-gb", ExpectedResult = true)]
+        [TestCase("-3412123.76543", "en-gb", ExpectedResult = true)]
+        [TestCase("+3412123.76543", "en-gb", ExpectedResult = true)]
+        [TestCase("7,034.989", "en-gb", ExpectedResult = true)]
+        [TestCase("-7,034.989", "en-gb", ExpectedResult = true)]
+        [TestCase("+7,034.989", "en-gb", ExpectedResult = true)]
+        // DE
+        [TestCase("3,123.451", "de-DE", ExpectedResult = false)]
+        [TestCase("3.123,451", "de-DE", ExpectedResult = true)]
+        public bool Test_IsValidNumber(string text, string cultureInfoName)
+        {
+            var cultureInfo = CultureInfo.GetCultureInfo(cultureInfoName);
+
+            var result = text.IsValidNumber(cultureInfo);
 
             return result;
         }

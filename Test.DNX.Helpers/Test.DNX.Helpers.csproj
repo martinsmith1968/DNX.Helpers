@@ -57,10 +57,15 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
+    <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
     <Compile Include="Converters\ConvertExtensionsTests.cs" />
+    <Compile Include="Dates\DateTimeExtensionsTests.cs" />
     <Compile Include="Exceptions\ConversionExceptionTests.cs" />
+    <Compile Include="Linq\ListExtensionsTests.cs" />
     <Compile Include="Linq\LinqExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\RegexStringExtensionsTests.cs" />
     <Compile Include="Strings\StringExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>

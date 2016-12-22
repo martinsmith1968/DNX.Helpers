@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
+// ReSharper disable InvertIf
 namespace DNX.Helpers.Linq
 {
     /// <summary>
@@ -9,32 +10,6 @@ namespace DNX.Helpers.Linq
     /// </summary>
     public static class LinqExtensions
     {
-        /// <summary>
-        /// Get an element from a list at the specified index, or return default
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="enumerable">The enumerable.</param>
-        /// <param name="index">The index.</param>
-        /// <returns>T. Or default(T)</returns>
-        /// <remarks>Also available as an extension method</remarks>
-        public static T GetAt<T>(this IList<T> enumerable , int index)
-        {
-            if (enumerable != null)
-            {
-                if (index < 0)
-                {
-                    index = enumerable.Count - Math.Abs(index % enumerable.Count);
-                }
-
-                if (index < enumerable.Count)
-                {
-                    return enumerable[index];
-                }
-            }
-
-            return default(T);
-        }
-
         /// <summary>
         /// Determines whether the specified enumerable has any elements and is not null
         /// </summary>

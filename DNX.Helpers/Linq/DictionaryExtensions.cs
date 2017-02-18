@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DNX.Helpers.Linq
 {
@@ -15,8 +16,19 @@ namespace DNX.Helpers.Linq
         /// <param name="dictionary">The dictionary.</param>
         /// <param name="keyName">Name of the key.</param>
         /// <param name="value">The value.</param>
+        /// <exception cref="System.ArgumentNullException"> dictionary or keyName </exception>
         public static void SetValue<TK, TV>(this IDictionary<TK, TV> dictionary, TK keyName, TV value)
         {
+            if (dictionary == null)
+            {
+                throw new ArgumentNullException("dictionary");
+            }
+
+            if (keyName == null)
+            {
+                throw new ArgumentNullException("keyName");
+            }
+
             if (dictionary.ContainsKey(keyName))
             {
                 dictionary[keyName] = value;
@@ -36,8 +48,19 @@ namespace DNX.Helpers.Linq
         /// <param name="keyName">Name of the key.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>TV.</returns>
+        /// <exception cref="System.ArgumentNullException"> dictionary or keyName </exception>
         public static TV GetValue<TK, TV>(this IDictionary<TK, TV> dictionary, TK keyName, TV defaultValue = default(TV))
         {
+            if (dictionary == null)
+            {
+                throw new ArgumentNullException("dictionary");
+            }
+
+            if (keyName == null)
+            {
+                throw new ArgumentNullException("keyName");
+            }
+
             return dictionary.ContainsKey(keyName)
                 ? dictionary[keyName]
                 : defaultValue;
@@ -48,18 +71,28 @@ namespace DNX.Helpers.Linq
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="dictionary">The dictionary.</param>
-        /// <param name="from">From.</param>
-        /// <param name="to">To.</param>
-        public static void RenameKey<T>(this IDictionary<string, T> dictionary, string from, string to)
+        /// <param name="fromKeyName">Name of from key.</param>
+        /// <param name="toKeyName">Name of to key.</param>
+        /// <exception cref="System.ArgumentNullException"> fromKeyName or toKeyName </exception>
+        public static void RenameKey<T>(this IDictionary<string, T> dictionary, string fromKeyName, string toKeyName)
         {
-            if (dictionary == null || !dictionary.ContainsKey(from) || dictionary.ContainsKey(to))
+            if (fromKeyName == null)
+            {
+                throw new ArgumentNullException("fromKeyName");
+            }
+            if (toKeyName == null)
+            {
+                throw new ArgumentNullException("toKeyName");
+            }
+
+            if (dictionary == null || !dictionary.ContainsKey(fromKeyName) || dictionary.ContainsKey(toKeyName))
             {
                 return;
             }
 
-            var old = dictionary[from];
-            dictionary.Remove(from);
-            dictionary[to] = old;
+            var old = dictionary[fromKeyName];
+            dictionary.Remove(fromKeyName);
+            dictionary.SetValue(toKeyName, old);
         }
     }
 }

@@ -1,0 +1,70 @@
+﻿using DNX.Helpers.Exceptions;
+
+namespace DNX.Helpers.Converters.BuiltInTypes
+{
+    /// <summary>
+    /// Class ConvertBoolExtensions.
+    /// </summary>
+    public static class Convert#Name#Extensions
+    {
+        /// <summary>
+        /// Converts the string to a #type#
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>#type#</returns>
+        /// <exception cref="DNX.Helpers.Exceptions.ConversionException">Unable to convert value to Type</exception>
+        /// <remarks>Also available as an extension method</remarks>
+        public static #type# To#Name#(this string text)
+        {
+            #type# result;
+
+            if (!#type#.TryParse(text, out result))
+            {
+                throw new ConversionException(text, "Unable to convert value to Type", typeof(#type#));
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Converts the string to a #type#, or returns the default value if the conversion fails
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns>#type#</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static #type# To#Name#(this string text, #type# defaultValue)
+        {
+            try
+            {
+                var result = text.To#Name#();
+
+                return result;
+            }
+            catch (ConversionException)
+            {
+                return defaultValue;
+            }
+        }
+
+        /// <summary>
+        /// Determines if the string can be converted to a #type# or not
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns><c>true</c> if the specified text is a #type; otherwise, <c>false</c>.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static bool Is#Name#(this string text)
+        {
+            try
+            {
+                text.To#Name#();
+
+                return true;
+            }
+            catch (ConversionException)
+            {
+                return false;
+            }
+        }
+    }
+}

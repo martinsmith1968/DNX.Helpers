@@ -25,7 +25,7 @@ namespace Test.DNX.Helpers.Exceptions
         }
 
         [Test]
-        public void Test_ConversionException1()
+        public void Test_ConversionException_constructor_value_message_type()
         {
             // Arrange
             var value = "abc";

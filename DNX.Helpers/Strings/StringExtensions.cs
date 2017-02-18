@@ -182,7 +182,7 @@ namespace DNX.Helpers.Strings
         /// <remarks>Also available as an extension method</remarks>
         public static bool ContainsOnly(this string text, string characters)
         {
-            return ContainsOnly(text, characters.ToCharArray());
+            return ContainsOnly(text, (characters ?? string.Empty).ToCharArray());
         }
 
         /// <summary>
@@ -323,6 +323,17 @@ namespace DNX.Helpers.Strings
         /// <remarks>Also available as an extension method</remarks>
         public static string CoalesceNullOrEmpty(params string[] strings)
         {
+            return strings.CoalesceNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Coalesces the list of strings to find the first not null or empty.
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNullOrEmpty(this IList<string> strings)
+        {
             var value = strings.FirstOrDefault(s => !string.IsNullOrEmpty(s));
 
             return value;
@@ -335,6 +346,17 @@ namespace DNX.Helpers.Strings
         /// <returns>System.String.</returns>
         /// <remarks>Also available as an extension method</remarks>
         public static string CoalesceNullOrWhitespace(params string[] strings)
+        {
+            return strings.CoalesceNullOrWhitespace();
+        }
+
+        /// <summary>
+        /// Coalesces the list of strings to find the first not null or whitespace.
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNullOrWhitespace(this IList<string> strings)
         {
             var value = strings.FirstOrDefault(s => !string.IsNullOrWhiteSpace(s));
 

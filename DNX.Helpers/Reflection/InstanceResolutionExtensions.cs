@@ -89,7 +89,7 @@ namespace DNX.Helpers.Reflection
 
             foreach (var instance in instances)
             {
-                var attributes = instance.GetInstanceAttributes<TA>(true);
+                var attributes = instance.GetTypeAttributesFromInstance<TA>(true);
 
                 var attributeMatches = attributes
                     .Where(i => func(i))

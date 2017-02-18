@@ -12,12 +12,58 @@ namespace DNX.Helpers.Strings
     public static class RegexStringExtensions
     {
         /// <summary>
+        /// Parses to key value pair.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="regExpression">The reg expression.</param>
+        /// <param name="keyGroupName">Name of the key group.</param>
+        /// <param name="valueGroupName">Name of the value group.</param>
+        /// <returns>KeyValuePair&lt;System.String, System.String&gt;.</returns>
+        public static KeyValuePair<string, string> ParseToKeyValuePair(this string input, string regExpression, string keyGroupName = "1", string valueGroupName = "2")
+        {
+            var values = input.ParseFirstMatchToDictionary(regExpression);
+
+            if (values == null)
+            {
+                return default(KeyValuePair<string, string>);
+            }
+
+            var result = new KeyValuePair<string, string>(
+                values.GetValue(keyGroupName),
+                values.GetValue(valueGroupName)
+                );
+
+            return result;
+        }
+
+        /// <summary>
         /// Parses to dictionary.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <param name="regExpression">The reg expression.</param>
+        /// <param name="keyGroupName">Name of the key group.</param>
+        /// <param name="valueGroupName">Name of the value group.</param>
+        /// <returns>Dictionary&lt;System.String, System.String&gt;.</returns>
+        public static Dictionary<string, string> ParseToDictionary(this IEnumerable<string> input, string regExpression, string keyGroupName = "1", string valueGroupName = "2")
+        {
+            var values = input
+                .Select(x => x.ParseToKeyValuePair(regExpression, keyGroupName, valueGroupName))
+                .Where(x => !string.IsNullOrEmpty(x.Key))
+                .ToDictionary(
+                    a => a.Key,
+                    a => a.Value
+                );
+
+            return values;
+        }
+
+        /// <summary>
+        /// Parses to a list of dictionaries.
+        /// </summary>
+        /// <param name="input">The input.</param>
+        /// <param name="regExpression">The reg expression.</param>
         /// <returns>List&lt;Dictionary&lt;System.String, System.String&gt;&gt;.</returns>
-        public static List<Dictionary<string, string>> ParseToDictionary(this string input, string regExpression)
+        public static List<Dictionary<string, string>> ParseToDictionaryList(this string input, string regExpression)
         {
             var regex = new Regex(regExpression);
 
@@ -49,7 +95,7 @@ namespace DNX.Helpers.Strings
         /// <returns>Dictionary&lt;System.String, System.String&gt;.</returns>
         public static Dictionary<string, string> ParseFirstMatchToDictionary(this string input, string regExpression)
         {
-            var dictionary = ParseToDictionary(input, regExpression);
+            var dictionary = ParseToDictionaryList(input, regExpression);
 
             return dictionary.FirstOrDefault();
         }

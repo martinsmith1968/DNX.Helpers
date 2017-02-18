@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using DNX.Helpers.Exceptions;
+using DNX.Helpers.Linq;
+using DNX.Helpers.Reflection;
 
 namespace DNX.Helpers.Enumerations
 {
@@ -90,6 +93,27 @@ namespace DNX.Helpers.Enumerations
         }
 
         /// <summary>
+        /// Gets the description.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>System.String.</returns>
+        public static string GetDescription(this Enum value)
+        {
+            var type = value.GetType();
+
+            var memInfo = type.GetMember(value.ToString())
+                .SingleOrDefault();
+
+            var description = memInfo == null
+                ? null
+                : memInfo.GetMemberAttributes<DescriptionAttribute>(true);
+
+            return description.HasAny()
+                ? description.First().Description
+                : null;
+        }
+
+        /// <summary>
         /// Determines whether the specified enum value is a valid enum name.
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -114,15 +138,51 @@ namespace DNX.Helpers.Enumerations
         public static bool IsValidEnum<T>(this string value)
             where T : struct
         {
-            if (!typeof(T).IsEnum)
+            return IsValidEnum(value, typeof(T), false);
+        }
+
+        /// <summary>
+        /// Determines whether the specified enum value is a valid enum name.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="ignoreCase">if set to <c>true</c> [ignore case].</param>
+        /// <returns><c>true</c> if [is valid enum] [the specified ignore case]; otherwise, <c>false</c>.</returns>
+        public static bool IsValidEnum<T>(this string value, bool ignoreCase)
+            where T : struct
+        {
+            return IsValidEnum(value, typeof(T), ignoreCase);
+        }
+
+        /// <summary>
+        /// Determines whether the text is a valid enum value of the specified enum type
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="ignoreCase">if set to <c>true</c> [ignore case].</param>
+        /// <returns><c>true</c> if [is valid enum] [the specified type]; otherwise, <c>false</c>.</returns>
+        /// <exception cref="System.ArgumentNullException">type</exception>
+        /// <exception cref="EnumTypeException"></exception>
+        public static bool IsValidEnum(this string value, Type type, bool ignoreCase)
+        {
+            if (type == null)
             {
-                throw new EnumTypeException(typeof(T));
+                throw new ArgumentNullException("type");
             }
 
-            var names = Enum.GetNames(typeof(T))
+            if (!type.IsEnum)
+            {
+                throw new EnumTypeException(type);
+            }
+
+            var comparison = ignoreCase
+                ? StringComparison.CurrentCultureIgnoreCase
+                : StringComparison.CurrentCulture;
+
+            var names = Enum.GetNames(type)
                 .ToList();
 
-            return names.Contains(value);
+            return names.Any(n => n.Equals(value, comparison));
         }
 
         /// <summary>
@@ -138,7 +198,9 @@ namespace DNX.Helpers.Enumerations
                 throw new EnumTypeException(typeof(T));
             }
 
-            return Enum.GetValues(typeof(T)).Cast<T>().Max();
+            return Enum.GetValues(typeof(T))
+                .Cast<T>()
+                .Max();
         }
 
         /// <summary>
@@ -154,7 +216,9 @@ namespace DNX.Helpers.Enumerations
                 throw new EnumTypeException(typeof(T));
             }
 
-            return Enum.GetValues(typeof(T)).Cast<T>().Min();
+            return Enum.GetValues(typeof(T))
+                .Cast<T>()
+                .Min();
         }
 
         /// <summary>
@@ -216,7 +280,6 @@ namespace DNX.Helpers.Enumerations
             {
                 valueAsInt &= ~flagAsInt;
             }
-
             return (T)valueAsInt;
         }
 
@@ -250,7 +313,7 @@ namespace DNX.Helpers.Enumerations
         /// <typeparam name="T"></typeparam>
         /// <param name="enumValue">The enum value.</param>
         /// <returns></returns>
-        public static List<T> GetSetValuesList<T>(Enum enumValue)
+        public static List<T> GetSetValuesList<T>(this Enum enumValue)
             where T : struct
         {
             if (!typeof(T).IsEnum)
@@ -276,11 +339,34 @@ namespace DNX.Helpers.Enumerations
         }
 
         /// <summary>
-        /// To the dictionary.
+        /// Converts the entire enum to a dictionary with Name as the key
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static IDictionary<T, string> ToDictionary<T>()
+        public static IDictionary<string, T> ToDictionaryByName<T>()
+            where T : struct
+        {
+            if (!typeof(T).IsEnum)
+            {
+                throw new EnumTypeException(typeof(T));
+            }
+
+            var dictionary = Enum.GetValues(typeof(T))
+                .Cast<T>()
+                .ToDictionary(
+                    t => t.ToString(),
+                    t => t
+                    );
+
+            return dictionary;
+        }
+
+        /// <summary>
+        /// Converts the entire enum to a dictionary with Value as the key
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static IDictionary<T, string> ToDictionaryByValue<T>()
             where T : struct
         {
             if (!typeof(T).IsEnum)

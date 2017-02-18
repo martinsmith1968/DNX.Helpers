@@ -44,7 +44,21 @@
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetails.cs" />
     <Compile Include="Assemblies\IAssemblyDetails.cs" />
-    <Compile Include="Converters\BuiltInTypeConvertExtensions.cs" />
+    <Compile Include="Converters\ConvertObjectExtensions.cs" />
+    <None Include="Converters\BuiltInTypes\Build.cmd" />
+    <None Include="Converters\BuiltInTypes\ConvertExtensions.cs.template" />
+    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensions.cs" />
     <Compile Include="Converters\ConvertExtensions.cs" />
     <Compile Include="Dates\DateTimeExtensions.cs" />
     <Compile Include="Enumerations\EnumExtensions.cs" />

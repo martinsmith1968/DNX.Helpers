@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
+namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
 {
-    public class ConvertDecimalExtensionsTestsSource
+    public class ConvertSingleExtensionsTestsSource
     {
-        public static IEnumerable<TestCaseData> IsDecimal
+        public static IEnumerable<TestCaseData> IsSingle
         {
             get
             {
@@ -20,12 +21,12 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToDecimal
+        public static IEnumerable<TestCaseData> ToSingle
         {
             get
             {
-                yield return new TestCaseData(decimal.MinValue.ToString()).Returns(decimal.MinValue);
-                yield return new TestCaseData(decimal.MaxValue.ToString()).Returns(decimal.MaxValue);
+                yield return new TestCaseData(Single.MinValue.ToString("F")).Returns(Single.MinValue);
+                yield return new TestCaseData(Single.MaxValue.ToString("F")).Returns(Single.MaxValue);
                 yield return new TestCaseData("0").Returns(0);
                 yield return new TestCaseData("100").Returns(100);
                 yield return new TestCaseData("10").Returns(10);
@@ -33,10 +34,12 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToDecimalThrows
+        public static IEnumerable<TestCaseData> ToSingleThrows
         {
             get
             {
+                yield return new TestCaseData(double.MinValue.ToString()).Returns(false);
+                yield return new TestCaseData(double.MaxValue.ToString()).Returns(false);
                 yield return new TestCaseData("abcdef").Returns(false);
                 yield return new TestCaseData("50.5").Returns(true);
                 yield return new TestCaseData("£-10").Returns(false);
@@ -46,14 +49,16 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToDecimalWithDefault
+        public static IEnumerable<TestCaseData> ToSingleWithDefault
         {
             get
             {
-                yield return new TestCaseData("abcdef", (decimal)25).Returns(25);
-                yield return new TestCaseData("$50.5", (decimal)25).Returns(25);
-                yield return new TestCaseData("100,000", (decimal)100).Returns(100000);
-                yield return new TestCaseData("100", (decimal)25).Returns(100);
+                yield return new TestCaseData(double.MinValue.ToString(), Single.MaxValue).Returns(Single.MaxValue);
+                yield return new TestCaseData(double.MaxValue.ToString(), Single.MinValue).Returns(Single.MinValue);
+                yield return new TestCaseData("abcdef", (Single)25).Returns(25);
+                yield return new TestCaseData("$50.5", (Single)25).Returns(25);
+                yield return new TestCaseData("100,000", (Single)100).Returns(100000);
+                yield return new TestCaseData("100", (Single)25).Returns(100);
             }
         }
     }

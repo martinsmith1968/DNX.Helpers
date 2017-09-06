@@ -35,15 +35,20 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetails.cs" />
     <Compile Include="Assemblies\IAssemblyDetails.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt16Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt32Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt64Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt16Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt32Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt64Extensions.cs" />
     <Compile Include="Converters\ConvertObjectExtensions.cs" />
     <None Include="Converters\BuiltInTypes\Build.cmd" />
     <None Include="Converters\BuiltInTypes\ConvertExtensions.cs.template" />

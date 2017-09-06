@@ -1,14 +1,11 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
+namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
 {
-    public class ConvertFloatExtensionsTestsSource
+    public class ConvertDoubleExtensionsTestsSource
     {
-        private const float ParsedMinValue = -3.40282306E+38f;
-        private const float ParsedMaxValue = 3.40282306E+38f;
-
-        public static IEnumerable<TestCaseData> IsFloat
+        public static IEnumerable<TestCaseData> IsDouble
         {
             get
             {
@@ -23,14 +20,12 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToFloat
+        public static IEnumerable<TestCaseData> ToDouble
         {
             get
             {
-                yield return new TestCaseData(float.MinValue.ToString("R")).Returns(float.MinValue);
-                yield return new TestCaseData(float.MaxValue.ToString("R")).Returns(float.MaxValue);
-                yield return new TestCaseData(float.MinValue.ToString("")).Returns(ParsedMinValue);
-                yield return new TestCaseData(float.MaxValue.ToString("")).Returns(ParsedMaxValue);
+                yield return new TestCaseData(double.MinValue.ToString("r")).Returns(double.MinValue);
+                yield return new TestCaseData(double.MaxValue.ToString("r")).Returns(double.MaxValue);
                 yield return new TestCaseData("0").Returns(0);
                 yield return new TestCaseData("100").Returns(100);
                 yield return new TestCaseData("10").Returns(10);
@@ -38,10 +33,12 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToFloatThrows
+        public static IEnumerable<TestCaseData> ToDoubleThrows
         {
             get
             {
+                yield return new TestCaseData(double.MinValue.ToString()).Returns(false);
+                yield return new TestCaseData(double.MaxValue.ToString()).Returns(false);
                 yield return new TestCaseData("abcdef").Returns(false);
                 yield return new TestCaseData("50.5").Returns(true);
                 yield return new TestCaseData("£-10").Returns(false);
@@ -51,16 +48,16 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToFloatWithDefault
+        public static IEnumerable<TestCaseData> ToDoubleWithDefault
         {
             get
             {
-                yield return new TestCaseData(float.MinValue.ToString(), 0).Returns(ParsedMinValue);
-                yield return new TestCaseData(float.MaxValue.ToString(), 0).Returns(ParsedMaxValue);
-                yield return new TestCaseData("abcdef", (float)25).Returns(25);
-                yield return new TestCaseData("$50.5", (float)25).Returns(25);
-                yield return new TestCaseData("100,000", (float)100).Returns(100000);
-                yield return new TestCaseData("100", (float)25).Returns(100);
+                yield return new TestCaseData(double.MinValue.ToString(), double.MaxValue).Returns(double.MaxValue);
+                yield return new TestCaseData(double.MaxValue.ToString(), double.MinValue).Returns(double.MinValue);
+                yield return new TestCaseData("abcdef", (double)25).Returns(25);
+                yield return new TestCaseData("$50.5", (double)25).Returns(25);
+                yield return new TestCaseData("100,000", (double)100).Returns(100000);
+                yield return new TestCaseData("100", (double)25).Returns(100);
             }
         }
     }

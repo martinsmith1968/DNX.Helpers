@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
+namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
 {
-    public class ConvertIntExtensionsTestsSource
+    public class ConvertUInt32ExtensionsTestsSource
     {
-        public static IEnumerable<TestCaseData> IsInt
+        public static IEnumerable<TestCaseData> IsUInt32
         {
             get
             {
@@ -23,12 +24,12 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToInt
+        public static IEnumerable<TestCaseData> ToUInt32
         {
             get
             {
-                yield return new TestCaseData(int.MinValue.ToString()).Returns(int.MinValue);
-                yield return new TestCaseData(int.MaxValue.ToString()).Returns(int.MaxValue);
+                yield return new TestCaseData(UInt32.MinValue.ToString()).Returns(UInt32.MinValue);
+                yield return new TestCaseData(UInt32.MaxValue.ToString()).Returns(UInt32.MaxValue);
                 yield return new TestCaseData("0").Returns(0);
                 yield return new TestCaseData("100").Returns(100);
                 yield return new TestCaseData("10").Returns(10);
@@ -45,7 +46,7 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
                 yield return new TestCaseData("50.5").Returns(false);
                 yield return new TestCaseData("-10").Returns(true);
                 yield return new TestCaseData("100,000").Returns(false);
-                yield return new TestCaseData(long.MaxValue.ToString()).Returns(false);
+                yield return new TestCaseData(Int64.MaxValue.ToString()).Returns(false);
                 yield return new TestCaseData("100").Returns(true);
             }
         }
@@ -54,10 +55,10 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
         {
             get
             {
-                yield return new TestCaseData("abcdef", (int)25).Returns(25);
-                yield return new TestCaseData("50.5", (int)25).Returns(25);
-                yield return new TestCaseData("100,000", (int)100).Returns(100);
-                yield return new TestCaseData("100", (int)25).Returns(100);
+                yield return new TestCaseData("abcdef", (UInt32)25).Returns(25);
+                yield return new TestCaseData("50.5", (UInt32)25).Returns(25);
+                yield return new TestCaseData("100,000", (UInt32)100).Returns(100);
+                yield return new TestCaseData("100", (UInt32)25).Returns(100);
             }
         }
     }

@@ -6,39 +6,39 @@ namespace DNX.Helpers.Converters.BuiltInTypes
     /// <summary>
     /// Class ConvertBoolExtensions.
     /// </summary>
-    public static class ConvertSByteExtensions
+    public static class ConvertUInt64Extensions
     {
         /// <summary>
-        /// Converts the string to a sbyte
+        /// Converts the string to a ulong
         /// </summary>
         /// <param name="text">The text.</param>
-        /// <returns>sbyte</returns>
+        /// <returns>ulong</returns>
         /// <exception cref="DNX.Helpers.Exceptions.ConversionException">Unable to convert value to Type</exception>
         /// <remarks>Also available as an extension method</remarks>
-        public static sbyte ToSByte(this string text)
+        public static ulong ToUInt64(this string text)
         {
-            sbyte result;
+            ulong result;
 
-            if (!sbyte.TryParse(text, out result))
+            if (!ulong.TryParse(text, out result))
             {
-                throw new ConversionException(text, "Unable to convert value to Type", typeof(sbyte));
+                throw new ConversionException(text, "Unable to convert value to Type", typeof(ulong));
             }
 
             return result;
         }
 
         /// <summary>
-        /// Converts the string to a sbyte, or returns the default value if the conversion fails
+        /// Converts the string to a ulong, or returns the default value if the conversion fails
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="defaultValue">The default value.</param>
-        /// <returns>sbyte</returns>
+        /// <returns>ulong</returns>
         /// <remarks>Also available as an extension method</remarks>
-        public static sbyte ToSByte(this string text, sbyte defaultValue)
+        public static ulong ToUInt64(this string text, ulong defaultValue)
         {
             try
             {
-                var result = text.ToSByte();
+                var result = text.ToUInt64();
 
                 return result;
             }
@@ -49,16 +49,16 @@ namespace DNX.Helpers.Converters.BuiltInTypes
         }
 
         /// <summary>
-        /// Determines if the string can be converted to a sbyte or not
+        /// Determines if the string can be converted to a ulong or not
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns><c>true</c> if the specified text is a #type; otherwise, <c>false</c>.</returns>
         /// <remarks>Also available as an extension method</remarks>
-        public static bool IsSByte(this string text)
+        public static bool IsUInt64(this string text)
         {
             try
             {
-                text.ToSByte();
+                text.ToUInt64();
 
                 return true;
             }

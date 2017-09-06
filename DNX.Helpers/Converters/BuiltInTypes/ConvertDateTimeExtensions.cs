@@ -6,39 +6,39 @@ namespace DNX.Helpers.Converters.BuiltInTypes
     /// <summary>
     /// Class ConvertBoolExtensions.
     /// </summary>
-    public static class ConvertSByteExtensions
+    public static class ConvertDateTimeExtensions
     {
         /// <summary>
-        /// Converts the string to a sbyte
+        /// Converts the string to a DateTime
         /// </summary>
         /// <param name="text">The text.</param>
-        /// <returns>sbyte</returns>
+        /// <returns>DateTime</returns>
         /// <exception cref="DNX.Helpers.Exceptions.ConversionException">Unable to convert value to Type</exception>
         /// <remarks>Also available as an extension method</remarks>
-        public static sbyte ToSByte(this string text)
+        public static DateTime ToDateTime(this string text)
         {
-            sbyte result;
+            DateTime result;
 
-            if (!sbyte.TryParse(text, out result))
+            if (!DateTime.TryParse(text, out result))
             {
-                throw new ConversionException(text, "Unable to convert value to Type", typeof(sbyte));
+                throw new ConversionException(text, "Unable to convert value to Type", typeof(DateTime));
             }
 
             return result;
         }
 
         /// <summary>
-        /// Converts the string to a sbyte, or returns the default value if the conversion fails
+        /// Converts the string to a DateTime, or returns the default value if the conversion fails
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="defaultValue">The default value.</param>
-        /// <returns>sbyte</returns>
+        /// <returns>DateTime</returns>
         /// <remarks>Also available as an extension method</remarks>
-        public static sbyte ToSByte(this string text, sbyte defaultValue)
+        public static DateTime ToDateTime(this string text, DateTime defaultValue)
         {
             try
             {
-                var result = text.ToSByte();
+                var result = text.ToDateTime();
 
                 return result;
             }
@@ -49,16 +49,16 @@ namespace DNX.Helpers.Converters.BuiltInTypes
         }
 
         /// <summary>
-        /// Determines if the string can be converted to a sbyte or not
+        /// Determines if the string can be converted to a DateTime or not
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns><c>true</c> if the specified text is a #type; otherwise, <c>false</c>.</returns>
         /// <remarks>Also available as an extension method</remarks>
-        public static bool IsSByte(this string text)
+        public static bool IsDateTime(this string text)
         {
             try
             {
-                text.ToSByte();
+                text.ToDateTime();
 
                 return true;
             }

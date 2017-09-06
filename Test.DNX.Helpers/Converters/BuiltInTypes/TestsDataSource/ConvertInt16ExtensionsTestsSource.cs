@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
+namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
 {
-    public class ConvertLongExtensionsTestsSource
+    public class ConvertInt16ExtensionsTestsSource
     {
-        public static IEnumerable<TestCaseData> IsLong
+        public static IEnumerable<TestCaseData> IsInt16
         {
             get
             {
@@ -23,12 +24,12 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToLong
+        public static IEnumerable<TestCaseData> ToInt16
         {
             get
             {
-                yield return new TestCaseData(int.MinValue.ToString()).Returns(int.MinValue);
-                yield return new TestCaseData(int.MaxValue.ToString()).Returns(int.MaxValue);
+                yield return new TestCaseData(Int16.MinValue.ToString()).Returns(Int16.MinValue);
+                yield return new TestCaseData(Int16.MaxValue.ToString()).Returns(Int16.MaxValue);
                 yield return new TestCaseData("0").Returns(0);
                 yield return new TestCaseData("100").Returns(100);
                 yield return new TestCaseData("10").Returns(10);
@@ -37,7 +38,7 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
             }
         }
 
-        public static IEnumerable<TestCaseData> ToLongThrows
+        public static IEnumerable<TestCaseData> ToInt16Throws
         {
             get
             {
@@ -45,19 +46,19 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
                 yield return new TestCaseData("50.5").Returns(false);
                 yield return new TestCaseData("-10").Returns(true);
                 yield return new TestCaseData("100,000").Returns(false);
-                yield return new TestCaseData(double.MaxValue.ToString("0.0")).Returns(false);
+                yield return new TestCaseData(Int32.MaxValue.ToString()).Returns(false);
                 yield return new TestCaseData("100").Returns(true);
             }
         }
 
-        public static IEnumerable<TestCaseData> ToLongWithDefault
+        public static IEnumerable<TestCaseData> ToInt16WithDefault
         {
             get
             {
-                yield return new TestCaseData("abcdef", (int)25).Returns(25);
-                yield return new TestCaseData("50.5", (int)25).Returns(25);
-                yield return new TestCaseData("100,000", (int)100).Returns(100);
-                yield return new TestCaseData("100", (int)25).Returns(100);
+                yield return new TestCaseData("abcdef", (Int16)25).Returns(25);
+                yield return new TestCaseData("50.5", (Int16)25).Returns(25);
+                yield return new TestCaseData("100,000", (Int16)100).Returns(100);
+                yield return new TestCaseData("100", (Int16)25).Returns(100);
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 
-namespace Test.DNX.Helpers.Converters.BuiltInTypes.Source
+namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
 {
     public class ConvertBoolExtensionsTestsSource
     {

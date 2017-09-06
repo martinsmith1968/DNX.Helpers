@@ -1,4 +1,5 @@
-﻿using DNX.Helpers.Exceptions;
+﻿using System;
+using DNX.Helpers.Exceptions;
 
 namespace DNX.Helpers.Converters.BuiltInTypes
 {

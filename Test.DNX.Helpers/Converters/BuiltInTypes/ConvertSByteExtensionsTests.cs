@@ -1,7 +1,8 @@
-﻿using DNX.Helpers.Converters.BuiltInTypes;
+﻿using System;
+using DNX.Helpers.Converters.BuiltInTypes;
 using DNX.Helpers.Exceptions;
 using NUnit.Framework;
-using Test.DNX.Helpers.Converters.BuiltInTypes.Source;
+using Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource;
 
 namespace Test.DNX.Helpers.Converters.BuiltInTypes
 {

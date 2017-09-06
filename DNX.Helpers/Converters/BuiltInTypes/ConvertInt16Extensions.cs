@@ -6,39 +6,39 @@ namespace DNX.Helpers.Converters.BuiltInTypes
     /// <summary>
     /// Class ConvertBoolExtensions.
     /// </summary>
-    public static class ConvertSByteExtensions
+    public static class ConvertInt16Extensions
     {
         /// <summary>
-        /// Converts the string to a sbyte
+        /// Converts the string to a short
         /// </summary>
         /// <param name="text">The text.</param>
-        /// <returns>sbyte</returns>
+        /// <returns>short</returns>
         /// <exception cref="DNX.Helpers.Exceptions.ConversionException">Unable to convert value to Type</exception>
         /// <remarks>Also available as an extension method</remarks>
-        public static sbyte ToSByte(this string text)
+        public static short ToInt16(this string text)
         {
-            sbyte result;
+            short result;
 
-            if (!sbyte.TryParse(text, out result))
+            if (!short.TryParse(text, out result))
             {
-                throw new ConversionException(text, "Unable to convert value to Type", typeof(sbyte));
+                throw new ConversionException(text, "Unable to convert value to Type", typeof(short));
             }
 
             return result;
         }
 
         /// <summary>
-        /// Converts the string to a sbyte, or returns the default value if the conversion fails
+        /// Converts the string to a short, or returns the default value if the conversion fails
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="defaultValue">The default value.</param>
-        /// <returns>sbyte</returns>
+        /// <returns>short</returns>
         /// <remarks>Also available as an extension method</remarks>
-        public static sbyte ToSByte(this string text, sbyte defaultValue)
+        public static short ToInt16(this string text, short defaultValue)
         {
             try
             {
-                var result = text.ToSByte();
+                var result = text.ToInt16();
 
                 return result;
             }
@@ -49,16 +49,16 @@ namespace DNX.Helpers.Converters.BuiltInTypes
         }
 
         /// <summary>
-        /// Determines if the string can be converted to a sbyte or not
+        /// Determines if the string can be converted to a short or not
         /// </summary>
         /// <param name="text">The text.</param>
         /// <returns><c>true</c> if the specified text is a #type; otherwise, <c>false</c>.</returns>
         /// <remarks>Also available as an extension method</remarks>
-        public static bool IsSByte(this string text)
+        public static bool IsInt16(this string text)
         {
             try
             {
-                text.ToSByte();
+                text.ToInt16();
 
                 return true;
             }

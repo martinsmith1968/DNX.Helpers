@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNX.Helpers", "DNX.Helpers\DNX.Helpers.csproj", "{BC278532-83D1-4AC0-BA01-E16F237BCBF9}"
 EndProject
@@ -18,6 +18,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{FB47A44B-A670-480D-8B11-6D02072596D4}"
+	ProjectSection(SolutionItems) = preProject
+		GenerateMarkdown.cmd = GenerateMarkdown.cmd
+		NuGet.publish.cmd = NuGet.publish.cmd
 	EndProjectSection
 EndProject
 Global
@@ -37,5 +43,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB47A44B-A670-480D-8B11-6D02072596D4} = {E52234A5-6012-4188-B216-87C7D41306B5}
 	EndGlobalSection
 EndGlobal

@@ -18,5 +18,6 @@ IF EXIST *.nupkg DEL *.nupkg
 "%NUGETEXE%" pack "%SCRIPTPATH%\DNX.Helpers\DNX.Helpers.csproj"
 
 FOR %%F IN (*.nupkg) DO (
-	%NUGETEXE% push "%%~F" -Source "%NUGETSERVERAPIURL%" -ApiKey "%NUGETSERVERAPIKEY%"
+    ECHO.Pushing: %%~F
+	ECHO.%NUGETEXE% push "%%~F" -Source "%NUGETSERVERAPIURL%" -ApiKey "%NUGETSERVERAPIKEY%"
 )

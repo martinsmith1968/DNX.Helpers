@@ -2,192 +2,1902 @@
 # DNX.Helpers
 
 
-## Converters.ConvertExtensions
+## Assemblies.AssemblyDetails
+
+Implementation for obtaining Assembly Attributes
+
+
+### M:DNX.Helpers.#ctor
+
+Initializes a new instance of the class.
+
+
+### M:DNX.Helpers.#ctor(assembly)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly. |
+
+### F:DNX.Helpers._assembly
+
+Internal _assembly field
+
+
+### P:DNX.Helpers.AssemblyName
+
+Gets the AssemblyName
+
+
+### P:DNX.Helpers.Company
+
+Gets the company attribute value.
+
+
+### P:DNX.Helpers.Configuration
+
+Gets the configuration attribute value.
+
+
+### P:DNX.Helpers.Copyright
+
+Gets the copyright attribute value.
+
+
+### P:DNX.Helpers.Description
+
+Gets the description attribute value.
+
+
+### P:DNX.Helpers.FileName
+
+Gets the file name of the assembly.
+
+
+### P:DNX.Helpers.FileVersion
+
+Gets the file version attribute value.
+
+
+### M:DNX.Helpers.GetValue``1(System.Func{``0,System.String})
+
+Returns the value of attribute T or String.Empty if no value is available.
+
+| Name | Description |
+| ---- | ----------- |
+| getValue | *Unknown type*<br>The get value. |
+
+
+#### Returns
+
+ The result of the specified Func, executed on the found attribute, if any. null if not matching attribute can be found 
+
+
+### P:DNX.Helpers.InformationalVersion
+
+Gets the informational version attribute value.
+
+
+### P:DNX.Helpers.Location
+
+Gets the location of the assembly.
+
+
+### P:DNX.Helpers.Name
+
+Gets the name of the assembly.
+
+
+### P:DNX.Helpers.Product
+
+Gets the product attribute value.
+
+
+### P:DNX.Helpers.Title
+
+Gets the title attribute value.
+
+
+### P:DNX.Helpers.Trademark
+
+Gets the trademark attribute value.
+
+
+### P:DNX.Helpers.Version
+
+Gets the assembly version.
+
+
+## T:DNX.Helpers.Assemblies.IAssemblyDetails
+
+Interface IAssemblyDetail
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.AssemblyName
+
+Gets the AssemblyName
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Company
+
+Gets the company attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Configuration
+
+Gets the configuration attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Copyright
+
+Gets the copyright attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Description
+
+Gets the description attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.FileName
+
+Gets the file name of the assembly.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.FileVersion
+
+Gets the file version attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.InformationalVersion
+
+Gets the informational version attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Location
+
+Gets the location of the assembly.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Name
+
+Gets the name of the assembly.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Product
+
+Gets the product attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Title
+
+Gets the title attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Trademark
+
+Gets the trademark attribute value.
+
+
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.Version
+
+Gets the assembly version.
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertBoolExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertBoolExtensions.IsBool(text)
+
+Determines if the string can be converted to a bool or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertBoolExtensions.ToBool(text)
+
+Converts the string to a bool
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+bool
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertBoolExtensions.ToBool(text, defaultValue)
+
+Converts the string to a bool, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Boolean*<br>The default value. |
+
+
+#### Returns
+
+bool
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertByteExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertByteExtensions.IsByte(text)
+
+Determines if the string can be converted to a byte or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertByteExtensions.ToByte(text)
+
+Converts the string to a byte
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+byte
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertByteExtensions.ToByte(text, defaultValue)
+
+Converts the string to a byte, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Byte*<br>The default value. |
+
+
+#### Returns
+
+byte
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertDateTimeExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDateTimeExtensions.IsDateTime(text)
+
+Determines if the string can be converted to a DateTime or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDateTimeExtensions.ToDateTime(text)
+
+Converts the string to a DateTime
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+DateTime
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDateTimeExtensions.ToDateTime(text, defaultValue)
+
+Converts the string to a DateTime, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.DateTime*<br>The default value. |
+
+
+#### Returns
+
+DateTime
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertDecimalExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDecimalExtensions.IsDecimal(text)
+
+Determines if the string can be converted to a decimal or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDecimalExtensions.ToDecimal(text)
+
+Converts the string to a decimal
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+decimal
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDecimalExtensions.ToDecimal(text, defaultValue)
+
+Converts the string to a decimal, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Decimal*<br>The default value. |
+
+
+#### Returns
+
+decimal
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertDoubleExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDoubleExtensions.IsDouble(text)
+
+Determines if the string can be converted to a double or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDoubleExtensions.ToDouble(text)
+
+Converts the string to a double
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+double
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDoubleExtensions.ToDouble(text, defaultValue)
+
+Converts the string to a double, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Double*<br>The default value. |
+
+
+#### Returns
+
+double
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertFloatExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertFloatExtensions.IsFloat(text)
+
+Determines if the string can be converted to a float or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertFloatExtensions.ToFloat(text)
+
+Converts the string to a float
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+float
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertFloatExtensions.ToFloat(text, defaultValue)
+
+Converts the string to a float, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Single*<br>The default value. |
+
+
+#### Returns
+
+float
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertInt16Extensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt16Extensions.IsInt16(text)
+
+Determines if the string can be converted to a short or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt16Extensions.ToInt16(text)
+
+Converts the string to a short
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+short
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt16Extensions.ToInt16(text, defaultValue)
+
+Converts the string to a short, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Int16*<br>The default value. |
+
+
+#### Returns
+
+short
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertInt32Extensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt32Extensions.IsInt32(text)
+
+Determines if the string can be converted to a int or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt32Extensions.ToInt32(text)
+
+Converts the string to a int
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+int
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt32Extensions.ToInt32(text, defaultValue)
+
+Converts the string to a int, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Int32*<br>The default value. |
+
+
+#### Returns
+
+int
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertInt64Extensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt64Extensions.IsInt64(text)
+
+Determines if the string can be converted to a long or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt64Extensions.ToInt64(text)
+
+Converts the string to a long
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+long
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt64Extensions.ToInt64(text, defaultValue)
+
+Converts the string to a long, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Int64*<br>The default value. |
+
+
+#### Returns
+
+long
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertIntExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertIntExtensions.IsInt(text)
+
+Determines if the string can be converted to a int or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertIntExtensions.ToInt(text)
+
+Converts the string to a int
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+int
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertIntExtensions.ToInt(text, defaultValue)
+
+Converts the string to a int, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Int32*<br>The default value. |
+
+
+#### Returns
+
+int
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertLongExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertLongExtensions.IsLong(text)
+
+Determines if the string can be converted to a long or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertLongExtensions.ToLong(text)
+
+Converts the string to a long
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+long
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertLongExtensions.ToLong(text, defaultValue)
+
+Converts the string to a long, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Int64*<br>The default value. |
+
+
+#### Returns
+
+long
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertSByteExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSByteExtensions.IsSByte(text)
+
+Determines if the string can be converted to a sbyte or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSByteExtensions.ToSByte(text)
+
+Converts the string to a sbyte
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+sbyte
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSByteExtensions.ToSByte(text, defaultValue)
+
+Converts the string to a sbyte, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.SByte*<br>The default value. |
+
+
+#### Returns
+
+sbyte
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertShortExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertShortExtensions.IsShort(text)
+
+Determines if the string can be converted to a short or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertShortExtensions.ToShort(text)
+
+Converts the string to a short
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+short
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertShortExtensions.ToShort(text, defaultValue)
+
+Converts the string to a short, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Int16*<br>The default value. |
+
+
+#### Returns
+
+short
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions.IsSingle(text)
+
+Determines if the string can be converted to a Single or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions.ToSingle(text)
+
+Converts the string to a Single
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+Single
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions.ToSingle(text, defaultValue)
+
+Converts the string to a Single, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.Single*<br>The default value. |
+
+
+#### Returns
+
+Single
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt16Extensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt16Extensions.IsUInt16(text)
+
+Determines if the string can be converted to a ushort or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt16Extensions.ToUInt16(text)
+
+Converts the string to a ushort
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+ushort
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt16Extensions.ToUInt16(text, defaultValue)
+
+Converts the string to a ushort, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.UInt16*<br>The default value. |
+
+
+#### Returns
+
+ushort
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt32Extensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt32Extensions.IsUInt32(text)
+
+Determines if the string can be converted to a uint or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt32Extensions.ToUInt32(text)
+
+Converts the string to a uint
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+uint
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt32Extensions.ToUInt32(text, defaultValue)
+
+Converts the string to a uint, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.UInt32*<br>The default value. |
+
+
+#### Returns
+
+uint
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt64Extensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt64Extensions.IsUInt64(text)
+
+Determines if the string can be converted to a ulong or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt64Extensions.ToUInt64(text)
+
+Converts the string to a ulong
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+ulong
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt64Extensions.ToUInt64(text, defaultValue)
+
+Converts the string to a ulong, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.UInt64*<br>The default value. |
+
+
+#### Returns
+
+ulong
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUIntExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUIntExtensions.IsUInt(text)
+
+Determines if the string can be converted to a uint or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUIntExtensions.ToUInt(text)
+
+Converts the string to a uint
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+uint
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUIntExtensions.ToUInt(text, defaultValue)
+
+Converts the string to a uint, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.UInt32*<br>The default value. |
+
+
+#### Returns
+
+uint
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertULongExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertULongExtensions.IsULong(text)
+
+Determines if the string can be converted to a ulong or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertULongExtensions.ToULong(text)
+
+Converts the string to a ulong
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+ulong
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertULongExtensions.ToULong(text, defaultValue)
+
+Converts the string to a ulong, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.UInt64*<br>The default value. |
+
+
+#### Returns
+
+ulong
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUShortExtensions
+
+Class ConvertBoolExtensions.
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUShortExtensions.IsUShort(text)
+
+Determines if the string can be converted to a ushort or not
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified text is a #type; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUShortExtensions.ToUShort(text)
+
+Converts the string to a ushort
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+ushort
+
+*DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUShortExtensions.ToUShort(text, defaultValue)
+
+Converts the string to a ushort, or returns the default value if the conversion fails
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| defaultValue | *System.UInt16*<br>The default value. |
+
+
+#### Returns
+
+ushort
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Converters.ConvertExtensions
 
 Conversion Extensions.
 
 
-### M:DNX.Helpers.IsInt(text)
+### M:DNX.Helpers.Converters.ConvertExtensions.ChangeType``1(value)
 
-Determines if the string can be converted to an int or not
+Changes the value to the specified type
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-
-
-#### Returns
-
-true if the specified text is an int; otherwise, false.
-
-
-#### Remarks
-
-Also available as an extension method
-
-
-### M:DNX.Helpers.IsLong(text)
-
-Determines if the string can be converted to a long or not
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Object*<br>The value. |
 
 
 #### Returns
 
-true if the specified text is a long; otherwise, false.
+T.
 
 
-#### Remarks
+### M:DNX.Helpers.Converters.ConvertExtensions.ChangeType``1(value, defaultValue)
 
-Also available as an extension method
+Changes the value to the specified type, with a default value if conversion fails
 
-
-### M:DNX.Helpers.IsShort(text)
-
-Determines if the string can be converted to a short or not
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Object*<br>The value. |
+| defaultValue | *``0*<br>The default value. |
 
 
 #### Returns
 
-true if the specified text is a short; otherwise, false.
+T.
 
 
-#### Remarks
+## T:DNX.Helpers.Converters.ConvertObjectExtensions
 
-Also available as an extension method
-
-
-### M:DNX.Helpers.ToInt(text)
-
-Converts the string to an int
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
+Conversion Extensions.
 
 
-#### Returns
+### M:DNX.Helpers.Converters.ConvertObjectExtensions.ToStringOrEmpty(obj)
 
-System.Int32.
+Returns the obj.ToString() or Empty if null
 
-*Exceptions.ConversionException:* Unable to convert value to Type
-
-
-#### Remarks
-
-Also available as an extension method
-
-
-### M:DNX.Helpers.ToInt(text, defaultValue)
-
-Converts the string to an int, or returns the default value if the conversion fails
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| defaultValue | *System.Int32* | The default value. |
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
 
 
 #### Returns
 
-System.Int32.
+System.String.
 
 
-#### Remarks
+### M:DNX.Helpers.Converters.ConvertObjectExtensions.ToStringOrNull(obj)
 
-Also available as an extension method
+Returns the obj.ToString() or null if null
 
-
-### M:DNX.Helpers.ToLong(text)
-
-Converts the string to a long
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
 
 
 #### Returns
 
-System.Int64.
-
-*Exceptions.ConversionException:* Unable to convert value to Type
+System.String.
 
 
-#### Remarks
+## T:DNX.Helpers.Dates.DateTimeExtensions
 
-Also available as an extension method
+DateTime Extensions.
 
 
-### M:DNX.Helpers.ToLong(text, defaultValue)
+### M:DNX.Helpers.Dates.DateTimeExtensions.ParseDateAsUtc(dateString)
 
-Converts the string to a long, or returns the default value if the conversion fails
+Parses the date as UTC.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| defaultValue | *System.Int64* | The default value. |
+| Name | Description |
+| ---- | ----------- |
+| dateString | *System.String*<br>The date string. |
 
 
 #### Returns
 
-System.Int64.
 
 
-#### Remarks
 
-Also available as an extension method
+### M:DNX.Helpers.Dates.DateTimeExtensions.ParseDateAsUtc(dateString, defaultDateTime)
 
+Parses the date as UTC.
 
-### M:DNX.Helpers.ToShort(text)
-
-Converts the string to a short
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
+| Name | Description |
+| ---- | ----------- |
+| dateString | *System.String*<br>The date string. |
+| defaultDateTime | *System.DateTime*<br>The default date time. |
 
 
 #### Returns
 
-System.Int16.
-
-*Exceptions.ConversionException:* Unable to convert value to Type
 
 
-#### Remarks
 
-Also available as an extension method
+### M:DNX.Helpers.Dates.DateTimeExtensions.ParseDateAsUtc(dateString, formatProvider)
 
+Parses the date as UTC.
 
-### M:DNX.Helpers.ToShort(text, defaultValue)
-
-Converts the string to a short, or returns the default value if the conversion fails
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| defaultValue | *System.Int16* | The default value. |
+| Name | Description |
+| ---- | ----------- |
+| dateString | *System.String*<br>The date string. |
+| formatProvider | *System.IFormatProvider*<br>The format provider. |
 
 
 #### Returns
 
-System.Int16.
+DateTime.
 
 
-#### Remarks
+### M:DNX.Helpers.Dates.DateTimeExtensions.ParseDateAsUtc(dateString, formatProvider, defaultDateTime)
 
-Also available as an extension method
+Parses the date as UTC.
+
+| Name | Description |
+| ---- | ----------- |
+| dateString | *System.String*<br>The date string. |
+| formatProvider | *System.IFormatProvider*<br>The format provider. |
+| defaultDateTime | *System.DateTime*<br>The default date time. |
 
 
-## Exceptions.ConversionException
+#### Returns
+
+System.DateTime.
+
+
+### P:DNX.Helpers.Dates.DateTimeExtensions.UnixEpoch
+
+Gets the unix epoch.
+
+
+## T:DNX.Helpers.Enumerations.EnumExtensions
+
+Enum Extensions.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetDescription(value)
+
+Gets the description.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetMaxValue``1
+
+Gets the max enum value.
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetMinValue``1
+
+Gets the min enum value.
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetSetValuesList``1(enumValue)
+
+Gets the set values list.
+
+| Name | Description |
+| ---- | ----------- |
+| enumValue | *System.Enum*<br>The enum value. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.IsValidEnum(value, type, ignoreCase)
+
+Determines whether the text is a valid enum value of the specified enum type
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.String*<br>The value. |
+| type | *System.Type*<br>The type. |
+| ignoreCase | *System.Boolean*<br>if set to true [ignore case]. |
+
+
+#### Returns
+
+true if [is valid enum] [the specified type]; otherwise, false.
+
+*System.ArgumentNullException:* type
+
+*DNX.Helpers.Exceptions.EnumTypeException:* 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.IsValidEnum``1(value)
+
+Determines whether the specified enum value is a valid enum name.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *``0*<br>The enum value. |
+
+
+#### Returns
+
+true if the specified value is valid; otherwise, false. 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.IsValidEnum``1(value)
+
+Determines whether the specified enum value is a valid enum name.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.String*<br>The enum Name. |
+
+
+#### Returns
+
+true if the specified value is valid; otherwise, false. 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.IsValidEnum``1(value, ignoreCase)
+
+Determines whether the specified enum value is a valid enum name.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.String*<br>The value. |
+| ignoreCase | *System.Boolean*<br>if set to true [ignore case]. |
+
+
+#### Returns
+
+true if [is valid enum] [the specified ignore case]; otherwise, false.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.IsValueOneOf``1(value, allowed)
+
+Determines whether [is value one of] [the specified args].
+
+| Name | Description |
+| ---- | ----------- |
+| value | *``0*<br>The value. |
+| allowed | *``0[]*<br>The allowed. |
+
+
+#### Returns
+
+true if [is value one of] [the specified args]; otherwise, false. 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.IsValueOneOf``1(value, allowed)
+
+Determines whether [is value one of] [the specified args].
+
+| Name | Description |
+| ---- | ----------- |
+| value | *``0*<br>The value. |
+| allowed | *System.Collections.Generic.IList{``0}*<br>The allowed. |
+
+
+#### Returns
+
+true if [is value one of] [the specified args]; otherwise, false. 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.ManipulateFlag``1(value, flag, set)
+
+Sets the flag.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+| flag | *``0*<br>The flag. |
+| set | *System.Boolean*<br>if set to true [set]. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.ParseEnum``1(item)
+
+Translate a given string to an enumeration value. May throw a translation exception
+
+| Name | Description |
+| ---- | ----------- |
+| item | *System.String*<br>The string representation of an enum value of T |
+
+
+#### Returns
+
+ The result 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.ParseEnum``1(item, ignoreCase)
+
+Translate a given string to an enumeration value. May throw a translation exception
+
+| Name | Description |
+| ---- | ----------- |
+| item | *System.String*<br>The string representation of an enum value of T |
+| ignoreCase | *System.Boolean*<br>if set to true ignore the case of item. |
+
+
+#### Returns
+
+ The result 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.ParseEnumOrDefault``1(item, defaultValue)
+
+Attempt to safely translate a string to an enumeration value. If translation is not possible return a default value
+
+| Name | Description |
+| ---- | ----------- |
+| item | *System.String*<br>The string representation of an enum value of T |
+| defaultValue | *``0*<br>The default value to return if translation cannot complete |
+
+
+#### Returns
+
+
+
+*DNX.Helpers.Exceptions.EnumTypeException:* 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.ParseEnumOrDefault``1(item, ignoreCase, defaultValue)
+
+Attempt to safely translate a string to an enumeration value. If translation is not possible return a default value
+
+| Name | Description |
+| ---- | ----------- |
+| item | *System.String*<br>The string representation of an enum value of T |
+| ignoreCase | *System.Boolean*<br>if set to true [ignore case]. |
+| defaultValue | *``0*<br>The default value to return if translation cannot complete |
+
+
+#### Returns
+
+
+
+*DNX.Helpers.Exceptions.EnumTypeException:* 
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.SetFlag``1(value, flag)
+
+Sets the flag.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+| flag | *``0*<br>The flag. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.ToDictionaryByName``1
+
+Converts the entire enum to a dictionary with Name as the key
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.ToDictionaryByValue``1
+
+Converts the entire enum to a dictionary with Value as the key
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.UnsetFlag``1(value, flag)
+
+Unsets the flag.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+| flag | *``0*<br>The flag. |
+
+
+#### Returns
+
+
+
+
+## T:DNX.Helpers.Exceptions.ConversionException
 
 Conversion Exception.
 
@@ -197,53 +1907,85 @@ Conversion Exception.
  Thrown when a conversion to a specified type fails 
 
 
-### M:DNX.Helpers.#ctor(value, message)
+### M:DNX.Helpers.Exceptions.ConversionException.#ctor(value, message)
 
 Initializes a new instance of the class.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | *System.String* | The value. |
-| message | *System.String* | The message. |
+| Name | Description |
+| ---- | ----------- |
+| value | *System.String*<br>The value. |
+| message | *System.String*<br>The message. |
 
-### M:DNX.Helpers.#ctor(value, message, type)
+### M:DNX.Helpers.Exceptions.ConversionException.#ctor(value, message, type)
 
 Initializes a new instance of the class.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| value | *System.String* | The value. |
-| message | *System.String* | The message. |
-| type | *System.Type* | The type. |
+| Name | Description |
+| ---- | ----------- |
+| value | *System.String*<br>The value. |
+| message | *System.String*<br>The message. |
+| type | *System.Type*<br>The type. |
 
-### .ConvertType
+### P:DNX.Helpers.Exceptions.ConversionException.ConvertType
 
 Gets the type of the convert.
 
 
-### .Value
+### P:DNX.Helpers.Exceptions.ConversionException.Value
 
 Gets the value.
 
 
-## Linq.LinqExtensions
+## T:DNX.Helpers.Exceptions.EnumTypeException
 
-Linq Extensions.
+EnumTypeException.
 
 
-### M:DNX.Helpers.GetAt``1(enumerable, index)
+### M:DNX.Helpers.Exceptions.EnumTypeException.#ctor(type)
 
-Get an element from a list at the specified index, or return default
+Initializes a new instance of the class.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| enumerable | *System.Collections.Generic.IList{``0}* | The enumerable. |
-| index | *System.Int32* | The index. |
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Remarks
+
+Uses the default message template
+
+
+### M:DNX.Helpers.Exceptions.EnumTypeException.#ctor(type, messageTemplate)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+| messageTemplate | *System.String*<br>The message template. |
+
+### P:DNX.Helpers.Exceptions.EnumTypeException.Type
+
+The type the exception was thrown for
+
+
+## T:DNX.Helpers.Exceptions.ExceptionExtensions
+
+Exception Extensions.
+
+
+### M:DNX.Helpers.Exceptions.ExceptionExtensions.GetExceptionList(ex)
+
+Gets the list of messages from an Exception and inner exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| ex | *System.Exception*<br>The ex. |
 
 
 #### Returns
 
-T. Or default(T)
+IList<System.String>.
 
 
 #### Remarks
@@ -251,13 +1993,104 @@ T. Or default(T)
 Also available as an extension method
 
 
-### M:DNX.Helpers.HasAny``1(enumerable)
+### M:DNX.Helpers.Exceptions.ExceptionExtensions.GetMessageList(ex)
+
+Gets the list of messages from an Exception and inner exceptions
+
+| Name | Description |
+| ---- | ----------- |
+| ex | *System.Exception*<br>The ex. |
+
+
+#### Returns
+
+IList<System.String>.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Exceptions.ReadOnlyListException`1
+
+Class ReadOnlyListException.
+
+
+### M:DNX.Helpers.Exceptions.ReadOnlyListException`1.#ctor(list)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{`0}*<br>The list. |
+
+### P:DNX.Helpers.Exceptions.ReadOnlyListException`1.List
+
+Gets the list.
+
+
+## T:DNX.Helpers.Linq.DictionaryExtensions
+
+Dictionary Extensions.
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.GetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+
+Gets the value.
+
+| Name | Description |
+| ---- | ----------- |
+| dictionary | *Unknown type*<br>The dictionary. |
+| keyName | *Unknown type*<br>Name of the key. |
+| defaultValue | *``0*<br>The default value. |
+
+
+#### Returns
+
+TV.
+
+*System.ArgumentNullException:*  dictionary or keyName 
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.RenameKey``1(System.Collections.Generic.IDictionary{System.String,``0},System.String,System.String)
+
+Renames the key.
+
+| Name | Description |
+| ---- | ----------- |
+| dictionary | *Unknown type*<br>The dictionary. |
+| fromKeyName | *Unknown type*<br>Name of from key. |
+| toKeyName | *Unknown type*<br>Name of to key. |
+
+*System.ArgumentNullException:*  fromKeyName or toKeyName 
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.SetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
+
+Sets the value.
+
+| Name | Description |
+| ---- | ----------- |
+| dictionary | *Unknown type*<br>The dictionary. |
+| keyName | *Unknown type*<br>Name of the key. |
+| value | *System.String*<br>The value. |
+
+*System.ArgumentNullException:*  dictionary or keyName 
+
+
+## T:DNX.Helpers.Linq.LinqExtensions
+
+Linq Extensions.
+
+
+### M:DNX.Helpers.Linq.LinqExtensions.HasAny``1(enumerable)
 
 Determines whether the specified enumerable has any elements and is not null
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| enumerable | *System.Collections.Generic.IEnumerable{``0}* | The enumerable. |
+| Name | Description |
+| ---- | ----------- |
+| enumerable | *System.Collections.Generic.IEnumerable{``0}*<br>The enumerable. |
 
 
 #### Returns
@@ -270,14 +2103,14 @@ true if the specified enumerable has any elements; otherwise, false.
 Also available as an extension method
 
 
-### M:DNX.Helpers.HasAny``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})
+### M:DNX.Helpers.Linq.LinqExtensions.HasAny``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})
 
 Determines whether the specified enumerable has any elements that match the predicate and is not null
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| enumerable | *System.Collections.Generic.IEnumerable{``0}* | The enumerable. |
-| predicate | *Unknown type* | The predicate. |
+| Name | Description |
+| ---- | ----------- |
+| enumerable | *System.Collections.Generic.IEnumerable{``0}*<br>The enumerable. |
+| predicate | *Unknown type*<br>The predicate. |
 
 
 #### Returns
@@ -290,19 +2123,702 @@ true if the specified predicate has any elements that match the predicate; other
 Also available as an extension method
 
 
-## Strings.StringExtensions
+## T:DNX.Helpers.Linq.ListExtensions
+
+List Extensions.
+
+
+### M:DNX.Helpers.Linq.ListExtensions.GetAbsoluteIndex``1(list, index)
+
+Gets the absolute index value for the list.
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| index | *System.Int32*<br>The index. |
+
+
+#### Returns
+
+System.Int32.
+
+
+### M:DNX.Helpers.Linq.ListExtensions.GetAt``1(list, index, defaultValue)
+
+Gets at.
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| index | *System.Int32*<br>The index. |
+| defaultValue | *``0*<br>The default value. |
+
+
+#### Returns
+
+T.
+
+
+### M:DNX.Helpers.Linq.ListExtensions.IsIndexValid``1(list, index)
+
+Determines whether the index is valid for the list
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| index | *System.Int32*<br>The index. |
+
+
+#### Returns
+
+true if [is index valid] [the specified index]; otherwise, false.
+
+
+### M:DNX.Helpers.Linq.ListExtensions.Move``1(list, oldIndex, newIndex)
+
+Moves an item to the new specified index
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| oldIndex | *System.Int32*<br>The old index. |
+| newIndex | *System.Int32*<br>The new index. |
+
+### M:DNX.Helpers.Linq.ListExtensions.Swap``1(list, oldIndex, newIndex)
+
+Swaps the items at the 2 specified indexes
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| oldIndex | *System.Int32*<br>The old index. |
+| newIndex | *System.Int32*<br>The new index. |
+
+## T:DNX.Helpers.Reflection.AttributeExtensions
+
+Attribute Extensions.
+
+
+### M:DNX.Helpers.Reflection.AttributeExtensions.GetMemberAttributes``1(memberInfo, inherit)
+
+Gets the member attributes.
+
+| Name | Description |
+| ---- | ----------- |
+| memberInfo | *System.Reflection.MemberInfo*<br>The member information. |
+| inherit | *System.Boolean*<br>The inherit. |
+
+
+#### Returns
+
+System.Collections.Generic.IList<T>.
+
+
+### M:DNX.Helpers.Reflection.AttributeExtensions.GetTypeAttributes``1(type, inherit)
+
+Gets the custom attributes for the Type.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+| inherit | *System.Boolean*<br>if set to true [inherit]. |
+
+
+#### Returns
+
+IList<T>.
+
+
+### M:DNX.Helpers.Reflection.AttributeExtensions.GetTypeAttributesFromInstance``1(instance, inherit)
+
+Gets the custom attributes for the type from an instance.
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The object. |
+| inherit | *System.Boolean*<br>if set to true [inherit]. |
+
+
+#### Returns
+
+IList<T>.
+
+
+### M:DNX.Helpers.Reflection.AttributeExtensions.InstanceHasAttributes``1(obj, inherit)
+
+Types the has attributes.
+
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
+| inherit | *System.Boolean*<br>if set to true [inherit]. |
+
+
+#### Returns
+
+true if XXXX, false otherwise.
+
+
+## T:DNX.Helpers.Reflection.InstanceResolutionExtensions
+
+Instance Resolution Extensions.
+
+
+### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetConcreteTypesThatImplementInterface``1(assembly)
+
+Find all concrete classes in an assembly that implement a given interface
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly to search |
+
+
+#### Returns
+
+List of 
+
+
+### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetInstanceOfClassesThatImplementInterfaceWithAttribute``2(System.Collections.Generic.IList{``0},System.Func{``1,System.Boolean})
+
+Find instances of classes in an assembly that implement a given interface and are decorated with an attribute that passes the given func test
+
+| Name | Description |
+| ---- | ----------- |
+| instances | *Unknown type*<br>The instances. |
+| func | *Unknown type*<br>The func to run against the decoration attribute |
+
+
+#### Returns
+
+Instance of T or null
+
+
+### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetInstancesOfClassesThatImplementInterface``1(assembly)
+
+Find instances of classes in an assembly that implement a given interface
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly to search |
+
+
+#### Returns
+
+List of instances of T>
+
+
+### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetTypesThatImplementInterface``1(assembly)
+
+Finds the types that implement interface.
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly. |
+
+
+#### Returns
+
+IList<Type>.
+
+
+### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.ResolveImplementationOfInterfaceWithAttribute``2(System.Reflection.Assembly,System.Func{``1,System.Boolean})
+
+Find instances of classes in an assembly that implement a given interface and are decorated with an attribute that passes the given func test
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly to search |
+| func | *Unknown type*<br>The func to run against the decoartion attribute |
+
+
+#### Returns
+
+List of instances of T
+
+
+## T:DNX.Helpers.Reflection.ReflectionExtensions
+
+Reflection Extensions.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetExpressionName``1(exp)
+
+Gets the name of the expression.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The exp. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetLambdaName``1(exp)
+
+Gets the name of the lambda expression.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The exp. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetMemberName``1(exp)
+
+Gets the name of the member expression.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The exp. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertiesDictionary(obj)
+
+Gets the object properties as a dictionary.
+
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
+
+
+#### Returns
+
+IDictionary<System.String, System.Object>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertiesDictionary(obj, bindingFlags)
+
+Gets the object properties as a dictionary.
+
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IDictionary<System.String, System.Object>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertiesForType(type)
+
+Gets the properties for the specified type.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+IList<PropertyInfo>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertiesForType(type, bindingFlags)
+
+Gets the properties for the specified type.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IList<PropertyInfo>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertiesForTypes(types)
+
+Gets the properties for the specified types.
+
+| Name | Description |
+| ---- | ----------- |
+| types | *System.Collections.Generic.IEnumerable{System.Type}*<br>The types. |
+
+
+#### Returns
+
+IList<PropertyInfo>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertiesForTypes(types, bindingFlags)
+
+Gets the properties for the specified types.
+
+| Name | Description |
+| ---- | ----------- |
+| types | *System.Collections.Generic.IEnumerable{System.Type}*<br>The types. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IList<PropertyInfo>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertyInfoByName(instance, propertyName)
+
+Gets an objects property info by name. Supports dot notation for child properties
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The instance. |
+| propertyName | *System.String*<br>Name of the property. |
+
+
+#### Returns
+
+PropertyInfo.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertyValueByName(instance, propertyName)
+
+Gets he value of an objects property by name
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The instance. |
+| propertyName | *System.String*<br>Name of the property. |
+
+
+#### Returns
+
+System.Object.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetUnaryName``1(exp)
+
+Gets the name of the unary expression.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The exp. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.IsLambdaExpression``1(exp)
+
+Determines whether Determines whether the expression is a lambda expression
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The exp. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.IsMemberExpression``1(exp)
+
+Determines whether the expression is a member expression
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The exp. |
+
+
+#### Returns
+
+
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.IsPropertyNameValid(instance, propertyName)
+
+Determines whether the specified property name is valid for the specified object
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The instance. |
+| propertyName | *System.String*<br>Name of the property. |
+
+
+#### Returns
+
+System.Boolean.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.IsUnaryExpression``1(exp)
+
+Determines whether Determines whether the expression is a unary expression
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The exp. |
+
+
+#### Returns
+
+
+
+
+## T:DNX.Helpers.Strings.RegexStringExtensions
+
+Regex String Extensions.
+
+
+### M:DNX.Helpers.Strings.RegexStringExtensions.GetGroupName(regex, index)
+
+Gets the name of the group.
+
+| Name | Description |
+| ---- | ----------- |
+| regex | *System.Text.RegularExpressions.Regex*<br>The regex. |
+| index | *System.Int32*<br>The index. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.RegexStringExtensions.ParseFirstMatchToDictionary(input, regExpression)
+
+Parses the first match to dictionary.
+
+| Name | Description |
+| ---- | ----------- |
+| input | *System.String*<br>The input. |
+| regExpression | *System.String*<br>The regular expression. |
+
+
+#### Returns
+
+Dictionary<System.String, System.String>.
+
+
+### M:DNX.Helpers.Strings.RegexStringExtensions.ParseToDictionary(input, regExpression, keyGroupName, valueGroupName)
+
+Parses to dictionary.
+
+| Name | Description |
+| ---- | ----------- |
+| input | *System.Collections.Generic.IEnumerable{System.String}*<br>The input. |
+| regExpression | *System.String*<br>The reg expression. |
+| keyGroupName | *System.String*<br>Name of the key group. |
+| valueGroupName | *System.String*<br>Name of the value group. |
+
+
+#### Returns
+
+Dictionary<System.String, System.String>.
+
+
+### M:DNX.Helpers.Strings.RegexStringExtensions.ParseToDictionaryList(input, regExpression)
+
+Parses to a list of dictionaries.
+
+| Name | Description |
+| ---- | ----------- |
+| input | *System.String*<br>The input. |
+| regExpression | *System.String*<br>The reg expression. |
+
+
+#### Returns
+
+List<Dictionary<System.String, System.String>>.
+
+
+### M:DNX.Helpers.Strings.RegexStringExtensions.ParseToKeyValuePair(input, regExpression, keyGroupName, valueGroupName)
+
+Parses to key value pair.
+
+| Name | Description |
+| ---- | ----------- |
+| input | *System.String*<br>The input. |
+| regExpression | *System.String*<br>The reg expression. |
+| keyGroupName | *System.String*<br>Name of the key group. |
+| valueGroupName | *System.String*<br>Name of the value group. |
+
+
+#### Returns
+
+KeyValuePair<System.String, System.String>.
+
+
+## T:DNX.Helpers.Strings.StringExtensions
 
 String Extensions
 
 
-### M:DNX.Helpers.EnsureEndsWith(text, suffix)
+### M:DNX.Helpers.Strings.StringExtensions.BuildNumberValidationRegexForCulture(cultureInfo)
+
+Builds the number validation regex for the specified cultureinfo
+
+| Name | Description |
+| ---- | ----------- |
+| cultureInfo | *System.Globalization.CultureInfo*<br>The culture information. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.CoalesceNullOrEmpty(strings)
+
+Coalesces the list of strings to find the first not null or empty.
+
+| Name | Description |
+| ---- | ----------- |
+| strings | *System.Collections.Generic.IList{System.String}*<br>The strings. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.CoalesceNullOrEmpty(strings)
+
+Coalesces the list of strings to find the first not null or empty.
+
+| Name | Description |
+| ---- | ----------- |
+| strings | *System.String[]*<br>The strings. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.CoalesceNullOrWhitespace(strings)
+
+Coalesces the list of strings to find the first not null or whitespace.
+
+| Name | Description |
+| ---- | ----------- |
+| strings | *System.Collections.Generic.IList{System.String}*<br>The strings. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.CoalesceNullOrWhitespace(strings)
+
+Coalesces the list of strings to find the first not null or whitespace.
+
+| Name | Description |
+| ---- | ----------- |
+| strings | *System.String[]*<br>The strings. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.ContainsOnly(text, characters)
+
+Determines whether text contains only the specified characters.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| characters | *System.Collections.Generic.IList{System.Char}*<br>The characters. |
+
+
+#### Returns
+
+System.Boolean.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.ContainsOnly(text, characters)
+
+Determines whether text contains only the specified characters.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| characters | *System.String*<br>The characters. |
+
+
+#### Returns
+
+true if the specified characters contains only; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.ContainsText(text, searchText, comparison)
+
+Determines whether the text contains the specified search text.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| searchText | *System.String*<br>The search text. |
+| comparison | *System.StringComparison*<br>The comparison. |
+
+
+#### Returns
+
+true if the specified search text contains text; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.EnsureEndsWith(text, suffix)
 
 Ensures a string ends with a suffix string.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| suffix | *System.String* | The suffix. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| suffix | *System.String*<br>The suffix. |
 
 
 #### Returns
@@ -315,14 +2831,14 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.EnsureStartsAndEndsWith(text, prefixsuffix)
+### M:DNX.Helpers.Strings.StringExtensions.EnsureStartsAndEndsWith(text, prefixsuffix)
 
 Ensures a string starts and ends with a prefix / suffix string.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| prefixsuffix | *System.String* | The prefix / suffix. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| prefixsuffix | *System.String*<br>The prefix / suffix. |
 
 
 #### Returns
@@ -335,15 +2851,15 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.EnsureStartsAndEndsWith(text, prefix, suffix)
+### M:DNX.Helpers.Strings.StringExtensions.EnsureStartsAndEndsWith(text, prefix, suffix)
 
 Ensures a string starts a prefix string and ends with a suffix string.
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| prefix | *System.String* | The prefix. |
-| suffix | *System.String* | The suffix. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| prefix | *System.String*<br>The prefix. |
+| suffix | *System.String*<br>The suffix. |
 
 
 #### Returns
@@ -356,14 +2872,14 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.EnsureStartsWith(text, prefix)
+### M:DNX.Helpers.Strings.StringExtensions.EnsureStartsWith(text, prefix)
 
 Ensure a string starts with a prefix string
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* |  |
-| prefix | *System.String* |  |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br> |
+| prefix | *System.String*<br> |
 
 
 #### Returns
@@ -376,14 +2892,29 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveAny(text, charsToRemove)
+### M:DNX.Helpers.Strings.StringExtensions.IsValidNumber(text, cultureInfo)
+
+Determines whether the specified text is numeric confirming to the specified Culture NumberFormat.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| cultureInfo | *System.Globalization.CultureInfo*<br>The culture information. |
+
+
+#### Returns
+
+true if the specified culture information is numeric; otherwise, false.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.RemoveAny(text, charsToRemove)
 
 Removes any of the specified characters from a string
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| charsToRemove | *System.Char[]* | The chars to remove. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| charsToRemove | *System.Char[]*<br>The chars to remove. |
 
 
 #### Returns
@@ -396,14 +2927,14 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveAny(text, charsToRemove)
+### M:DNX.Helpers.Strings.StringExtensions.RemoveAny(text, charsToRemove)
 
 Removes any of the specified characters from a string
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| charsToRemove | *System.String* | The chars to remove. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| charsToRemove | *System.String*<br>The chars to remove. |
 
 
 #### Returns
@@ -416,14 +2947,14 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveAnyExcept(text, charsToKeep)
+### M:DNX.Helpers.Strings.StringExtensions.RemoveAnyExcept(text, charsToKeep)
 
 Removes any characters from a string so that only instances of the specified characters remain
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| charsToKeep | *System.Collections.Generic.IList{System.Char}* | The chars to keep. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| charsToKeep | *System.Collections.Generic.IList{System.Char}*<br>The chars to keep. |
 
 
 #### Returns
@@ -436,14 +2967,14 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveAnyExcept(text, charsToKeep)
+### M:DNX.Helpers.Strings.StringExtensions.RemoveAnyExcept(text, charsToKeep)
 
 Removes any characters from a string so that only instances of the specified characters remain
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| charsToKeep | *System.String* | The chars to keep. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| charsToKeep | *System.String*<br>The chars to keep. |
 
 
 #### Returns
@@ -456,14 +2987,14 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveEndsWith(text, suffix)
+### M:DNX.Helpers.Strings.StringExtensions.RemoveEndsWith(text, suffix)
 
 Ensures a string does not end with a suffix string
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| suffix | *System.String* | The suffix. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| suffix | *System.String*<br>The suffix. |
 
 
 #### Returns
@@ -476,14 +3007,14 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveStartsAndEndsWith(text, prefixsuffix)
+### M:DNX.Helpers.Strings.StringExtensions.RemoveStartsAndEndsWith(text, prefixsuffix)
 
 Ensures a string does not start or end with a prefix / suffix string
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| prefixsuffix | *System.String* | The prefixsuffix. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| prefixsuffix | *System.String*<br>The prefix and suffix. |
 
 
 #### Returns
@@ -496,15 +3027,15 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveStartsAndEndsWith(text, prefix, suffix)
+### M:DNX.Helpers.Strings.StringExtensions.RemoveStartsAndEndsWith(text, prefix, suffix)
 
 Ensures a string does not start with a prefix string or end with a suffix string
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| prefix | *System.String* | The prefix. |
-| suffix | *System.String* | The suffix. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| prefix | *System.String*<br>The prefix. |
+| suffix | *System.String*<br>The suffix. |
 
 
 #### Returns
@@ -517,19 +3048,655 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.RemoveStartsWith(text, prefix)
+### M:DNX.Helpers.Strings.StringExtensions.RemoveStartsWith(text, prefix)
 
 Ensures a string does not start with a prefix string
 
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| text | *System.String* | The text. |
-| prefix | *System.String* | The prefix. |
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| prefix | *System.String*<br>The prefix. |
 
 
 #### Returns
 
 System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Reverse(text)
+
+Reverses the specified text.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Split(text, delimiters, options)
+
+Splits the text by the specified delimiters.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| delimiters | *System.String*<br>The delimiters. |
+| options | *System.StringSplitOptions*<br>The options. |
+
+
+#### Returns
+
+IEnumerable<System.String>.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+## T:DNX.Helpers.Threading.IProducerConsumerQueue`1
+
+Interface IProducerConsumerQueue
+
+
+### M:DNX.Helpers.Threading.IProducerConsumerQueue`1.AddItem(item)
+
+Add an item to the Queue to be processed
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to be queued. |
+
+### M:DNX.Helpers.Threading.IProducerConsumerQueue`1.AddItems(items)
+
+Adds a batch of items to the Queue to be processed
+
+| Name | Description |
+| ---- | ----------- |
+| items | *`0[]*<br>The items to be queued. |
+
+### M:DNX.Helpers.Threading.IProducerConsumerQueue`1.Clear
+
+Clear the Queue of all items
+
+
+### P:DNX.Helpers.Threading.IProducerConsumerQueue`1.Comparer
+
+A Comparer to use if the Queue is to be ordered
+
+
+## T:DNX.Helpers.Threading.ParameterizedThreadStart`1
+
+Generic parameterized delegate.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.String*<br>The strongly typed value to pass to the method. |
+
+## T:DNX.Helpers.Threading.ProducerConsumerQueue`1
+
+Generic Producer/Consumer Queue object
+
+
+#### Remarks
+
+Provides virtual methods hooks to allow a descendant class to vary the behaviour.Allows an to process queued items in a defined order.Abstract to allow implementor to provide ProcessItem method to handle a queued item.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.#ctor
+
+Default Constructor
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.#ctor(autoCleanup)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| autoCleanup | *System.Boolean*<br>if set to true items will be automatically disposed. |
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.#ctor(autoCleanup, timeout, comparer)
+
+Constructor accepting a Wake timeout and a Comparer (for Ordered Queue)
+
+| Name | Description |
+| ---- | ----------- |
+| autoCleanup | *System.Boolean*<br>if set to true [auto cleanup]. |
+| timeout | *System.TimeSpan*<br>The timeout. |
+| comparer | *System.Collections.Generic.IComparer{`0}*<br>The comparer. |
+
+### F:DNX.Helpers.Threading.ProducerConsumerQueue`1._executingItems
+
+The currently executing items
+
+
+### F:DNX.Helpers.Threading.ProducerConsumerQueue`1._lockerExecuting
+
+Locking control object to regulate access to the process executing count.
+
+
+### F:DNX.Helpers.Threading.ProducerConsumerQueue`1._lockerQueue
+
+Locking control object to regulate access to the queue objects
+
+
+### F:DNX.Helpers.Threading.ProducerConsumerQueue`1._queuedItems
+
+The queued items
+
+
+### F:DNX.Helpers.Threading.ProducerConsumerQueue`1._waitHandle
+
+WaitHandle for synchronising threads
+
+
+### F:DNX.Helpers.Threading.ProducerConsumerQueue`1._workerThread
+
+Queue processor thread
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.AddItem(item)
+
+Queue an item to be processed
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to be added. |
+
+
+#### Remarks
+
+ Public interface. Validates item to be a valid instance. 
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.AddItems(items)
+
+Adds a batch of items to the Queue to be processed
+
+| Name | Description |
+| ---- | ----------- |
+| items | *`0[]*<br>The items. |
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.AutoCleanupItems
+
+Gets or sets a value indicating whether items are automatically disposed.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.CanHandleItemNow(item)
+
+Hook to determine if we can handle the item yet.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item about to be handled |
+
+
+#### Returns
+
+ true/false - depending on whether we can handle the item yet or not 
+
+
+#### Remarks
+
+ Allows implementor to create custom lists (not just queues) based around the Producer/Consumer pattern 
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.Clear
+
+Remove all items from the Queue
+
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.Comparer
+
+The Comparer to use when ordering Queued items
+
+
+#### Remarks
+
+ Specify NULL for a regular FIFO queue 
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.Describe(ex)
+
+Describes the specified exception.
+
+| Name | Description |
+| ---- | ----------- |
+| ex | *System.Exception*<br>The exception. |
+
+
+#### Returns
+
+A text representation of the Exception
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.Dispose
+
+Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.EnqueueItem(item)
+
+Queue an item to be processed
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to be queued. |
+
+
+#### Remarks
+
+ Internal use only. 
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.EnqueueItems(items)
+
+Queue a batch of items to be processed
+
+| Name | Description |
+| ---- | ----------- |
+| items | *System.Collections.Generic.IReadOnlyCollection{`0}*<br>The items. |
+
+
+#### Remarks
+
+ Internal use only. 
+
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.ExecutingCount
+
+Gets the executing count.
+
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.ExecutingItems
+
+Gets the executing items.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.HandleItem(item)
+
+Queue processor to handle an item when it gets to the front of the queue.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to be handled |
+
+
+#### Remarks
+
+ Performs any processing required prior to calling specific implementor of ProcessItem 
+
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.IsExecuting
+
+Gets a value indicating whether this instance is executing.
+
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.IsTimed
+
+Gets a value indicating whether this queue operates on a timeout.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.ItemAdded(item)
+
+Hook called when an item has been added to the queue.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item just added. |
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.ItemComplete(item)
+
+Hook called when an item has been processed
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item just successfully processed |
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.Items
+
+Gets the items.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.ProcessItem(item)
+
+Abstract method for processing a queued item after being picked up by the Queue handler
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to be processed |
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.StartExecuting(item)
+
+Adds the item to the executing items list.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to add. |
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.StopExecuting(item)
+
+Removes the item from the executing items list.
+
+
+#### Remarks
+
+ Also performs cleanup of the item, if necessary 
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to remove. |
+
+### P:DNX.Helpers.Threading.ProducerConsumerQueue`1.Timeout
+
+Gets the timeout.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.WaitForConsumersToComplete
+
+Waits for consumers to complete.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueue`1.Work
+
+Queue handler thread method for dealing with queued items
+
+
+## T:DNX.Helpers.Threading.ProducerConsumerQueueAction`1
+
+Class ProducerConsumerQueueAction.
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueueAction`1.#ctor(action)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| action | *System.Action{`0}*<br>The action. |
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueueAction`1.#ctor(action, autoCleanUp)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| action | *System.Action{`0}*<br>The action. |
+| autoCleanUp | *System.Boolean*<br>if set to true [automatic clean up]. |
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueueAction`1.#ctor(action, autoCleanUp, timeout, comparer)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| action | *System.Action{`0}*<br>The action. |
+| autoCleanUp | *System.Boolean*<br>if set to true [automatic clean up]. |
+| timeout | *System.TimeSpan*<br>The timeout. |
+| comparer | *System.Collections.Generic.IComparer{`0}*<br>The comparer. |
+
+### F:DNX.Helpers.Threading.ProducerConsumerQueueAction`1._action
+
+The action
+
+
+### M:DNX.Helpers.Threading.ProducerConsumerQueueAction`1.ProcessItem(item)
+
+Method for processing a queued item after being picked up by the Queue handler
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item to be processed |
+
+## T:DNX.Helpers.Threading.ThreadHelper
+
+Helper class for Thread operations
+
+
+### M:DNX.Helpers.Threading.ThreadHelper.Start(start)
+
+Creates and starts a new Thread.
+
+| Name | Description |
+| ---- | ----------- |
+| start | *System.Threading.ThreadStart*<br>ThreadStart delegate. |
+
+
+#### Returns
+
+The Thread instance.
+
+
+### M:DNX.Helpers.Threading.ThreadHelper.Start``1(start, value)
+
+Creates and starts a new Thread which runs the parameterized delegate.
+
+| Name | Description |
+| ---- | ----------- |
+| start | *DNX.Helpers.Threading.ParameterizedThreadStart{``0}*<br>The generic delegate. |
+| value | *``0*<br>The type to pass to delegate. |
+
+
+#### Returns
+
+The Thread instance.
+
+
+### M:DNX.Helpers.Threading.ThreadHelper.StartOnThreadPool(start)
+
+Queues a delegate to run on a thread pool thread.
+
+| Name | Description |
+| ---- | ----------- |
+| start | *System.Threading.ThreadStart*<br>ThreadStart delegate. |
+
+
+#### Returns
+
+True if the delegate is queued successfully; False otherwise 
+
+
+### M:DNX.Helpers.Threading.ThreadHelper.StartOnThreadPool``1(start, value)
+
+Queues a delegate to run on a thread pool thread.
+
+| Name | Description |
+| ---- | ----------- |
+| start | *DNX.Helpers.Threading.ParameterizedThreadStart{``0}*<br>The generic delegate. |
+| value | *``0*<br>The type to pass to delegate. |
+
+
+#### Returns
+
+True if the delegate is queued successfully; False otherwise 
+
+
+## T:DNX.Helpers.Validation.Guard
+
+Guard Extensions.
+
+
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The linq expression of the argument to check |
+| min | *System.Int32*<br>minimum allowed value |
+| max | *System.Int32*<br>maximum allowed value |
+
+### M:DNX.Helpers.Validation.Guard.IsBetween``1(exp, val, min, max)
+
+Throw an ArgumentOutOfRangeException when checking the result of exp.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The linq expression of the argument to check |
+| val | *System.Int32*<br>value of argument in exp |
+| min | *System.Int32*<br>minimum allowed integer value |
+| max | *System.Int32*<br>maximum allowed integer value |
+
+
+#### Remarks
+
+Use this if you are not happy that the expression exp will be invoked more than once by your method.
+
+
+### M:DNX.Helpers.Validation.Guard.IsNotNull``1(exp)
+
+Throw an ArgumentNullException when checking the result of exp.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The linq expression of the argument to check |
+
+### M:DNX.Helpers.Validation.Guard.IsNotNull``1(exp, val)
+
+Throw an ArgumentNullException when checking the result of exp.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The linq expression of the argument to check |
+| val | *``0*<br>value of argument in exp |
+
+
+#### Remarks
+
+Use this if you are not happy that the expression exp will be invoked more than once by your method.
+
+
+### M:DNX.Helpers.Validation.Guard.IsNotNullOrEmpty(exp)
+
+Throw an ArgumentException if the string resulting from exp is null or empty.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.String}}*<br>The linq expression of the argument to check |
+
+### M:DNX.Helpers.Validation.Guard.IsNotNullOrEmpty(exp, val)
+
+Throw an ArgumentException if the string resulting from exp is null or empty.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.String}}*<br>The linq expression of the argument to check |
+| val | *System.String*<br>value of argument in exp |
+
+
+#### Remarks
+
+Use this if you are not happy that the expression exp will be invoked more than once by your method.
+
+
+### M:DNX.Helpers.Validation.Guard.IsNotNullOrWhitespace(exp)
+
+Throw an ArgumentException if the string resulting from exp is null or empty.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.String}}*<br>The linq expression of the argument to check |
+
+### M:DNX.Helpers.Validation.Guard.IsNotNullOrWhitespace(exp, val)
+
+Throw an ArgumentException if the string resulting from exp is null or empty.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.String}}*<br>The linq expression of the argument to check |
+| val | *System.String*<br>value of argument in exp |
+
+
+#### Remarks
+
+Use this if you are not happy that the expression exp will be invoked more than once by your method.
+
+
+## T:DNX.Helpers.Validation.TypeExtensions
+
+Type Extensions.
+
+
+### M:DNX.Helpers.Validation.TypeExtensions.CreateDefaultInstance(type)
+
+Gets a default instance.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+System.Object.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Validation.TypeExtensions.CreateDefaultInstance``1
+
+Gets a default instance.
+
+
+#### Returns
+
+System.Object.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Validation.TypeExtensions.GetDefaultValue(type)
+
+Gets the default value.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+System.Object.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Validation.TypeExtensions.IsNullable(type)
+
+Determines whether the specified type is nullable.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+true if the specified type is nullable; otherwise, false.
 
 
 #### Remarks

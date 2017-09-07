@@ -67,9 +67,11 @@
     <Compile Include="Converters\ConvertExtensions.cs" />
     <Compile Include="Dates\DateTimeExtensions.cs" />
     <Compile Include="Enumerations\EnumExtensions.cs" />
+    <Compile Include="Exceptions\ParameterException.cs" />
     <Compile Include="Exceptions\ConversionException.cs" />
     <Compile Include="Exceptions\EnumTypeException.cs" />
     <Compile Include="Exceptions\ExceptionExtensions.cs" />
+    <Compile Include="Exceptions\ParameterInvalidException.cs" />
     <Compile Include="Exceptions\ReadOnlyListException.cs" />
     <Compile Include="Linq\DictionaryExtensions.cs" />
     <Compile Include="Linq\LinqExtensions.cs" />

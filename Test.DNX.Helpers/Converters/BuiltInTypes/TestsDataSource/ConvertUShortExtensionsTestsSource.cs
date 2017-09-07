@@ -11,11 +11,11 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
             {
                 yield return new TestCaseData("0").Returns(true);
                 yield return new TestCaseData("1").Returns(true);
-                yield return new TestCaseData("-1").Returns(true);
+                yield return new TestCaseData("-1").Returns(false);
                 yield return new TestCaseData("100").Returns(true);
                 yield return new TestCaseData("200").Returns(true);
-                yield return new TestCaseData("-100").Returns(true);
-                yield return new TestCaseData("-200").Returns(true);
+                yield return new TestCaseData("-100").Returns(false);
+                yield return new TestCaseData("-200").Returns(false);
                 yield return new TestCaseData(" 100").Returns(true);
                 yield return new TestCaseData("100 ").Returns(true);
                 yield return new TestCaseData("1.5").Returns(false);
@@ -33,7 +33,6 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
                 yield return new TestCaseData("100").Returns(100);
                 yield return new TestCaseData("10").Returns(10);
                 yield return new TestCaseData("10 ").Returns(10);
-                yield return new TestCaseData("-1").Returns(-1);
             }
         }
 
@@ -43,7 +42,7 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
             {
                 yield return new TestCaseData("abcdef").Returns(false);
                 yield return new TestCaseData("50.5").Returns(false);
-                yield return new TestCaseData("-10").Returns(true);
+                yield return new TestCaseData("-10").Returns(false);
                 yield return new TestCaseData("100,000").Returns(false);
                 yield return new TestCaseData(double.MaxValue.ToString("0.0")).Returns(false);
                 yield return new TestCaseData("100").Returns(true);

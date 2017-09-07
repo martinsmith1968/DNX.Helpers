@@ -1,0 +1,53 @@
+﻿using System;
+using DNX.Helpers.Converters.BuiltInTypes;
+using DNX.Helpers.Exceptions;
+using NUnit.Framework;
+using Test.DNX.Helpers.Converters.BuiltInTypes.Source;
+
+namespace Test.DNX.Helpers.Converters.BuiltInTypes
+{
+    [TestFixture]
+    public class Convert#Name#ExtensionsTests
+    {
+        [TestCaseSource(typeof(Convert#Name#ExtensionsTestsSource), "Is#Name#")]
+        public bool Test_Is#Name#(string text)
+        {
+            var result = text.Is#Name#();
+
+            return result;
+        }
+
+        [TestCaseSource(typeof(Convert#Name#ExtensionsTestsSource), "To#Name#")]
+        public #type# Test_To#Name#(string text)
+        {
+            var result = text.To#Name#();
+
+            return result;
+        }
+
+        [TestCaseSource(typeof(Convert#Name#ExtensionsTestsSource), "To#Name#Throws")]
+        public bool Test_To#Name#_Throws(string text)
+        {
+            try
+            {
+                text.To#Name#();
+            }
+            catch (ConversionException ex)
+            {
+                Assert.AreEqual(text, ex.Value);
+
+                return false;
+            }
+
+            return true;
+        }
+
+        [TestCaseSource(typeof(Convert#Name#ExtensionsTestsSource), "To#Name#WithDefault")]
+        public #type# Test_To#Name#_with_default(string text, #type# defaultValue)
+        {
+            var result = text.To#Name#(defaultValue);
+
+            return result;
+        }
+    }
+}

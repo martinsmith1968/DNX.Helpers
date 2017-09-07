@@ -1,7 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Net.Configuration;
 using System.Text;
+using System.Text.RegularExpressions;
 using DNX.Helpers.Linq;
 
+// ReSharper disable InvertIf
+// ReSharper disable LoopCanBeConvertedToQuery
 namespace DNX.Helpers.Strings
 {
     /// <summary>
@@ -18,7 +25,6 @@ namespace DNX.Helpers.Strings
         /// <remarks>Also available as an extension method</remarks>
         public static string EnsureStartsWith(this string text, string prefix)
         {
-            // ReSharper disable once InvertIf
             if (!string.IsNullOrEmpty(prefix))
             {
                 if (string.IsNullOrEmpty(text) || !text.StartsWith(prefix))
@@ -121,7 +127,7 @@ namespace DNX.Helpers.Strings
         /// Ensures a string does not start or end with a prefix / suffix string
         /// </summary>
         /// <param name="text">The text.</param>
-        /// <param name="prefixsuffix">The prefixsuffix.</param>
+        /// <param name="prefixsuffix">The prefix and suffix.</param>
         /// <returns>System.String.</returns>
         /// <remarks>Also available as an extension method</remarks>
         public static string RemoveStartsAndEndsWith(this string text, string prefixsuffix)
@@ -142,6 +148,66 @@ namespace DNX.Helpers.Strings
         {
             return text.RemoveStartsWith(prefix)
                 .RemoveEndsWith(suffix);
+        }
+
+        /// <summary>
+        /// Determines whether the text contains the specified search text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="searchText">The search text.</param>
+        /// <param name="comparison">The comparison.</param>
+        /// <returns><c>true</c> if the specified search text contains text; otherwise, <c>false</c>.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static bool ContainsText(this string text, string searchText, StringComparison comparison = StringComparison.CurrentCultureIgnoreCase)
+        {
+            if (text == null)
+            {
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(searchText))
+            {
+                return true;
+            }
+
+            return text.IndexOf(searchText, comparison) >= 0;
+        }
+
+        /// <summary>
+        /// Determines whether text contains only the specified characters.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="characters">The characters.</param>
+        /// <returns><c>true</c> if the specified characters contains only; otherwise, <c>false</c>.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static bool ContainsOnly(this string text, string characters)
+        {
+            return ContainsOnly(text, (characters ?? string.Empty).ToCharArray());
+        }
+
+        /// <summary>
+        /// Determines whether text contains only the specified characters.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="characters">The characters.</param>
+        /// <returns>System.Boolean.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static bool ContainsOnly(this string text, IList<char> characters)
+        {
+            if (text == null || !characters.HasAny())
+            {
+                return false;
+            }
+
+            foreach (var ch in text)
+            {
+                if (!characters.Contains(ch))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
@@ -216,6 +282,119 @@ namespace DNX.Helpers.Strings
             }
 
             return sb.ToString();
+        }
+
+        /// <summary>
+        /// Reverses the specified text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string Reverse(this string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+            {
+                return text;
+            }
+
+            var charArray = text.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+        /// <summary>
+        /// Splits the text by the specified delimiters.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="delimiters">The delimiters.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>IEnumerable&lt;System.String&gt;.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static IEnumerable<string> Split(this string text, string delimiters, StringSplitOptions options = StringSplitOptions.None)
+        {
+            return text.Split(delimiters.ToCharArray(), options);
+        }
+
+        /// <summary>
+        /// Coalesces the list of strings to find the first not null or empty.
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNullOrEmpty(params string[] strings)
+        {
+            return strings.CoalesceNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Coalesces the list of strings to find the first not null or empty.
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNullOrEmpty(this IList<string> strings)
+        {
+            var value = strings.FirstOrDefault(s => !string.IsNullOrEmpty(s));
+
+            return value;
+        }
+
+        /// <summary>
+        /// Coalesces the list of strings to find the first not null or whitespace.
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNullOrWhitespace(params string[] strings)
+        {
+            return strings.CoalesceNullOrWhitespace();
+        }
+
+        /// <summary>
+        /// Coalesces the list of strings to find the first not null or whitespace.
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNullOrWhitespace(this IList<string> strings)
+        {
+            var value = strings.FirstOrDefault(s => !string.IsNullOrWhiteSpace(s));
+
+            return value;
+        }
+
+        /// <summary>
+        /// Builds the number validation regex for the specified cultureinfo
+        ///
+        /// </summary>
+        /// <param name="cultureInfo">The culture information.</param>
+        /// <returns>System.String.</returns>
+        private static string BuildNumberValidationRegexForCulture(CultureInfo cultureInfo)
+        {
+            var pattern =string.Format(
+                    @"^[\{2}\{3}]?(0|[1-9][0-9]*|[1-9][0-9]{{0,{4}}}(\{0}[0-9]{{{5},{5}}})*)([\{1}]+[0-9]+)?$",
+                    cultureInfo.NumberFormat.NumberGroupSeparator,
+                    cultureInfo.NumberFormat.NumberDecimalSeparator,
+                    cultureInfo.NumberFormat.NegativeSign,
+                    cultureInfo.NumberFormat.PositiveSign,
+                    cultureInfo.NumberFormat.NumberGroupSizes.First() - 1,
+                    cultureInfo.NumberFormat.NumberGroupSizes.First()
+                    );
+
+            return pattern;
+        }
+
+        /// <summary>
+        /// Determines whether the specified text is numeric confirming to the specified Culture NumberFormat.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="cultureInfo">The culture information.</param>
+        /// <returns><c>true</c> if the specified culture information is numeric; otherwise, <c>false</c>.</returns>
+        public static bool IsValidNumber(this string text, CultureInfo cultureInfo)
+        {
+            var pattern = BuildNumberValidationRegexForCulture(cultureInfo);
+
+            return Regex.IsMatch(text, pattern);
         }
     }
 }

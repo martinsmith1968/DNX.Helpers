@@ -7,33 +7,14 @@ namespace Test.DNX.Helpers.Linq
     [TestFixture]
     public class LinqExtensionsTests
     {
-        [TestCase("a,b,c,d,e,f,g,h,i,j", 0, ExpectedResult = "a")]
-        [TestCase("a,b,c,d,e,f,g,h,i,j", 5, ExpectedResult = "f")]
-        [TestCase("a,b,c,d,e,f,g,h,i,j", 9, ExpectedResult = "j")]
-        [TestCase("a,b,c,d,e,f,g,h,i,j", 10, ExpectedResult = null)]
-        [TestCase("a,b,c,d,e,f,g,h,i,j", -1, ExpectedResult = "j")]
-        [TestCase("a,b,c,d,e,f,g,h,i,j", -15, ExpectedResult = "f")]
-        [TestCase("", 5, ExpectedResult = null)]
-        [TestCase(null, 5, ExpectedResult = null)]
-        public string Test_GetAt(string commaDelimitedArray, int index)
-        {
-            var array = string.IsNullOrEmpty(commaDelimitedArray)
-                ? null
-                : commaDelimitedArray.Split(",".ToCharArray());
-
-            var result = array.GetAt(index);
-
-            return result;
-        }
-
         [TestCase("", ExpectedResult = false)]
         [TestCase(null, ExpectedResult = false)]
         [TestCase("a,b,c,d,e,f,g,h,i,j", ExpectedResult = true)]
-        public bool Test_HasAny(string commaDeleimitedArray)
+        public bool Test_HasAny(string commaDelimitedArray)
         {
-            var enumerable = commaDeleimitedArray == null
+            var enumerable = commaDelimitedArray == null
                 ? null
-                : commaDeleimitedArray.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                : commaDelimitedArray.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
             var result = enumerable.HasAny();
 

@@ -57,10 +57,62 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
+    <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
+    <None Include="Converters\BuiltInTypes\Build.cmd" />
+    <None Include="Converters\BuiltInTypes\ConvertExtensionsTests.cs.template" />
+    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt16ExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt32ExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt64ExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt16ExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt32ExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt64ExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDateTimeExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertShortExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUIntExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertULongExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUShortExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUInt32ExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUInt16ExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUInt64ExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertSingleExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertInt16ExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertInt32ExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertInt64ExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertSByteExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertLongExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertIntExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertFloatExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDoubleExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDecimalExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertByteExtensionsTestsSource.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensionsTests.cs" />
     <Compile Include="Converters\ConvertExtensionsTests.cs" />
+    <Compile Include="Dates\DateTimeExtensionsTests.cs" />
+    <Compile Include="Enumerations\EnumExtensionsTests.cs" />
+    <Compile Include="Exceptions\ExceptionExtensionsTests.cs" />
+    <Compile Include="Exceptions\ReadOnlyListExceptionTests.cs" />
+    <Compile Include="Exceptions\EnumTypeExceptionTests.cs" />
     <Compile Include="Exceptions\ConversionExceptionTests.cs" />
+    <Compile Include="Linq\DictionaryExtensionsTests.cs" />
+    <Compile Include="Linq\ListExtensionsTests.cs" />
     <Compile Include="Linq\LinqExtensionsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\RegexStringExtensionsTests.cs" />
     <Compile Include="Strings\StringExtensionsTests.cs" />
   </ItemGroup>
   <ItemGroup>

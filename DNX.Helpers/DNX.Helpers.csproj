@@ -35,19 +35,61 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assemblies\AssemblyDetails.cs" />
+    <Compile Include="Assemblies\IAssemblyDetails.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt16Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt32Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertInt64Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt16Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt32Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt64Extensions.cs" />
+    <Compile Include="Converters\ConvertObjectExtensions.cs" />
+    <None Include="Converters\BuiltInTypes\Build.cmd" />
+    <None Include="Converters\BuiltInTypes\ConvertExtensions.cs.template" />
+    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensions.cs" />
     <Compile Include="Converters\ConvertExtensions.cs" />
+    <Compile Include="Dates\DateTimeExtensions.cs" />
+    <Compile Include="Enumerations\EnumExtensions.cs" />
+    <Compile Include="Exceptions\ParameterException.cs" />
     <Compile Include="Exceptions\ConversionException.cs" />
+    <Compile Include="Exceptions\EnumTypeException.cs" />
+    <Compile Include="Exceptions\ExceptionExtensions.cs" />
+    <Compile Include="Exceptions\ParameterInvalidException.cs" />
+    <Compile Include="Exceptions\ReadOnlyListException.cs" />
+    <Compile Include="Linq\DictionaryExtensions.cs" />
     <Compile Include="Linq\LinqExtensions.cs" />
+    <Compile Include="Linq\ListExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\AttributeExtensions.cs" />
+    <Compile Include="Reflection\InstanceResolutionExtensions.cs" />
+    <Compile Include="Reflection\ReflectionExtensions.cs" />
+    <Compile Include="Strings\RegexStringExtensions.cs" />
     <Compile Include="Strings\StringExtensions.cs" />
+    <Compile Include="Threading\IProducerConsumerQueue.cs" />
+    <Compile Include="Threading\ProducerConsumerQueue.cs" />
+    <Compile Include="Threading\ProducerConsumerQueueAction.cs" />
+    <Compile Include="Threading\ThreadHelper.cs" />
+    <Compile Include="Validation\Guard.cs" />
+    <Compile Include="Validation\TypeExtensions.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

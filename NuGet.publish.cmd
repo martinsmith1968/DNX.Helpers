@@ -19,5 +19,5 @@ IF EXIST *.nupkg DEL *.nupkg
 
 FOR %%F IN (*.nupkg) DO (
     ECHO.Pushing: %%~F
-	ECHO.%NUGETEXE% push "%%~F" -Source "%NUGETSERVERAPIURL%" -ApiKey "%NUGETSERVERAPIKEY%"
+	%NUGETEXE% push "%%~F" -Source "%NUGETSERVERAPIURL%" -ApiKey "%NUGETSERVERAPIKEY%"
 )

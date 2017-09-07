@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
     <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
+    <Compile Include="Validation\TypeExtensionsTests.cs" />
     <None Include="Converters\BuiltInTypes\Build.cmd" />
     <None Include="Converters\BuiltInTypes\ConvertExtensionsTests.cs.template" />
     <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensionsTests.cs" />

@@ -2012,6 +2012,105 @@ IList<System.String>.
 Also available as an extension method
 
 
+## T:DNX.Helpers.Exceptions.ParameterException
+
+An exception for idenifying issues with expected parameters
+
+
+### M:DNX.Helpers.Exceptions.ParameterException.#ctor(paramName, paramValue, message)
+
+Create a ParameterException with a parameter name and value, and a message
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| paramValue | *System.Object*<br> |
+| message | *System.String*<br> |
+
+### M:DNX.Helpers.Exceptions.ParameterException.#ctor(System.String,System.Object,System.String,System.Exception)
+
+Create a ParameterException with a parameter name and value, message and inner Exception
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| paramValue | *System.Object*<br> |
+| message | *System.String*<br> |
+
+### M:DNX.Helpers.Exceptions.ParameterException.#ctor(paramName, message)
+
+Create a ParameterException with a parameter name and a message
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| message | *System.String*<br> |
+
+### M:DNX.Helpers.Exceptions.ParameterException.#ctor(paramName, message, innerException)
+
+Create a ParameterException with a parameter name, message and inner Exception
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| message | *System.String*<br> |
+| innerException | *System.Exception*<br> |
+
+### P:DNX.Helpers.Exceptions.ParameterException.ParamName
+
+The Parameter Name
+
+
+### P:DNX.Helpers.Exceptions.ParameterException.ParamValue
+
+The value specified for the Parameter
+
+
+## T:DNX.Helpers.Exceptions.ParameterInvalidException
+
+An exception for idenifying an invalid value issue with expected parameters
+
+
+### M:DNX.Helpers.Exceptions.ParameterInvalidException.#ctor(paramName, paramValue, message)
+
+Create a ParameterInvalidException with a parameter name and value, and a message
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| paramValue | *System.Object*<br> |
+| message | *System.String*<br> |
+
+### M:DNX.Helpers.Exceptions.ParameterInvalidException.#ctor(paramName, paramValue, message, innerException)
+
+Create a ParameterInvalidException with a parameter name and value, message and inner Exception
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| paramValue | *System.Object*<br> |
+| message | *System.String*<br> |
+| innerException | *System.Exception*<br> |
+
+### M:DNX.Helpers.Exceptions.ParameterInvalidException.#ctor(paramName, message)
+
+Create a ParameterInvalidException with a parameter name and a message
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| message | *System.String*<br> |
+
+### M:DNX.Helpers.Exceptions.ParameterInvalidException.#ctor(paramName, message, innerException)
+
+Create a ParameterInvalidException with a parameter name, message and inner Exception
+
+| Name | Description |
+| ---- | ----------- |
+| paramName | *System.String*<br> |
+| message | *System.String*<br> |
+| innerException | *System.Exception*<br> |
+
 ## T:DNX.Helpers.Exceptions.ReadOnlyListException`1
 
 Class ReadOnlyListException.

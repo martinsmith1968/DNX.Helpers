@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using DNX.Helpers.Exceptions;
 
 namespace DNX.Helpers.Linq

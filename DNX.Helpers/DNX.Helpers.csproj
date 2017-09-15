@@ -36,34 +36,76 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetails.cs" />
     <Compile Include="Assemblies\IAssemblyDetails.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertInt16Extensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertInt32Extensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertInt64Extensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt16Extensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt32Extensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt64Extensions.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertInt16Extensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertInt32Extensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertInt64Extensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt16Extensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt32Extensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt64Extensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensions.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Converters\ConvertObjectExtensions.cs" />
-    <None Include="Converters\BuiltInTypes\Build.cmd" />
-    <None Include="Converters\BuiltInTypes\ConvertExtensions.cs.template" />
-    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensions.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensions.cs" />
     <Compile Include="Converters\ConvertExtensions.cs" />
     <Compile Include="Dates\DateTimeExtensions.cs" />
     <Compile Include="Enumerations\EnumExtensions.cs" />
@@ -76,6 +118,19 @@
     <Compile Include="Linq\DictionaryExtensions.cs" />
     <Compile Include="Linq\LinqExtensions.cs" />
     <Compile Include="Linq\ListExtensions.cs" />
+    <Compile Include="Linq\TupleExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathByteExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathDateTimeExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathDecimalExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathDoubleExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathFloatExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathInt16Extensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathInt32Extensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathInt64Extensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathSByteExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathUInt16Extensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathUInt32Extensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathUInt64Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\AttributeExtensions.cs" />
     <Compile Include="Reflection\InstanceResolutionExtensions.cs" />
@@ -88,8 +143,22 @@
     <Compile Include="Threading\ThreadHelper.cs" />
     <Compile Include="Validation\Guard.cs" />
     <Compile Include="Validation\TypeExtensions.cs" />
+    <None Include="Maths\BuiltInTypes\Build.cmd" />
+    <None Include="Maths\BuiltInTypes\MathExtensions.cs.template" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
+    </Content>
+    <None Include="Converters\BuiltInTypes\MultipleOutputHelper.ttinclude">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

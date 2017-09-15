@@ -59,6 +59,9 @@
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
     <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathByteExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathDateTimeExtensions.cs" />
+    <Compile Include="Validation\GuardTests.cs" />
     <Compile Include="Validation\TypeExtensionsTests.cs" />
     <None Include="Converters\BuiltInTypes\Build.cmd" />
     <None Include="Converters\BuiltInTypes\ConvertExtensionsTests.cs.template" />

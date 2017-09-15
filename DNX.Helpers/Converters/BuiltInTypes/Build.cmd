@@ -4,32 +4,32 @@ SETLOCAL EnableDelayedExpansion
 
 
 REM  :BuildTemplate C#-Type Descriptive-Name
-CALL :BuildTemplate bool        Bool
-
-CALL :BuildTemplate byte        Byte
-CALL :BuildTemplate sbyte       SByte
-
-CALL :BuildTemplate DateTime    DateTime
-
-CALL :BuildTemplate short       Int16
-CALL :BuildTemplate ushort      UInt16
-CALL :BuildTemplate short       Short
-CALL :BuildTemplate ushort      UShort
-
-CALL :BuildTemplate int         Int32
-CALL :BuildTemplate uint        UInt32
-CALL :BuildTemplate int         Int
-CALL :BuildTemplate uint        UInt
-
-CALL :BuildTemplate long        Int64
-CALL :BuildTemplate ulong       UInt64
-CALL :BuildTemplate long        Long
-CALL :BuildTemplate ulong       ULong
-
-CALL :BuildTemplate float       Float
-CALL :BuildTemplate float       Single
-CALL :BuildTemplate double      Double
-CALL :BuildTemplate decimal     Decimal
+REM CALL :BuildTemplate bool        Bool
+REM
+REM CALL :BuildTemplate byte        Byte
+REM CALL :BuildTemplate sbyte       SByte
+REM
+REM CALL :BuildTemplate DateTime    DateTime
+REM
+REM CALL :BuildTemplate short       Int16
+REM CALL :BuildTemplate ushort      UInt16
+REM CALL :BuildTemplate short       Short
+REM CALL :BuildTemplate ushort      UShort
+REM
+REM CALL :BuildTemplate int         Int32
+REM CALL :BuildTemplate uint        UInt32
+REM CALL :BuildTemplate int         Int
+REM CALL :BuildTemplate uint        UInt
+REM
+REM CALL :BuildTemplate long        Int64
+REM CALL :BuildTemplate ulong       UInt64
+REM CALL :BuildTemplate long        Long
+REM CALL :BuildTemplate ulong       ULong
+REM
+REM CALL :BuildTemplate float       Float
+REM CALL :BuildTemplate float       Single
+REM CALL :BuildTemplate double      Double
+REM CALL :BuildTemplate decimal     Decimal
 
 GOTO :EOF
 

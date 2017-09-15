@@ -22,12 +22,23 @@ namespace DNX.Helpers.Converters
         /// Returns the obj.ToString() or Empty if null
         /// </summary>
         /// <param name="obj">The object.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns>System.String.</returns>
+        public static string ToStringOrDefault(this object obj, string defaultValue)
+        {
+            return obj == null
+                ? defaultValue
+                : obj.ToString();
+        }
+
+        /// <summary>
+        /// Returns the obj.ToString() or Empty if null
+        /// </summary>
+        /// <param name="obj">The object.</param>
         /// <returns>System.String.</returns>
         public static string ToStringOrEmpty(this object obj)
         {
-            return obj == null
-                ? string.Empty
-                : obj.ToString();
+            return obj.ToStringOrDefault(string.Empty);
         }
     }
 }

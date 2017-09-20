@@ -13,9 +13,17 @@ namespace DNX.Helpers.Converters
         /// <returns>System.String.</returns>
         public static string ToStringOrNull(this object obj)
         {
-            return obj == null
-                ? null
-                : obj.ToString();
+            return obj.ToStringOrDefault(null);
+        }
+
+        /// <summary>
+        /// Returns the obj.ToString() or Empty if null
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>System.String.</returns>
+        public static string ToStringOrEmpty(this object obj)
+        {
+            return obj.ToStringOrDefault(string.Empty);
         }
 
         /// <summary>
@@ -29,16 +37,6 @@ namespace DNX.Helpers.Converters
             return obj == null
                 ? defaultValue
                 : obj.ToString();
-        }
-
-        /// <summary>
-        /// Returns the obj.ToString() or Empty if null
-        /// </summary>
-        /// <param name="obj">The object.</param>
-        /// <returns>System.String.</returns>
-        public static string ToStringOrEmpty(this object obj)
-        {
-            return obj.ToStringOrDefault(string.Empty);
         }
     }
 }

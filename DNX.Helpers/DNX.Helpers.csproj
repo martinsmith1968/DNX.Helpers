@@ -121,18 +121,53 @@
     <Compile Include="Linq\LinqExtensions.cs" />
     <Compile Include="Linq\ListExtensions.cs" />
     <Compile Include="Linq\TupleExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathByteExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathDateTimeExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathDecimalExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathDoubleExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathFloatExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathInt16Extensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathInt32Extensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathInt64Extensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathSByteExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathUInt16Extensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathUInt32Extensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathUInt64Extensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathByteExtensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathDateTimeExtensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathDecimalExtensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathDoubleExtensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathExtensionsTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathFloatExtensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathInt16Extensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathInt32Extensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathInt64Extensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathSByteExtensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathUInt16Extensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathUInt32Extensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathUInt64Extensions.generated.cs">
+      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\IsBetweenBoundsType.cs" />
+    <Compile Include="MultipleOutputHelper1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MultipleOutputHelper.ttinclude</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\AttributeExtensions.cs" />
     <Compile Include="Reflection\InstanceResolutionExtensions.cs" />
@@ -143,20 +178,67 @@
     <Compile Include="Threading\ProducerConsumerQueue.cs" />
     <Compile Include="Threading\ProducerConsumerQueueAction.cs" />
     <Compile Include="Threading\ThreadHelper.cs" />
+    <Compile Include="Validation\BuiltInTypes\GuardByteExtensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardDateTimeExtensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardDecimalExtensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardDoubleExtensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardExtensionsTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardFloatExtensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardInt16Extensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardInt32Extensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardInt64Extensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardSByteExtensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardUInt16Extensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardUInt32Extensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\GuardUInt64Extensions.generated.cs">
+      <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Validation\Guard.cs" />
     <Compile Include="Validation\TypeExtensions.cs" />
-    <None Include="Maths\BuiltInTypes\Build.cmd" />
-    <None Include="Maths\BuiltInTypes\MathExtensions.cs.template" />
+    <None Include="MultipleOutputHelper.ttinclude">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
     </Content>
-    <None Include="Converters\BuiltInTypes\MultipleOutputHelper.ttinclude">
+    <Content Include="Maths\BuiltInTypes\MathExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
-    </None>
+      <LastGenOutput>MathExtensionsTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Validation\BuiltInTypes\GuardExtensionsTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GuardExtensionsTemplate.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

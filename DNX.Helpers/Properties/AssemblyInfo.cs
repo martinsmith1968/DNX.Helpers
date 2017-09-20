@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DNX.Helpers")]
-[assembly: AssemblyDescription(".NET Extensions and helpers for strings, LINQ and Converters")]
+[assembly: AssemblyDescription(".NET Extensions and helpers for Core and Common .NET types")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("DNX Solutions Ltd")]
 [assembly: AssemblyProduct("DNX.Helpers")]
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]

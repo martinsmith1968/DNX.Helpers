@@ -59,24 +59,83 @@
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
     <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
+    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertInt16ExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertInt32ExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertInt64ExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt16ExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt32ExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUInt64ExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensionsTests.generated.cs">
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Include="Linq\ItemComparisonListTests.cs" />
     <Compile Include="Linq\ItemComparisonTests.cs" />
     <Compile Include="Maths\BuiltInTypes\MathByteExtensions.cs" />
     <Compile Include="Maths\BuiltInTypes\MathDateTimeExtensions.cs" />
+    <Compile Include="MultipleOutputHelper1.cs">
+      <DependentUpon>MultipleOutputHelper.ttinclude</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Validation\GuardTests.cs" />
     <Compile Include="Validation\TypeExtensionsTests.cs" />
     <None Include="Converters\BuiltInTypes\Build.cmd" />
-    <None Include="Converters\BuiltInTypes\ConvertExtensionsTests.cs.template" />
-    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertInt16ExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertInt32ExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertInt64ExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt16ExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt32ExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt64ExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDateTimeExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertShortExtensionsTestsSource.cs" />
@@ -97,16 +156,6 @@
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDoubleExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDecimalExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertByteExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensionsTests.cs" />
     <Compile Include="Converters\ConvertExtensionsTests.cs" />
     <Compile Include="Dates\DateTimeExtensionsTests.cs" />
     <Compile Include="Enumerations\EnumExtensionsTests.cs" />
@@ -128,7 +177,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="MultipleOutputHelper.ttinclude">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

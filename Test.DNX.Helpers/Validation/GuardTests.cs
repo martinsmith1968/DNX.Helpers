@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using System;
 
+#if SHIT
 namespace Test.DNX.Helpers.Validation
 {
     [TestFixture]
@@ -224,3 +225,4 @@ namespace Test.DNX.Helpers.Validation
 #endif
     }
 }
+#endif

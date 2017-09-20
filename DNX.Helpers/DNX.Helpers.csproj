@@ -116,6 +116,8 @@
     <Compile Include="Exceptions\ParameterInvalidException.cs" />
     <Compile Include="Exceptions\ReadOnlyListException.cs" />
     <Compile Include="Linq\DictionaryExtensions.cs" />
+    <Compile Include="Linq\ItemComparison.cs" />
+    <Compile Include="Linq\ItemComparisonList.cs" />
     <Compile Include="Linq\LinqExtensions.cs" />
     <Compile Include="Linq\ListExtensions.cs" />
     <Compile Include="Linq\TupleExtensions.cs" />

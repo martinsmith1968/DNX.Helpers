@@ -255,8 +255,8 @@ foreach (var kvp in types)
                 string.Format("{0} must be {1}",
                     memberName,
                     string.Format(boundsType.GetLimitDescriptionFormat(),
-                        Math<#= typeDesc #>Extensions.GetLowerBound(bound1, bound2, allowEitherOrder),
-                        Math<#= typeDesc #>Extensions.GetUpperBound(bound1, bound2, allowEitherOrder)
+                        Maths<#= typeDesc #>Extensions.GetLowerBound(bound1, bound2, allowEitherOrder),
+                        Maths<#= typeDesc #>Extensions.GetUpperBound(bound1, bound2, allowEitherOrder)
                         )
                     )
                 );

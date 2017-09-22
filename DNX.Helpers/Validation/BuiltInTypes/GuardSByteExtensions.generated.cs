@@ -216,8 +216,8 @@ namespace DNX.Helpers.Maths.BuiltInTypes
                 string.Format("{0} must be {1}",
                     memberName,
                     string.Format(boundsType.GetLimitDescriptionFormat(),
-                        MathSByteExtensions.GetLowerBound(bound1, bound2, allowEitherOrder),
-                        MathSByteExtensions.GetUpperBound(bound1, bound2, allowEitherOrder)
+                        MathsSByteExtensions.GetLowerBound(bound1, bound2, allowEitherOrder),
+                        MathsSByteExtensions.GetUpperBound(bound1, bound2, allowEitherOrder)
                         )
                     )
                 );

@@ -121,46 +121,46 @@
     <Compile Include="Linq\LinqExtensions.cs" />
     <Compile Include="Linq\ListExtensions.cs" />
     <Compile Include="Linq\TupleExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathByteExtensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsByteExtensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathDateTimeExtensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsDateTimeExtensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathDecimalExtensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsDecimalExtensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathDoubleExtensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsDoubleExtensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathExtensionsTemplate.cs">
+    <Compile Include="Maths\BuiltInTypes\MathsExtensionsTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathFloatExtensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsFloatExtensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathInt16Extensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsInt16Extensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathInt32Extensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsInt32Extensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathInt64Extensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsInt64Extensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathSByteExtensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsSByteExtensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathUInt16Extensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsUInt16Extensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathUInt32Extensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsUInt32Extensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathUInt64Extensions.generated.cs">
-      <DependentUpon>MathExtensionsTemplate.tt</DependentUpon>
+    <Compile Include="Maths\BuiltInTypes\MathsUInt64Extensions.generated.cs">
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Maths\IsBetweenBoundsType.cs" />
     <Compile Include="MultipleOutputHelper1.cs">
@@ -231,9 +231,9 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Maths\BuiltInTypes\MathExtensionsTemplate.tt">
+    <Content Include="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MathExtensionsTemplate.cs</LastGenOutput>
+      <LastGenOutput>MathsExtensionsTemplate.cs</LastGenOutput>
     </Content>
     <Content Include="Validation\BuiltInTypes\GuardExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

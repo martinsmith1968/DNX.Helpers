@@ -126,8 +126,90 @@
     </Compile>
     <Compile Include="Linq\ItemComparisonListTests.cs" />
     <Compile Include="Linq\ItemComparisonTests.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathByteExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathDateTimeExtensions.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathsDateTimeExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsDecimalExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsDoubleExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDateTimeExtensionsTestsSource.cs" />
+    <Compile Include="Maths\BuiltInTypes\MathsByteExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsFloatExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsInt16ExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsInt32ExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsInt64ExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsSByteExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsUInt16ExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsUInt32ExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\MathsUInt64ExtensionsTests.generated.cs">
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsByteExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDateTimeExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDecimalExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDoubleExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsFloatExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsInt16ExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsInt32ExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsInt64ExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsSByteExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsUInt16ExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsUInt32ExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsUInt64ExtensionsTestsSource.generated.cs">
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maths\IsBetweenTypeExtensionsTests.cs" />
     <Compile Include="MultipleOutputHelper1.cs">
       <DependentUpon>MultipleOutputHelper.ttinclude</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -135,7 +217,6 @@
     </Compile>
     <Compile Include="Validation\GuardTests.cs" />
     <Compile Include="Validation\TypeExtensionsTests.cs" />
-    <None Include="Converters\BuiltInTypes\Build.cmd" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDateTimeExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertShortExtensionsTestsSource.cs" />
@@ -187,6 +268,14 @@
     <Content Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MathsExtensionsTestsTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MathsExtensionsTestsSourceTemplate.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

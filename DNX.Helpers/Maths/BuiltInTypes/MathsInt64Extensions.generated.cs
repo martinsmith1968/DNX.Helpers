@@ -4,9 +4,9 @@ using System;
 namespace DNX.Helpers.Maths.BuiltInTypes
 {
     /// <summary>
-    /// Class MathInt16Extensions.
+    /// Class MathsInt64Extensions.
     /// </summary>
-    public static class MathInt16Extensions
+    public static class MathsInt64Extensions
     {
         /// <summary>
         /// Determines whether the specified value is inclusively between min and max.
@@ -15,7 +15,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns><c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.</returns>
-        public static bool IsBetween(this short value, short min, short max)
+        public static bool IsBetween(this long value, long min, long max)
         {
             return value.IsBetween(min, max, IsBetweenBoundsType.Inclusive);
         }
@@ -28,7 +28,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="max">The maximum.</param>
         /// <param name="boundsType">Control boundary checking.</param>
         /// <returns><c>true</c> if the specified minimum is between; otherwise, <c>false</c>.</returns>
-        public static bool IsBetween(this short value, short min, short max, IsBetweenBoundsType boundsType)
+        public static bool IsBetween(this long value, long min, long max, IsBetweenBoundsType boundsType)
         {
             return value.IsBetween(min, max, false, boundsType);
         }
@@ -40,9 +40,9 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns><c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.</returns>
-        public static bool IsBetweenEither(this short value, short min, short max)
+        public static bool IsBetweenEither(this long value, long min, long max)
         {
-            return value.IsBetween(min, max, IsBetweenBoundsType.Inclusive);
+            return value.IsBetweenEither(min, max, IsBetweenBoundsType.Inclusive);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="max">The maximum.</param>
         /// <param name="boundsType">Control boundary checking.</param>
         /// <returns><c>true</c> if [is between either] [the specified minimum]; otherwise, <c>false</c>.</returns>
-        public static bool IsBetweenEither(this short value, short min, short max, IsBetweenBoundsType boundsType)
+        public static bool IsBetweenEither(this long value, long min, long max, IsBetweenBoundsType boundsType)
         {
             return value.IsBetween(min, max, true, boundsType);
         }
@@ -69,7 +69,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <returns>
         ///   <c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.
 		/// </returns>
-        public static bool IsBetween(this short value, short min, short max, bool allowEitherOrder, IsBetweenBoundsType boundsType)
+        public static bool IsBetween(this long value, long min, long max, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             var lowerBound = GetLowerBound(min, max, allowEitherOrder);
             var upperBound = GetUpperBound(min, max, allowEitherOrder);
@@ -99,8 +99,8 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> short</returns>
-        public static short GetLowerBound( short min, short max, bool allowEitherOrder)
+        /// <returns> long</returns>
+        public static long GetLowerBound(long min, long max, bool allowEitherOrder)
         {
             return allowEitherOrder
                 ? min < max
@@ -115,8 +115,8 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> short</returns>
-        public static short GetUpperBound( short min, short max, bool allowEitherOrder)
+        /// <returns> long</returns>
+        public static long GetUpperBound(long min, long max, bool allowEitherOrder)
         {
             return allowEitherOrder
                 ? max > min

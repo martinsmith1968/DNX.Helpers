@@ -1,11 +1,12 @@
-﻿using DNX.Helpers.Dates;
+﻿#if SHIT
+using DNX.Helpers.Dates;
 using DNX.Helpers.Maths;
 using DNX.Helpers.Maths.BuiltInTypes;
 using NUnit.Framework;
 
-namespace Test.DNX.Helpers.Maths.BuiltInTypes
+namespace Test.DNX.Helpers.Maths.BuiltInTypes.TestsDataSource
 {
-    public class MathDateTimeExtensions
+    public class MathsDateTimeExtensionsTestsSource
     {
         [TestCase("2017-06-17 12:34:56", "2017-06-01", "2017-06-30", ExpectedResult = true)]
         [TestCase("2017-06-17 12:34:56", "2017-05-01", "2017-05-30", ExpectedResult = false)]
@@ -80,3 +81,4 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes
         }
     }
 }
+#endif

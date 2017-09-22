@@ -4,9 +4,9 @@ using System;
 namespace DNX.Helpers.Maths.BuiltInTypes
 {
     /// <summary>
-    /// Class MathDecimalExtensions.
+    /// Class MathsUInt32Extensions.
     /// </summary>
-    public static class MathDecimalExtensions
+    public static class MathsUInt32Extensions
     {
         /// <summary>
         /// Determines whether the specified value is inclusively between min and max.
@@ -15,7 +15,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns><c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.</returns>
-        public static bool IsBetween(this decimal value, decimal min, decimal max)
+        public static bool IsBetween(this uint value, uint min, uint max)
         {
             return value.IsBetween(min, max, IsBetweenBoundsType.Inclusive);
         }
@@ -28,7 +28,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="max">The maximum.</param>
         /// <param name="boundsType">Control boundary checking.</param>
         /// <returns><c>true</c> if the specified minimum is between; otherwise, <c>false</c>.</returns>
-        public static bool IsBetween(this decimal value, decimal min, decimal max, IsBetweenBoundsType boundsType)
+        public static bool IsBetween(this uint value, uint min, uint max, IsBetweenBoundsType boundsType)
         {
             return value.IsBetween(min, max, false, boundsType);
         }
@@ -40,9 +40,9 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns><c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.</returns>
-        public static bool IsBetweenEither(this decimal value, decimal min, decimal max)
+        public static bool IsBetweenEither(this uint value, uint min, uint max)
         {
-            return value.IsBetween(min, max, IsBetweenBoundsType.Inclusive);
+            return value.IsBetweenEither(min, max, IsBetweenBoundsType.Inclusive);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="max">The maximum.</param>
         /// <param name="boundsType">Control boundary checking.</param>
         /// <returns><c>true</c> if [is between either] [the specified minimum]; otherwise, <c>false</c>.</returns>
-        public static bool IsBetweenEither(this decimal value, decimal min, decimal max, IsBetweenBoundsType boundsType)
+        public static bool IsBetweenEither(this uint value, uint min, uint max, IsBetweenBoundsType boundsType)
         {
             return value.IsBetween(min, max, true, boundsType);
         }
@@ -69,7 +69,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <returns>
         ///   <c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.
 		/// </returns>
-        public static bool IsBetween(this decimal value, decimal min, decimal max, bool allowEitherOrder, IsBetweenBoundsType boundsType)
+        public static bool IsBetween(this uint value, uint min, uint max, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             var lowerBound = GetLowerBound(min, max, allowEitherOrder);
             var upperBound = GetUpperBound(min, max, allowEitherOrder);
@@ -99,8 +99,8 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> decimal</returns>
-        public static decimal GetLowerBound( decimal min, decimal max, bool allowEitherOrder)
+        /// <returns> uint</returns>
+        public static uint GetLowerBound(uint min, uint max, bool allowEitherOrder)
         {
             return allowEitherOrder
                 ? min < max
@@ -115,8 +115,8 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> decimal</returns>
-        public static decimal GetUpperBound( decimal min, decimal max, bool allowEitherOrder)
+        /// <returns> uint</returns>
+        public static uint GetUpperBound(uint min, uint max, bool allowEitherOrder)
         {
             return allowEitherOrder
                 ? max > min

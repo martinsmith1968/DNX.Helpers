@@ -16,7 +16,7 @@ namespace DNX.Helpers.Linq
         /// <param name="dictionary">The dictionary.</param>
         /// <param name="keyName">Name of the key.</param>
         /// <param name="value">The value.</param>
-        /// <exception cref="System.ArgumentNullException"> dictionary or keyName </exception>
+        /// <exception cref="System.ArgumentNullException">dictionary or keyName</exception>
         public static void SetValue<TK, TV>(this IDictionary<TK, TV> dictionary, TK keyName, TV value)
         {
             if (dictionary == null)
@@ -48,7 +48,7 @@ namespace DNX.Helpers.Linq
         /// <param name="keyName">Name of the key.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>TV.</returns>
-        /// <exception cref="System.ArgumentNullException"> dictionary or keyName </exception>
+        /// <exception cref="System.ArgumentNullException">dictionary or keyName</exception>
         public static TV GetValue<TK, TV>(this IDictionary<TK, TV> dictionary, TK keyName, TV defaultValue = default(TV))
         {
             if (dictionary == null)
@@ -73,7 +73,7 @@ namespace DNX.Helpers.Linq
         /// <param name="dictionary">The dictionary.</param>
         /// <param name="fromKeyName">Name of from key.</param>
         /// <param name="toKeyName">Name of to key.</param>
-        /// <exception cref="System.ArgumentNullException"> fromKeyName or toKeyName </exception>
+        /// <exception cref="System.ArgumentNullException">fromKeyName or toKeyName</exception>
         public static void RenameKey<T>(this IDictionary<string, T> dictionary, string fromKeyName, string toKeyName)
         {
             if (fromKeyName == null)

@@ -9,12 +9,12 @@ namespace DNX.Helpers.Threading
     /// <summary>
     /// Generic Producer/Consumer Queue object
     /// </summary>
-    /// <remarks>
-    /// <para>Provides virtual methods hooks to allow a descendant class to vary the behaviour.</para>
-    /// <para>Allows an <see cref="IComparer{T}"/> to process queued items in a defined order.</para>
-    /// <para>Abstract to allow implementor to provide ProcessItem method to handle a queued item.</para>
-    /// </remarks>
     /// <typeparam name="T">class / interface type of objects to queue</typeparam>
+    /// <seealso cref="System.IDisposable" />
+    /// <seealso cref="DNX.Helpers.Threading.IProducerConsumerQueue{T}" />
+    /// <remarks><para>Provides virtual methods hooks to allow a descendant class to vary the behaviour.</para>
+    /// <para>Allows an <see cref="IComparer{T}" /> to process queued items in a defined order.</para>
+    /// <para>Abstract to allow implementor to provide ProcessItem method to handle a queued item.</para></remarks>
     // ReSharper disable LoopCanBeConvertedToQuery
     public abstract class ProducerConsumerQueue<T> : IDisposable, IProducerConsumerQueue<T> where T : class
     {

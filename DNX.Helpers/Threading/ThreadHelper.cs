@@ -16,20 +16,17 @@ namespace DNX.Helpers.Threading
     /// <example>
     /// // Start new thread with type safe parameter.
     /// RunThread.Start(new ParameterizedThreadStart&lt;int&gt;(RunThis), 8);
-    ///
     /// // Start new thread pool thread with type safe parameter.
     /// RunThread.StartOnThreadPool(new ParameterizedThreadStart&lt;int&gt;(RunThis), 9);
-    ///
     /// // Start anonymous method on the thread pool.
     /// RunThread.StartOnThreadPool(delegate(int i)
     /// {
-    ///    Console.WriteLine("Anonymous method run on thread pool and passed: " + i);
+    /// Console.WriteLine("Anonymous method run on thread pool and passed: " + i);
     /// }, 10);
-    ///
     /// // Method with parm to run on a new thread.
     /// private void RunThis(int value)
     /// {
-    ///    Console.WriteLine("Value: " + value + " ThreadPool: " +
+    /// Console.WriteLine("Value: " + value + " ThreadPool: " +
     /// Thread.CurrentThread.IsThreadPoolThread +
     /// " ID: " + Thread.CurrentThread.ManagedThreadId);
     /// }

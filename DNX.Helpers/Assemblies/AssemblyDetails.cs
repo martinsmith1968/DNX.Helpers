@@ -9,6 +9,7 @@ namespace DNX.Helpers.Assemblies
     /// <summary>
     /// Implementation for obtaining Assembly Attributes
     /// </summary>
+    /// <seealso cref="DNX.Helpers.Assemblies.IAssemblyDetails" />
     public class AssemblyDetails : IAssemblyDetails
     {
         #region Fields
@@ -23,7 +24,7 @@ namespace DNX.Helpers.Assemblies
         #region Constructor(s)
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AssemblyDetails"/> class.
+        /// Initializes a new instance of the <see cref="AssemblyDetails" /> class.
         /// </summary>
         public AssemblyDetails()
             : this(Assembly.GetCallingAssembly())
@@ -31,7 +32,7 @@ namespace DNX.Helpers.Assemblies
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AssemblyDetails"/> class.
+        /// Initializes a new instance of the <see cref="AssemblyDetails" /> class.
         /// </summary>
         /// <param name="assembly">The assembly.</param>
         public AssemblyDetails(Assembly assembly)
@@ -50,10 +51,8 @@ namespace DNX.Helpers.Assemblies
         /// </summary>
         /// <typeparam name="T">The type of attribute to interrogate</typeparam>
         /// <param name="getValue">The get value.</param>
-        /// <returns>
-        /// The result of the specified Func, executed on the found attribute, if any.
-        /// <c>null</c> if not matching attribute can be found
-        /// </returns>
+        /// <returns>The result of the specified Func, executed on the found attribute, if any.
+        /// <c>null</c> if not matching attribute can be found</returns>
         protected string GetValue<T>(Func<T, string> getValue) where T : Attribute
         {
             var a = (T)Attribute.GetCustomAttribute(_assembly, typeof(T));
@@ -70,6 +69,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the AssemblyName
         /// </summary>
+        /// <value>The name of the assembly.</value>
         public AssemblyName AssemblyName
         {
             get { return _assembly.GetName(); }
@@ -78,6 +78,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the name of the assembly.
         /// </summary>
+        /// <value>The name.</value>
         public string Name
         {
             get { return AssemblyName.Name; }
@@ -86,6 +87,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the location of the assembly.
         /// </summary>
+        /// <value>The location.</value>
         public string Location
         {
             get { return _assembly.Location; }
@@ -94,6 +96,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the file name of the assembly.
         /// </summary>
+        /// <value>The name of the file.</value>
         public string FileName
         {
             get { return Path.GetFileName(_assembly.Location); }
@@ -102,6 +105,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the title attribute value.
         /// </summary>
+        /// <value>The title.</value>
         public string Title
         {
             get { return GetValue<AssemblyTitleAttribute>(a => a.Title); }
@@ -110,6 +114,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the product attribute value.
         /// </summary>
+        /// <value>The product.</value>
         public string Product
         {
             get { return GetValue<AssemblyProductAttribute>(a => a.Product); }
@@ -118,6 +123,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the copyright attribute value.
         /// </summary>
+        /// <value>The copyright.</value>
         public string Copyright
         {
             get { return GetValue<AssemblyCopyrightAttribute>(a => a.Copyright); }
@@ -126,6 +132,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the company attribute value.
         /// </summary>
+        /// <value>The company.</value>
         public string Company
         {
             get { return GetValue<AssemblyCompanyAttribute>(a => a.Company); }
@@ -134,6 +141,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the description attribute value.
         /// </summary>
+        /// <value>The description.</value>
         public string Description
         {
             get { return GetValue<AssemblyDescriptionAttribute>(a => a.Description); }
@@ -142,6 +150,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the trademark attribute value.
         /// </summary>
+        /// <value>The trademark.</value>
         public string Trademark
         {
             get { return GetValue<AssemblyTrademarkAttribute>(a => a.Trademark); }
@@ -150,6 +159,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the configuration attribute value.
         /// </summary>
+        /// <value>The configuration.</value>
         public string Configuration
         {
             get { return GetValue<AssemblyConfigurationAttribute>(a => a.Configuration); }
@@ -158,6 +168,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the assembly version.
         /// </summary>
+        /// <value>The version.</value>
         public Version Version
         {
             get { return AssemblyName.Version; }
@@ -166,6 +177,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the file version attribute value.
         /// </summary>
+        /// <value>The file version.</value>
         public string FileVersion
         {
             get { return GetValue<AssemblyFileVersionAttribute>(a => a.Version); }
@@ -174,6 +186,7 @@ namespace DNX.Helpers.Assemblies
         /// <summary>
         /// Gets the informational version attribute value.
         /// </summary>
+        /// <value>The informational version.</value>
         public string InformationalVersion
         {
             get { return GetValue<AssemblyInformationalVersionAttribute>(a => a.InformationalVersion); }

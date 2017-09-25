@@ -105,9 +105,7 @@ foreach (var kvp in types)
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order.</param>
         /// <param name="boundsType">Control boundary checking.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.
-		/// </returns>
+        /// <returns><c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.</returns>
         public static bool IsBetween(this <#= typeName #> value, <#= typeName #> min, <#= typeName #> max, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             var lowerBound = GetLowerBound(min, max, allowEitherOrder);
@@ -138,7 +136,7 @@ foreach (var kvp in types)
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> <#= typeName #></returns>
+        /// <returns><#= typeName #></returns>
         public static <#= typeName #> GetLowerBound(<#= typeName #> min, <#= typeName #> max, bool allowEitherOrder)
         {
             return allowEitherOrder
@@ -154,7 +152,7 @@ foreach (var kvp in types)
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> <#= typeName #></returns>
+        /// <returns><#= typeName #></returns>
         public static <#= typeName #> GetUpperBound(<#= typeName #> min, <#= typeName #> max, bool allowEitherOrder)
         {
             return allowEitherOrder

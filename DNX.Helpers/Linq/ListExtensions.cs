@@ -44,6 +44,7 @@ namespace DNX.Helpers.Linq
         /// <summary>
         /// Gets at.
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="list">The list.</param>
         /// <param name="index">The index.</param>
         /// <param name="defaultValue">The default value.</param>
@@ -67,6 +68,12 @@ namespace DNX.Helpers.Linq
         /// <param name="list">The list.</param>
         /// <param name="oldIndex">The old index.</param>
         /// <param name="newIndex">The new index.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// oldIndex
+        /// or
+        /// newIndex
+        /// </exception>
+        /// <exception cref="ReadOnlyListException{T}"></exception>
         public static void Move<T>(this IList<T> list, int oldIndex, int newIndex)
         {
             oldIndex = list.GetAbsoluteIndex(oldIndex);
@@ -99,6 +106,12 @@ namespace DNX.Helpers.Linq
         /// <param name="list">The list.</param>
         /// <param name="oldIndex">The old index.</param>
         /// <param name="newIndex">The new index.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// oldIndex
+        /// or
+        /// newIndex
+        /// </exception>
+        /// <exception cref="ReadOnlyListException{T}"></exception>
         public static void Swap<T>(this IList<T> list, int oldIndex, int newIndex)
         {
             oldIndex = list.GetAbsoluteIndex(oldIndex);

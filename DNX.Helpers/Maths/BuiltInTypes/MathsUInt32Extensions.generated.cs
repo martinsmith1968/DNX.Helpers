@@ -66,9 +66,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order.</param>
         /// <param name="boundsType">Control boundary checking.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.
-		/// </returns>
+        /// <returns><c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.</returns>
         public static bool IsBetween(this uint value, uint min, uint max, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             var lowerBound = GetLowerBound(min, max, allowEitherOrder);
@@ -99,7 +97,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> uint</returns>
+        /// <returns>uint</returns>
         public static uint GetLowerBound(uint min, uint max, bool allowEitherOrder)
         {
             return allowEitherOrder
@@ -115,7 +113,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> allow min/max in either order</param>
-        /// <returns> uint</returns>
+        /// <returns>uint</returns>
         public static uint GetUpperBound(uint min, uint max, bool allowEitherOrder)
         {
             return allowEitherOrder

@@ -19,9 +19,7 @@ namespace DNX.Helpers.Enumerations
         /// </summary>
         /// <typeparam name="T">The enum type to translate to</typeparam>
         /// <param name="item">The string representation of an enum value of T</param>
-        /// <returns>
-        /// The result
-        /// </returns>
+        /// <returns>The result</returns>
         public static T ParseEnum<T>(this string item)
             where T : struct
         {
@@ -35,9 +33,8 @@ namespace DNX.Helpers.Enumerations
         /// <typeparam name="T">The enum type to translate to</typeparam>
         /// <param name="item">The string representation of an enum value of T</param>
         /// <param name="ignoreCase">if set to <c>true</c> ignore the case of item.</param>
-        /// <returns>
-        /// The result
-        /// </returns>
+        /// <returns>The result</returns>
+        /// <exception cref="EnumTypeException"></exception>
         public static T ParseEnum<T>(this string item, bool ignoreCase)
             where T : struct
         {
@@ -56,7 +53,7 @@ namespace DNX.Helpers.Enumerations
         /// <typeparam name="T">The enum type to translate to</typeparam>
         /// <param name="item">The string representation of an enum value of T</param>
         /// <param name="defaultValue">The default value to return if translation cannot complete</param>
-        /// <returns></returns>
+        /// <returns>T.</returns>
         /// <exception cref="EnumTypeException"></exception>
         public static T ParseEnumOrDefault<T>(this string item, T defaultValue)
             where T : struct
@@ -72,7 +69,7 @@ namespace DNX.Helpers.Enumerations
         /// <param name="item">The string representation of an enum value of T</param>
         /// <param name="ignoreCase">if set to <c>true</c> [ignore case].</param>
         /// <param name="defaultValue">The default value to return if translation cannot complete</param>
-        /// <returns></returns>
+        /// <returns>T.</returns>
         /// <exception cref="EnumTypeException"></exception>
         public static T ParseEnumOrDefault<T>(this string item, bool ignoreCase, T defaultValue)
             where T : struct
@@ -118,9 +115,7 @@ namespace DNX.Helpers.Enumerations
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The enum value.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified value is valid; otherwise, <c>false</c>.
-        /// </returns>
+        /// <returns><c>true</c> if the specified value is valid; otherwise, <c>false</c>.</returns>
         public static bool IsValidEnum<T>(this T value)
             where T : struct
         {
@@ -132,9 +127,7 @@ namespace DNX.Helpers.Enumerations
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The enum Name.</param>
-        /// <returns>
-        ///   <c>true</c> if the specified value is valid; otherwise, <c>false</c>.
-        /// </returns>
+        /// <returns><c>true</c> if the specified value is valid; otherwise, <c>false</c>.</returns>
         public static bool IsValidEnum<T>(this string value)
             where T : struct
         {
@@ -189,7 +182,8 @@ namespace DNX.Helpers.Enumerations
         /// Gets the max enum value.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>T.</returns>
+        /// <exception cref="EnumTypeException"></exception>
         public static T GetMaxValue<T>()
             where T : struct
         {
@@ -207,7 +201,8 @@ namespace DNX.Helpers.Enumerations
         /// Gets the min enum value.
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>T.</returns>
+        /// <exception cref="EnumTypeException"></exception>
         public static T GetMinValue<T>()
             where T : struct
         {
@@ -227,9 +222,7 @@ namespace DNX.Helpers.Enumerations
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
         /// <param name="allowed">The allowed.</param>
-        /// <returns>
-        ///   <c>true</c> if [is value one of] [the specified args]; otherwise, <c>false</c>.
-        /// </returns>
+        /// <returns><c>true</c> if [is value one of] [the specified args]; otherwise, <c>false</c>.</returns>
         public static bool IsValueOneOf<T>(this T value, params T[] allowed)
             where T : struct
         {
@@ -242,9 +235,8 @@ namespace DNX.Helpers.Enumerations
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
         /// <param name="allowed">The allowed.</param>
-        /// <returns>
-        ///   <c>true</c> if [is value one of] [the specified args]; otherwise, <c>false</c>.
-        /// </returns>
+        /// <returns><c>true</c> if [is value one of] [the specified args]; otherwise, <c>false</c>.</returns>
+        /// <exception cref="EnumTypeException"></exception>
         public static bool IsValueOneOf<T>(this T value, IList<T> allowed)
             where T : struct
         {
@@ -263,7 +255,7 @@ namespace DNX.Helpers.Enumerations
         /// <param name="value">The value.</param>
         /// <param name="flag">The flag.</param>
         /// <param name="set">if set to <c>true</c> [set].</param>
-        /// <returns></returns>
+        /// <returns>T.</returns>
         public static T ManipulateFlag<T>(this Enum value, T flag, bool set)
         {
             var underlyingType = Enum.GetUnderlyingType(value.GetType());
@@ -289,7 +281,7 @@ namespace DNX.Helpers.Enumerations
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
         /// <param name="flag">The flag.</param>
-        /// <returns></returns>
+        /// <returns>T.</returns>
         public static T SetFlag<T>(this Enum value, T flag)
         {
             return ManipulateFlag(value, flag, true);
@@ -301,7 +293,7 @@ namespace DNX.Helpers.Enumerations
         /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
         /// <param name="flag">The flag.</param>
-        /// <returns></returns>
+        /// <returns>T.</returns>
         public static T UnsetFlag<T>(this Enum value, T flag)
         {
             return ManipulateFlag(value, flag, false);
@@ -312,7 +304,8 @@ namespace DNX.Helpers.Enumerations
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="enumValue">The enum value.</param>
-        /// <returns></returns>
+        /// <returns>List&lt;T&gt;.</returns>
+        /// <exception cref="EnumTypeException"></exception>
         public static List<T> GetSetValuesList<T>(this Enum enumValue)
             where T : struct
         {
@@ -342,7 +335,8 @@ namespace DNX.Helpers.Enumerations
         /// Converts the entire enum to a dictionary with Name as the key
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>IDictionary&lt;System.String, T&gt;.</returns>
+        /// <exception cref="EnumTypeException"></exception>
         public static IDictionary<string, T> ToDictionaryByName<T>()
             where T : struct
         {
@@ -365,7 +359,8 @@ namespace DNX.Helpers.Enumerations
         /// Converts the entire enum to a dictionary with Value as the key
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <returns>IDictionary&lt;T, System.String&gt;.</returns>
+        /// <exception cref="EnumTypeException"></exception>
         public static IDictionary<T, string> ToDictionaryByValue<T>()
             where T : struct
         {

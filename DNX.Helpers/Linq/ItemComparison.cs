@@ -20,7 +20,7 @@
         public T2 Target { get; private set; }
 
         /// <summary>
-        /// Gets a value indicating whether this <see cref="ItemComparison{T1, T2}"/> is matched.
+        /// Gets a value indicating whether this <see cref="ItemComparison{T1, T2}" /> is matched.
         /// </summary>
         /// <value><c>true</c> if matched; otherwise, <c>false</c>.</value>
         public bool Matched { get { return Source != null && Target != null; } }
@@ -37,6 +37,11 @@
         /// <value><c>true</c> if [target only]; otherwise, <c>false</c>.</value>
         public bool TargetOnly { get { return Source == null && Target != null; } }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ItemComparison{T1, T2}"/> class.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="target">The target.</param>
         private ItemComparison(T1 source, T2 target)
         {
             Source = source;

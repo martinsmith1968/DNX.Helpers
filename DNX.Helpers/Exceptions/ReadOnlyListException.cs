@@ -17,7 +17,7 @@ namespace DNX.Helpers.Exceptions
         public IList<T> List { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ReadOnlyListException{T}"/> class.
+        /// Initializes a new instance of the <see cref="ReadOnlyListException{T}" /> class.
         /// </summary>
         /// <param name="list">The list.</param>
         public ReadOnlyListException(IList<T> list)

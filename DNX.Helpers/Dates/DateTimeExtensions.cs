@@ -10,9 +10,7 @@ namespace DNX.Helpers.Dates
         /// <summary>
         /// Gets the unix epoch.
         /// </summary>
-        /// <value>
-        /// The unix epoch.
-        /// </value>
+        /// <value>The unix epoch.</value>
         public static DateTime UnixEpoch
         {
             get { return new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc); }
@@ -22,7 +20,7 @@ namespace DNX.Helpers.Dates
         /// Parses the date as UTC.
         /// </summary>
         /// <param name="dateString">The date string.</param>
-        /// <returns></returns>
+        /// <returns>DateTime.</returns>
         public static DateTime ParseDateAsUtc(this string dateString)
         {
             var dateTime = DateTime.Parse(dateString);
@@ -52,7 +50,7 @@ namespace DNX.Helpers.Dates
         /// </summary>
         /// <param name="dateString">The date string.</param>
         /// <param name="defaultDateTime">The default date time.</param>
-        /// <returns></returns>
+        /// <returns>DateTime.</returns>
         public static DateTime ParseDateAsUtc(this string dateString, DateTime defaultDateTime)
         {
             try

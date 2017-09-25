@@ -5,10 +5,8 @@ namespace DNX.Helpers.Exceptions
     /// <summary>
     /// Conversion Exception.
     /// </summary>
-    /// <remarks>
-    /// Thrown when a conversion to a specified type fails
-    /// </remarks>
     /// <seealso cref="System.Exception" />
+    /// <remarks>Thrown when a conversion to a specified type fails</remarks>
     public class ConversionException : Exception
     {
         /// <summary>
@@ -24,7 +22,7 @@ namespace DNX.Helpers.Exceptions
         public Type ConvertType { get; private set; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConversionException"/> class.
+        /// Initializes a new instance of the <see cref="ConversionException" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="message">The message.</param>
@@ -34,7 +32,7 @@ namespace DNX.Helpers.Exceptions
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ConversionException"/> class.
+        /// Initializes a new instance of the <see cref="ConversionException" /> class.
         /// </summary>
         /// <param name="value">The value.</param>
         /// <param name="message">The message.</param>

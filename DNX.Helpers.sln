@@ -26,6 +26,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{FB
 		NuGet.publish.cmd = NuGet.publish.cmd
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNX.Helpers.Log4Net", "DNX.Helpers.Log4Net\DNX.Helpers.Log4Net.csproj", "{61EB307E-F9C3-422C-881B-2A855684E33B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.DNX.Helpers.Log4Net", "Test.DNX.Helpers.Log4Net\Test.DNX.Helpers.Log4Net.csproj", "{75959401-AAAC-4C20-9415-7E42C5984D7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +44,14 @@ Global
 		{B3666B7C-ADF3-46B1-8955-D3224F4A9C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3666B7C-ADF3-46B1-8955-D3224F4A9C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3666B7C-ADF3-46B1-8955-D3224F4A9C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61EB307E-F9C3-422C-881B-2A855684E33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61EB307E-F9C3-422C-881B-2A855684E33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61EB307E-F9C3-422C-881B-2A855684E33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61EB307E-F9C3-422C-881B-2A855684E33B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75959401-AAAC-4C20-9415-7E42C5984D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75959401-AAAC-4C20-9415-7E42C5984D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75959401-AAAC-4C20-9415-7E42C5984D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75959401-AAAC-4C20-9415-7E42C5984D7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

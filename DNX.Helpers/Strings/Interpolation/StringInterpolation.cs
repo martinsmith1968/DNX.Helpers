@@ -48,7 +48,7 @@ namespace DNX.Helpers.Strings.Interpolation
                 new NamedInstance(instance, namePrefix)
             };
 
-            return InterpolateWith(text, namedInstances, ignoreErrors);
+            return InterpolateWithAll(text, namedInstances, ignoreErrors);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace DNX.Helpers.Strings.Interpolation
         /// <param name="namedInstances">The named instances.</param>
         /// <param name="ignoreErrors">if set to <c>true</c> [ignore errors].</param>
         /// <returns>System.String.</returns>
-        public static string InterpolateWith(this string text, IList<NamedInstance> namedInstances, bool ignoreErrors = false)
+        public static string InterpolateWithAll(this string text, IList<NamedInstance> namedInstances, bool ignoreErrors = false)
         {
             var paramValues = new Dictionary<string, object>();
 

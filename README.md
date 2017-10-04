@@ -6212,22 +6212,6 @@ Gets the list of interpolatable properties from a type
 IList<InterpolatableProperty>.
 
 
-### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWith(text, namedInstances, ignoreErrors)
-
-Interpolates text with properties from an object instance.
-
-| Name | Description |
-| ---- | ----------- |
-| text | *System.String*<br>The text. |
-| namedInstances | *System.Collections.Generic.IList{DNX.Helpers.Strings.Interpolation.NamedInstance}*<br>The named instances. |
-| ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
-
-
-#### Returns
-
-System.String.
-
-
 ### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWith(text, instance, namePrefix, ignoreErrors)
 
 Interpolates the with.
@@ -6237,6 +6221,22 @@ Interpolates the with.
 | text | *System.String*<br>The text. |
 | instance | *System.Object*<br>The instance. |
 | namePrefix | *System.String*<br>The name prefix. |
+| ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWithAll(text, namedInstances, ignoreErrors)
+
+Interpolates text with properties from an object instance.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| namedInstances | *System.Collections.Generic.IList{DNX.Helpers.Strings.Interpolation.NamedInstance}*<br>The named instances. |
 | ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
 
 

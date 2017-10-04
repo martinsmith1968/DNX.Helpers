@@ -9,7 +9,7 @@
 
         public string Name { get; set; }
 
-        internal NamedInstance(object instance, string name = null)
+        public NamedInstance(object instance, string name = null)
         {
             Instance = instance;
             Name     = name;

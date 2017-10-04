@@ -232,18 +232,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
+    <None Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
+    </None>
+    <None Include="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MathsExtensionsTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Validation\BuiltInTypes\GuardExtensionsTemplate.tt">
+    </None>
+    <None Include="Validation\BuiltInTypes\GuardExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardExtensionsTemplate.cs</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

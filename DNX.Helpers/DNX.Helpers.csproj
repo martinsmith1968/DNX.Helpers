@@ -228,6 +228,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
     </None>
+    <None Include="DNX.Helpers.nuspec" />
     <None Include="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MathsExtensionsTemplate.cs</LastGenOutput>

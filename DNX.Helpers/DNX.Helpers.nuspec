@@ -15,6 +15,6 @@
     <description>$description$</description>
     <releaseNotes>Initial release</releaseNotes>
     <copyright>Copyright 2016 DNX Solutions Ltd</copyright>
-    <tags>DNX string array linq helpers extensions</tags>
+    <tags>DNX helpers extensions string array linq</tags>
   </metadata>
 </package>

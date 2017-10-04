@@ -176,6 +176,7 @@
     <Compile Include="Reflection\InstanceResolutionExtensions.cs" />
     <Compile Include="Reflection\ReflectionExtensions.cs" />
     <Compile Include="Strings\Interpolation\InterpolatableProperty.cs" />
+    <Compile Include="Strings\Interpolation\NamedInstance.cs" />
     <Compile Include="Strings\RegexStringExtensions.cs" />
     <Compile Include="Strings\StringExtensions.cs" />
     <Compile Include="Strings\Interpolation\StringInterpolation.cs" />

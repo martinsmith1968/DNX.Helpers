@@ -71,7 +71,7 @@ Returns the value of attribute T or String.Empty if no value is available.
 
 #### Returns
 
- The result of the specified Func, executed on the found attribute, if any. null if not matching attribute can be found 
+The result of the specified Func, executed on the found attribute, if any. null if not matching attribute can be found
 
 
 ### P:DNX.Helpers.InformationalVersion
@@ -200,7 +200,7 @@ Determines if the string can be converted to a bool or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a bool; otherwise, false.
 
 
 #### Remarks
@@ -251,7 +251,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertByteExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertByteExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertByteExtensions.IsByte(text)
@@ -265,7 +265,7 @@ Determines if the string can be converted to a byte or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a byte; otherwise, false.
 
 
 #### Remarks
@@ -316,7 +316,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertDateTimeExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertDateTimeExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDateTimeExtensions.IsDateTime(text)
@@ -330,7 +330,7 @@ Determines if the string can be converted to a DateTime or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a DateTime; otherwise, false.
 
 
 #### Remarks
@@ -381,7 +381,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertDecimalExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertDecimalExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDecimalExtensions.IsDecimal(text)
@@ -395,7 +395,7 @@ Determines if the string can be converted to a decimal or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a decimal; otherwise, false.
 
 
 #### Remarks
@@ -446,7 +446,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertDoubleExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertDoubleExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertDoubleExtensions.IsDouble(text)
@@ -460,7 +460,7 @@ Determines if the string can be converted to a double or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a double; otherwise, false.
 
 
 #### Remarks
@@ -511,7 +511,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertFloatExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertFloatExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertFloatExtensions.IsFloat(text)
@@ -525,7 +525,7 @@ Determines if the string can be converted to a float or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a float; otherwise, false.
 
 
 #### Remarks
@@ -576,7 +576,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertInt16Extensions
 
-Class ConvertBoolExtensions.
+Class ConvertInt16Extensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt16Extensions.IsInt16(text)
@@ -590,7 +590,7 @@ Determines if the string can be converted to a short or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a short; otherwise, false.
 
 
 #### Remarks
@@ -641,7 +641,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertInt32Extensions
 
-Class ConvertBoolExtensions.
+Class ConvertInt32Extensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt32Extensions.IsInt32(text)
@@ -655,7 +655,7 @@ Determines if the string can be converted to a int or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a int; otherwise, false.
 
 
 #### Remarks
@@ -706,7 +706,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertInt64Extensions
 
-Class ConvertBoolExtensions.
+Class ConvertInt64Extensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertInt64Extensions.IsInt64(text)
@@ -720,7 +720,7 @@ Determines if the string can be converted to a long or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a long; otherwise, false.
 
 
 #### Remarks
@@ -771,7 +771,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertIntExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertIntExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertIntExtensions.IsInt(text)
@@ -785,7 +785,7 @@ Determines if the string can be converted to a int or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a int; otherwise, false.
 
 
 #### Remarks
@@ -836,7 +836,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertLongExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertLongExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertLongExtensions.IsLong(text)
@@ -850,7 +850,7 @@ Determines if the string can be converted to a long or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a long; otherwise, false.
 
 
 #### Remarks
@@ -901,7 +901,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertSByteExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertSByteExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSByteExtensions.IsSByte(text)
@@ -915,7 +915,7 @@ Determines if the string can be converted to a sbyte or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a sbyte; otherwise, false.
 
 
 #### Remarks
@@ -966,7 +966,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertShortExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertShortExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertShortExtensions.IsShort(text)
@@ -980,7 +980,7 @@ Determines if the string can be converted to a short or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a short; otherwise, false.
 
 
 #### Remarks
@@ -1031,12 +1031,12 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertSingleExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions.IsSingle(text)
 
-Determines if the string can be converted to a Single or not
+Determines if the string can be converted to a float or not
 
 | Name | Description |
 | ---- | ----------- |
@@ -1045,7 +1045,7 @@ Determines if the string can be converted to a Single or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a float; otherwise, false.
 
 
 #### Remarks
@@ -1055,7 +1055,7 @@ Also available as an extension method
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions.ToSingle(text)
 
-Converts the string to a Single
+Converts the string to a float
 
 | Name | Description |
 | ---- | ----------- |
@@ -1064,7 +1064,7 @@ Converts the string to a Single
 
 #### Returns
 
-Single
+float
 
 *DNX.Helpers.Exceptions.ConversionException:* Unable to convert value to Type
 
@@ -1076,7 +1076,7 @@ Also available as an extension method
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertSingleExtensions.ToSingle(text, defaultValue)
 
-Converts the string to a Single, or returns the default value if the conversion fails
+Converts the string to a float, or returns the default value if the conversion fails
 
 | Name | Description |
 | ---- | ----------- |
@@ -1086,7 +1086,7 @@ Converts the string to a Single, or returns the default value if the conversion 
 
 #### Returns
 
-Single
+float
 
 
 #### Remarks
@@ -1096,7 +1096,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt16Extensions
 
-Class ConvertBoolExtensions.
+Class ConvertUInt16Extensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt16Extensions.IsUInt16(text)
@@ -1110,7 +1110,7 @@ Determines if the string can be converted to a ushort or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a ushort; otherwise, false.
 
 
 #### Remarks
@@ -1161,7 +1161,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt32Extensions
 
-Class ConvertBoolExtensions.
+Class ConvertUInt32Extensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt32Extensions.IsUInt32(text)
@@ -1175,7 +1175,7 @@ Determines if the string can be converted to a uint or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a uint; otherwise, false.
 
 
 #### Remarks
@@ -1226,7 +1226,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt64Extensions
 
-Class ConvertBoolExtensions.
+Class ConvertUInt64Extensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUInt64Extensions.IsUInt64(text)
@@ -1240,7 +1240,7 @@ Determines if the string can be converted to a ulong or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a ulong; otherwise, false.
 
 
 #### Remarks
@@ -1291,7 +1291,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUIntExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertUIntExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUIntExtensions.IsUInt(text)
@@ -1305,7 +1305,7 @@ Determines if the string can be converted to a uint or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a uint; otherwise, false.
 
 
 #### Remarks
@@ -1356,7 +1356,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertULongExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertULongExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertULongExtensions.IsULong(text)
@@ -1370,7 +1370,7 @@ Determines if the string can be converted to a ulong or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a ulong; otherwise, false.
 
 
 #### Remarks
@@ -1421,7 +1421,7 @@ Also available as an extension method
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertUShortExtensions
 
-Class ConvertBoolExtensions.
+Class ConvertUShortExtensions.
 
 
 ### M:DNX.Helpers.Converters.BuiltInTypes.ConvertUShortExtensions.IsUShort(text)
@@ -1435,7 +1435,7 @@ Determines if the string can be converted to a ushort or not
 
 #### Returns
 
-true if the specified text is a #type; otherwise, false.
+true if the specified text is a ushort; otherwise, false.
 
 
 #### Remarks
@@ -1523,6 +1523,21 @@ T.
 Conversion Extensions.
 
 
+### M:DNX.Helpers.Converters.ConvertObjectExtensions.ToStringOrDefault(obj, defaultValue)
+
+Returns the obj.ToString() or Empty if null
+
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
+| defaultValue | *System.String*<br>The default value. |
+
+
+#### Returns
+
+System.String.
+
+
 ### M:DNX.Helpers.Converters.ConvertObjectExtensions.ToStringOrEmpty(obj)
 
 Returns the obj.ToString() or Empty if null
@@ -1567,7 +1582,7 @@ Parses the date as UTC.
 
 #### Returns
 
-
+DateTime.
 
 
 ### M:DNX.Helpers.Dates.DateTimeExtensions.ParseDateAsUtc(dateString, defaultDateTime)
@@ -1582,7 +1597,7 @@ Parses the date as UTC.
 
 #### Returns
 
-
+DateTime.
 
 
 ### M:DNX.Helpers.Dates.DateTimeExtensions.ParseDateAsUtc(dateString, formatProvider)
@@ -1647,7 +1662,9 @@ Gets the max enum value.
 
 #### Returns
 
+T.
 
+*DNX.Helpers.Exceptions.EnumTypeException:* 
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.GetMinValue``1
@@ -1657,7 +1674,9 @@ Gets the min enum value.
 
 #### Returns
 
+T.
 
+*DNX.Helpers.Exceptions.EnumTypeException:* 
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.GetSetValuesList``1(enumValue)
@@ -1671,7 +1690,9 @@ Gets the set values list.
 
 #### Returns
 
+List<T>.
 
+*DNX.Helpers.Exceptions.EnumTypeException:* 
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.IsValidEnum(value, type, ignoreCase)
@@ -1705,7 +1726,7 @@ Determines whether the specified enum value is a valid enum name.
 
 #### Returns
 
-true if the specified value is valid; otherwise, false. 
+true if the specified value is valid; otherwise, false.
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.IsValidEnum``1(value)
@@ -1719,7 +1740,7 @@ Determines whether the specified enum value is a valid enum name.
 
 #### Returns
 
-true if the specified value is valid; otherwise, false. 
+true if the specified value is valid; otherwise, false.
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.IsValidEnum``1(value, ignoreCase)
@@ -1749,7 +1770,7 @@ Determines whether [is value one of] [the specified args].
 
 #### Returns
 
-true if [is value one of] [the specified args]; otherwise, false. 
+true if [is value one of] [the specified args]; otherwise, false.
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.IsValueOneOf``1(value, allowed)
@@ -1764,7 +1785,9 @@ Determines whether [is value one of] [the specified args].
 
 #### Returns
 
-true if [is value one of] [the specified args]; otherwise, false. 
+true if [is value one of] [the specified args]; otherwise, false.
+
+*DNX.Helpers.Exceptions.EnumTypeException:* 
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.ManipulateFlag``1(value, flag, set)
@@ -1780,7 +1803,7 @@ Sets the flag.
 
 #### Returns
 
-
+T.
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.ParseEnum``1(item)
@@ -1794,7 +1817,7 @@ Translate a given string to an enumeration value. May throw a translation except
 
 #### Returns
 
- The result 
+The result
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.ParseEnum``1(item, ignoreCase)
@@ -1809,7 +1832,9 @@ Translate a given string to an enumeration value. May throw a translation except
 
 #### Returns
 
- The result 
+The result
+
+*DNX.Helpers.Exceptions.EnumTypeException:* 
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.ParseEnumOrDefault``1(item, defaultValue)
@@ -1824,7 +1849,7 @@ Attempt to safely translate a string to an enumeration value. If translation is 
 
 #### Returns
 
-
+T.
 
 *DNX.Helpers.Exceptions.EnumTypeException:* 
 
@@ -1842,7 +1867,7 @@ Attempt to safely translate a string to an enumeration value. If translation is 
 
 #### Returns
 
-
+T.
 
 *DNX.Helpers.Exceptions.EnumTypeException:* 
 
@@ -1859,7 +1884,7 @@ Sets the flag.
 
 #### Returns
 
-
+T.
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.ToDictionaryByName``1
@@ -1869,7 +1894,9 @@ Converts the entire enum to a dictionary with Name as the key
 
 #### Returns
 
+IDictionary<System.String, T>.
 
+*DNX.Helpers.Exceptions.EnumTypeException:* 
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.ToDictionaryByValue``1
@@ -1879,7 +1906,9 @@ Converts the entire enum to a dictionary with Value as the key
 
 #### Returns
 
+IDictionary<T, System.String>.
 
+*DNX.Helpers.Exceptions.EnumTypeException:* 
 
 
 ### M:DNX.Helpers.Enumerations.EnumExtensions.UnsetFlag``1(value, flag)
@@ -1894,7 +1923,7 @@ Unsets the flag.
 
 #### Returns
 
-
+T.
 
 
 ## T:DNX.Helpers.Exceptions.ConversionException
@@ -1904,7 +1933,7 @@ Conversion Exception.
 
 #### Remarks
 
- Thrown when a conversion to a specified type fails 
+Thrown when a conversion to a specified type fails
 
 
 ### M:DNX.Helpers.Exceptions.ConversionException.#ctor(value, message)
@@ -1963,6 +1992,11 @@ Initializes a new instance of the class.
 | ---- | ----------- |
 | type | *System.Type*<br>The type. |
 | messageTemplate | *System.String*<br>The message template. |
+
+### F:DNX.Helpers.Exceptions.EnumTypeException.MessageTemplate
+
+The message template
+
 
 ### P:DNX.Helpers.Exceptions.EnumTypeException.Type
 
@@ -2023,19 +2057,20 @@ Create a ParameterException with a parameter name and value, and a message
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| paramValue | *System.Object*<br> |
-| message | *System.String*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| paramValue | *System.Object*<br>The parameter value. |
+| message | *System.String*<br>The message. |
 
-### M:DNX.Helpers.Exceptions.ParameterException.#ctor(System.String,System.Object,System.String,System.Exception)
+### M:DNX.Helpers.Exceptions.ParameterException.#ctor(paramName, paramValue, message, innerException)
 
 Create a ParameterException with a parameter name and value, message and inner Exception
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| paramValue | *System.Object*<br> |
-| message | *System.String*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| paramValue | *System.Object*<br>The parameter value. |
+| message | *System.String*<br>The message. |
+| innerException | *System.Exception*<br>The inner exception. |
 
 ### M:DNX.Helpers.Exceptions.ParameterException.#ctor(paramName, message)
 
@@ -2043,8 +2078,8 @@ Create a ParameterException with a parameter name and a message
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| message | *System.String*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| message | *System.String*<br>The message. |
 
 ### M:DNX.Helpers.Exceptions.ParameterException.#ctor(paramName, message, innerException)
 
@@ -2052,9 +2087,9 @@ Create a ParameterException with a parameter name, message and inner Exception
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| message | *System.String*<br> |
-| innerException | *System.Exception*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| message | *System.String*<br>The message. |
+| innerException | *System.Exception*<br>The inner exception. |
 
 ### P:DNX.Helpers.Exceptions.ParameterException.ParamName
 
@@ -2077,9 +2112,9 @@ Create a ParameterInvalidException with a parameter name and value, and a messag
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| paramValue | *System.Object*<br> |
-| message | *System.String*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| paramValue | *System.Object*<br>The parameter value. |
+| message | *System.String*<br>The message. |
 
 ### M:DNX.Helpers.Exceptions.ParameterInvalidException.#ctor(paramName, paramValue, message, innerException)
 
@@ -2087,10 +2122,10 @@ Create a ParameterInvalidException with a parameter name and value, message and 
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| paramValue | *System.Object*<br> |
-| message | *System.String*<br> |
-| innerException | *System.Exception*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| paramValue | *System.Object*<br>The parameter value. |
+| message | *System.String*<br>The message. |
+| innerException | *System.Exception*<br>The inner exception. |
 
 ### M:DNX.Helpers.Exceptions.ParameterInvalidException.#ctor(paramName, message)
 
@@ -2098,8 +2133,8 @@ Create a ParameterInvalidException with a parameter name and a message
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| message | *System.String*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| message | *System.String*<br>The message. |
 
 ### M:DNX.Helpers.Exceptions.ParameterInvalidException.#ctor(paramName, message, innerException)
 
@@ -2107,9 +2142,9 @@ Create a ParameterInvalidException with a parameter name, message and inner Exce
 
 | Name | Description |
 | ---- | ----------- |
-| paramName | *System.String*<br> |
-| message | *System.String*<br> |
-| innerException | *System.Exception*<br> |
+| paramName | *System.String*<br>Name of the parameter. |
+| message | *System.String*<br>The message. |
+| innerException | *System.Exception*<br>The inner exception. |
 
 ## T:DNX.Helpers.Exceptions.ReadOnlyListException`1
 
@@ -2128,6 +2163,51 @@ Initializes a new instance of the class.
 
 Gets the list.
 
+
+## T:DNX.Helpers.Interfaces.IConverter`2
+
+Converter Interface for transposing objects between 2 types
+
+
+### M:DNX.Helpers.Interfaces.IConverter`2.Convert(source)
+
+Converts the specified source.
+
+| Name | Description |
+| ---- | ----------- |
+| source | *`0*<br>The source. |
+
+
+#### Returns
+
+T2.
+
+
+## T:DNX.Helpers.Interfaces.IExtractable`1
+
+Extractable Interface for populating another instance from this one
+
+
+### M:DNX.Helpers.Interfaces.IExtractable`1.ExtractInto(target)
+
+Extracts this object into another
+
+| Name | Description |
+| ---- | ----------- |
+| target | *`0*<br>The target. |
+
+## T:DNX.Helpers.Interfaces.IPopulatable`1
+
+Populatable Interface for populating this object from another
+
+
+### M:DNX.Helpers.Interfaces.IPopulatable`1.PopulateFrom(source)
+
+Populates from an instance of T1
+
+| Name | Description |
+| ---- | ----------- |
+| source | *`0*<br>The source. |
 
 ## T:DNX.Helpers.Linq.DictionaryExtensions
 
@@ -2149,7 +2229,7 @@ Gets the value.
 
 TV.
 
-*System.ArgumentNullException:*  dictionary or keyName 
+*System.ArgumentNullException:* dictionary or keyName
 
 
 ### M:DNX.Helpers.Linq.DictionaryExtensions.RenameKey``1(System.Collections.Generic.IDictionary{System.String,``0},System.String,System.String)
@@ -2162,7 +2242,7 @@ Renames the key.
 | fromKeyName | *Unknown type*<br>Name of from key. |
 | toKeyName | *Unknown type*<br>Name of to key. |
 
-*System.ArgumentNullException:*  fromKeyName or toKeyName 
+*System.ArgumentNullException:* fromKeyName or toKeyName
 
 
 ### M:DNX.Helpers.Linq.DictionaryExtensions.SetValue``2(System.Collections.Generic.IDictionary{``0,``1},``0,``1)
@@ -2175,7 +2255,98 @@ Sets the value.
 | keyName | *Unknown type*<br>Name of the key. |
 | value | *System.String*<br>The value. |
 
-*System.ArgumentNullException:*  dictionary or keyName 
+*System.ArgumentNullException:* dictionary or keyName
+
+
+## T:DNX.Helpers.Linq.ItemComparison`2
+
+ItemComparison result for logical comparison of 2 objects.
+
+
+### M:DNX.Helpers.Linq.ItemComparison`2.#ctor(source, target)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| source | *`0*<br>The source. |
+| target | *`1*<br>The target. |
+
+### M:DNX.Helpers.Linq.ItemComparison`2.Create(item1, item2)
+
+Creates an ItemComparison
+
+| Name | Description |
+| ---- | ----------- |
+| item1 | *`0*<br>The item1. |
+| item2 | *`1*<br>The item2. |
+
+
+#### Returns
+
+ItemComparison<T1, T2>.
+
+
+### P:DNX.Helpers.Linq.ItemComparison`2.Matched
+
+Gets a value indicating whether this is matched.
+
+
+### P:DNX.Helpers.Linq.ItemComparison`2.Source
+
+Gets the source.
+
+
+### P:DNX.Helpers.Linq.ItemComparison`2.SourceOnly
+
+Gets a value indicating whether [source only].
+
+
+### P:DNX.Helpers.Linq.ItemComparison`2.Target
+
+Gets the target.
+
+
+### P:DNX.Helpers.Linq.ItemComparison`2.TargetOnly
+
+Gets a value indicating whether [target only].
+
+
+## T:DNX.Helpers.Linq.ItemComparisonList
+
+Class ItemComparisonList.
+
+
+### M:DNX.Helpers.Linq.ItemComparisonList.Create``1(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``0},System.Func{``0,``0,System.Boolean})
+
+Creates the specified source list.
+
+| Name | Description |
+| ---- | ----------- |
+| sourceList | *Unknown type*<br>The source list. |
+| targetList | *Unknown type*<br>The target list. |
+| matchFunc | *Unknown type*<br>The match function. |
+
+
+#### Returns
+
+IList<ItemComparison<T, T>>.
+
+
+### M:DNX.Helpers.Linq.ItemComparisonList.Create``2(System.Collections.Generic.IList{``0},System.Collections.Generic.IList{``1},System.Func{``0,``1,System.Boolean})
+
+Creates the specified source list.
+
+| Name | Description |
+| ---- | ----------- |
+| sourceList | *Unknown type*<br>The source list. |
+| targetList | *Unknown type*<br>The target list. |
+| matchFunc | *Unknown type*<br>The match function. |
+
+
+#### Returns
+
+IList<ItemComparison<T1, T2>>.
 
 
 ## T:DNX.Helpers.Linq.LinqExtensions
@@ -2283,6 +2454,11 @@ Moves an item to the new specified index
 | oldIndex | *System.Int32*<br>The old index. |
 | newIndex | *System.Int32*<br>The new index. |
 
+*System.ArgumentOutOfRangeException:*  oldIndex or newIndex 
+
+*DNX.Helpers.Exceptions.ReadOnlyListException`1:* 
+
+
 ### M:DNX.Helpers.Linq.ListExtensions.Swap``1(list, oldIndex, newIndex)
 
 Swaps the items at the 2 specified indexes
@@ -2292,6 +2468,3312 @@ Swaps the items at the 2 specified indexes
 | list | *System.Collections.Generic.IList{``0}*<br>The list. |
 | oldIndex | *System.Int32*<br>The old index. |
 | newIndex | *System.Int32*<br>The new index. |
+
+*System.ArgumentOutOfRangeException:*  oldIndex or newIndex 
+
+*DNX.Helpers.Exceptions.ReadOnlyListException`1:* 
+
+
+## T:DNX.Helpers.Linq.TupleExtensions
+
+Class TupleExtensions.
+
+
+#### Remarks
+
+To allow Tuple initializers See: https://stackoverflow.com/questions/8002455/how-to-easily-initialize-a-list-of-tuples
+
+
+## T:DNX.Helpers.Linq.TupleExtensions.TupleList`2
+
+Class TupleList.
+
+
+### M:DNX.Helpers.Linq.TupleExtensions.TupleList`2.Add(item, item2)
+
+Adds the specified item.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item. |
+| item2 | *`1*<br>The item2. |
+
+## T:DNX.Helpers.Linq.TupleExtensions.TupleList`3
+
+Class TupleList.
+
+
+### M:DNX.Helpers.Linq.TupleExtensions.TupleList`3.Add(item, item2, item3)
+
+Adds the specified item.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item. |
+| item2 | *`1*<br>The item2. |
+| item3 | *`2*<br>The item3. |
+
+## T:DNX.Helpers.Linq.TupleExtensions.TupleList`4
+
+Class TupleList.
+
+
+### M:DNX.Helpers.Linq.TupleExtensions.TupleList`4.Add(item, item2, item3, item4)
+
+Adds the specified item.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item. |
+| item2 | *`1*<br>The item2. |
+| item3 | *`2*<br>The item3. |
+| item4 | *`3*<br>The item4. |
+
+## T:DNX.Helpers.Linq.TupleExtensions.TupleList`5
+
+Class TupleList.
+
+
+### M:DNX.Helpers.Linq.TupleExtensions.TupleList`5.Add(item, item2, item3, item4, item5)
+
+Adds the specified item.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item. |
+| item2 | *`1*<br>The item2. |
+| item3 | *`2*<br>The item3. |
+| item4 | *`3*<br>The item4. |
+| item5 | *`4*<br>The item5. |
+
+## T:DNX.Helpers.Linq.TupleExtensions.TupleList`6
+
+Class TupleList.
+
+
+### M:DNX.Helpers.Linq.TupleExtensions.TupleList`6.Add(item, item2, item3, item4, item5, item6)
+
+Adds the specified item.
+
+| Name | Description |
+| ---- | ----------- |
+| item | *`0*<br>The item. |
+| item2 | *`1*<br>The item2. |
+| item3 | *`2*<br>The item3. |
+| item4 | *`3*<br>The item4. |
+| item5 | *`4*<br>The item5. |
+| item6 | *`5*<br>The item6. |
+
+## T:DNX.Helpers.Maths.BuiltInTypes.Guard
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+Guard Extensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The linq expression of the argument to check |
+| min | *System.Byte*<br>minimum allowed value |
+| max | *System.Byte*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| bound1 | *System.Byte*<br>The bound1. |
+| bound2 | *System.Byte*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| bound1 | *System.Byte*<br>The bound1. |
+| bound2 | *System.Byte*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The linq expression of the argument to check |
+| min | *System.DateTime*<br>minimum allowed value |
+| max | *System.DateTime*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| bound1 | *System.DateTime*<br>The bound1. |
+| bound2 | *System.DateTime*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| bound1 | *System.DateTime*<br>The bound1. |
+| bound2 | *System.DateTime*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The linq expression of the argument to check |
+| min | *System.Decimal*<br>minimum allowed value |
+| max | *System.Decimal*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| bound1 | *System.Decimal*<br>The bound1. |
+| bound2 | *System.Decimal*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| bound1 | *System.Decimal*<br>The bound1. |
+| bound2 | *System.Decimal*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The linq expression of the argument to check |
+| min | *System.Double*<br>minimum allowed value |
+| max | *System.Double*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| bound1 | *System.Double*<br>The bound1. |
+| bound2 | *System.Double*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| bound1 | *System.Double*<br>The bound1. |
+| bound2 | *System.Double*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The linq expression of the argument to check |
+| min | *System.Int16*<br>minimum allowed value |
+| max | *System.Int16*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| bound1 | *System.Int16*<br>The bound1. |
+| bound2 | *System.Int16*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| bound1 | *System.Int16*<br>The bound1. |
+| bound2 | *System.Int16*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The linq expression of the argument to check |
+| min | *System.Int32*<br>minimum allowed value |
+| max | *System.Int32*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| bound1 | *System.Int32*<br>The bound1. |
+| bound2 | *System.Int32*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| bound1 | *System.Int32*<br>The bound1. |
+| bound2 | *System.Int32*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The linq expression of the argument to check |
+| min | *System.Int64*<br>minimum allowed value |
+| max | *System.Int64*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| bound1 | *System.Int64*<br>The bound1. |
+| bound2 | *System.Int64*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| bound1 | *System.Int64*<br>The bound1. |
+| bound2 | *System.Int64*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The linq expression of the argument to check |
+| min | *System.SByte*<br>minimum allowed value |
+| max | *System.SByte*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| bound1 | *System.SByte*<br>The bound1. |
+| bound2 | *System.SByte*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| bound1 | *System.SByte*<br>The bound1. |
+| bound2 | *System.SByte*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The linq expression of the argument to check |
+| min | *System.Single*<br>minimum allowed value |
+| max | *System.Single*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| bound1 | *System.Single*<br>The bound1. |
+| bound2 | *System.Single*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| bound1 | *System.Single*<br>The bound1. |
+| bound2 | *System.Single*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The linq expression of the argument to check |
+| min | *System.UInt16*<br>minimum allowed value |
+| max | *System.UInt16*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| bound1 | *System.UInt16*<br>The bound1. |
+| bound2 | *System.UInt16*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| bound1 | *System.UInt16*<br>The bound1. |
+| bound2 | *System.UInt16*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The linq expression of the argument to check |
+| min | *System.UInt32*<br>minimum allowed value |
+| max | *System.UInt32*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| bound1 | *System.UInt32*<br>The bound1. |
+| bound2 | *System.UInt32*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| bound1 | *System.UInt32*<br>The bound1. |
+| bound2 | *System.UInt32*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The linq expression of the argument to check |
+| min | *System.UInt64*<br>minimum allowed value |
+| max | *System.UInt64*<br>maximum allowed value |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| bound1 | *System.UInt64*<br>The bound1. |
+| bound2 | *System.UInt64*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+
+Verifies an expression is between 2 values
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| bound1 | *System.UInt64*<br>The bound1. |
+| bound2 | *System.UInt64*<br>The bound2. |
+| allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+*System.ArgumentOutOfRangeException:* 
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| min | *System.Byte*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| min | *System.DateTime*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| min | *System.Decimal*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| min | *System.Double*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| min | *System.Int16*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| min | *System.Int32*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| min | *System.Int64*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| min | *System.SByte*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| min | *System.Single*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| min | *System.UInt16*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| min | *System.UInt32*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| min | *System.UInt64*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| min | *System.Byte*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| min | *System.DateTime*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| min | *System.Decimal*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| min | *System.Double*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| min | *System.Int16*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| min | *System.Int32*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| min | *System.Int64*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| min | *System.SByte*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| min | *System.Single*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| min | *System.UInt16*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| min | *System.UInt32*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| min | *System.UInt64*<br>The minimum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Determines whether [is greater than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| max | *System.Byte*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| max | *System.Byte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| max | *System.DateTime*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| max | *System.DateTime*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| max | *System.Decimal*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| max | *System.Decimal*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| max | *System.Double*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| max | *System.Double*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| max | *System.Int16*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| max | *System.Int16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| max | *System.Int32*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| max | *System.Int32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| max | *System.Int64*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| max | *System.Int64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| max | *System.SByte*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| max | *System.SByte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| max | *System.Single*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| max | *System.Single*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| max | *System.UInt16*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| max | *System.UInt16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| max | *System.UInt32*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| max | *System.UInt32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| max | *System.UInt64*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThan(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| max | *System.UInt64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| max | *System.Byte*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| max | *System.Byte*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| max | *System.DateTime*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| max | *System.DateTime*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| max | *System.Decimal*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| max | *System.Decimal*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| max | *System.Double*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| max | *System.Double*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| max | *System.Int16*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| max | *System.Int16*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| max | *System.Int32*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| max | *System.Int32*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| max | *System.Int64*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| max | *System.Int64*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| max | *System.SByte*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| max | *System.SByte*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| max | *System.Single*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| max | *System.Single*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| max | *System.UInt16*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| max | *System.UInt16*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| max | *System.UInt32*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| max | *System.UInt32*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| max | *System.UInt64*<br>The maximum. |
+
+### M:DNX.Helpers.Maths.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Determines whether [is Less than] [the specified exp].
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| max | *System.UInt64*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions
+
+Class MathsByteExtensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+byte
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+byte
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsByteExtensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+| max | *System.Byte*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions
+
+Class MathsDateTimeExtensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+DateTime
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+DateTime
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDateTimeExtensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+| max | *System.DateTime*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions
+
+Class MathsDecimalExtensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+decimal
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+decimal
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDecimalExtensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+| max | *System.Decimal*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions
+
+Class MathsDoubleExtensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+double
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+double
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsDoubleExtensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+| max | *System.Double*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions
+
+Class MathsFloatExtensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+float
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+float
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsFloatExtensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+| max | *System.Single*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions
+
+Class MathsInt16Extensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+short
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+short
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt16Extensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+| max | *System.Int16*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions
+
+Class MathsInt32Extensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+int
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+int
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt32Extensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+| max | *System.Int32*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions
+
+Class MathsInt64Extensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+long
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+long
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsInt64Extensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+| max | *System.Int64*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions
+
+Class MathsSByteExtensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+sbyte
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+sbyte
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsSByteExtensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+| max | *System.SByte*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions
+
+Class MathsUInt16Extensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+ushort
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+ushort
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt16Extensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+| max | *System.UInt16*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions
+
+Class MathsUInt32Extensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+uint
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+uint
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt32Extensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+| max | *System.UInt32*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions
+
+Class MathsUInt64Extensions.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions.GetLowerBound(min, max, allowEitherOrder)
+
+Gets the lower bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+ulong
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions.GetUpperBound(min, max, allowEitherOrder)
+
+Gets the upper bound.
+
+| Name | Description |
+| ---- | ----------- |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order |
+
+
+#### Returns
+
+ulong
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions.IsBetween(value, min, max)
+
+Determines whether the specified value is inclusively between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions.IsBetween(value, min, max, boundsType)
+
+Determines whether the specified value is between min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions.IsBetween(value, min, max, allowEitherOrder, boundsType)
+
+Determines whether the specified value is between min and max with full control over bounds checking.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+| allowEitherOrder | *System.Boolean*<br>if set to true allow min/max in either order. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions.IsBetweenEither(value, min, max)
+
+Determines whether the specified value is inclusively between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+
+
+#### Returns
+
+true if the specified minimum is between min and max; otherwise, false.
+
+
+### M:DNX.Helpers.Maths.BuiltInTypes.MathsUInt64Extensions.IsBetweenEither(value, min, max, boundsType)
+
+Determines whether the specified value is between the smaller of min and max and the larger of min and max.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+| max | *System.UInt64*<br>The maximum. |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Control boundary checking. |
+
+
+#### Returns
+
+true if [is between either] [the specified minimum]; otherwise, false.
+
+
+## T:DNX.Helpers.Maths.IsBetweenBoundsType
+
+Enum IsBetweenBoundsType
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.ExcludeLowerAndUpper
+
+Exclude Lower and Upper bounds when determining IsBetween
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.ExcludeLowerIncludeUpper
+
+Exclude Lower but Include Upper bounds when determining IsBetween
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.Exclusive
+
+Exclude Lower and Upper bounds when determining IsBetween
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper
+
+Exclude Lower but Include Upper bounds when determining IsBetween
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.GreaterThanOrEqualToLowerLessThanUpper
+
+Include Lower but Exclude Upper bounds when determining IsBetween
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.IncludeLowerAndUpper
+
+Include Lower and Upper bounds when determining IsBetween
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.IncludeLowerExcludeUpper
+
+Include Lower but Exclude Upper bounds when determining IsBetween
+
+
+### F:DNX.Helpers.Maths.IsBetweenBoundsType.Inclusive
+
+Include Lower and Upper bounds when determining IsBetween
+
+
+## T:DNX.Helpers.Maths.IsBetweenTypeExtensions
+
+Class IsBetweenTypeExtensions.
+
+
+### M:DNX.Helpers.Maths.IsBetweenTypeExtensions.GetLimitDescriptionFormat(boundsType)
+
+Gets the limit description format.
+
+| Name | Description |
+| ---- | ----------- |
+| boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
+
+
+#### Returns
+
+System.String.
+
 
 ## T:DNX.Helpers.Reflection.AttributeExtensions
 
@@ -2668,6 +6150,99 @@ Determines whether Determines whether the expression is a unary expression
 #### Returns
 
 
+
+
+## T:DNX.Helpers.Strings.Interpolation.InterpolatableProperty
+
+An InterpolatableProperty
+
+
+### M:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.GetVariableName(namePrefix)
+
+Gets the name of the variable for substitution
+
+| Name | Description |
+| ---- | ----------- |
+| namePrefix | *System.String*<br>The name prefix. |
+
+
+#### Returns
+
+System.String.
+
+
+## T:DNX.Helpers.Strings.Interpolation.NamedInstance
+
+Class NamedInstance.
+
+
+## T:DNX.Helpers.Strings.Interpolation.StringInterpolator
+
+StringInterpolator to simulate named string interpolation available in C# 6.0
+
+
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.BuildParameterValuesForNamedInstance(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,System.Object,System.String)
+
+Builds the parameter values for named instance.
+
+| Name | Description |
+| ---- | ----------- |
+| parameterValues | *Unknown type*<br>The parameter values. |
+| format | *Unknown type*<br>The format. |
+| instance | *System.Object*<br>The instance. |
+| namePrefix | *System.String*<br>The name prefix. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.GetInterpolatableProperties(type)
+
+Gets the list of interpolatable properties from a type
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+IList<InterpolatableProperty>.
+
+
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWith(text, namedInstances, ignoreErrors)
+
+Interpolates text with properties from an object instance.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| namedInstances | *System.Collections.Generic.IList{DNX.Helpers.Strings.Interpolation.NamedInstance}*<br>The named instances. |
+| ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWith(text, instance, namePrefix, ignoreErrors)
+
+Interpolates the with.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| instance | *System.Object*<br>The instance. |
+| namePrefix | *System.String*<br>The name prefix. |
+| ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
+
+
+#### Returns
+
+System.String.
 
 
 ## T:DNX.Helpers.Strings.RegexStringExtensions
@@ -3244,7 +6819,7 @@ Generic parameterized delegate.
 
 | Name | Description |
 | ---- | ----------- |
-| value | *System.String*<br>The strongly typed value to pass to the method. |
+| value | *System.UInt64*<br>The strongly typed value to pass to the method. |
 
 ## T:DNX.Helpers.Threading.ProducerConsumerQueue`1
 
@@ -3630,32 +7205,27 @@ True if the delegate is queued successfully; False otherwise
 Guard Extensions.
 
 
-### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsFalse(exp, val, messageText)
 
-Verifies an expression is between 2 values
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The linq expression of the argument to check |
-| min | *System.Int32*<br>minimum allowed value |
-| max | *System.Int32*<br>maximum allowed value |
-
-### M:DNX.Helpers.Validation.Guard.IsBetween``1(exp, val, min, max)
-
-Throw an ArgumentOutOfRangeException when checking the result of exp.
+Determines whether the specified exp is false.
 
 | Name | Description |
 | ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{``0}}*<br>The linq expression of the argument to check |
-| val | *System.Int32*<br>value of argument in exp |
-| min | *System.Int32*<br>minimum allowed integer value |
-| max | *System.Int32*<br>maximum allowed integer value |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Boolean}}*<br>The exp. |
+| val | *System.Boolean*<br>The value. |
+| messageText | *System.String*<br>The message text. |
+
+*System.ArgumentOutOfRangeException:* 
 
 
-#### Remarks
+### M:DNX.Helpers.Validation.Guard.IsFalse(exp, messageText)
 
-Use this if you are not happy that the expression exp will be invoked more than once by your method.
+Determines whether the specified exp is false.
 
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Boolean}}*<br>The exp. |
+| messageText | *System.String*<br>The message text. |
 
 ### M:DNX.Helpers.Validation.Guard.IsNotNull``1(exp)
 
@@ -3725,6 +7295,28 @@ Throw an ArgumentException if the string resulting from exp is null or empty.
 
 Use this if you are not happy that the expression exp will be invoked more than once by your method.
 
+
+### M:DNX.Helpers.Validation.Guard.IsTrue(exp, val, messageText)
+
+Determines whether the specified exp is true.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Boolean}}*<br>The exp. |
+| val | *System.Boolean*<br>The value. |
+| messageText | *System.String*<br>The message text. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsTrue(exp, messageText)
+
+Determines whether the specified exp is true.
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Boolean}}*<br>The exp. |
+| messageText | *System.String*<br>The message text. |
 
 ## T:DNX.Helpers.Validation.TypeExtensions
 

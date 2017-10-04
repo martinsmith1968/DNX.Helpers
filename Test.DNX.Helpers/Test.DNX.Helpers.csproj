@@ -215,6 +215,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Strings\Interpolation\StringInterpolatorTests.cs" />
     <Compile Include="Validation\GuardTests.cs" />
     <Compile Include="Validation\TypeExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />

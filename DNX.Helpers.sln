@@ -23,7 +23,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{FB47A44B-A670-480D-8B11-6D02072596D4}"
 	ProjectSection(SolutionItems) = preProject
 		GenerateMarkdown.cmd = GenerateMarkdown.cmd
-		NuGet.publish.cmd = NuGet.publish.cmd
+		NuGet.Package.cmd = NuGet.Package.cmd
+		NuGet.Publish.cmd = NuGet.Publish.cmd
 	EndProjectSection
 EndProject
 Global

@@ -15,8 +15,8 @@ namespace DNX.Helpers.Strings.Interpolation
         internal InterpolatableProperty(PropertyInfo propertyInfo)
         {
             PropertyInfo = propertyInfo;
-            Name = propertyInfo.Name;
-            IsStatic = propertyInfo.GetAccessors().First().IsStatic;
+            Name         = propertyInfo.Name;
+            IsStatic     = propertyInfo.GetAccessors().First().IsStatic;
         }
 
         /// <summary>

@@ -4,8 +4,6 @@ SETLOCAL EnableDelayedExpansion
 
 SET SCRIPTPATH=%~dp0
 
-CALL "%SCRIPTPATH%\NuGet.Package.cmd"
-
 SET APPTITLE=DNX.Helpers
 
 REM NuGet feed v3 (VS 2015 / NuGet v3.x): https://api.nuget.org/v3/index.json
@@ -16,7 +14,6 @@ SET NUGETSERVERAPIURL=https://www.nuget.org/api/v2/package
 
 CALL SetNuGetServerAPIKey.cmd "%APPTITLE%"
 
-FOR %%F IN (*.nupkg) DO (
-    ECHO.Pushing: %%~F
-	%NUGETEXE% push "%%~F" -Source "%NUGETSERVERAPIURL%" -ApiKey "%NUGETSERVERAPIKEY%"
-)
+IF EXIST *.nupkg DEL *.nupkg
+
+"%NUGETEXE%" pack "%SCRIPTPATH%\%APPTITLE%\%APPTITLE%.csproj"

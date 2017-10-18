@@ -6,7 +6,7 @@ using System.Reflection;
 namespace DNX.Helpers.Strings.Interpolation
 {
     /// <summary>
-    /// StringInterpolator to simulate named string interpolation available in C# 6.0
+    /// StringInterpolator to simulate and extend named string interpolation available in C# 6.0
     /// </summary>
     public static class StringInterpolator
     {
@@ -34,7 +34,7 @@ namespace DNX.Helpers.Strings.Interpolation
         }
 
         /// <summary>
-        /// Interpolates the with.
+        /// Interpolates the text with the optionally named instance
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="instance">The instance.</param>
@@ -52,7 +52,7 @@ namespace DNX.Helpers.Strings.Interpolation
         }
 
         /// <summary>
-        /// Interpolates text with properties from an object instance.
+        /// Interpolates text with properties from a list of object instances
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="namedInstances">The named instances.</param>

@@ -6176,9 +6176,18 @@ System.String.
 Class NamedInstance.
 
 
+### M:DNX.Helpers.Strings.Interpolation.NamedInstance.#ctor(instance, name)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The instance. |
+| name | *System.String*<br>The name. |
+
 ## T:DNX.Helpers.Strings.Interpolation.StringInterpolator
 
-StringInterpolator to simulate named string interpolation available in C# 6.0
+StringInterpolator to simulate and extend named string interpolation available in C# 6.0
 
 
 ### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.BuildParameterValuesForNamedInstance(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,System.Object,System.String)
@@ -6214,7 +6223,7 @@ IList<InterpolatableProperty>.
 
 ### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWith(text, instance, namePrefix, ignoreErrors)
 
-Interpolates the with.
+Interpolates the text with the optionally named instance
 
 | Name | Description |
 | ---- | ----------- |
@@ -6231,7 +6240,7 @@ System.String.
 
 ### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWithAll(text, namedInstances, ignoreErrors)
 
-Interpolates text with properties from an object instance.
+Interpolates text with properties from a list of object instances
 
 | Name | Description |
 | ---- | ----------- |

@@ -9,6 +9,11 @@
 
         public string Name { get; set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NamedInstance"/> class.
+        /// </summary>
+        /// <param name="instance">The instance.</param>
+        /// <param name="name">The name.</param>
         public NamedInstance(object instance, string name = null)
         {
             Instance = instance;

@@ -19,9 +19,11 @@ namespace Test.DNX.Helpers.Strings.Interpolation
             get { return DateOfBirth.Year; }
         }
 
+        private int? _fakeAge;
         public int AgeInYears
         {
-            get { return Convert.ToInt32(DateTime.UtcNow.Subtract(DateOfBirth).TotalDays / 365); }
+            get { return _fakeAge ?? Convert.ToInt32(DateTime.UtcNow.Subtract(DateOfBirth).TotalDays / 365); }
+            set { _fakeAge = value; }
         }
 
         public static int Number
@@ -58,14 +60,32 @@ namespace Test.DNX.Helpers.Strings.Interpolation
         [TestCase("{FirstName} {LastName} <> {LastName} {FirstName}", "Martin", "Smith", "2017-08-11", null, ExpectedResult = "Martin Smith <> Smith Martin")]
         public string InterpolateWith_SinglePerson_Test(string format, string firstName, string lastName, string dateOfBirth, string instanceName)
         {
-            var testClass = new Person()
+            var person = new Person()
             {
                 FirstName   = firstName,
                 LastName    = lastName,
                 DateOfBirth = DateTime.Parse(dateOfBirth)
             };
 
-            var result = format.InterpolateWith(testClass, instanceName);
+            var result = format.InterpolateWith(person, instanceName);
+
+            return result;
+        }
+
+        [TestCase("{FirstName} was born in {DateOfBirth:MMMM yyyy} and is {AgeInYears:0000}", "Martin", "Smith", "1968-08-11", 29, null, ExpectedResult = "Martin was born in August 1968 and is 0029")]
+        public string InterpolateWith_SinglePerson_WithFormatModifiers_Test(string format, string firstName, string lastName, string dateOfBirth, int? fakeAge, string instanceName)
+        {
+            var person = new Person()
+            {
+                FirstName   = firstName,
+                LastName    = lastName,
+                DateOfBirth = DateTime.Parse(dateOfBirth),
+            };
+
+            if (fakeAge.HasValue)
+                person.AgeInYears = fakeAge.Value;
+
+            var result = format.InterpolateWith(person, instanceName);
 
             return result;
         }
@@ -74,13 +94,13 @@ namespace Test.DNX.Helpers.Strings.Interpolation
         [TestCase("{artist.FirstName} {artist.LastName} and {puppet.FirstName} {puppet.LastName}", "Bob", "Carolgees", "1935-10-01", "artist", "Spit", "the Dog", "1900-01-01", "puppet", ExpectedResult = "Bob Carolgees and Spit the Dog")]
         public string InterpolateWithAll_MultiplePersons_Test(string format, string firstName1, string lastName1, string dateOfBirth1, string instanceName1, string firstName2, string lastName2, string dateOfBirth2, string instanceName2)
         {
-            var testClass1 = new Person()
+            var person1 = new Person()
             {
                 FirstName   = firstName1,
                 LastName    = lastName1,
                 DateOfBirth = DateTime.Parse(dateOfBirth1)
             };
-            var testClass2 = new Person()
+            var person2 = new Person()
             {
                 FirstName   = firstName2,
                 LastName    = lastName2,
@@ -89,8 +109,8 @@ namespace Test.DNX.Helpers.Strings.Interpolation
 
             var instanceList = new List<NamedInstance>()
             {
-                new NamedInstance(testClass1, instanceName1),
-                new NamedInstance(testClass2, instanceName2),
+                new NamedInstance(person1, instanceName1),
+                new NamedInstance(person2, instanceName2),
             };
 
             var result = format.InterpolateWithAll(instanceList);
@@ -103,8 +123,8 @@ namespace Test.DNX.Helpers.Strings.Interpolation
         {
             var person = new Person()
             {
-                FirstName = firstName,
-                LastName = lastName,
+                FirstName   = firstName,
+                LastName    = lastName,
                 DateOfBirth = DateTime.Parse(dateOfBirth)
             };
             var club = new Club()

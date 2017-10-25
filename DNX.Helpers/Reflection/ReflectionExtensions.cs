@@ -305,5 +305,86 @@ namespace DNX.Helpers.Reflection
 
             return returnValue;
         }
+
+        /// <summary>
+        /// Serialises an object instance to a Dictionary
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">The instance.</param>
+        /// <param name="bindingFlags">The binding flags.</param>
+        /// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
+        public static IDictionary<string, object> ToDictionary<T>(this T instance, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty)
+        {
+            if (instance == null)
+            {
+                return null;
+            }
+
+            var properties = typeof(T).GetProperties(bindingFlags);
+
+            var dict = new Dictionary<string, object>();
+
+            foreach (var property in properties)
+            {
+                dict.Add(property.Name, property.GetValue(instance));
+            }
+
+            return dict;
+        }
+
+        /// <summary>
+        /// Creates a populated object instance from a Dictionary
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="dict">The dictionary.</param>
+        /// <param name="bindingFlags">The binding flags.</param>
+        /// <returns>T.</returns>
+        public static T ToInstance<T>(this IDictionary<string, object> dict, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty)
+            where T : new()
+        {
+            if (dict == null)
+            {
+                return default(T);
+            }
+
+            var instance = new T();
+
+            instance.PopulateFrom(dict, bindingFlags);
+
+            return instance;
+        }
+
+        /// <summary>
+        /// Populates an object instance from a Dictionary
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="instance">The instance.</param>
+        /// <param name="dict">The dictionary.</param>
+        /// <param name="bindingFlags">The binding flags.</param>
+        /// <returns>T.</returns>
+        public static T PopulateFrom<T>(this T instance, IDictionary<string, object> dict, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty)
+            where T : new()
+        {
+            if (dict == null)
+            {
+                return instance;
+            }
+
+            var properties = typeof(T).GetProperties(bindingFlags)
+                .Where(p => p.CanWrite)
+                .ToList();
+
+            foreach (var property in properties)
+            {
+                if (!dict.ContainsKey(property.Name))
+                {
+                    continue;
+                }
+
+                property.SetValue(instance, dict[property.Name]);
+            }
+
+            return instance;
+        }
     }
 }

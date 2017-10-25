@@ -1,8 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DNX.Helpers.Linq
 {
+    /// <summary>
+    /// MergeTechnique
+    /// </summary>
+    /// <remarks>The technique to use when merging dictionaries</remarks>
+    public enum MergeTechnique
+    {
+        /// <summary>
+        /// All keys must be unique
+        /// </summary>
+        Unique = 1,
+
+        /// <summary>
+        /// When keys clash, take the first found key value
+        /// </summary>
+        TakeFirst = 2,
+
+        /// <summary>
+        /// When keys clash, take the last found key value
+        /// </summary>
+        TakeLast = 3
+    }
+
     /// <summary>
     /// Dictionary Extensions.
     /// </summary>
@@ -93,6 +116,97 @@ namespace DNX.Helpers.Linq
             var old = dictionary[fromKeyName];
             dictionary.Remove(fromKeyName);
             dictionary.SetValue(toKeyName, old);
+        }
+
+        /// <summary>
+        /// Merges the with.
+        /// </summary>
+        /// <typeparam name="TK">The type of the tk.</typeparam>
+        /// <typeparam name="TV">The type of the tv.</typeparam>
+        /// <param name="dict">The dictionary.</param>
+        /// <param name="other">The other.</param>
+        /// <param name="mergeTechnique">The merge technique.</param>
+        /// <returns>Dictionary&lt;TK, TV&gt;.</returns>
+        /// <remarks>Source and target dictionaries are left untouched</remarks>
+        public static IDictionary<TK, TV> MergeWith<TK, TV>(this IDictionary<TK, TV> dict, IDictionary<TK, TV> other, MergeTechnique mergeTechnique = MergeTechnique.Unique)
+        {
+            var result = Merge(mergeTechnique, dict, other);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Merges dictionaries
+        /// </summary>
+        /// <typeparam name="TK">The type of the tk.</typeparam>
+        /// <typeparam name="TV">The type of the tv.</typeparam>
+        /// <param name="mergeTechnique">The merge technique.</param>
+        /// <param name="dictionaries">The dictionaries.</param>
+        /// <returns>Dictionary&lt;TK, TV&gt;.</returns>
+        /// <exception cref="System.ArgumentException">Invalid or unsupported Merge Technique - mergeTechnique</exception>
+        public static IDictionary<TK, TV> Merge<TK, TV>(MergeTechnique mergeTechnique, params IDictionary<TK, TV>[] dictionaries)
+        {
+            switch (mergeTechnique)
+            {
+                case MergeTechnique.Unique:
+                    return MergeUnique(dictionaries);
+
+                case MergeTechnique.TakeFirst:
+                    return MergeFirst(dictionaries);
+
+                case MergeTechnique.TakeLast:
+                    return MergeLast(dictionaries);
+
+                default:
+                    throw new ArgumentException("Invalid or unsupported Merge Technique", "mergeTechnique");
+            }
+        }
+
+        /// <summary>
+        /// Merges dictionaries assuming all keys are unique
+        /// </summary>
+        /// <typeparam name="TK">The type of the tk.</typeparam>
+        /// <typeparam name="TV">The type of the tv.</typeparam>
+        /// <param name="dictionaries">The dictionaries.</param>
+        /// <returns>Dictionary&lt;TK, TV&gt;.</returns>
+        public static IDictionary<TK, TV> MergeUnique<TK, TV>(params IDictionary<TK, TV>[] dictionaries)
+        {
+            var dict = dictionaries.SelectMany(d => d)
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
+
+            return dict;
+        }
+
+        /// <summary>
+        /// Merges dictionaries using the first found key value
+        /// </summary>
+        /// <typeparam name="TK">The type of the tk.</typeparam>
+        /// <typeparam name="TV">The type of the tv.</typeparam>
+        /// <param name="dictionaries">The dictionaries.</param>
+        /// <returns>Dictionary&lt;TK, TV&gt;.</returns>
+        public static IDictionary<TK, TV> MergeFirst<TK, TV>(params IDictionary<TK, TV>[] dictionaries)
+        {
+            var result = dictionaries.SelectMany(dict => dict)
+                .ToLookup(pair => pair.Key, pair => pair.Value)
+                .ToDictionary(group => group.Key, group => group.First());
+
+            return result;
+        }
+
+        /// <summary>
+        /// Merges dictionaries using the last found key value
+        /// </summary>
+        /// <typeparam name="TK">The type of the tk.</typeparam>
+        /// <typeparam name="TV">The type of the tv.</typeparam>
+        /// <param name="dictionaries">The dictionaries.</param>
+        /// <returns>Dictionary&lt;TK, TV&gt;.</returns>
+        public static IDictionary<TK, TV> MergeLast<TK, TV>(params IDictionary<TK, TV>[] dictionaries)
+        {
+            var result = dictionaries.SelectMany(dict => dict)
+                .ToLookup(pair => pair.Key, pair => pair.Value)
+                .ToDictionary(group => group.Key, group => group.Last());
+
+            return result;
         }
     }
 }

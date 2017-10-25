@@ -10,13 +10,13 @@ namespace DNX.Helpers.Linq
     /// See: https://stackoverflow.com/questions/8002455/how-to-easily-initialize-a-list-of-tuples</remarks>
     public static class TupleExtensions
     {
+        /// <inheritdoc />
         /// <summary>
-        /// Class TupleList.
+        /// Class TupleList to allow Tuple initializers
         /// </summary>
         /// <typeparam name="T1">The type of the t1.</typeparam>
         /// <typeparam name="T2">The type of the t2.</typeparam>
-        /// <seealso cref="System.Collections.Generic.List{System.Tuple{T1, T2}}" />
-        /// <seealso cref="Tuple{T1,T2}" />
+        /// <seealso cref="T:System.Tuple`2" />
         public class TupleList<T1, T2> : List<Tuple<T1, T2>>
         {
             /// <summary>
@@ -30,14 +30,14 @@ namespace DNX.Helpers.Linq
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Class TupleList.
+        /// Class TupleList to allow Tuple initializers
         /// </summary>
         /// <typeparam name="T1">The type of the t1.</typeparam>
         /// <typeparam name="T2">The type of the t2.</typeparam>
         /// <typeparam name="T3">The type of the t3.</typeparam>
-        /// <seealso cref="System.Collections.Generic.List{System.Tuple{T1, T2, T3}}" />
-        /// <seealso cref="Tuple{T1,T2,T3}" />
+        /// <seealso cref="T:System.Tuple`3" />
         public class TupleList<T1, T2, T3> : List<Tuple<T1, T2, T3>>
         {
             /// <summary>
@@ -52,15 +52,15 @@ namespace DNX.Helpers.Linq
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Class TupleList.
+        /// Class TupleList to allow Tuple initializers
         /// </summary>
         /// <typeparam name="T1">The type of the t1.</typeparam>
         /// <typeparam name="T2">The type of the t2.</typeparam>
         /// <typeparam name="T3">The type of the t3.</typeparam>
         /// <typeparam name="T4">The type of the t4.</typeparam>
-        /// <seealso cref="System.Collections.Generic.List{System.Tuple{T1, T2, T3, T4}}" />
-        /// <seealso cref="Tuple{T1,T2,T3,T4}" />
+        /// <seealso cref="T:System.Tuple`4" />
         public class TupleList<T1, T2, T3, T4> : List<Tuple<T1, T2, T3, T4>>
         {
             /// <summary>
@@ -76,16 +76,16 @@ namespace DNX.Helpers.Linq
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Class TupleList.
+        /// Class TupleList to allow Tuple initializers
         /// </summary>
         /// <typeparam name="T1">The type of the t1.</typeparam>
         /// <typeparam name="T2">The type of the t2.</typeparam>
         /// <typeparam name="T3">The type of the t3.</typeparam>
         /// <typeparam name="T4">The type of the t4.</typeparam>
         /// <typeparam name="T5">The type of the t5.</typeparam>
-        /// <seealso cref="System.Collections.Generic.List{System.Tuple{T1, T2, T3, T4, T5}}" />
-        /// <seealso cref="Tuple{T1,T2,T3,T4,T5}" />
+        /// <seealso cref="T:System.Tuple`5" />
         public class TupleList<T1, T2, T3, T4, T5> : List<Tuple<T1, T2, T3, T4, T5>>
         {
             /// <summary>
@@ -102,8 +102,9 @@ namespace DNX.Helpers.Linq
             }
         }
 
+        /// <inheritdoc />
         /// <summary>
-        /// Class TupleList.
+        /// Class TupleList to allow Tuple initializers
         /// </summary>
         /// <typeparam name="T1">The type of the t1.</typeparam>
         /// <typeparam name="T2">The type of the t2.</typeparam>
@@ -111,8 +112,7 @@ namespace DNX.Helpers.Linq
         /// <typeparam name="T4">The type of the t4.</typeparam>
         /// <typeparam name="T5">The type of the t5.</typeparam>
         /// <typeparam name="T6">The type of the t6.</typeparam>
-        /// <seealso cref="System.Collections.Generic.List{System.Tuple{T1, T2, T3, T4, T5, T6}}" />
-        /// <seealso cref="Tuple{T1,T2,T3,T4,T5,T6}" />
+        /// <seealso cref="T:System.Tuple`6" />
         public class TupleList<T1, T2, T3, T4, T5, T6> : List<Tuple<T1, T2, T3, T4, T5, T6>>
         {
             /// <summary>

@@ -64,7 +64,7 @@ namespace DNX.Helpers.Reflection
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="TA"></typeparam>
         /// <param name="assembly">The assembly to search</param>
-        /// <param name="func">The func to run against the decoartion attribute</param>
+        /// <param name="func">The func to run against the decoration attribute</param>
         /// <returns>List of instances of T</returns>
         public static T ResolveImplementationOfInterfaceWithAttribute<T, TA>(Assembly assembly, Func<TA, bool> func)
         {

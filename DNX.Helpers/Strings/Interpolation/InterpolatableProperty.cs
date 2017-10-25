@@ -8,8 +8,20 @@ namespace DNX.Helpers.Strings.Interpolation
     /// </summary>
     public class InterpolatableProperty
     {
+        /// <summary>
+        /// Gets the property information.
+        /// </summary>
+        /// <value>The property information.</value>
         public PropertyInfo PropertyInfo { get; private set; }
+        /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>The name.</value>
         public string Name { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is static.
+        /// </summary>
+        /// <value><c>true</c> if this instance is static; otherwise, <c>false</c>.</value>
         public bool IsStatic { get; set; }
 
         internal InterpolatableProperty(PropertyInfo propertyInfo)

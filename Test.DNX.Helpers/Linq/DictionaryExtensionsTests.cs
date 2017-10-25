@@ -63,6 +63,7 @@ namespace Test.DNX.Helpers.Linq
         [TestCase("a=1;b=2;c=3", "b", "4", ExpectedResult = "a=1;b=4;c=3")]
         [TestCase("a=1;b=2;c=3", "a", "4", ExpectedResult = "a=4;b=2;c=3")]
         [TestCase("a=1;b=2;c=3", "c", "4", ExpectedResult = "a=1;b=2;c=4")]
+
         [TestCase("a=1;b=2;c=3", "z", "4", ExpectedResult = "a=1;b=2;c=3;z=4")]
         [TestCase("a=1;b=2;c=3", "", "4", ExpectedResult = "a=1;b=2;c=3;=4")]
         public string Test_SetValue(string dictionaryText, string key, string newValue)
@@ -152,6 +153,429 @@ namespace Test.DNX.Helpers.Linq
 
                 return false;
             }
+        }
+
+        [Test]
+        public void MergeUnique_can_combine_dictionaries_successfully()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "B1", 1 },
+                { "B2", 2 },
+                { "B3", 3 },
+            };
+
+            var dict3 = new Dictionary<string, int>()
+            {
+                { "C1", 1 },
+                { "C2", 2 },
+                { "C3", 3 },
+            };
+
+            // Act
+            var result1 = DictionaryExtensions.MergeUnique(dict1, dict2, dict3);
+            var result2 = DictionaryExtensions.Merge(MergeTechnique.Unique, dict1, dict2, dict3);
+
+            // Assert
+            result1.ShouldNotBeNull();
+            result1.Count.ShouldEqual(dict1.Count + dict2.Count + dict3.Count);
+            foreach (var kvp1 in dict1)
+            {
+                result1.ContainsKey(kvp1.Key).ShouldBeTrue();
+                result1[kvp1.Key].ShouldEqual(kvp1.Value);
+            }
+            foreach (var kvp2 in dict2)
+            {
+                result1.ContainsKey(kvp2.Key).ShouldBeTrue();
+                result1[kvp2.Key].ShouldEqual(kvp2.Value);
+            }
+            foreach (var kvp3 in dict3)
+            {
+                result1.ContainsKey(kvp3.Key).ShouldBeTrue();
+                result1[kvp3.Key].ShouldEqual(kvp3.Value);
+            }
+
+            CollectionAssert.AreEqual(result1, result2);
+        }
+
+        [Test]
+        public void MergeUnique_with_dictionaries_with_key_clashes_fails()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "B1", 1 },
+                { "A2", 2 },
+                { "B3", 3 },
+            };
+
+            // Act
+            try
+            {
+                var result = DictionaryExtensions.MergeUnique(dict1, dict2);
+
+                Assert.Fail("Expected exception not thrown");
+            }
+            catch (ArgumentException e)
+            {
+                e.Message.ShouldNotBeNull();
+            }
+
+            try
+            {
+                var result = DictionaryExtensions.Merge(MergeTechnique.Unique, dict1, dict2);
+
+                Assert.Fail("Expected exception not thrown");
+            }
+            catch (ArgumentException e)
+            {
+                e.Message.ShouldNotBeNull();
+            }
+        }
+
+        [Test]
+        public void MergeFirst_can_combine_unique_dictionaries_successfully()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "B1", 1 },
+                { "B2", 2 },
+                { "B3", 3 },
+            };
+
+            var dict3 = new Dictionary<string, int>()
+            {
+                { "C1", 1 },
+                { "C2", 2 },
+                { "C3", 3 },
+            };
+
+            // Act
+            var result1 = DictionaryExtensions.MergeFirst(dict1, dict2, dict3);
+            var result2 = DictionaryExtensions.Merge(MergeTechnique.TakeFirst, dict1, dict2, dict3);
+
+            // Assert
+            result1.ShouldNotBeNull();
+            result1.Count.ShouldEqual(dict1.Count + dict2.Count + dict2.Count);
+            foreach (var kvp1 in dict1)
+            {
+                result1.ContainsKey(kvp1.Key).ShouldBeTrue();
+                result1[kvp1.Key].ShouldEqual(kvp1.Value);
+            }
+            foreach (var kvp2 in dict2)
+            {
+                result1.ContainsKey(kvp2.Key).ShouldBeTrue();
+                result1[kvp2.Key].ShouldEqual(kvp2.Value);
+            }
+            foreach (var kvp3 in dict3)
+            {
+                result1.ContainsKey(kvp3.Key).ShouldBeTrue();
+                result1[kvp3.Key].ShouldEqual(kvp3.Value);
+            }
+
+            CollectionAssert.AreEqual(result1, result2);
+        }
+
+        [Test]
+        public void MergeFirst_with_dictionaries_with_key_clashes_uses_first_found_values_successfully()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "A2", 12 },
+                { "A4", 14 },
+                { "A6", 16 },
+            };
+
+            var dict3 = new Dictionary<string, int>()
+            {
+                { "A1", 21 },
+                { "A3", 23 },
+                { "A5", 25 },
+            };
+
+            // Act
+            var result1 = DictionaryExtensions.MergeFirst(dict1, dict2, dict3);
+            var result2 = DictionaryExtensions.Merge(MergeTechnique.TakeFirst, dict1, dict2, dict3);
+
+            // Assert
+            result1.ShouldNotBeNull();
+            result1.Count.ShouldEqual(dict1.Select(d => d.Key).Union(dict2.Select(d => d.Key)).Union(dict3.Select(d => d.Key)).Distinct().Count());
+            foreach (var kvp1 in dict1)
+            {
+                result1.ContainsKey(kvp1.Key).ShouldBeTrue();
+            }
+            foreach (var kvp2 in dict2)
+            {
+                result1.ContainsKey(kvp2.Key).ShouldBeTrue();
+            }
+            foreach (var kvp3 in dict3)
+            {
+                result1.ContainsKey(kvp3.Key).ShouldBeTrue();
+            }
+            result1["A1"].ShouldEqual(1);
+            result1["A2"].ShouldEqual(2);
+            result1["A3"].ShouldEqual(3);
+            result1["A4"].ShouldEqual(4);
+            result1["A5"].ShouldEqual(5);
+            result1["A6"].ShouldEqual(16);
+
+            CollectionAssert.AreEqual(result1, result2);
+        }
+
+        [Test]
+        public void MergeLast_can_combine_dictionaries_successfully()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "B1", 1 },
+                { "B2", 2 },
+                { "B3", 3 },
+            };
+
+            var dict3 = new Dictionary<string, int>()
+            {
+                { "C1", 1 },
+                { "C2", 2 },
+                { "C3", 3 },
+            };
+
+            // Act
+            var result1 = DictionaryExtensions.MergeLast(dict1, dict2, dict3);
+            var result2 = DictionaryExtensions.Merge(MergeTechnique.TakeLast, dict1, dict2, dict3);
+
+            // Assert
+            result1.ShouldNotBeNull();
+            result1.Count.ShouldEqual(dict1.Count + dict2.Count + dict2.Count);
+            foreach (var kvp1 in dict1)
+            {
+                result1.ContainsKey(kvp1.Key).ShouldBeTrue();
+                result1[kvp1.Key].ShouldEqual(kvp1.Value);
+            }
+            foreach (var kvp2 in dict2)
+            {
+                result1.ContainsKey(kvp2.Key).ShouldBeTrue();
+                result1[kvp2.Key].ShouldEqual(kvp2.Value);
+            }
+            foreach (var kvp3 in dict3)
+            {
+                result1.ContainsKey(kvp3.Key).ShouldBeTrue();
+                result1[kvp3.Key].ShouldEqual(kvp3.Value);
+            }
+
+            CollectionAssert.AreEqual(result1, result2);
+        }
+
+        [Test]
+        public void MergeLast_with_dictionaries_with_key_clashes_uses_last_found_values_successfully()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "A2", 12 },
+                { "A4", 14 },
+                { "A6", 16 },
+            };
+
+            var dict3 = new Dictionary<string, int>()
+            {
+                { "A1", 21 },
+                { "A3", 23 },
+                { "A5", 25 },
+            };
+
+            // Act
+            var result1 = DictionaryExtensions.MergeLast(dict1, dict2, dict3);
+            var result2 = DictionaryExtensions.Merge(MergeTechnique.TakeLast, dict1, dict2, dict3);
+
+            // Assert
+            result1.ShouldNotBeNull();
+            result1.Count.ShouldEqual(dict1.Select(d => d.Key).Union(dict2.Select(d => d.Key)).Union(dict3.Select(d => d.Key)).Distinct().Count());
+            foreach (var kvp1 in dict1)
+            {
+                result1.ContainsKey(kvp1.Key).ShouldBeTrue();
+            }
+            foreach (var kvp2 in dict2)
+            {
+                result1.ContainsKey(kvp2.Key).ShouldBeTrue();
+            }
+            foreach (var kvp3 in dict3)
+            {
+                result1.ContainsKey(kvp3.Key).ShouldBeTrue();
+            }
+            result1["A1"].ShouldEqual(21);
+            result1["A2"].ShouldEqual(12);
+            result1["A3"].ShouldEqual(23);
+            result1["A4"].ShouldEqual(14);
+            result1["A5"].ShouldEqual(25);
+            result1["A6"].ShouldEqual(16);
+
+            CollectionAssert.AreEqual(result1, result2);
+        }
+
+        [Test]
+        public void MergeWith_can_merge_a_target_dictionary_and_leave_source_and_target_untouched_successfully()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "B1", 11 },
+                { "B2", 12 },
+                { "B3", 13 },
+            };
+
+            // Act
+            var result = dict1.MergeWith(dict2, MergeTechnique.Unique);
+
+            // Assert
+            dict1.Count.ShouldEqual(5);
+            dict2.Count.ShouldEqual(3);
+            result.ShouldNotBeNull();
+            result.Count.ShouldEqual(dict1.Count + dict2.Count);
+            foreach (var kvp1 in dict1)
+            {
+                result.ContainsKey(kvp1.Key).ShouldBeTrue();
+            }
+            foreach (var kvp2 in dict2)
+            {
+                result.ContainsKey(kvp2.Key).ShouldBeTrue();
+            }
+            result["A1"].ShouldEqual(1);
+            result["A2"].ShouldEqual(2);
+            result["A3"].ShouldEqual(3);
+            result["A4"].ShouldEqual(4);
+            result["A5"].ShouldEqual(5);
+            result["B1"].ShouldEqual(11);
+            result["B2"].ShouldEqual(12);
+            result["B3"].ShouldEqual(13);
+        }
+
+        [Test]
+        public void MergeWith_can_chain_merge_target_dictionaries_and_leave_sources_and_targets_untouched_successfully()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "B1", 11 },
+                { "B2", 12 },
+                { "B3", 13 },
+            };
+
+            var dict3 = new Dictionary<string, int>()
+            {
+                { "C1", 21 },
+                { "C2", 22 },
+            };
+
+            // Act
+            var result = dict1
+                .MergeWith(dict2, MergeTechnique.Unique)
+                .MergeWith(dict3, MergeTechnique.Unique)
+                ;
+
+            // Assert
+            dict1.Count.ShouldEqual(5);
+            dict2.Count.ShouldEqual(3);
+            dict3.Count.ShouldEqual(2);
+            result.ShouldNotBeNull();
+            result.Count.ShouldEqual(dict1.Count + dict2.Count + dict3.Count);
+            foreach (var kvp1 in dict1)
+            {
+                result.ContainsKey(kvp1.Key).ShouldBeTrue();
+            }
+            foreach (var kvp2 in dict2)
+            {
+                result.ContainsKey(kvp2.Key).ShouldBeTrue();
+            }
+            foreach (var kvp3 in dict3)
+            {
+                result.ContainsKey(kvp3.Key).ShouldBeTrue();
+            }
+            result["A1"].ShouldEqual(1);
+            result["A2"].ShouldEqual(2);
+            result["A3"].ShouldEqual(3);
+            result["A4"].ShouldEqual(4);
+            result["A5"].ShouldEqual(5);
+            result["B1"].ShouldEqual(11);
+            result["B2"].ShouldEqual(12);
+            result["B3"].ShouldEqual(13);
+            result["C1"].ShouldEqual(21);
+            result["C2"].ShouldEqual(22);
         }
     }
 }

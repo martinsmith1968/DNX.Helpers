@@ -2232,6 +2232,86 @@ TV.
 *System.ArgumentNullException:* dictionary or keyName
 
 
+### M:DNX.Helpers.Linq.DictionaryExtensions.Merge``2(DNX.Helpers.Linq.MergeTechnique,System.Collections.Generic.IDictionary{``0,``1}[])
+
+Merges dictionaries
+
+| Name | Description |
+| ---- | ----------- |
+| mergeTechnique | *Unknown type*<br>The merge technique. |
+| dictionaries | *Unknown type*<br>The dictionaries. |
+
+
+#### Returns
+
+Dictionary<TK, TV>.
+
+*System.ArgumentException:* Invalid or unsupported Merge Technique - mergeTechnique
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.MergeFirst``2(System.Collections.Generic.IDictionary{``0,``1}[])
+
+Merges dictionaries using the first found key value
+
+| Name | Description |
+| ---- | ----------- |
+| dictionaries | *Unknown type*<br>The dictionaries. |
+
+
+#### Returns
+
+Dictionary<TK, TV>.
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.MergeLast``2(System.Collections.Generic.IDictionary{``0,``1}[])
+
+Merges dictionaries using the last found key value
+
+| Name | Description |
+| ---- | ----------- |
+| dictionaries | *Unknown type*<br>The dictionaries. |
+
+
+#### Returns
+
+Dictionary<TK, TV>.
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.MergeUnique``2(System.Collections.Generic.IDictionary{``0,``1}[])
+
+Merges dictionaries assuming all keys are unique
+
+| Name | Description |
+| ---- | ----------- |
+| dictionaries | *Unknown type*<br>The dictionaries. |
+
+
+#### Returns
+
+Dictionary<TK, TV>.
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1},DNX.Helpers.Linq.MergeTechnique)
+
+Merges the with.
+
+| Name | Description |
+| ---- | ----------- |
+| dict | *Unknown type*<br>The dictionary. |
+| other | *Unknown type*<br>The other. |
+| mergeTechnique | *Unknown type*<br>The merge technique. |
+
+
+#### Returns
+
+Dictionary<TK, TV>.
+
+
+#### Remarks
+
+Source and target dictionaries are left untouched
+
+
 ### M:DNX.Helpers.Linq.DictionaryExtensions.RenameKey``1(System.Collections.Generic.IDictionary{System.String,``0},System.String,System.String)
 
 Renames the key.
@@ -2474,6 +2554,31 @@ Swaps the items at the 2 specified indexes
 *DNX.Helpers.Exceptions.ReadOnlyListException`1:* 
 
 
+## T:DNX.Helpers.Linq.MergeTechnique
+
+MergeTechnique
+
+
+#### Remarks
+
+The technique to use when merging dictionaries
+
+
+### F:DNX.Helpers.Linq.MergeTechnique.TakeFirst
+
+When keys clash, take the first found key value
+
+
+### F:DNX.Helpers.Linq.MergeTechnique.TakeLast
+
+When keys clash, take the last found key value
+
+
+### F:DNX.Helpers.Linq.MergeTechnique.Unique
+
+All keys must be unique
+
+
 ## T:DNX.Helpers.Linq.TupleExtensions
 
 Class TupleExtensions.
@@ -2486,7 +2591,7 @@ To allow Tuple initializers See: https://stackoverflow.com/questions/8002455/how
 
 ## T:DNX.Helpers.Linq.TupleExtensions.TupleList`2
 
-Class TupleList.
+Class TupleList to allow Tuple initializers
 
 
 ### M:DNX.Helpers.Linq.TupleExtensions.TupleList`2.Add(item, item2)
@@ -2500,7 +2605,7 @@ Adds the specified item.
 
 ## T:DNX.Helpers.Linq.TupleExtensions.TupleList`3
 
-Class TupleList.
+Class TupleList to allow Tuple initializers
 
 
 ### M:DNX.Helpers.Linq.TupleExtensions.TupleList`3.Add(item, item2, item3)
@@ -2515,7 +2620,7 @@ Adds the specified item.
 
 ## T:DNX.Helpers.Linq.TupleExtensions.TupleList`4
 
-Class TupleList.
+Class TupleList to allow Tuple initializers
 
 
 ### M:DNX.Helpers.Linq.TupleExtensions.TupleList`4.Add(item, item2, item3, item4)
@@ -2531,7 +2636,7 @@ Adds the specified item.
 
 ## T:DNX.Helpers.Linq.TupleExtensions.TupleList`5
 
-Class TupleList.
+Class TupleList to allow Tuple initializers
 
 
 ### M:DNX.Helpers.Linq.TupleExtensions.TupleList`5.Add(item, item2, item3, item4, item5)
@@ -2548,7 +2653,7 @@ Adds the specified item.
 
 ## T:DNX.Helpers.Linq.TupleExtensions.TupleList`6
 
-Class TupleList.
+Class TupleList to allow Tuple initializers
 
 
 ### M:DNX.Helpers.Linq.TupleExtensions.TupleList`6.Add(item, item2, item3, item4, item5, item6)
@@ -5909,7 +6014,7 @@ Find instances of classes in an assembly that implement a given interface and ar
 | Name | Description |
 | ---- | ----------- |
 | assembly | *System.Reflection.Assembly*<br>The assembly to search |
-| func | *Unknown type*<br>The func to run against the decoartion attribute |
+| func | *Unknown type*<br>The func to run against the decoration attribute |
 
 
 #### Returns
@@ -6152,6 +6257,52 @@ Determines whether Determines whether the expression is a unary expression
 
 
 
+### M:DNX.Helpers.Reflection.ReflectionExtensions.PopulateFrom``1(``0,System.Collections.Generic.IDictionary{System.String,System.Object},System.Reflection.BindingFlags)
+
+Populates an object instance from a Dictionary
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The instance. |
+| dict | *Unknown type*<br>The dictionary. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+T.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.ToDictionary``1(instance, bindingFlags)
+
+Serialises an object instance to a Dictionary
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *``0*<br>The instance. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IDictionary<System.String, System.Object>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.ToInstance``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.Reflection.BindingFlags)
+
+Creates a populated object instance from a Dictionary
+
+| Name | Description |
+| ---- | ----------- |
+| dict | *Unknown type*<br>The dictionary. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+T.
+
+
 ## T:DNX.Helpers.Strings.Interpolation.InterpolatableProperty
 
 An InterpolatableProperty
@@ -6171,6 +6322,21 @@ Gets the name of the variable for substitution
 System.String.
 
 
+### P:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.IsStatic
+
+Gets or sets a value indicating whether this instance is static.
+
+
+### P:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.Name
+
+Gets or sets the name.
+
+
+### P:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.PropertyInfo
+
+Gets the property information.
+
+
 ## T:DNX.Helpers.Strings.Interpolation.NamedInstance
 
 Class NamedInstance.
@@ -6184,6 +6350,16 @@ Initializes a new instance of the class.
 | ---- | ----------- |
 | instance | *System.Object*<br>The instance. |
 | name | *System.String*<br>The name. |
+
+### P:DNX.Helpers.Strings.Interpolation.NamedInstance.Instance
+
+Gets or sets the instance.
+
+
+### P:DNX.Helpers.Strings.Interpolation.NamedInstance.Name
+
+Gets or sets the name.
+
 
 ## T:DNX.Helpers.Strings.Interpolation.StringInterpolator
 
@@ -6820,6 +6996,140 @@ Clear the Queue of all items
 ### P:DNX.Helpers.Threading.IProducerConsumerQueue`1.Comparer
 
 A Comparer to use if the Queue is to be ordered
+
+
+## T:DNX.Helpers.Threading.Mutexes.Mutex
+
+Class Mutex.
+
+
+### M:DNX.Helpers.Threading.Mutexes.Mutex.#ctor(name)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| name | *System.String*<br>The name. |
+
+### M:DNX.Helpers.Threading.Mutexes.Mutex.#ctor(name, lockObject)
+
+Initializes a new instance of the class.
+
+| Name | Description |
+| ---- | ----------- |
+| name | *System.String*<br>The name. |
+| lockObject | *System.Object*<br>The lock object. |
+
+### M:DNX.Helpers.Threading.Mutexes.Mutex.Dispose
+
+Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+
+
+### P:DNX.Helpers.Threading.Mutexes.Mutex.LockObject
+
+Gets or sets the lock object.
+
+
+### P:DNX.Helpers.Threading.Mutexes.Mutex.Name
+
+Gets the name.
+
+
+### P:DNX.Helpers.Threading.Mutexes.Mutex.State
+
+Gets the state.
+
+
+### P:DNX.Helpers.Threading.Mutexes.Mutex.ThreadId
+
+Gets the thread identifier.
+
+
+### P:DNX.Helpers.Threading.Mutexes.Mutex.Timestamp
+
+Gets the timestamp.
+
+
+## T:DNX.Helpers.Threading.Mutexes.MutexManager
+
+Class MutexManager.
+
+
+### M:DNX.Helpers.Threading.Mutexes.MutexManager.#cctor
+
+Initializes a new instance of the class.
+
+
+### M:DNX.Helpers.Threading.Mutexes.MutexManager.Acquire(name)
+
+Acquires a named Mutex waiting for it to become available
+
+| Name | Description |
+| ---- | ----------- |
+| name | *System.String*<br>The name. |
+
+
+#### Returns
+
+Mutex.
+
+
+### M:DNX.Helpers.Threading.Mutexes.MutexManager.AcquireNoWait(name)
+
+Acquires a named Mutex or returns null immediately if unable
+
+| Name | Description |
+| ---- | ----------- |
+| name | *System.String*<br>The name. |
+
+
+#### Returns
+
+DNX.Helpers.Threading.Mutexes.Mutex.
+
+
+### M:DNX.Helpers.Threading.Mutexes.MutexManager.CanAcquire(name)
+
+Determines whether the named Mutex could be acquired
+
+| Name | Description |
+| ---- | ----------- |
+| name | *System.String*<br>The name. |
+
+
+#### Returns
+
+true if this instance can acquire the specified name; otherwise, false.
+
+
+### P:DNX.Helpers.Threading.Mutexes.MutexManager.Mutexes
+
+Gets the mutexes.
+
+
+### F:DNX.Helpers.Threading.Mutexes.MutexManager.MutexManagerLocker
+
+The locker
+
+
+## T:DNX.Helpers.Threading.Mutexes.MutexState
+
+The waiting
+
+
+### F:DNX.Helpers.Threading.Mutexes.MutexState.Acquired
+
+Lock acquired
+
+
+### F:DNX.Helpers.Threading.Mutexes.MutexState.Released
+
+Lock released
+
+
+### F:DNX.Helpers.Threading.Mutexes.MutexState.Waiting
+
+Waiting to acquire a lock
 
 
 ## T:DNX.Helpers.Threading.ParameterizedThreadStart`1

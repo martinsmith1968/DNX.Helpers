@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using DNX.Helpers.Threading;
@@ -80,7 +79,40 @@ namespace Test.DNX.Helpers.Threading.Mutexes
             mutex1.ShouldNotBeNull();
             mutex2.ShouldBeNull();
 
+            MutexManager.Mutexes.ContainsKey(mutexName).ShouldBeTrue();
+
             mutex1.Dispose();
+
+            MutexManager.Mutexes.ContainsKey(mutexName).ShouldBeFalse();
+        }
+
+        [Test]
+        public void CanAcquire_can_always_acquire_something_not_yet_acquired()
+        {
+            // Arrange
+            var name = Guid.NewGuid().ToString();
+
+            // Act
+            var result = MutexManager.CanAcquire(name);
+
+            // Assert
+            result.ShouldBeTrue();
+        }
+
+        [Test]
+        public void CanAcquire_returns_false_for_a_lock_already_acquired()
+        {
+            // Arrange
+            var name = Guid.NewGuid().ToString();
+
+            // Act
+            using (var result = MutexManager.Acquire(name))
+            {
+                MutexManager.CanAcquire(name).ShouldBeFalse();
+            }
+
+            // Assert
+            MutexManager.Mutexes.Count.ShouldEqual(0);
         }
 
         [Test]

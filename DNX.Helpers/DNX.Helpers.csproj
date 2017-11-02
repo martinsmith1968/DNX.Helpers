@@ -176,6 +176,9 @@
     <Compile Include="Strings\StringExtensions.cs" />
     <Compile Include="Strings\Interpolation\StringInterpolation.cs" />
     <Compile Include="Threading\IProducerConsumerQueue.cs" />
+    <Compile Include="Threading\Mutexes\MutexManager.cs" />
+    <Compile Include="Threading\Mutexes\Mutex.cs" />
+    <Compile Include="Threading\Mutexes\MutexState.cs" />
     <Compile Include="Threading\ProducerConsumerQueue.cs" />
     <Compile Include="Threading\ProducerConsumerQueueAction.cs" />
     <Compile Include="Threading\ThreadHelper.cs" />

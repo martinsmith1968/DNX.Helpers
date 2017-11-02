@@ -221,6 +221,7 @@
     </Compile>
     <Compile Include="Reflection\ReflectionExtensionsTests.cs" />
     <Compile Include="Strings\Interpolation\StringInterpolatorTests.cs" />
+    <Compile Include="Threading\Mutexes\MutexManagerTests.cs" />
     <Compile Include="Validation\GuardTests.cs" />
     <Compile Include="Validation\TypeExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />

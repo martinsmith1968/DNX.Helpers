@@ -130,6 +130,7 @@
     </Compile>
     <Compile Include="Linq\ItemComparisonListTests.cs" />
     <Compile Include="Linq\ItemComparisonTests.cs" />
+    <Compile Include="Linq\NameValueExtensionsTests.cs" />
     <Compile Include="Maths\BuiltInTypes\MathsDateTimeExtensionsTests.generated.cs">
       <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
     </Compile>

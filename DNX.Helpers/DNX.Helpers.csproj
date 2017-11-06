@@ -168,6 +168,11 @@
       <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Maths\IsBetweenBoundsType.cs" />
+    <Compile Include="MultipleOutputHelper1.cs">
+      <DependentUpon>MultipleOutputHelper.ttinclude</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflection\AttributeExtensions.cs" />
     <Compile Include="Reflection\InstanceResolutionExtensions.cs" />
@@ -237,6 +242,10 @@
     <None Include="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MathsExtensionsTemplate.cs</LastGenOutput>
+    </None>
+    <None Include="MultipleOutputHelper.ttinclude">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
     </None>
     <None Include="Validation\BuiltInTypes\GuardExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

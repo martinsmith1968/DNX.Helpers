@@ -2579,6 +2579,26 @@ When keys clash, take the last found key value
 All keys must be unique
 
 
+## T:DNX.Helpers.Linq.NameValueExtensions
+
+Class NameValueExtensions.
+
+
+### M:DNX.Helpers.Linq.NameValueExtensions.ToDictionary(collection, mergeTechnique)
+
+Create a Dictionary from a NameValueCollection
+
+| Name | Description |
+| ---- | ----------- |
+| collection | *System.Collections.Specialized.NameValueCollection*<br>The collection. |
+| mergeTechnique | *DNX.Helpers.Linq.MergeTechnique*<br>The merge technique. |
+
+
+#### Returns
+
+IDictionary<System.String, System.String>.
+
+
 ## T:DNX.Helpers.Linq.TupleExtensions
 
 Class TupleExtensions.

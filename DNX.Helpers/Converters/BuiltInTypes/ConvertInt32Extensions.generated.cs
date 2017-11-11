@@ -68,5 +68,5 @@ namespace DNX.Helpers.Converters.BuiltInTypes
                 return false;
             }
         }
-	}
+    }
 }

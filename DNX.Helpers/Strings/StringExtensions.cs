@@ -315,6 +315,42 @@ namespace DNX.Helpers.Strings
         }
 
         /// <summary>
+        /// Splits the text by the specified text string.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="delimiterText">The delimiter text.</param>
+        /// <param name="options">The options.</param>
+        /// <param name="comparison">The comparison.</param>
+        /// <returns>IEnumerable&lt;System.String&gt;.</returns>
+        public static IEnumerable<string> SplitByText(this string text, string delimiterText, StringSplitOptions options = StringSplitOptions.None, StringComparison comparison = StringComparison.CurrentCulture)
+        {
+            var elements = new List<string>();
+
+            var tempText = text;
+
+            while (!string.IsNullOrEmpty(delimiterText) && tempText.Contains(delimiterText))
+            {
+                var index = tempText.IndexOf(delimiterText, comparison);
+
+                var element = index == 0 ? string.Empty : tempText.Substring(0, index);
+
+                if (options == StringSplitOptions.None || !string.IsNullOrEmpty(element))
+                {
+                    elements.Add(element);
+                }
+
+                tempText = tempText.Substring(element.Length + delimiterText.Length);
+            }
+
+            if (!string.IsNullOrEmpty(tempText))
+            {
+                elements.Add(tempText);
+            }
+
+            return elements;
+        }
+
+        /// <summary>
         /// Coalesces the list of strings to find the first not null or empty.
         /// </summary>
         /// <param name="strings">The strings.</param>

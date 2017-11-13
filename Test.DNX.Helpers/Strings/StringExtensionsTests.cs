@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
 
@@ -243,11 +244,40 @@ namespace Test.DNX.Helpers.Strings
         [TestCase("a-b[c]d=e", "-[]=", StringSplitOptions.None, ExpectedResult = "a,b,c,d,e")]
         [TestCase("a-b--d-e", "-", StringSplitOptions.RemoveEmptyEntries, ExpectedResult = "a,b,d,e")]
         [TestCase("a-b[]d=e", "-[]=", StringSplitOptions.RemoveEmptyEntries, ExpectedResult = "a,b,d,e")]
+        [TestCase("a-b[]d=e", "-[]=", StringSplitOptions.None, ExpectedResult = "a,b,,d,e")]
         public string Test_Split(string text, string delimiters, StringSplitOptions options)
         {
             var result = text.Split(delimiters, options);
 
             return string.Join(",", result);
+        }
+
+        [TestCase("a-b-c-d-e", "-", StringSplitOptions.None, ExpectedResult = "a,b,c,d,e")]
+        [TestCase("a-b[c]d-e", "-", StringSplitOptions.None, ExpectedResult = "a,b[c]d,e")]
+        [TestCase("a-b--d-e", "-", StringSplitOptions.RemoveEmptyEntries, ExpectedResult = "a,b,d,e")]
+        [TestCase("a-b[]d=e", "[]", StringSplitOptions.RemoveEmptyEntries, ExpectedResult = "a-b,d=e")]
+        [TestCase("a-b//d=e", "/", StringSplitOptions.None, ExpectedResult = "a-b,,d=e")]
+        [TestCase("a-b//d=e", "/", StringSplitOptions.RemoveEmptyEntries, ExpectedResult = "a-b,d=e")]
+        public string Test_SplitByText(string text, string delimiters, StringSplitOptions options)
+        {
+            var result = text.SplitByText(delimiters, options);
+
+            return string.Join(",", result);
+        }
+
+        [TestCase("Line 1/Line 2//Line 4", StringSplitOptions.None, StringComparison.CurrentCulture, ExpectedResult = "Line 1/Line 2//Line 4")]
+        [TestCase("Line 1/Line 2//Line 4", StringSplitOptions.RemoveEmptyEntries, StringComparison.CurrentCulture, ExpectedResult = "Line 1/Line 2/Line 4")]
+        [TestCase("Line 1///Line 2//Line 4/", StringSplitOptions.None, StringComparison.CurrentCulture, ExpectedResult = "Line 1///Line 2//Line 4")]
+        [TestCase("Line 1/Line 2//Line 4", StringSplitOptions.RemoveEmptyEntries, StringComparison.CurrentCulture, ExpectedResult = "Line 1/Line 2/Line 4")]
+        public string Test_SplitByText_ComplexDelimiter(string text, StringSplitOptions options, StringComparison comparison)
+        {
+            var delimiters = Environment.NewLine;
+
+            var adjustedText = string.Join(Environment.NewLine, text.Split('/'));
+
+            var  lines = adjustedText.SplitByText(delimiters, options, comparison);
+
+            return string.Join("/", lines);
         }
 
         [TestCase("a", "b", "c", ExpectedResult = "a")]

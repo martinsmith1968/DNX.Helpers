@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetails.cs" />
     <Compile Include="Assemblies\IAssemblyDetails.cs" />
+    <Compile Include="Assemblies\VersionExtensions.cs" />
     <Compile Include="Interfaces\IConverter.cs" />
     <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensions.generated.cs">
       <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>

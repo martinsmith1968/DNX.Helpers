@@ -94,6 +94,11 @@ Gets the name of the assembly.
 Gets the product attribute value.
 
 
+### P:DNX.Helpers.SimplifiedVersion
+
+Gets or sets the simplified version.
+
+
 ### P:DNX.Helpers.Title
 
 Gets the title attribute value.
@@ -169,6 +174,11 @@ Gets the name of the assembly.
 Gets the product attribute value.
 
 
+### P:DNX.Helpers.Assemblies.IAssemblyDetails.SimplifiedVersion
+
+Gets the simplified version.
+
+
 ### P:DNX.Helpers.Assemblies.IAssemblyDetails.Title
 
 Gets the title attribute value.
@@ -182,6 +192,26 @@ Gets the trademark attribute value.
 ### P:DNX.Helpers.Assemblies.IAssemblyDetails.Version
 
 Gets the assembly version.
+
+
+## T:DNX.Helpers.Assemblies.VersionExtensions
+
+Class VersionExtensions.
+
+
+### M:DNX.Helpers.Assemblies.VersionExtensions.Simplify(version, minimumPositions)
+
+Simplifies the Version to the specified minimum positions
+
+| Name | Description |
+| ---- | ----------- |
+| version | *System.Version*<br>The version. |
+| minimumPositions | *System.Int32*<br>The minimum positions. |
+
+
+#### Returns
+
+System.String.
 
 
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertBoolExtensions
@@ -6985,6 +7015,23 @@ IEnumerable<System.String>.
 #### Remarks
 
 Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.SplitByText(text, delimiterText, options, comparison)
+
+Splits the text by the specified text string.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| delimiterText | *System.String*<br>The delimiter text. |
+| options | *System.StringSplitOptions*<br>The options. |
+| comparison | *System.StringComparison*<br>The comparison. |
+
+
+#### Returns
+
+IEnumerable<System.String>.
 
 
 ## T:DNX.Helpers.Threading.IProducerConsumerQueue`1

@@ -175,6 +175,15 @@ namespace DNX.Helpers.Assemblies
         }
 
         /// <summary>
+        /// Gets or sets the simplified version.
+        /// </summary>
+        /// <value>The simplified version.</value>
+        public string SimplifiedVersion
+        {
+            get { return Version.Simplify(); }
+        }
+
+        /// <summary>
         /// Gets the file version attribute value.
         /// </summary>
         /// <value>The file version.</value>

@@ -81,6 +81,12 @@ namespace DNX.Helpers.Assemblies
         Version Version { get; }
 
         /// <summary>
+        /// Gets the simplified version.
+        /// </summary>
+        /// <value>The simplified version.</value>
+        string SimplifiedVersion { get; }
+
+        /// <summary>
         /// Gets the file version attribute value.
         /// </summary>
         /// <value>The file version.</value>

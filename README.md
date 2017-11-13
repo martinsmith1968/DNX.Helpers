@@ -60,6 +60,64 @@ Gets the file name of the assembly.
 Gets the file version attribute value.
 
 
+### M:DNX.Helpers.ForAssembly(assembly)
+
+Froms the assembly.
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly. |
+
+
+#### Returns
+
+IAssemblyDetails.
+
+
+### M:DNX.Helpers.ForAssemblyContaining(type)
+
+Fors the assembly containing.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+IAssemblyDetails.
+
+
+### M:DNX.Helpers.ForAssemblyContaining``1
+
+Fors the assembly containing.
+
+
+#### Returns
+
+IAssemblyDetails.
+
+
+### M:DNX.Helpers.ForEntryPoint
+
+Fors the entry point.
+
+
+#### Returns
+
+IAssemblyDetails.
+
+
+### M:DNX.Helpers.ForMe
+
+For the calling assembly
+
+
+#### Returns
+
+IAssemblyDetails.
+
+
 ### M:DNX.Helpers.GetValue``1(System.Func{``0,System.String})
 
 Returns the value of attribute T or String.Empty if no value is available.

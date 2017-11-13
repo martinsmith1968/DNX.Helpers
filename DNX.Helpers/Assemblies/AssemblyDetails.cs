@@ -202,5 +202,57 @@ namespace DNX.Helpers.Assemblies
         }
 
         #endregion
+
+        #region Static Methods
+
+        /// <summary>
+        /// Froms the assembly.
+        /// </summary>
+        /// <param name="assembly">The assembly.</param>
+        /// <returns>IAssemblyDetails.</returns>
+        public static IAssemblyDetails ForAssembly(Assembly assembly)
+        {
+            return new AssemblyDetails(assembly);
+        }
+
+        /// <summary>
+        /// For the calling assembly
+        /// </summary>
+        /// <returns>IAssemblyDetails.</returns>
+        public static IAssemblyDetails ForMe()
+        {
+            return ForAssembly(Assembly.GetCallingAssembly());
+        }
+
+        /// <summary>
+        /// Fors the entry point.
+        /// </summary>
+        /// <returns>IAssemblyDetails.</returns>
+        public static IAssemblyDetails ForEntryPoint()
+        {
+            return ForAssembly(Assembly.GetEntryAssembly());
+        }
+
+        /// <summary>
+        /// Fors the assembly containing.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>IAssemblyDetails.</returns>
+        public static IAssemblyDetails ForAssemblyContaining(Type type)
+        {
+            return ForAssembly(type.Assembly);
+        }
+
+        /// <summary>
+        /// Fors the assembly containing.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>IAssemblyDetails.</returns>
+        public static IAssemblyDetails ForAssemblyContaining<T>()
+        {
+            return ForAssembly(typeof(T).Assembly);
+        }
+
+        #endregion
     }
 }

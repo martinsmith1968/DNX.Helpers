@@ -6381,7 +6381,22 @@ Populates an object instance from a Dictionary
 T.
 
 
-### M:DNX.Helpers.Reflection.ReflectionExtensions.ToDictionary``1(instance, bindingFlags)
+### M:DNX.Helpers.Reflection.ReflectionExtensions.ToDictionary(instance, bindingFlags)
+
+Serialises an object instance to a Dictionary
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The instance. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IDictionary<System.String, System.Object>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.ToDictionaryTyped``1(instance, bindingFlags)
 
 Serialises an object instance to a Dictionary
 

@@ -313,14 +313,30 @@ namespace DNX.Helpers.Reflection
         /// <param name="instance">The instance.</param>
         /// <param name="bindingFlags">The binding flags.</param>
         /// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
-        public static IDictionary<string, object> ToDictionary<T>(this T instance, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty)
+        public static IDictionary<string, object> ToDictionaryTyped<T>(this T instance, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty)
         {
             if (instance == null)
             {
                 return null;
             }
 
-            var properties = typeof(T).GetProperties(bindingFlags);
+            return instance.ToDictionary();
+        }
+
+        /// <summary>
+        /// Serialises an object instance to a Dictionary
+        /// </summary>
+        /// <param name="instance">The instance.</param>
+        /// <param name="bindingFlags">The binding flags.</param>
+        /// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
+        public static IDictionary<string, object> ToDictionary(this object instance, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty)
+        {
+            if (instance == null)
+            {
+                return null;
+            }
+
+            var properties = instance.GetType().GetProperties(bindingFlags);
 
             var dict = new Dictionary<string, object>();
 

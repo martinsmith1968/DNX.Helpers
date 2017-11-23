@@ -287,6 +287,24 @@ namespace Test.DNX.Helpers.Strings
         [TestCase(null, null, null, ExpectedResult = null)]
         [TestCase("a", "b", "c", ExpectedResult = "a")]
         [TestCase("a", "", "", ExpectedResult = "a")]
+        [TestCase("", "b", "c", ExpectedResult = "")]
+        [TestCase("", "", "c", ExpectedResult = "")]
+        [TestCase("", "", "", ExpectedResult = "")]
+
+        public string Test_CoalesceNull(string a, string b, string c)
+        {
+            var result = StringExtensions.CoalesceNull(a, b, c);
+
+            return result;
+        }
+
+        [TestCase("a", "b", "c", ExpectedResult = "a")]
+        [TestCase("a", null, null, ExpectedResult = "a")]
+        [TestCase(null, "b", "c", ExpectedResult = "b")]
+        [TestCase(null, null, "c", ExpectedResult = "c")]
+        [TestCase(null, null, null, ExpectedResult = null)]
+        [TestCase("a", "b", "c", ExpectedResult = "a")]
+        [TestCase("a", "", "", ExpectedResult = "a")]
         [TestCase("", "b", "c", ExpectedResult = "b")]
         [TestCase("", "", "c", ExpectedResult = "c")]
         [TestCase("", "", "", ExpectedResult = null)]

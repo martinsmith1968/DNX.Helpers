@@ -272,6 +272,54 @@ Simplifies the Version to the specified minimum positions
 System.String.
 
 
+## T:DNX.Helpers.Comparisons.EqualityComparerFunc`1
+
+Class EqualityComparerFunc.
+
+
+### M:DNX.Helpers.Comparisons.EqualityComparerFunc`1.Create(System.Func{`0,`0,System.Boolean})
+
+Creates a comparer for the specified type
+
+| Name | Description |
+| ---- | ----------- |
+| func | *Unknown type*<br>The function. |
+
+
+#### Returns
+
+ActionEqualityComparer<T>.
+
+
+### M:DNX.Helpers.Comparisons.EqualityComparerFunc`1.Equals(x, y)
+
+Determines whether the specified objects are equal.
+
+| Name | Description |
+| ---- | ----------- |
+| x | *`0*<br>The first object to compare. |
+| y | *`0*<br>The second object to compare. |
+
+
+#### Returns
+
+true if the specified objects are equal; otherwise, false.
+
+
+### M:DNX.Helpers.Comparisons.EqualityComparerFunc`1.GetHashCode(obj)
+
+Returns a hash code for this instance.
+
+| Name | Description |
+| ---- | ----------- |
+| obj | *`0*<br>The for which a hash code is to be returned. |
+
+
+#### Returns
+
+A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.
+
+
 ## T:DNX.Helpers.Converters.BuiltInTypes.ConvertBoolExtensions
 
 Class ConvertBoolExtensions.
@@ -2426,6 +2474,39 @@ Sets the value.
 *System.ArgumentNullException:* dictionary or keyName
 
 
+## T:DNX.Helpers.Linq.EnumerableExtensions
+
+Class EnumerableExtensions.
+
+
+### M:DNX.Helpers.Linq.EnumerableExtensions.ToConcreteList``1(enumerable)
+
+Converts an Enumerable to a List or to an empty list if null
+
+| Name | Description |
+| ---- | ----------- |
+| enumerable | *System.Collections.Generic.IEnumerable{``0}*<br>The enumerable. |
+
+
+#### Returns
+
+IList<T>.
+
+
+### M:DNX.Helpers.Linq.EnumerableExtensions.ToListOrNull``1(enumerable)
+
+Converts an Enumerable to a List or null
+
+| Name | Description |
+| ---- | ----------- |
+| enumerable | *System.Collections.Generic.IEnumerable{``0}*<br>The enumerable. |
+
+
+#### Returns
+
+IList<T>.
+
+
 ## T:DNX.Helpers.Linq.ItemComparison`2
 
 ItemComparison result for logical comparison of 2 objects.
@@ -2559,6 +2640,70 @@ true if the specified predicate has any elements that match the predicate; other
 #### Remarks
 
 Also available as an extension method
+
+
+### M:DNX.Helpers.Linq.LinqExtensions.IsIn``1(value, list)
+
+Determines whether the specified value is in the list.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *``0*<br>The value. |
+| list | *``0[]*<br>The list. |
+
+
+#### Returns
+
+true if the list is not null and value is in the list; otherwise, false.
+
+
+### M:DNX.Helpers.Linq.LinqExtensions.IsIn``1(value, list, comparer, treatNullListAs)
+
+Determines whether the specified value is in the list.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *``0*<br>The value. |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| comparer | *System.Collections.Generic.IEqualityComparer{``0}*<br>The comparer. |
+| treatNullListAs | *System.Boolean*<br>The value to return if the list is null |
+
+
+#### Returns
+
+true if the value is in the list; otherwise, false.
+
+
+### M:DNX.Helpers.Linq.LinqExtensions.IsNotIn``1(value, list)
+
+Determines whether the specified value is not in the list.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *``0*<br>The value. |
+| list | *``0[]*<br>The list. |
+
+
+#### Returns
+
+true if the list is not null and value is not in the list; otherwise, false.
+
+
+### M:DNX.Helpers.Linq.LinqExtensions.IsNotIn``1(value, list, comparer, treatNullListAs)
+
+Determines whether the specified value is not in the list.
+
+| Name | Description |
+| ---- | ----------- |
+| value | *``0*<br>The value. |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| comparer | *System.Collections.Generic.IEqualityComparer{``0}*<br>The comparer. |
+| treatNullListAs | *System.Boolean*<br>The value to return if the list is null |
+
+
+#### Returns
+
+true if the value is not in the list; otherwise, false.
 
 
 ## T:DNX.Helpers.Linq.ListExtensions
@@ -6426,6 +6571,55 @@ Creates a populated object instance from a Dictionary
 T.
 
 
+## T:DNX.Helpers.Streams.StreamExtensions
+
+Class StreamProcessor.
+
+
+### M:DNX.Helpers.Streams.StreamExtensions.ReadAllBytes(stream, bufferSize)
+
+Reads the entire stream as a byte array
+
+| Name | Description |
+| ---- | ----------- |
+| stream | *System.IO.Stream*<br>The stream. |
+| bufferSize | *System.Int32*<br>Size of the buffer. |
+
+
+#### Returns
+
+System.Byte[].
+
+
+### M:DNX.Helpers.Streams.StreamExtensions.ReadAllLines(stream, estimatedCapacity)
+
+Reads the entire stream as a list of lines
+
+| Name | Description |
+| ---- | ----------- |
+| stream | *System.IO.Stream*<br>The stream. |
+| estimatedCapacity | *System.Nullable{System.Int32}*<br>The estimated capacity. |
+
+
+#### Returns
+
+IList<System.String>.
+
+
+### M:DNX.Helpers.Streams.StreamExtensions.ReadAllText(stream)
+
+Reads the entire stream as text
+
+| Name | Description |
+| ---- | ----------- |
+| stream | *System.IO.Stream*<br>The stream. |
+
+
+#### Returns
+
+System.String.
+
+
 ## T:DNX.Helpers.Strings.Interpolation.InterpolatableProperty
 
 An InterpolatableProperty
@@ -6654,6 +6848,44 @@ Builds the number validation regex for the specified cultureinfo
 #### Returns
 
 System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.CoalesceNull(strings)
+
+Coalesces the list of strings to find the first not null
+
+| Name | Description |
+| ---- | ----------- |
+| strings | *System.Collections.Generic.IList{System.String}*<br>The strings. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.CoalesceNull(strings)
+
+Coalesces the list of strings to find the first not null
+
+| Name | Description |
+| ---- | ----------- |
+| strings | *System.String[]*<br>The strings. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
 
 
 ### M:DNX.Helpers.Strings.StringExtensions.CoalesceNullOrEmpty(strings)

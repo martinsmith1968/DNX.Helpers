@@ -351,6 +351,30 @@ namespace DNX.Helpers.Strings
         }
 
         /// <summary>
+        /// Coalesces the list of strings to find the first not null
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNull(params string[] strings)
+        {
+            return strings.CoalesceNull();
+        }
+
+        /// <summary>
+        /// Coalesces the list of strings to find the first not null
+        /// </summary>
+        /// <param name="strings">The strings.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static string CoalesceNull(this IList<string> strings)
+        {
+            var value = strings.FirstOrDefault(s => s != null);
+
+            return value;
+        }
+
+        /// <summary>
         /// Coalesces the list of strings to find the first not null or empty.
         /// </summary>
         /// <param name="strings">The strings.</param>

@@ -29,6 +29,28 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
+        /// Determines whether the specified type is a.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="type">The type.</param>
+        /// <returns><c>true</c> if the specified type is a; otherwise, <c>false</c>.</returns>
+        public static bool IsA<T>(this Type type)
+        {
+            return type.IsA(typeof(T));
+        }
+
+        /// <summary>
+        /// Determines whether the specified type is a.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="baseClassOrInterface">The base class or interface.</param>
+        /// <returns>System.Boolean.</returns>
+        public static bool IsA(this Type type, Type baseClassOrInterface)
+        {
+            return baseClassOrInterface.IsAssignableFrom(type);
+        }
+
+        /// <summary>
         /// Gets the default value.
         /// </summary>
         /// <param name="type">The type.</param>

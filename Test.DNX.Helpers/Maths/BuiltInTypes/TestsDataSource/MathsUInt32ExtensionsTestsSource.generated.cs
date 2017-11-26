@@ -10,17 +10,17 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes.TestsDataSource
     [TestFixture]
     public class MathsUInt32ExtensionsTestsSource
     {
-		private static object CreateDataValue(uint value)
-		{
-			if (typeof(uint) == typeof(DateTime))
-			{
-				var epoch = new DateTime(2017, 01, 01);
+        private static object CreateDataValue(uint value)
+        {
+            if (typeof(uint) == typeof(DateTime))
+            {
+                var epoch = new DateTime(2017, 01, 01);
 
-				return epoch.AddDays(Convert.ToInt32(value));
-			}
+                return epoch.AddDays(Convert.ToInt32(value));
+            }
 
-			return value;
-		}
+            return value;
+        }
 
         public static IEnumerable<TestCaseData> IsBetween_Default
         {
@@ -94,6 +94,9 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes.TestsDataSource
                 yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper).Returns(false);
                 yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper).Returns(false);
                 yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper).Returns(false);
+
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), (IsBetweenBoundsType)int.MaxValue).Returns(false);
+                yield return new TestCaseData(CreateDataValue(20), CreateDataValue(1), CreateDataValue(10), (IsBetweenBoundsType)int.MaxValue).Returns(false);
             }
         }
 

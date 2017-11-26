@@ -8,26 +8,24 @@ namespace DNX.Helpers.Validation
     /// <summary>
     /// Guard Extensions.
     /// </summary>
-    public static class Guard
+    public static partial class Guard
     {
         /// <summary>
-        /// Determines whether the specified exp is true.
+        /// Ensures the specified exp is true.
         /// </summary>
         /// <param name="exp">The exp.</param>
-        /// <param name="messageText">The message text.</param>
-        public static void IsTrue(Expression<Func<bool>> exp, string messageText)
+        public static void IsTrue(Expression<Func<bool>> exp)
         {
-            IsTrue(exp, exp.Compile().Invoke(), messageText);
+            IsTrue(exp, exp.Compile().Invoke());
         }
 
         /// <summary>
-        /// Determines whether the specified exp is true.
+        /// Ensures the specified exp is true.
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
-        /// <param name="messageText">The message text.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsTrue(Expression<Func<bool>> exp, bool val, string messageText)
+        public static void IsTrue(Expression<Func<bool>> exp, bool val)
         {
             if (val)
             {
@@ -39,28 +37,26 @@ namespace DNX.Helpers.Validation
             throw new ArgumentOutOfRangeException(
                 memberName,
                 val,
-                string.Format(messageText, memberName)
+                string.Format("{0} must be true", memberName)
             );
         }
 
         /// <summary>
-        /// Determines whether the specified exp is false.
+        /// Ensures the specified exp is false.
         /// </summary>
         /// <param name="exp">The exp.</param>
-        /// <param name="messageText">The message text.</param>
-        public static void IsFalse(Expression<Func<bool>> exp, string messageText)
+        public static void IsFalse(Expression<Func<bool>> exp)
         {
-            IsFalse(exp, exp.Compile().Invoke(), messageText);
+            IsFalse(exp, exp.Compile().Invoke());
         }
 
         /// <summary>
-        /// Determines whether the specified exp is false.
+        /// Ensures the specified exp is false.
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
-        /// <param name="messageText">The message text.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsFalse(Expression<Func<bool>> exp, bool val, string messageText)
+        public static void IsFalse(Expression<Func<bool>> exp, bool val)
         {
             if (!val)
             {
@@ -72,12 +68,12 @@ namespace DNX.Helpers.Validation
             throw new ArgumentOutOfRangeException(
                 memberName,
                 val,
-                string.Format(messageText, memberName)
+                string.Format("{0} must be false", memberName)
             );
         }
 
         /// <summary>
-        /// Throw an ArgumentNullException when checking the result of exp.
+        /// Ensures the specified exp is not null
         /// </summary>
         /// <typeparam name="T">Any reference type</typeparam>
         /// <param name="exp">The linq expression of the argument to check</param>
@@ -90,7 +86,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Throw an ArgumentNullException when checking the result of exp.
+        /// Ensures the specified exp is not null
         /// </summary>
         /// <typeparam name="T">Any reference type</typeparam>
         /// <param name="exp">The linq expression of the argument to check</param>
@@ -105,13 +101,13 @@ namespace DNX.Helpers.Validation
 
                 throw new ArgumentNullException(
                     memberName,
-                    string.Format("{0} may not be null", memberName)
+                    string.Format("{0} must not be null", memberName)
                     );
             }
         }
 
         /// <summary>
-        /// Throw an ArgumentException if the string resulting from exp is null or empty.
+        /// Ensures the specified exp is not null or empty
         /// </summary>
         /// <param name="exp">The linq expression of the argument to check</param>
         public static void IsNotNullOrEmpty(Expression<Func<string>> exp)
@@ -120,7 +116,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        ///Throw an ArgumentException if the string resulting from exp is null or empty.
+        /// Ensures the specified exp is not null or empty
         /// </summary>
         /// <param name="exp">The linq expression of the argument to check</param>
         /// <param name="val">value of argument in exp</param>
@@ -132,13 +128,13 @@ namespace DNX.Helpers.Validation
                 var memberName = ReflectionExtensions.GetMemberName(exp);
 
                 throw new ArgumentException(
-                    string.Format("{0} may not be null or empty", memberName), memberName
+                    string.Format("{0} must not be null or empty", memberName), memberName
                     );
             }
         }
 
         /// <summary>
-        /// Throw an ArgumentException if the string resulting from exp is null or empty.
+        /// Ensures the specified exp is not null or whitespace
         /// </summary>
         /// <param name="exp">The linq expression of the argument to check</param>
         public static void IsNotNullOrWhitespace(Expression<Func<string>> exp)
@@ -147,7 +143,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        ///Throw an ArgumentException if the string resulting from exp is null or empty.
+        /// Ensures the specified exp is not null or whitespace
         /// </summary>
         /// <param name="exp">The linq expression of the argument to check</param>
         /// <param name="val">value of argument in exp</param>
@@ -159,7 +155,7 @@ namespace DNX.Helpers.Validation
                 var memberName = ReflectionExtensions.GetMemberName(exp);
 
                 throw new ArgumentException(
-                    string.Format("{0} may not be null or whitespace", memberName), memberName
+                    string.Format("{0} must not be null or whitespace", memberName), memberName
                     );
             }
         }

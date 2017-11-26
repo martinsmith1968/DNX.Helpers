@@ -1,228 +1,177 @@
-﻿using DNX.Helpers.Validation;
+﻿using System;
+using DNX.Helpers.Validation;
 using NUnit.Framework;
-using System;
 
-#if SHIT
 namespace Test.DNX.Helpers.Validation
 {
-    [TestFixture]
-    public class GuardTests
+
+    namespace Test.DNX.Helpers.Validation
     {
-        [TestCase(150, 100, 200, ExpectedResult = true)]
-        [TestCase(101, 100, 200, ExpectedResult = true)]
-        [TestCase(199, 100, 200, ExpectedResult = true)]
-        [TestCase(100, 100, 200, ExpectedResult = true)]
-        [TestCase(200, 100, 200, ExpectedResult = true)]
-        [TestCase(-150, -100, -200, ExpectedResult = false)]
-        [TestCase(-150, -200, -100, ExpectedResult = true)]
-        [TestCase(-101, -200, -100, ExpectedResult = true)]
-        [TestCase(-199, -200, -100, ExpectedResult = true)]
-        [TestCase(-100, -200, -100, ExpectedResult = true)]
-        [TestCase(-200, -200, -100, ExpectedResult = true)]
-        [TestCase(50, 100, 200, ExpectedResult = false)]
-        [TestCase(250, 100, 200, ExpectedResult = false)]
-        [TestCase(100, 100, 200, ExpectedResult = true)]
-        [TestCase(200, 100, 200, ExpectedResult = true)]
-        [TestCase(100, 100, 100, ExpectedResult = true)]
-        public bool IsBetween_InclusiveDefault(int number, int min, int max)
+        [TestFixture]
+        public class GuardTests
         {
-            try
+            [TestCase(false, "exp must be true", ExpectedResult = false)]
+            [TestCase(true, null, ExpectedResult = true)]
+            public bool IsTrue_exp_Test(bool val, string messageContains)
             {
-                // Act
-                Guard.IsBetween(() => number, min, max);
+                try
+                {
+                    var exp = val;
+                    Guard.IsTrue(() => exp);
 
-                return true;
+                    return true;
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
             }
-            catch (ArgumentOutOfRangeException)
+
+            [TestCase(false, "exp must be true", ExpectedResult = false)]
+            [TestCase(true, null, ExpectedResult = true)]
+            public bool IsTrue_exp_and_val_Test(bool val, string messageContains)
             {
-                return false;
+                try
+                {
+                    var exp = false;
+                    Guard.IsTrue(() => exp, val);
+
+                    return true;
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
             }
-            catch (Exception ex)
+
+            [TestCase(false, "exp must not be null", ExpectedResult = false)]
+            [TestCase(true, null, ExpectedResult = true)]
+            public bool IsNotNull_exp_Test(bool instance, string messageContains)
             {
-                // Assert
-                Assert.Fail(ex.Message);
-                return false;
+                try
+                {
+                    var exp = instance
+                        ? new Linq.MyTestClass1()
+                        : null;
+
+                    Guard.IsNotNull(() => exp);
+
+                    return true;
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
+            }
+
+            [TestCase(false, "exp must not be null", ExpectedResult = false)]
+            [TestCase(true, null, ExpectedResult = true)]
+            public bool IsNotNull_exp_and_val_Test(bool instance, string messageContains)
+            {
+                try
+                {
+                    var exp = new Linq.MyTestClass1();
+                    var val = instance
+                        ? new Linq.MyTestClass1()
+                        : null;
+
+                    Guard.IsNotNull(() => exp, val);
+
+                    return true;
+                }
+                catch (ArgumentNullException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
+            }
+
+            [TestCase("some text", null, ExpectedResult = true)]
+            [TestCase("", "exp must not be null or empty", ExpectedResult = false)]
+            [TestCase(null, "exp must not be null or empty", ExpectedResult = false)]
+            public bool IsNotNullOrEmpty_exp_Test(string exp, string messageContains)
+            {
+                try
+                {
+                    Guard.IsNotNullOrEmpty(() => exp);
+
+                    return true;
+                }
+                catch (ArgumentException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
+            }
+
+            [TestCase("some text", null, ExpectedResult = true)]
+            [TestCase("", "exp must not be null or empty", ExpectedResult = false)]
+            [TestCase(null, "exp must not be null or empty", ExpectedResult = false)]
+            public bool IsNotNullOrEmpty_exp_and_val_Test(string val, string messageContains)
+            {
+                try
+                {
+                    var exp = "some exp text";
+                    Guard.IsNotNullOrEmpty(() => exp, val);
+
+                    return true;
+                }
+                catch (ArgumentException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
+            }
+
+            [TestCase("some text", null, ExpectedResult = true)]
+            [TestCase("", "exp must not be null or whitespace", ExpectedResult = false)]
+            [TestCase("  ", "exp must not be null or whitespace", ExpectedResult = false)]
+            [TestCase(null, "exp must not be null or whitespace", ExpectedResult = false)]
+            public bool IsNotNullOrWhitespace_exp_Test(string exp, string messageContains)
+            {
+                try
+                {
+                    Guard.IsNotNullOrWhitespace(() => exp);
+
+                    return true;
+                }
+                catch (ArgumentException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
+            }
+
+            [TestCase("some text", null, ExpectedResult = true)]
+            [TestCase("", "exp must not be null or whitespace", ExpectedResult = false)]
+            [TestCase("  ", "exp must not be null or whitespace", ExpectedResult = false)]
+            [TestCase(null, "exp must not be null or whitespace", ExpectedResult = false)]
+            public bool IsNotNullOrWhitespace_exp_and_val_Test(string val, string messageContains)
+            {
+                try
+                {
+                    var exp = "some exp text";
+                    Guard.IsNotNullOrWhitespace(() => exp, val);
+
+                    return true;
+                }
+                catch (ArgumentException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
             }
         }
-
-        [TestCase(150, 100, 200, ExpectedResult = true)]
-        [TestCase(101, 100, 200, ExpectedResult = true)]
-        [TestCase(199, 100, 200, ExpectedResult = true)]
-        [TestCase(100, 100, 200, ExpectedResult = false)]
-        [TestCase(200, 100, 200, ExpectedResult = false)]
-        [TestCase(-150, -100, -200, ExpectedResult = false)]
-        [TestCase(-150, -200, -100, ExpectedResult = true)]
-        [TestCase(-101, -200, -100, ExpectedResult = true)]
-        [TestCase(-199, -200, -100, ExpectedResult = true)]
-        [TestCase(-100, -200, -100, ExpectedResult = false)]
-        [TestCase(-200, -200, -100, ExpectedResult = false)]
-        [TestCase(50, 100, 200, ExpectedResult = false)]
-        [TestCase(250, 100, 200, ExpectedResult = false)]
-        [TestCase(100, 100, 200, ExpectedResult = false)]
-        [TestCase(200, 100, 200, ExpectedResult = false)]
-        [TestCase(100, 100, 100, ExpectedResult = false)]
-        public bool IsBetween_NotInclusive(int number, int min, int max)
-        {
-            try
-            {
-                // Act
-                Guard.IsBetween(() => number, min, max, false);
-
-                return true;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                return false;
-            }
-            catch (Exception ex)
-            {
-                // Assert
-                Assert.Fail(ex.Message);
-                return false;
-            }
-        }
-
-        [TestCase(150, 100, 200, ExpectedResult = true)]
-        [TestCase(101, 100, 200, ExpectedResult = true)]
-        [TestCase(199, 100, 200, ExpectedResult = true)]
-        [TestCase(100, 100, 200, ExpectedResult = true)]
-        [TestCase(200, 100, 200, ExpectedResult = true)]
-        [TestCase(150, 200, 100, ExpectedResult = true)]
-        [TestCase(101, 200, 100, ExpectedResult = true)]
-        [TestCase(199, 200, 100, ExpectedResult = true)]
-        [TestCase(100, 200, 100, ExpectedResult = true)]
-        [TestCase(200, 200, 100, ExpectedResult = true)]
-        [TestCase(-150, -100, -200, ExpectedResult = true)]
-        [TestCase(-150, -200, -100, ExpectedResult = true)]
-        [TestCase(-101, -200, -100, ExpectedResult = true)]
-        [TestCase(-199, -200, -100, ExpectedResult = true)]
-        [TestCase(-100, -200, -100, ExpectedResult = true)]
-        [TestCase(-200, -200, -100, ExpectedResult = true)]
-        [TestCase(-150, -200, -100, ExpectedResult = true)]
-        [TestCase(-150, -100, -200, ExpectedResult = true)]
-        [TestCase(-101, -100, -200, ExpectedResult = true)]
-        [TestCase(-199, -100, -200, ExpectedResult = true)]
-        [TestCase(-100, -100, -200, ExpectedResult = true)]
-        [TestCase(-200, -100, -200, ExpectedResult = true)]
-        [TestCase(50, 100, 200, ExpectedResult = false)]
-        [TestCase(250, 100, 200, ExpectedResult = false)]
-        [TestCase(50, 200, 100, ExpectedResult = false)]
-        [TestCase(250, 200, 100, ExpectedResult = false)]
-        [TestCase(100, 100, 200, ExpectedResult = true)]
-        [TestCase(200, 100, 200, ExpectedResult = true)]
-        [TestCase(100, 200, 100, ExpectedResult = true)]
-        [TestCase(200, 200, 100, ExpectedResult = true)]
-        [TestCase(100, 100, 100, ExpectedResult = true)]
-        public bool IsBetweenEither_InclusiveDefault(int number, int min, int max)
-        {
-            try
-            {
-                // Act
-                Guard.IsBetweenEither(() => number, min, max);
-
-                return true;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                return false;
-            }
-            catch (Exception ex)
-            {
-                // Assert
-                Assert.Fail(ex.Message);
-                return false;
-            }
-        }
-
-        [TestCase(150, 100, 200, ExpectedResult = true)]
-        [TestCase(101, 100, 200, ExpectedResult = true)]
-        [TestCase(199, 100, 200, ExpectedResult = true)]
-        [TestCase(100, 100, 200, ExpectedResult = false)]
-        [TestCase(200, 100, 200, ExpectedResult = false)]
-        [TestCase(150, 200, 100, ExpectedResult = true)]
-        [TestCase(101, 200, 100, ExpectedResult = true)]
-        [TestCase(199, 200, 100, ExpectedResult = true)]
-        [TestCase(100, 200, 100, ExpectedResult = false)]
-        [TestCase(200, 200, 100, ExpectedResult = false)]
-        [TestCase(-150, -100, -200, ExpectedResult = true)]
-        [TestCase(-150, -200, -100, ExpectedResult = true)]
-        [TestCase(-101, -200, -100, ExpectedResult = true)]
-        [TestCase(-199, -200, -100, ExpectedResult = true)]
-        [TestCase(-100, -200, -100, ExpectedResult = false)]
-        [TestCase(-200, -200, -100, ExpectedResult = false)]
-        [TestCase(-150, -200, -100, ExpectedResult = true)]
-        [TestCase(-150, -100, -200, ExpectedResult = true)]
-        [TestCase(-101, -100, -200, ExpectedResult = true)]
-        [TestCase(-199, -100, -200, ExpectedResult = true)]
-        [TestCase(-100, -100, -200, ExpectedResult = false)]
-        [TestCase(-200, -100, -200, ExpectedResult = false)]
-        [TestCase(50, 100, 200, ExpectedResult = false)]
-        [TestCase(250, 100, 200, ExpectedResult = false)]
-        [TestCase(50, 200, 100, ExpectedResult = false)]
-        [TestCase(250, 200, 100, ExpectedResult = false)]
-        [TestCase(100, 100, 200, ExpectedResult = false)]
-        [TestCase(200, 100, 200, ExpectedResult = false)]
-        [TestCase(100, 200, 100, ExpectedResult = false)]
-        [TestCase(200, 200, 100, ExpectedResult = false)]
-        [TestCase(100, 100, 100, ExpectedResult = false)]
-        public bool IsBetweenEither_NotInclusive(int number, int min, int max)
-        {
-            try
-            {
-                // Act
-                Guard.IsBetweenEither(() => number, min, max, false);
-
-                return true;
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                return false;
-            }
-            catch (Exception ex)
-            {
-                // Assert
-                Assert.Fail(ex.Message);
-                return false;
-            }
-        }
-
-#if TODO
-        [Test]
-        public void IsNotNullTest()
-        {
-            Assert.Fail();
-        }
-
-        [Test]
-        public void IsNotNullTest1()
-        {
-            Assert.Fail();
-        }
-
-        [Test]
-        public void IsNotNullOrEmptyTest()
-        {
-            Assert.Fail();
-        }
-
-        [Test]
-        public void IsNotNullOrEmptyTest1()
-        {
-            Assert.Fail();
-        }
-
-        [Test]
-        public void IsNotNullOrWhitespaceTest()
-        {
-            Assert.Fail();
-        }
-
-        [Test]
-        public void IsNotNullOrWhitespaceTest1()
-        {
-            Assert.Fail();
-        }
-#endif
     }
 }
-#endif

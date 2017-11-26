@@ -12,12 +12,12 @@ namespace DNX.Helpers.Assemblies
     /// <seealso cref="DNX.Helpers.Assemblies.IAssemblyDetails" />
     public class AssemblyDetails : IAssemblyDetails
     {
-        #region Fields
+        #region Properties
 
         /// <summary>
-        /// Internal _assembly field
+        /// Internal Assembly field
         /// </summary>
-        private readonly Assembly _assembly;
+        public Assembly Assembly { get; private set; }
 
         #endregion
 
@@ -39,7 +39,7 @@ namespace DNX.Helpers.Assemblies
         {
             Guard.IsNotNull(() => assembly);
 
-            _assembly = assembly;
+            Assembly = assembly;
         }
 
         #endregion
@@ -53,9 +53,10 @@ namespace DNX.Helpers.Assemblies
         /// <param name="getValue">The get value.</param>
         /// <returns>The result of the specified Func, executed on the found attribute, if any.
         /// <c>null</c> if not matching attribute can be found</returns>
-        protected string GetValue<T>(Func<T, string> getValue) where T : Attribute
+        protected string GetValue<T>(Func<T, string> getValue)
+            where T : Attribute
         {
-            var a = (T)Attribute.GetCustomAttribute(_assembly, typeof(T));
+            var a = (T)Attribute.GetCustomAttribute(Assembly, typeof(T));
 
             return a == null
                 ? null
@@ -72,7 +73,7 @@ namespace DNX.Helpers.Assemblies
         /// <value>The name of the assembly.</value>
         public AssemblyName AssemblyName
         {
-            get { return _assembly.GetName(); }
+            get { return Assembly.GetName(); }
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace DNX.Helpers.Assemblies
         /// <value>The location.</value>
         public string Location
         {
-            get { return _assembly.Location; }
+            get { return Assembly.Location; }
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace DNX.Helpers.Assemblies
         /// <value>The name of the file.</value>
         public string FileName
         {
-            get { return Path.GetFileName(_assembly.Location); }
+            get { return Path.GetFileName(Assembly.Location); }
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace DNX.Helpers.Assemblies
         #region Static Methods
 
         /// <summary>
-        /// Froms the assembly.
+        /// Creates an AssemblyDetails from the specified assembly.
         /// </summary>
         /// <param name="assembly">The assembly.</param>
         /// <returns>IAssemblyDetails.</returns>
@@ -216,7 +217,7 @@ namespace DNX.Helpers.Assemblies
         }
 
         /// <summary>
-        /// For the calling assembly
+        /// Creates an AssemblyDetails for the calling assembly
         /// </summary>
         /// <returns>IAssemblyDetails.</returns>
         public static IAssemblyDetails ForMe()
@@ -225,7 +226,7 @@ namespace DNX.Helpers.Assemblies
         }
 
         /// <summary>
-        /// Fors the entry point.
+        /// Creates an AssemblyDetails for the entry point assembly.
         /// </summary>
         /// <returns>IAssemblyDetails.</returns>
         public static IAssemblyDetails ForEntryPoint()
@@ -234,7 +235,7 @@ namespace DNX.Helpers.Assemblies
         }
 
         /// <summary>
-        /// Fors the assembly containing.
+        /// Creates an AssemblyDetails fors the assembly containing the specified Type
         /// </summary>
         /// <param name="type">The type.</param>
         /// <returns>IAssemblyDetails.</returns>
@@ -244,7 +245,7 @@ namespace DNX.Helpers.Assemblies
         }
 
         /// <summary>
-        /// Fors the assembly containing.
+        /// Creates an AssemblyDetails fors the assembly containing the specified Type
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns>IAssemblyDetails.</returns>

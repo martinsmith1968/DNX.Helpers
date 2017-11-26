@@ -24,7 +24,9 @@ namespace DNX.Helpers.Assemblies
                 parts = parts.Take(parts.Count - 1).ToList();
             }
 
-            return string.Join(".", parts);
+            var versionText = string.Join(".", parts);
+
+            return versionText;
         }
     }
 }

@@ -21,25 +21,19 @@ namespace Test.DNX.Helpers.Dates
         {
             if (arg is DateTime)
             {
-                var dt = (DateTime)arg;
+                var dt = (DateTime) arg;
 
-                if (string.IsNullOrEmpty(format))
-                {
-                    // by default, format doubles to 3 decimal places
-                    return dt.ToString(FormatString);
-                }
-                else
-                {
-                    // if user supplied own format use it
-                    return ((DateTime)arg).ToString(format);
-                }
+                // if user supplied own format use it
+                return string.IsNullOrEmpty(format)
+                    ? dt.ToString(FormatString)
+                    : ((DateTime)arg).ToString(format);
             }
 
             // format everything else normally
-            if (arg is IFormattable)
-                return ((IFormattable)arg).ToString(format, formatProvider);
-            else
-                return arg.ToString();
+            var formattable = arg as IFormattable;
+            return formattable != null
+                ? formattable.ToString(format, formatProvider)
+                : arg.ToString();
         }
     }
 

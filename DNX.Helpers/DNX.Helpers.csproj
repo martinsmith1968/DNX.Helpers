@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetails.cs" />
+    <Compile Include="Assemblies\AssemblyExtensions.cs" />
     <Compile Include="Assemblies\IAssemblyDetails.cs" />
     <Compile Include="Assemblies\VersionExtensions.cs" />
     <Compile Include="Comparisons\EqualityComparerFunc.cs" />
@@ -235,6 +236,7 @@
       <DependentUpon>GuardExtensionsTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Validation\Guard.cs" />
+    <Compile Include="Validation\GuardEnums.cs" />
     <Compile Include="Validation\TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

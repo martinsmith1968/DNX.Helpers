@@ -47,8 +47,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="nunit.framework, Version=3.8.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.8.1\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Should, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -151,7 +151,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDateTimeExtensionsTestsSource.cs" />
     <Compile Include="Maths\BuiltInTypes\MathsByteExtensionsTests.generated.cs">
       <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
     </Compile>
@@ -230,7 +229,9 @@
     <Compile Include="Streams\StreamExtensionsTests.cs" />
     <Compile Include="Strings\Interpolation\StringInterpolatorTests.cs" />
     <Compile Include="Threading\Mutexes\MutexManagerTests.cs" />
+    <Compile Include="Validation\GuardEnumsTests.cs" />
     <Compile Include="Validation\GuardTests.cs" />
+    <Compile Include="Validation\GuardBuiltInTypesTests.cs" />
     <Compile Include="Validation\TypeExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDateTimeExtensionsTestsSource.cs" />

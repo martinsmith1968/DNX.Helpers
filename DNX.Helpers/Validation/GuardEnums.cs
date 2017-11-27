@@ -57,20 +57,6 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="exp">The exp.</param>
-        /// <param name="val">The value.</param>
-        /// <param name="allowed">The allowed.</param>
-        /// <exception cref="System.ArgumentException"></exception>
-        public static void IsEnumOneOf<T>(this Expression<Func<T>> exp, T val, params T[] allowed)
-            where T : struct
-        {
-            IsEnumOneOf(exp, val, allowed.ToList());
-        }
-
-        /// <summary>
-        /// Ensures the expression is a valid Enum value
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="exp">The exp.</param>
         /// <param name="allowed">The allowed.</param>
         public static void IsEnumOneOf<T>(this Expression<Func<T>> exp, IList<T> allowed)
             where T : struct
@@ -93,8 +79,11 @@ namespace DNX.Helpers.Validation
             {
                 var memberName = ReflectionExtensions.GetMemberName(exp);
 
+                var allowedValues = allowed
+                    .Select(a => Convert.ToString(a));
+
                 throw new ArgumentException(
-                    string.Format("{0} must be a valid {1} value", memberName, typeof(T).Name), memberName
+                    string.Format("{0} must be an allowed {1} value: {2}", memberName, typeof(T).Name, string.Join(",", allowedValues)), memberName
                 );
             }
         }

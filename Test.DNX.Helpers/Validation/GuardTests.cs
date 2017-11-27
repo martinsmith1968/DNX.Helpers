@@ -48,6 +48,44 @@ namespace Test.DNX.Helpers.Validation
                 }
             }
 
+            [TestCase(true, "exp must be false", ExpectedResult = false)]
+            [TestCase(false, null, ExpectedResult = true)]
+            public bool IsFalse_exp_Test(bool val, string messageContains)
+            {
+                try
+                {
+                    var exp = val;
+                    Guard.IsFalse(() => exp);
+
+                    return true;
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
+            }
+
+            [TestCase(true, "exp must be false", ExpectedResult = false)]
+            [TestCase(false, null, ExpectedResult = true)]
+            public bool IsFalse_exp_and_val_Test(bool val, string messageContains)
+            {
+                try
+                {
+                    var exp = false;
+                    Guard.IsFalse(() => exp, val);
+
+                    return true;
+                }
+                catch (ArgumentOutOfRangeException ex)
+                {
+                    Assert.IsTrue(ex.Message.Contains(messageContains));
+
+                    return false;
+                }
+            }
+
             [TestCase(false, "exp must not be null", ExpectedResult = false)]
             [TestCase(true, null, ExpectedResult = true)]
             public bool IsNotNull_exp_Test(bool instance, string messageContains)

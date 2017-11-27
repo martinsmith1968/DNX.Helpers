@@ -13,7 +13,7 @@ namespace DNX.Helpers.Validation
     public static partial class Guard
     {
         /// <summary>
-        /// Determines whether [is greater than] [the specified exp].
+        /// Ensures the expression evaluates to greater than the specified minimum
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="min">The minimum.</param>
@@ -23,7 +23,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Determines whether [is greater than] [the specified exp].
+        /// Ensures the expression and corresponding value evaluates to greater than the specified minimum
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
@@ -49,7 +49,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Determines whether [is greater than] [the specified exp].
+        /// Ensures the expression evaluates to greater than or equal to the specified minimum
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="min">The minimum.</param>
@@ -59,8 +59,8 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Determines whether [is greater than] [the specified exp].
-        /// </summary>
+        /// Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+		/// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
         /// <param name="min">The minimum.</param>
@@ -85,7 +85,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Determines whether [is Less than] [the specified exp].
+        /// Ensures the expression evaluates to less than the specified minimum
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="max">The maximum.</param>
@@ -95,7 +95,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Determines whether [is Less than] [the specified exp].
+        /// Ensures the expression and corresponding value evaluates to less than the specified minimum
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
@@ -121,7 +121,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Determines whether [is Less than] [the specified exp].
+        /// Ensures the expression evaluates to less than or equal to the specified minimum
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="max">The maximum.</param>
@@ -131,7 +131,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Determines whether [is Less than] [the specified exp].
+        /// Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
@@ -157,7 +157,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Verifies an expression is between 2 values
+        /// Ensures the expression evaluates to between the specified values
         /// </summary>
         /// <param name="exp">The linq expression of the argument to check</param>
         /// <param name="min">minimum allowed value</param>
@@ -168,7 +168,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Verifies an expression is between 2 values
+        /// Ensures the expression and corresponding value evaluates to between the specified values
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="min">The minimum.</param>
@@ -180,7 +180,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Verifies an expression is between 2 values
+        /// Ensures the expression evaluates to between the specified values
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="bound1">The bound1.</param>
@@ -193,7 +193,7 @@ namespace DNX.Helpers.Validation
         }
 
         /// <summary>
-        /// Verifies an expression is between 2 values
+        /// Ensures the expression and corresponding value evaluates to between the specified values
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>

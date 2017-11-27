@@ -5,6 +5,7 @@ using DNX.Helpers.Maths;
 
 namespace Test.DNX.Helpers.Validation
 {
+#if TODO
     [TestFixture]
     public class GuardBuiltInTypesTests
     {
@@ -186,7 +187,6 @@ namespace Test.DNX.Helpers.Validation
             }
         }
 
-#if TODO
         [Test]
         public void IsNotNullTest()
         {
@@ -223,5 +223,5 @@ namespace Test.DNX.Helpers.Validation
             Assert.Fail();
         }
 #endif
-    }
+}
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using DNX.Helpers.Validation;
 
 namespace DNX.Helpers.Reflection
 {
@@ -40,10 +41,7 @@ namespace DNX.Helpers.Reflection
         /// <returns>IList&lt;T&gt;.</returns>
         public static IList<T> GetTypeAttributesFromInstance<T>(this object instance, bool inherit)
         {
-            if (instance == null)
-            {
-                throw new ArgumentNullException("instance");
-            }
+            Guard.IsNotNull(() => instance);
 
             var attributes = instance.GetType()
                 .GetTypeAttributes<T>(inherit);
@@ -60,6 +58,8 @@ namespace DNX.Helpers.Reflection
         /// <returns>System.Collections.Generic.IList&lt;T&gt;.</returns>
         public static IList<T> GetMemberAttributes<T>(this MemberInfo memberInfo, bool inherit)
         {
+            Guard.IsNotNull(() => memberInfo);
+
             var attributes = memberInfo.GetCustomAttributes(typeof(T), inherit);
 
             return attributes

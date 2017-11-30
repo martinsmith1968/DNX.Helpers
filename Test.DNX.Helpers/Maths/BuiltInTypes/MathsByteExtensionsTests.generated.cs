@@ -40,16 +40,16 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes
             return value.IsBetween(min, max, allowEitherOrder, boundsType);
         }
 
-        [TestCaseSource(typeof(MathsByteExtensionsTestsSource), "GetLowerBound")]
-        public byte GetLowerBound(byte min, byte max, bool allowEitherOrder)
-        {
-            return MathsByteExtensions.GetLowerBound(min, max, allowEitherOrder);
-        }
+		[TestCaseSource(typeof(MathsByteExtensionsTestsSource), "GetLowerBound")]
+		public byte GetLowerBound(byte min, byte max, bool allowEitherOrder)
+		{
+			return MathsByteExtensions.GetLowerBound(min, max, allowEitherOrder);
+		}
 
-        [TestCaseSource(typeof(MathsByteExtensionsTestsSource), "GetUpperBound")]
-        public byte GetUpperBound(byte min, byte max, bool allowEitherOrder)
-        {
-            return MathsByteExtensions.GetUpperBound(min, max, allowEitherOrder);
-        }
+		[TestCaseSource(typeof(MathsByteExtensionsTestsSource), "GetUpperBound")]
+		public byte GetUpperBound(byte min, byte max, bool allowEitherOrder)
+		{
+			return MathsByteExtensions.GetUpperBound(min, max, allowEitherOrder);
+		}
     }
 }

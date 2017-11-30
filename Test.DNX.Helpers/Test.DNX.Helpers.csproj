@@ -229,9 +229,100 @@
     <Compile Include="Streams\StreamExtensionsTests.cs" />
     <Compile Include="Strings\Interpolation\StringInterpolatorTests.cs" />
     <Compile Include="Threading\Mutexes\MutexManagerTests.cs" />
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardTestsSourceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardByteTests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardDateTimeTests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardDecimalTests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardDoubleTests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
     <Compile Include="Validation\GuardEnumsTests.cs" />
+    <Compile Include="Validation\GuardFloatTests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardInt16Tests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardInt32Tests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardInt64Tests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardSByteTests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
     <Compile Include="Validation\GuardTests.cs" />
-    <Compile Include="Validation\GuardBuiltInTypesTests.cs" />
+    <Content Include="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MathsExtensionsTestsSourceTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Validation\GuardBuiltInTypesTests.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>GuardBuiltInTypesTests.cs</LastGenOutput>
+      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
+      <AlwaysRun>True</AlwaysRun>
+    </Content>
+    <Compile Include="Validation\GuardBuiltInTypesTests.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardByteTestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardDateTimeTestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardDecimalTestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardDoubleTestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardFloatTestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardInt16TestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardInt32TestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardInt64TestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardSByteTestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardUInt16TestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardUInt32TestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardUInt64TestsSource.generated.cs">
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardUInt16Tests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardUInt32Tests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validation\GuardUInt64Tests.generated.cs">
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
     <Compile Include="Validation\TypeExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />
     <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDateTimeExtensionsTestsSource.cs" />
@@ -284,19 +375,25 @@
     <Content Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
+      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
+      <AlwaysRun>True</AlwaysRun>
     </Content>
     <Content Include="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MathsExtensionsTestsTemplate.cs</LastGenOutput>
+      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
+      <AlwaysRun>True</AlwaysRun>
     </Content>
-    <Content Include="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.tt">
+    <Content Include="Validation\BuiltInTypes\TestsDataSource\GuardTestsSourceTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MathsExtensionsTestsSourceTemplate.cs</LastGenOutput>
+      <LastGenOutput>GuardTestsSourceTemplate.cs</LastGenOutput>
+      <AlwaysRun>True</AlwaysRun>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

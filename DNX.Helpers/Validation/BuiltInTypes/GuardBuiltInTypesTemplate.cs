@@ -5,7 +5,7 @@ using DNX.Helpers.Maths;
 using DNX.Helpers.Maths.BuiltInTypes;
 using DNX.Helpers.Reflection;
 
-namespace DNX.Helpers.Validation
+namespace DNX.Helpers.Validation.BuiltInTypes
 {
 }
 

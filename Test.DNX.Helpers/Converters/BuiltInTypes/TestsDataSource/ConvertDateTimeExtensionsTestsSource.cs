@@ -64,6 +64,7 @@ namespace Test.DNX.Helpers.Converters.BuiltInTypes.TestsDataSource
         {
             get
             {
+                yield return new TestCaseData(CreateDateString(2017, 09, 06), new DateTime(2017, 10, 14)).Returns(new DateTime(2017, 09, 06));
                 yield return new TestCaseData("abcdef", new DateTime(2017, 09, 06)).Returns(new DateTime(2017, 09, 06));
                 yield return new TestCaseData("Negatory", new DateTime(2017, 02, 28)).Returns(new DateTime(2017, 02, 28));
                 yield return new TestCaseData("Affirmative", new DateTime(2017, 12, 31)).Returns(new DateTime(2017, 12, 31));

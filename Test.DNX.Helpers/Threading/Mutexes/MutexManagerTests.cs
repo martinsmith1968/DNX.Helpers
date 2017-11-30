@@ -41,6 +41,9 @@ namespace Test.DNX.Helpers.Threading.Mutexes
                 // Assert
                 mutex.Name.ShouldEqual(mutexName);
                 MutexManager.Mutexes.ContainsKey(mutexName).ShouldBeTrue();
+                MutexManager.Mutexes[mutexName].State.ShouldEqual(MutexState.Acquired);
+                MutexManager.Mutexes[mutexName].Timestamp.ShouldBeGreaterThan(DateTime.MinValue);
+                MutexManager.Mutexes[mutexName].ThreadId.ShouldEqual(Thread.CurrentThread.ManagedThreadId);
             }
 
             // Assert
@@ -59,6 +62,9 @@ namespace Test.DNX.Helpers.Threading.Mutexes
                 // Assert
                 mutex.Name.ShouldEqual(mutexName);
                 MutexManager.Mutexes.ContainsKey(mutexName).ShouldBeTrue();
+                MutexManager.Mutexes[mutexName].State.ShouldEqual(MutexState.Acquired);
+                MutexManager.Mutexes[mutexName].Timestamp.ShouldBeGreaterThan(DateTime.MinValue);
+                MutexManager.Mutexes[mutexName].ThreadId.ShouldEqual(Thread.CurrentThread.ManagedThreadId);
             }
 
             // Assert

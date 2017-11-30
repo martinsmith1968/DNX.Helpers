@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using DNX.Helpers.Validation;
 using NUnit.Framework;
 
@@ -95,7 +96,7 @@ namespace Test.DNX.Helpers.Validation
         {
             try
             {
-                var allowedList = new[] { GuardEnum1.One, GuardEnum1.Three, GuardEnum1.Five };
+                var allowedList = new List<GuardEnum1>() { GuardEnum1.One, GuardEnum1.Three, GuardEnum1.Five };
 
                 Guard.IsEnumOneOf(() => exp, allowedList);
 

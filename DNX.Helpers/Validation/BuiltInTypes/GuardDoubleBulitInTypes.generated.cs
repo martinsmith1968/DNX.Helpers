@@ -5,7 +5,7 @@ using DNX.Helpers.Maths;
 using DNX.Helpers.Maths.BuiltInTypes;
 using DNX.Helpers.Reflection;
 
-namespace DNX.Helpers.Validation
+namespace DNX.Helpers.Validation.BuiltInTypes
 {
     /// <summary>
     /// Guard Extensions.
@@ -17,7 +17,7 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="min">The minimum.</param>
-        public static void IsGreaterThan(Expression<Func<float>> exp, float min)
+        public static void IsGreaterThan(Expression<Func<double>> exp, double min)
         {
             IsGreaterThan(exp, exp.Compile().Invoke(), min);
         }
@@ -29,14 +29,14 @@ namespace DNX.Helpers.Validation
         /// <param name="val">The value.</param>
         /// <param name="min">The minimum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsGreaterThan(Expression<Func<float>> exp, float val, float min)
+        public static void IsGreaterThan(Expression<Func<double>> exp, double val, double min)
         {
             if (val > min)
             {
                 return;
             }
 
-            var memberName = ReflectionExtensions.GetMemberName(exp);
+            var memberName = ExpressionExtensions.GetMemberName(exp);
 
             throw new ArgumentOutOfRangeException(
                 memberName,
@@ -53,7 +53,7 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="min">The minimum.</param>
-        public static void IsGreaterThanOrEqualTo(Expression<Func<float>> exp, float min)
+        public static void IsGreaterThanOrEqualTo(Expression<Func<double>> exp, double min)
         {
             IsGreaterThanOrEqualTo(exp, exp.Compile().Invoke(), min);
         }
@@ -65,14 +65,14 @@ namespace DNX.Helpers.Validation
         /// <param name="val">The value.</param>
         /// <param name="min">The minimum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsGreaterThanOrEqualTo(Expression<Func<float>> exp, float val, float min)
+        public static void IsGreaterThanOrEqualTo(Expression<Func<double>> exp, double val, double min)
         {
             if (val >= min)
             {
                 return;
             }
 
-            var memberName = ReflectionExtensions.GetMemberName(exp);
+            var memberName = ExpressionExtensions.GetMemberName(exp);
 
             throw new ArgumentOutOfRangeException(
                 memberName,
@@ -89,7 +89,7 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="max">The maximum.</param>
-        public static void IsLessThan(Expression<Func<float>> exp, float max)
+        public static void IsLessThan(Expression<Func<double>> exp, double max)
         {
             IsLessThan(exp, exp.Compile().Invoke(), max);
         }
@@ -101,14 +101,14 @@ namespace DNX.Helpers.Validation
         /// <param name="val">The value.</param>
         /// <param name="max">The minimum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsLessThan(Expression<Func<float>> exp, float val, float max)
+        public static void IsLessThan(Expression<Func<double>> exp, double val, double max)
         {
             if (val < max)
             {
                 return;
             }
 
-            var memberName = ReflectionExtensions.GetMemberName(exp);
+            var memberName = ExpressionExtensions.GetMemberName(exp);
 
             throw new ArgumentOutOfRangeException(
                 memberName,
@@ -125,7 +125,7 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="max">The maximum.</param>
-        public static void IsLessThanOrEqualTo(Expression<Func<float>> exp, float max)
+        public static void IsLessThanOrEqualTo(Expression<Func<double>> exp, double max)
         {
             IsLessThanOrEqualTo(exp, exp.Compile().Invoke(), max);
         }
@@ -137,14 +137,14 @@ namespace DNX.Helpers.Validation
         /// <param name="val">The value.</param>
         /// <param name="max">The maximum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsLessThanOrEqualTo(Expression<Func<float>> exp, float val, float max)
+        public static void IsLessThanOrEqualTo(Expression<Func<double>> exp, double val, double max)
         {
             if (val <= max)
             {
                 return;
             }
 
-            var memberName = ReflectionExtensions.GetMemberName(exp);
+            var memberName = ExpressionExtensions.GetMemberName(exp);
 
             throw new ArgumentOutOfRangeException(
                 memberName,
@@ -162,7 +162,7 @@ namespace DNX.Helpers.Validation
         /// <param name="exp">The linq expression of the argument to check</param>
         /// <param name="min">minimum allowed value</param>
         /// <param name="max">maximum allowed value</param>
-        public static void IsBetween(Expression<Func<float>> exp, float min, float max)
+        public static void IsBetween(Expression<Func<double>> exp, double min, double max)
         {
             IsBetween(exp, min, max, IsBetweenBoundsType.Inclusive);
         }
@@ -174,7 +174,7 @@ namespace DNX.Helpers.Validation
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="boundsType">Type of the bounds.</param>
-        public static void IsBetween(Expression<Func<float>> exp, float min, float max, IsBetweenBoundsType boundsType)
+        public static void IsBetween(Expression<Func<double>> exp, double min, double max, IsBetweenBoundsType boundsType)
         {
             IsBetween(exp, min, max, false, boundsType);
         }
@@ -187,7 +187,7 @@ namespace DNX.Helpers.Validation
         /// <param name="bound2">The bound2.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> [allow either order].</param>
         /// <param name="boundsType">Type of the bounds.</param>
-        public static void IsBetween(Expression<Func<float>> exp, float bound1, float bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
+        public static void IsBetween(Expression<Func<double>> exp, double bound1, double bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             IsBetween(exp, exp.Compile().Invoke(), bound1, bound2, allowEitherOrder, boundsType);
         }
@@ -203,14 +203,14 @@ namespace DNX.Helpers.Validation
         /// <param name="boundsType">Type of the bounds.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsBetween(Expression<Func<float>> exp, float val, float bound1, float bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
+        public static void IsBetween(Expression<Func<double>> exp, double val, double bound1, double bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             if (val.IsBetween(bound1, bound2, allowEitherOrder, boundsType))
             {
                 return;
             }
 
-            var memberName = ReflectionExtensions.GetMemberName(exp);
+            var memberName = ExpressionExtensions.GetMemberName(exp);
 
             throw new ArgumentOutOfRangeException(
                 memberName,
@@ -218,8 +218,8 @@ namespace DNX.Helpers.Validation
                 string.Format("{0} must be {1}",
                     memberName,
                     string.Format(boundsType.GetLimitDescriptionFormat(),
-                        MathsFloatExtensions.GetLowerBound(bound1, bound2, allowEitherOrder),
-                        MathsFloatExtensions.GetUpperBound(bound1, bound2, allowEitherOrder)
+                        MathsDoubleExtensions.GetLowerBound(bound1, bound2, allowEitherOrder),
+                        MathsDoubleExtensions.GetUpperBound(bound1, bound2, allowEitherOrder)
                         )
                     )
                 );

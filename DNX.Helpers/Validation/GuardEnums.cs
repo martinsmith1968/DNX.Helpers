@@ -32,7 +32,7 @@ namespace DNX.Helpers.Validation
         {
             if (!val.IsValidEnum())
             {
-                var memberName = ReflectionExtensions.GetMemberName(exp);
+                var memberName = ExpressionExtensions.GetMemberName(exp);
 
                 throw new ArgumentException(
                     string.Format("{0} must be a valid {1} value", memberName, typeof(T).Name), memberName
@@ -77,7 +77,7 @@ namespace DNX.Helpers.Validation
         {
             if (!val.IsValueOneOf(allowed))
             {
-                var memberName = ReflectionExtensions.GetMemberName(exp);
+                var memberName = ExpressionExtensions.GetMemberName(exp);
 
                 var allowedValues = allowed
                     .Select(a => Convert.ToString(a));

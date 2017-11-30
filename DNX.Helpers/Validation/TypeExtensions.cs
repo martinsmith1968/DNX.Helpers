@@ -15,10 +15,7 @@ namespace DNX.Helpers.Validation
         /// <remarks>Also available as an extension method</remarks>
         public static bool IsNullable(this Type type)
         {
-            if (type == null)
-            {
-                return false;
-            }
+            Guard.IsNotNull(() => type);
 
             if (!type.IsValueType)
             {

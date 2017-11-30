@@ -14,6 +14,7 @@ namespace Test.DNX.Helpers.Maths
         [TestCase(IsBetweenBoundsType.ExcludeLowerAndUpper, ExpectedResult = "between but not including {0} and {1}")]
         [TestCase(IsBetweenBoundsType.ExcludeLowerIncludeUpper, ExpectedResult = "greater than {0} but less than or equal to {1}")]
         [TestCase(IsBetweenBoundsType.IncludeLowerExcludeUpper, ExpectedResult = "greater than or equal to {0} but less than {1}")]
+        [TestCase((IsBetweenBoundsType)999, ExpectedResult = null)]
         public string GetLimitDescriptionFormatTest(IsBetweenBoundsType boundsType)
         {
             return boundsType.GetLimitDescriptionFormat();

@@ -20,10 +20,7 @@ namespace DNX.Helpers.Reflection
         /// <returns>IList&lt;T&gt;.</returns>
         public static IList<T> GetTypeAttributes<T>(this Type type, bool inherit)
         {
-            if (type == null)
-            {
-                throw new ArgumentNullException("type");
-            }
+            Guard.IsNotNull(() => type);
 
             var attributes = type.GetCustomAttributes(typeof(T), inherit);
 
@@ -50,7 +47,7 @@ namespace DNX.Helpers.Reflection
         }
 
         /// <summary>
-        /// Gets the member attributes.
+        /// Gets the custom attributes from a member (property / field)
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="memberInfo">The member information.</param>
@@ -68,13 +65,27 @@ namespace DNX.Helpers.Reflection
         }
 
         /// <summary>
-        /// Types the has attributes.
+        /// Does the instance object have type attributes
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="type">The type.</param>
+        /// <param name="inherit">if set to <c>true</c> [inherit].</param>
+        /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        public static bool HasTypeAttributes<T>(this Type type, bool inherit)
+        {
+            var attributes = type.GetTypeAttributes<T>(inherit);
+
+            return attributes.Any();
+        }
+
+        /// <summary>
+        /// Does the instance object have type attributes
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="obj">The object.</param>
         /// <param name="inherit">if set to <c>true</c> [inherit].</param>
         /// <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
-        public static bool InstanceHasAttributes<T>(this object obj, bool inherit)
+        public static bool InstanceHasTypeAttributes<T>(this object obj, bool inherit)
         {
             var attributes = obj.GetTypeAttributesFromInstance<T>(inherit);
 

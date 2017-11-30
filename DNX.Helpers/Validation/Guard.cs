@@ -32,7 +32,7 @@ namespace DNX.Helpers.Validation
                 return;
             }
 
-            var memberName = ReflectionExtensions.GetMemberName(exp);
+            var memberName = ExpressionExtensions.GetMemberName(exp);
 
             throw new ArgumentOutOfRangeException(
                 memberName,
@@ -63,7 +63,7 @@ namespace DNX.Helpers.Validation
                 return;
             }
 
-            var memberName = ReflectionExtensions.GetMemberName(exp);
+            var memberName = ExpressionExtensions.GetMemberName(exp);
 
             throw new ArgumentOutOfRangeException(
                 memberName,
@@ -97,7 +97,7 @@ namespace DNX.Helpers.Validation
         {
             if (val == null)
             {
-                var memberName = ReflectionExtensions.GetMemberName(exp);
+                var memberName = ExpressionExtensions.GetMemberName(exp);
 
                 throw new ArgumentNullException(
                     memberName,
@@ -125,7 +125,7 @@ namespace DNX.Helpers.Validation
         {
             if (string.IsNullOrEmpty(val))
             {
-                var memberName = ReflectionExtensions.GetMemberName(exp);
+                var memberName = ExpressionExtensions.GetMemberName(exp);
 
                 throw new ArgumentException(
                     string.Format("{0} must not be null or empty", memberName), memberName
@@ -152,7 +152,7 @@ namespace DNX.Helpers.Validation
         {
             if (string.IsNullOrWhiteSpace(val))
             {
-                var memberName = ReflectionExtensions.GetMemberName(exp);
+                var memberName = ExpressionExtensions.GetMemberName(exp);
 
                 throw new ArgumentException(
                     string.Format("{0} must not be null or whitespace", memberName), memberName

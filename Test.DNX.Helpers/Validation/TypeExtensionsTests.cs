@@ -1,6 +1,7 @@
 ﻿using System;
 using DNX.Helpers.Validation;
 using NUnit.Framework;
+using Should;
 
 namespace Test.DNX.Helpers.Validation
 {
@@ -36,6 +37,21 @@ namespace Test.DNX.Helpers.Validation
         public bool IsNullableTest(Type type)
         {
             return type.IsNullable();
+        }
+
+        public void IsNullableTest_Throws()
+        {
+            try
+            {
+                Type type = null;
+
+                var result = type.IsNullable();
+
+                Assert.Fail("Unexpected result");
+            }
+            catch (ArgumentNullException)
+            {
+            }
         }
 
         [TestCase(typeof(I1), ExpectedResult = true)]

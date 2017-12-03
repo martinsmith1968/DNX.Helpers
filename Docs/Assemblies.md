@@ -58,7 +58,7 @@ Extend a `Version` reference
 
 | Method Name | Parameters | Description |
 | --- | --- | --- |
-| Simplify | minimumPositions (Default: 1) | Reduce a `Version` string to only the significant values, honouring the minimum required positions |
+| Simplify | minimumPositions (1 - 4) (Default: 1) | Reduce a `Version` string to only the significant values, honouring the minimum required positions |
 
 Examples:
 

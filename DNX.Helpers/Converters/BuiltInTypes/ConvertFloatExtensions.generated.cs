@@ -5,7 +5,7 @@ using DNX.Helpers.Exceptions;
 namespace DNX.Helpers.Converters.BuiltInTypes
 {
     /// <summary>
-    /// Class ConvertFloatExtensions.
+    /// Class ConvertFloatExtensions
     /// </summary>
     public static class ConvertFloatExtensions
     {

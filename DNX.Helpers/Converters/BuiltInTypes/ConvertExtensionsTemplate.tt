@@ -53,7 +53,7 @@ foreach (var kvp in types)
     manager.StartNewFile(fileName);
 #>
     /// <summary>
-    /// Class Convert<#= typeDesc #>Extensions.
+    /// Class Convert<#= typeDesc #>Extensions
     /// </summary>
     public static class Convert<#= typeDesc #>Extensions
     {

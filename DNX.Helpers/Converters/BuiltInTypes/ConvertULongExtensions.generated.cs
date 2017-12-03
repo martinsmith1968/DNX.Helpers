@@ -5,7 +5,7 @@ using DNX.Helpers.Exceptions;
 namespace DNX.Helpers.Converters.BuiltInTypes
 {
     /// <summary>
-    /// Class ConvertULongExtensions.
+    /// Class ConvertULongExtensions
     /// </summary>
     public static class ConvertULongExtensions
     {

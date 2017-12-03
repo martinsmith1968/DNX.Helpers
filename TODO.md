@@ -1,6 +1,6 @@
 ﻿# To Do
 
-- Guard class add all useful methods
-- Guard tests
-- Reference Resharper annotations and add implement where useful
-
+- .NET Core
+  - Maybe need to break up into separate packages for each namespace ?
+- Unit test coverage
+- Reference Resharper annotations and add implement where appropriate

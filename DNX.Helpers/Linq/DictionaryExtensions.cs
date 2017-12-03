@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DNX.Helpers.Exceptions;
+using DNX.Helpers.Validation;
 
 namespace DNX.Helpers.Linq
 {
@@ -20,10 +22,7 @@ namespace DNX.Helpers.Linq
         /// <exception cref="System.ArgumentNullException">dictionary or keyName</exception>
         public static void SetValue<TK, TV>(this IDictionary<TK, TV> dictionary, TK keyName, TV value)
         {
-            if (dictionary == null)
-            {
-                throw new ArgumentNullException("dictionary");
-            }
+            Guard.IsNotNull(() => dictionary);
 
             if (keyName == null)
             {
@@ -52,10 +51,7 @@ namespace DNX.Helpers.Linq
         /// <exception cref="System.ArgumentNullException">dictionary or keyName</exception>
         public static TV GetValue<TK, TV>(this IDictionary<TK, TV> dictionary, TK keyName, TV defaultValue = default(TV))
         {
-            if (dictionary == null)
-            {
-                throw new ArgumentNullException("dictionary");
-            }
+            Guard.IsNotNull(() => dictionary);
 
             if (keyName == null)
             {
@@ -136,7 +132,7 @@ namespace DNX.Helpers.Linq
                     return MergeLast(dictionaries);
 
                 default:
-                    throw new ArgumentException("Invalid or unsupported Merge Technique", "mergeTechnique");
+                    throw new EnumValueException<MergeTechnique>(mergeTechnique);
             }
         }
 

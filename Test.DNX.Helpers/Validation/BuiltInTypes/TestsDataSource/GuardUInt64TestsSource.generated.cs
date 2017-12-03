@@ -26,14 +26,14 @@ namespace Test.DNX.Helpers.Validation.BuiltInTypes.TestsDataSource
         {
             get
             {
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(1), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(20), CreateDataValue(1), CreateDataValue(10), string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(1), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(20), CreateDataValue(1), CreateDataValue(10), string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
             }
         }
 
@@ -97,20 +97,20 @@ namespace Test.DNX.Helpers.Validation.BuiltInTypes.TestsDataSource
 
         public static IEnumerable<TestCaseData> IsBetween
         {
-			get
-			{
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(2), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(9), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(1), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(10), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(1), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(20), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+            get
+            {
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(2), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(9), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(1), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(10), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(1), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(20), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
 
                 yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Exclusive, null).Returns(true);
                 yield return new TestCaseData(CreateDataValue(2), CreateDataValue(1), CreateDataValue(10), false, IsBetweenBoundsType.Exclusive, null).Returns(true);
@@ -152,18 +152,18 @@ namespace Test.DNX.Helpers.Validation.BuiltInTypes.TestsDataSource
                 yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), false, IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper, string.Format("value must be greater than {0} but less than or equal to {1}", CreateDataValue(10), CreateDataValue(1))).Returns(false);
 
 
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(2), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(9), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(1), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(10), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(1), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(20), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(2), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(9), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(1), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(10), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(1), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(20), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.Inclusive, string.Format("value must be between {0} and {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
 
                 yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Exclusive, null).Returns(true);
                 yield return new TestCaseData(CreateDataValue(2), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.Exclusive, null).Returns(true);
@@ -203,47 +203,47 @@ namespace Test.DNX.Helpers.Validation.BuiltInTypes.TestsDataSource
                 yield return new TestCaseData(CreateDataValue(0), CreateDataValue(1), CreateDataValue(10), true, IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper, string.Format("value must be greater than {0} but less than or equal to {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
                 yield return new TestCaseData(CreateDataValue(20), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper, string.Format("value must be greater than {0} but less than or equal to {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
                 yield return new TestCaseData(CreateDataValue(0), CreateDataValue(10), CreateDataValue(1), true, IsBetweenBoundsType.GreaterThanLowerLessThanOrEqualToUpper, string.Format("value must be greater than {0} but less than or equal to {1}", CreateDataValue(1), CreateDataValue(10))).Returns(false);
-			}
+            }
         }
 
         public static IEnumerable<TestCaseData> IsGreaterThan
         {
-			get
-			{
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), string.Format("value must be greater than {0}", CreateDataValue(5))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), string.Format("value must be greater than {0}", CreateDataValue(10))).Returns(false);
-			}
-		}
+            get
+            {
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), string.Format("value must be greater than {0}", CreateDataValue(5))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), string.Format("value must be greater than {0}", CreateDataValue(10))).Returns(false);
+            }
+        }
 
         public static IEnumerable<TestCaseData> IsGreaterThanOrEqualTo
         {
-			get
-			{
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), string.Format("value must be greater than or equal to {0}", CreateDataValue(10))).Returns(false);
-			}
-		}
+            get
+            {
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), string.Format("value must be greater than or equal to {0}", CreateDataValue(10))).Returns(false);
+            }
+        }
 
         public static IEnumerable<TestCaseData> IsLessThan
         {
-			get
-			{
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), string.Format("value must be less than {0}", CreateDataValue(5))).Returns(false);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), string.Format("value must be less than {0}", CreateDataValue(1))).Returns(false);
-			}
-		}
+            get
+            {
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), string.Format("value must be less than {0}", CreateDataValue(5))).Returns(false);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), string.Format("value must be less than {0}", CreateDataValue(1))).Returns(false);
+            }
+        }
 
         public static IEnumerable<TestCaseData> IsLessThanOrEqualTo
         {
-			get
-			{
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), null).Returns(true);
-				yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), string.Format("value must be less than or equal to {0}", CreateDataValue(1))).Returns(false);
-			}
-		}
+            get
+            {
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(10), null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(5), null).Returns(true);
+                yield return new TestCaseData(CreateDataValue(5), CreateDataValue(1), string.Format("value must be less than or equal to {0}", CreateDataValue(1))).Returns(false);
+            }
+        }
     }
 }

@@ -133,6 +133,7 @@
     <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensionsTests.generated.cs">
       <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Include="Exceptions\EnumValueExceptionTests.cs" />
     <Compile Include="Linq\EnumerableExtensionsTests.cs" />
     <Compile Include="Linq\ItemComparisonListTests.cs" />
     <Compile Include="Linq\ItemComparisonTests.cs" />
@@ -234,32 +235,32 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardByteTests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardByteTests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardDateTimeTests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardDateTimeTests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardDecimalTests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardDecimalTests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardDoubleTests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardDoubleTests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Validation\GuardEnumsTests.cs" />
-    <Compile Include="Validation\GuardFloatTests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardFloatTests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardInt16Tests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardInt16Tests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardInt32Tests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardInt32Tests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardInt64Tests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardInt64Tests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardSByteTests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardSByteTests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Validation\GuardTests.cs" />
@@ -267,13 +268,14 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MathsExtensionsTestsSourceTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Validation\GuardBuiltInTypesTests.tt">
+    <Content Include="Validation\BuiltInTypes\GuardBuiltInTypesTests.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardBuiltInTypesTests.cs</LastGenOutput>
       <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
       <AlwaysRun>True</AlwaysRun>
+      <TransformOnBuild>True</TransformOnBuild>
     </Content>
-    <Compile Include="Validation\GuardBuiltInTypesTests.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardBuiltInTypesTests.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
@@ -314,13 +316,13 @@
     <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardUInt64TestsSource.generated.cs">
       <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardUInt16Tests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardUInt16Tests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardUInt32Tests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardUInt32Tests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\GuardUInt64Tests.generated.cs">
+    <Compile Include="Validation\BuiltInTypes\GuardUInt64Tests.generated.cs">
       <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
     </Compile>
     <Compile Include="Validation\TypeExtensionsTests.cs" />
@@ -377,17 +379,20 @@
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
       <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
       <AlwaysRun>True</AlwaysRun>
+      <TransformOnBuild>True</TransformOnBuild>
     </Content>
     <Content Include="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MathsExtensionsTestsTemplate.cs</LastGenOutput>
       <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
       <AlwaysRun>True</AlwaysRun>
+      <TransformOnBuild>True</TransformOnBuild>
     </Content>
     <Content Include="Validation\BuiltInTypes\TestsDataSource\GuardTestsSourceTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardTestsSourceTemplate.cs</LastGenOutput>
       <AlwaysRun>True</AlwaysRun>
+      <TransformOnBuild>True</TransformOnBuild>
     </Content>
   </ItemGroup>
   <ItemGroup>

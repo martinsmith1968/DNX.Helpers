@@ -43,6 +43,7 @@
     <Compile Include="Assemblies\IAssemblyDetails.cs" />
     <Compile Include="Assemblies\VersionExtensions.cs" />
     <Compile Include="Comparisons\EqualityComparerFunc.cs" />
+    <Compile Include="Exceptions\EnumValueException.cs" />
     <Compile Include="Interfaces\IConverter.cs" />
     <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensions.generated.cs">
       <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
@@ -246,6 +247,7 @@
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
       <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
       <AlwaysRun>True</AlwaysRun>
+      <TransformOnBuild>True</TransformOnBuild>
     </None>
     <None Include="DNX.Helpers.nuspec" />
     <None Include="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
@@ -253,6 +255,7 @@
       <LastGenOutput>MathsExtensionsTemplate.cs</LastGenOutput>
       <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
       <AlwaysRun>True</AlwaysRun>
+      <TransformOnBuild>True</TransformOnBuild>
     </None>
     <None Include="MultipleOutputHelper.ttinclude">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -263,6 +266,7 @@
       <LastGenOutput>GuardBuiltInTypesTemplate.cs</LastGenOutput>
       <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
       <AlwaysRun>True</AlwaysRun>
+      <TransformOnBuild>True</TransformOnBuild>
     </None>
   </ItemGroup>
   <ItemGroup>

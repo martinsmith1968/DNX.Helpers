@@ -1,0 +1,19 @@
+{
+  "commands": {
+    "GenerateMarkdown": {
+      "fileName": "cmd.exe",
+      "workingDirectory": ".",
+      "arguments": "/c GenerateMarkdown.cmd"
+    },
+    "NuGet.Package": {
+      "fileName": "cmd.exe",
+      "workingDirectory": ".",
+      "arguments": "/c NuGet.Package.cmd"
+    },
+    "NuGet.Publish": {
+      "fileName": "cmd.exe",
+      "workingDirectory": ".",
+      "arguments": "/c NuGet.Publish.cmd"
+    }
+  }
+}

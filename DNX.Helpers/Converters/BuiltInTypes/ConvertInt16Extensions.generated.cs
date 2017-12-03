@@ -5,7 +5,7 @@ using DNX.Helpers.Exceptions;
 namespace DNX.Helpers.Converters.BuiltInTypes
 {
     /// <summary>
-    /// Class ConvertInt16Extensions.
+    /// Class ConvertInt16Extensions
     /// </summary>
     public static class ConvertInt16Extensions
     {

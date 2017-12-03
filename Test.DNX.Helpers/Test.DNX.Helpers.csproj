@@ -67,6 +67,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
+    <Compile Include="Assemblies\VersionExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensionsTests.generated.cs">
       <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>

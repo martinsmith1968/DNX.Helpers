@@ -68,6 +68,8 @@
   <ItemGroup>
     <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
     <Compile Include="Assemblies\VersionExtensionsTests.cs" />
+    <Compile Include="Comparisons\EqualityComparerFuncTests.cs" />
+    <Compile Include="Comparisons\ComparerFuncTests.cs" />
     <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
     <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensionsTests.generated.cs">
       <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
@@ -231,6 +233,7 @@
     <Compile Include="Streams\StreamExtensionsTests.cs" />
     <Compile Include="Strings\Interpolation\StringInterpolatorTests.cs" />
     <Compile Include="Threading\Mutexes\MutexManagerTests.cs" />
+    <Compile Include="Threading\ThreadHelperTests.cs" />
     <Compile Include="Validation\BuiltInTypes\TestsDataSource\GuardTestsSourceTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

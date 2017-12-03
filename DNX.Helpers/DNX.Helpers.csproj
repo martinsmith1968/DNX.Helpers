@@ -42,6 +42,7 @@
     <Compile Include="Assemblies\AssemblyExtensions.cs" />
     <Compile Include="Assemblies\IAssemblyDetails.cs" />
     <Compile Include="Assemblies\VersionExtensions.cs" />
+    <Compile Include="Comparisons\ComparerFunc.cs" />
     <Compile Include="Comparisons\EqualityComparerFunc.cs" />
     <Compile Include="Exceptions\EnumValueException.cs" />
     <Compile Include="Interfaces\IConverter.cs" />

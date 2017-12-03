@@ -69,7 +69,7 @@ var v1 = version1.Simplify();     // 1
 var v2 = version1.Simplify(2);    // 1.0
 
 var version2 = new Version(1, 2, 3, 0);
-var v1 = version1.Simplify();     // 1.2.3
-var v2 = version1.Simplify(2);    // 1.2.3
+var v1 = version2.Simplify();     // 1.2.3
+var v2 = version2.Simplify(2);    // 1.2.3
 
 ```

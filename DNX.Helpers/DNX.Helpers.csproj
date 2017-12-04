@@ -131,6 +131,7 @@
     <Compile Include="Linq\ListExtensions.cs" />
     <Compile Include="Linq\MergeTechnique.cs" />
     <Compile Include="Linq\NameValueExtensions.cs" />
+    <Compile Include="Linq\TupleList.cs" />
     <Compile Include="Linq\TupleExtensions.cs" />
     <Compile Include="Maths\BuiltInTypes\MathsByteExtensions.generated.cs">
       <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>

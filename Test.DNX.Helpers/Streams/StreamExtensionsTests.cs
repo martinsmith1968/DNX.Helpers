@@ -40,6 +40,19 @@ namespace Test.DNX.Helpers.Streams
         }
 
         [Test]
+        public void ReadAllText_handles_null_streams_appropriately()
+        {
+            // Arrange
+            var stream = (MemoryStream)null;
+
+            // Act
+            var result = stream.ReadAllText();
+
+            // Assert
+            result.ShouldBeNull();
+        }
+
+        [Test]
         public void ReadAllLines_should_read_lines_successfully()
         {
             // Arrange
@@ -62,6 +75,19 @@ namespace Test.DNX.Helpers.Streams
         }
 
         [Test]
+        public void ReadAllLines_handles_null_streams_appropriately()
+        {
+            // Arrange
+            var stream = (MemoryStream)null;
+
+            // Act
+            var result = stream.ReadAllLines();
+
+            // Assert
+            result.ShouldBeNull();
+        }
+
+        [Test]
         public void ReadAllBytes_should_read_bytes_successfully()
         {
             // Arrange
@@ -78,6 +104,19 @@ namespace Test.DNX.Helpers.Streams
             result.ShouldNotBeNull();
             result.Length.ShouldBeGreaterThan(0);
             result.ShouldEqual(bytes);
+        }
+
+        [Test]
+        public void ReadAllBytes_handles_null_streams_appropriately()
+        {
+            // Arrange
+            var stream = (MemoryStream)null;
+
+            // Act
+            var result = stream.ReadAllBytes();
+
+            // Assert
+            result.ShouldBeNull();
         }
     }
 }

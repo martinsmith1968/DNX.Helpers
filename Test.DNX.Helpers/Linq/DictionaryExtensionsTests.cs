@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DNX.Helpers.Exceptions;
 using DNX.Helpers.Linq;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
@@ -576,6 +577,41 @@ namespace Test.DNX.Helpers.Linq
             result["B3"].ShouldEqual(13);
             result["C1"].ShouldEqual(21);
             result["C2"].ShouldEqual(22);
+        }
+
+        [Test]
+        public void Merge_fails_when_invalid_or_unknown_MergeTechnique_specified()
+        {
+            // Arrange
+            var dict1 = new Dictionary<string, int>()
+            {
+                { "A1", 1 },
+                { "A2", 2 },
+                { "A3", 3 },
+                { "A4", 4 },
+                { "A5", 5 },
+            };
+
+            var dict2 = new Dictionary<string, int>()
+            {
+                { "B1", 11 },
+                { "B2", 12 },
+                { "B3", 13 },
+            };
+
+            var mergeTechnique = (MergeTechnique)int.MaxValue;
+
+            // Act
+            var ex = Assert.Throws<EnumValueException<MergeTechnique>>(() =>
+                {
+                    dict1.MergeWith(dict2, mergeTechnique);
+                }
+            );
+
+            // Assert
+            ex.ShouldNotBeNull();
+            ex.Value.ShouldEqual(mergeTechnique);
+            ex.Type.ShouldEqual(typeof(MergeTechnique));
         }
     }
 }

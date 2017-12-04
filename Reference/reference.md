@@ -291,6 +291,40 @@ Simplifies the Version to the specified minimum positions
 System.String.
 
 
+## T:DNX.Helpers.Comparisons.ComparerFunc`1
+
+Class ComparerFunc.
+
+
+### M:DNX.Helpers.Comparisons.ComparerFunc`1.Compare(x, y)
+
+Compares two objects and returns a value indicating whether one is less than, equal to, or greater than the other.
+
+| Name | Description |
+| ---- | ----------- |
+| x | *`0*<br>The first object to compare. |
+| y | *`0*<br>The second object to compare. |
+
+
+#### Returns
+
+A signed integer that indicates the relative values of and , as shown in the following table.Value Meaning Less than zero is less than .Zero equals .Greater than zero is greater than .
+
+
+### M:DNX.Helpers.Comparisons.ComparerFunc`1.Create(System.Func{`0,`0,System.Int32})
+
+Creates a comparer for the specified type
+
+| Name | Description |
+| ---- | ----------- |
+| func | *Unknown type*<br>The function. |
+
+
+#### Returns
+
+ActionComparer<T>.
+
+
 ## T:DNX.Helpers.Comparisons.EqualityComparerFunc`1
 
 Class EqualityComparerFunc.
@@ -2890,20 +2924,75 @@ IDictionary<System.String, System.String>.
 
 ## T:DNX.Helpers.Linq.TupleExtensions
 
-Class TupleExtensions.
+Class TupleListExtensions.
 
 
-#### Remarks
+### M:DNX.Helpers.Linq.TupleExtensions.Add``2(System.Collections.Generic.IList{System.Tuple{``0,``1}},``0,``1)
 
-To allow Tuple initializers See: https://stackoverflow.com/questions/8002455/how-to-easily-initialize-a-list-of-tuples
+Adds the specified item1.
 
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| item1 | *`0*<br>The item1. |
+| item2 | *`1*<br>The item2. |
 
-## T:DNX.Helpers.Linq.TupleExtensions.TupleList`2
+### M:DNX.Helpers.Linq.TupleExtensions.Add``3(System.Collections.Generic.IList{System.Tuple{``0,``1,``2}},``0,``1,``2)
+
+Adds the specified item1.
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| item1 | *`0*<br>The item1. |
+| item2 | *`1*<br>The item2. |
+| item3 | *Unknown type*<br>The item3. |
+
+### M:DNX.Helpers.Linq.TupleExtensions.Add``4(System.Collections.Generic.IList{System.Tuple{``0,``1,``2,``3}},``0,``1,``2,``3)
+
+Adds the specified item1.
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| item1 | *`0*<br>The item1. |
+| item2 | *`1*<br>The item2. |
+| item3 | *Unknown type*<br>The item3. |
+| item4 | *Unknown type*<br>The item4. |
+
+### M:DNX.Helpers.Linq.TupleExtensions.Add``5(System.Collections.Generic.IList{System.Tuple{``0,``1,``2,``3,``4}},``0,``1,``2,``3,``4)
+
+Adds the specified item1.
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| item1 | *`0*<br>The item1. |
+| item2 | *`1*<br>The item2. |
+| item3 | *Unknown type*<br>The item3. |
+| item4 | *Unknown type*<br>The item4. |
+| item5 | *Unknown type*<br>The item5. |
+
+### M:DNX.Helpers.Linq.TupleExtensions.Add``6(System.Collections.Generic.IList{System.Tuple{``0,``1,``2,``3,``4,``5}},``0,``1,``2,``3,``4,``5)
+
+Adds the specified item1.
+
+| Name | Description |
+| ---- | ----------- |
+| list | *System.Collections.Generic.IList{``0}*<br>The list. |
+| item1 | *`0*<br>The item1. |
+| item2 | *`1*<br>The item2. |
+| item3 | *Unknown type*<br>The item3. |
+| item4 | *Unknown type*<br>The item4. |
+| item5 | *Unknown type*<br>The item5. |
+| item6 | *Unknown type*<br>The item6. |
+
+## T:DNX.Helpers.Linq.TupleList`2
 
 Class TupleList to allow Tuple initializers
 
 
-### M:DNX.Helpers.Linq.TupleExtensions.TupleList`2.Add(item, item2)
+### M:DNX.Helpers.Linq.TupleList`2.Add(item, item2)
 
 Adds the specified item.
 
@@ -2912,12 +3001,12 @@ Adds the specified item.
 | item | *`0*<br>The item. |
 | item2 | *`1*<br>The item2. |
 
-## T:DNX.Helpers.Linq.TupleExtensions.TupleList`3
+## T:DNX.Helpers.Linq.TupleList`3
 
 Class TupleList to allow Tuple initializers
 
 
-### M:DNX.Helpers.Linq.TupleExtensions.TupleList`3.Add(item, item2, item3)
+### M:DNX.Helpers.Linq.TupleList`3.Add(item, item2, item3)
 
 Adds the specified item.
 
@@ -2927,12 +3016,12 @@ Adds the specified item.
 | item2 | *`1*<br>The item2. |
 | item3 | *`2*<br>The item3. |
 
-## T:DNX.Helpers.Linq.TupleExtensions.TupleList`4
+## T:DNX.Helpers.Linq.TupleList`4
 
 Class TupleList to allow Tuple initializers
 
 
-### M:DNX.Helpers.Linq.TupleExtensions.TupleList`4.Add(item, item2, item3, item4)
+### M:DNX.Helpers.Linq.TupleList`4.Add(item, item2, item3, item4)
 
 Adds the specified item.
 
@@ -2943,12 +3032,12 @@ Adds the specified item.
 | item3 | *`2*<br>The item3. |
 | item4 | *`3*<br>The item4. |
 
-## T:DNX.Helpers.Linq.TupleExtensions.TupleList`5
+## T:DNX.Helpers.Linq.TupleList`5
 
 Class TupleList to allow Tuple initializers
 
 
-### M:DNX.Helpers.Linq.TupleExtensions.TupleList`5.Add(item, item2, item3, item4, item5)
+### M:DNX.Helpers.Linq.TupleList`5.Add(item, item2, item3, item4, item5)
 
 Adds the specified item.
 
@@ -2960,12 +3049,12 @@ Adds the specified item.
 | item4 | *`3*<br>The item4. |
 | item5 | *`4*<br>The item5. |
 
-## T:DNX.Helpers.Linq.TupleExtensions.TupleList`6
+## T:DNX.Helpers.Linq.TupleList`6
 
 Class TupleList to allow Tuple initializers
 
 
-### M:DNX.Helpers.Linq.TupleExtensions.TupleList`6.Add(item, item2, item3, item4, item5, item6)
+### M:DNX.Helpers.Linq.TupleList`6.Add(item, item2, item3, item4, item5, item6)
 
 Adds the specified item.
 

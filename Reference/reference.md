@@ -4583,6 +4583,40 @@ Gets the limit description format.
 System.String.
 
 
+## T:DNX.Helpers.Objects.ObjectExtensions
+
+Class ObjectExtensions.
+
+
+### M:DNX.Helpers.Objects.ObjectExtensions.GetUniqueInstanceId(obj)
+
+Gets the unique instance identifier.
+
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Objects.ObjectExtensions.GetUniqueInstanceId(obj, instanceIdOverride)
+
+Gets the unique instance identifier.
+
+| Name | Description |
+| ---- | ----------- |
+| obj | *System.Object*<br>The object. |
+| instanceIdOverride | *System.String*<br>The instance identifier override. |
+
+
+#### Returns
+
+System.String.
+
+
 ## T:DNX.Helpers.Reflection.AttributeExtensions
 
 Attribute Extensions.

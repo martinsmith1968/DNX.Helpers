@@ -231,6 +231,7 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Objects\ObjectExtensionsTests.cs" />
     <Compile Include="Reflection\ReflectionExtensionsTests.cs" />
     <Compile Include="Streams\StreamExtensionsTests.cs" />
     <Compile Include="Strings\Interpolation\StringInterpolatorTests.cs" />

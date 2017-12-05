@@ -43,7 +43,7 @@ Helpers are divided into the following namespaces:
 | [Interfaces](Docs/Interfaces.md) | Common useful interfaces that promote conformity |
 | [Linq](Docs/Linq.md) | Some useful extension methods and classes for working with enumerables |
 | [Maths](Docs/Maths.md) | Some useful extension methods for math comparisons across the built in types |
-| [Objects](Objects.md) | Some extension methods that apply to any object |
+| [Objects](Docs/Objects.md) | Some extension methods that apply to any object |
 | [Reflection](Docs/Reflection.md) | Makes querying your own code at runtime so much simpler |
 | [Streams](Docs/Streams.md) | Some useful helpers for working with streams without having to remember how to setup readers, etc |
 | [Strings](Docs/Strings.md) | Extensions to the `string` class to simplify working with textual data |

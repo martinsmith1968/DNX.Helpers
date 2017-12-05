@@ -8,9 +8,9 @@ It is designed around the premise that code should be as readable as possible at
 E.g. Replaces code that would normally look something like:
 ```csharp
 var escapedCode = string.Format("{0}{1}{2}",
-    code.StartsWith("[") ? null : "[",
+    code != null && code.StartsWith("[") ? null : "[",
     code,
-    code.EndsWith("]") ? null : "]"
+    code != null && code.EndsWith("]") ? null : "]"
     );
 ```
 
@@ -19,8 +19,6 @@ with
 ```csharp
 var escapedCode = code.EnsureStartsAndEndsWith("[", "]");
 ```
-
-and that's without having to cater for `code` being a null reference
 
 ### Installation
 

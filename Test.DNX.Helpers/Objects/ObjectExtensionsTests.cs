@@ -47,5 +47,23 @@ namespace Test.DNX.Helpers.Objects
 
             return uniqueId1 == uniqueId2;
         }
+
+        [TestCase("a", "b", "c", ExpectedResult = "a")]
+        [TestCase("a", null, null, ExpectedResult = "a")]
+        [TestCase(null, "b", "c", ExpectedResult = "b")]
+        [TestCase(null, null, "c", ExpectedResult = "c")]
+        [TestCase(null, null, null, ExpectedResult = null)]
+        [TestCase("a", "b", "c", ExpectedResult = "a")]
+        [TestCase("a", "", "", ExpectedResult = "a")]
+        [TestCase("", "b", "c", ExpectedResult = "")]
+        [TestCase("", "", "c", ExpectedResult = "")]
+        [TestCase("", "", "", ExpectedResult = "")]
+
+        public object Test_CoalesceNull(string a, string b, string c)
+        {
+            var result = ObjectExtensions.CoalesceNull(a, b, c);
+
+            return result;
+        }
     }
 }

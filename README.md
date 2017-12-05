@@ -5,8 +5,7 @@
 
 It is designed around the premise that code should be as readable as possible at the highest level possible.
 
-E.g. Would you rather look at code and see:
-
+E.g. Replaces code that would normally look something like:
 ```csharp
 var escapedCode = string.Format("{0}{1}{2}",
     code.StartsWith("[") ? null : "[",
@@ -15,7 +14,7 @@ var escapedCode = string.Format("{0}{1}{2}",
     );
 ```
 
-or
+with
 
 ```csharp
 var escapedCode = code.EnsureStartsAndEndsWith("[", "]");
@@ -44,6 +43,7 @@ Helpers are divided into the following namespaces:
 | [Interfaces](Docs/Interfaces.md) | Common useful interfaces that promote conformity |
 | [Linq](Docs/Linq.md) | Some useful extension methods and classes for working with enumerables |
 | [Maths](Docs/Maths.md) | Some useful extension methods for math comparisons across the built in types |
+| [Objects](Objects.md) | Some extension methods that apply to any object |
 | [Reflection](Docs/Reflection.md) | Makes querying your own code at runtime so much simpler |
 | [Streams](Docs/Streams.md) | Some useful helpers for working with streams without having to remember how to setup readers, etc |
 | [Strings](Docs/Strings.md) | Extensions to the `string` class to simplify working with textual data |
@@ -58,7 +58,7 @@ Also, check out the [Unit Test](Test.DNX.Helpers) project for some usage example
 
 ### To Do
 
-[To Do](TODO.md)
+[To Do](todo.md)
 
 ### Contributing
 
@@ -70,11 +70,11 @@ By Martin Smith, 2001 onwards
 
 ### Licence
 
-[Licence](LICENSE.txt)
+[Licence](licence.txt)
 
 ### Related Projects
 
 | Project | Location |
 | --- | --- |
-| [DNX.Helpers.Console](http://github.com/martinsmith1968/DNX.Helpers.Console){:target="_blank"} | For working with console applications. Includes CommandLine parser support |
-| [DNX.Helpers.Log4Net](http://github.com/martinsmith1968/DNX.Helpers.Log4Net){:target="_blank"} | For working with Log4Net |
+| [DNX.Helpers.Console](http://github.com/martinsmith1968/DNX.Helpers.Console) | For working with console applications. Includes CommandLine parser support |
+| [DNX.Helpers.Log4Net](http://github.com/martinsmith1968/DNX.Helpers.Log4Net) | For working with Log4Net |

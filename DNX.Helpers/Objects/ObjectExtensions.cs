@@ -1,4 +1,6 @@
-﻿using DNX.Helpers.Strings;
+﻿using System.Collections.Generic;
+using System.Linq;
+using DNX.Helpers.Strings;
 
 namespace DNX.Helpers.Objects
 {
@@ -29,6 +31,30 @@ namespace DNX.Helpers.Objects
                 obj.GetType().FullName,
                 StringExtensions.CoalesceNullOrEmpty(instanceIdOverride, obj.GetHashCode().ToString())
             );
+        }
+
+        /// <summary>
+        /// Coalesces the list of objects to find the first not null
+        /// </summary>
+        /// <param name="objects">The objects.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static object CoalesceNull(params object[] objects)
+        {
+            return objects.CoalesceNull();
+        }
+
+        /// <summary>
+        /// Coalesces the list of objects to find the first not null
+        /// </summary>
+        /// <param name="objects">The objects.</param>
+        /// <returns>System.String.</returns>
+        /// <remarks>Also available as an extension method</remarks>
+        public static object CoalesceNull(this IList<object> objects)
+        {
+            var value = objects.FirstOrDefault(o => o != null);
+
+            return value;
         }
     }
 }

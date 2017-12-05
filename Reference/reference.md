@@ -4588,6 +4588,44 @@ System.String.
 Class ObjectExtensions.
 
 
+### M:DNX.Helpers.Objects.ObjectExtensions.CoalesceNull(objects)
+
+Coalesces the list of objects to find the first not null
+
+| Name | Description |
+| ---- | ----------- |
+| objects | *System.Collections.Generic.IList{System.Object}*<br>The objects. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Objects.ObjectExtensions.CoalesceNull(objects)
+
+Coalesces the list of objects to find the first not null
+
+| Name | Description |
+| ---- | ----------- |
+| objects | *System.Object[]*<br>The objects. |
+
+
+#### Returns
+
+System.String.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
 ### M:DNX.Helpers.Objects.ObjectExtensions.GetUniqueInstanceId(obj)
 
 Gets the unique instance identifier.
@@ -5610,9 +5648,23 @@ System.String.
 Also available as an extension method
 
 
+### M:DNX.Helpers.Strings.StringExtensions.IsValidNumber(text)
+
+Determines whether the specified text is numeric conforming to the current Culture NumberFormat.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if the specified culture information is numeric; otherwise, false.
+
+
 ### M:DNX.Helpers.Strings.StringExtensions.IsValidNumber(text, cultureInfo)
 
-Determines whether the specified text is numeric confirming to the specified Culture NumberFormat.
+Determines whether the specified text is numeric conforming to the specified Culture NumberFormat.
 
 | Name | Description |
 | ---- | ----------- |

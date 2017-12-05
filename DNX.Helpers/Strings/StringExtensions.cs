@@ -424,7 +424,6 @@ namespace DNX.Helpers.Strings
 
         /// <summary>
         /// Builds the number validation regex for the specified cultureinfo
-        ///
         /// </summary>
         /// <param name="cultureInfo">The culture information.</param>
         /// <returns>System.String.</returns>
@@ -444,7 +443,19 @@ namespace DNX.Helpers.Strings
         }
 
         /// <summary>
-        /// Determines whether the specified text is numeric confirming to the specified Culture NumberFormat.
+        /// Determines whether the specified text is numeric conforming to the current Culture NumberFormat.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns><c>true</c> if the specified culture information is numeric; otherwise, <c>false</c>.</returns>
+        public static bool IsValidNumber(this string text)
+        {
+            var pattern = BuildNumberValidationRegexForCulture(CultureInfo.CurrentCulture);
+
+            return Regex.IsMatch(text, pattern);
+        }
+
+        /// <summary>
+        /// Determines whether the specified text is numeric conforming to the specified Culture NumberFormat.
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="cultureInfo">The culture information.</param>

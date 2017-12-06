@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DNX.Helpers.Maths;
-using DNX.Helpers.Validation.BuiltInTypes;
+using DNX.Helpers.Validation;
 
 namespace DNX.Helpers.Assemblies
 {

@@ -5113,6 +5113,112 @@ Creates a populated object instance from a Dictionary
 T.
 
 
+## T:DNX.Helpers.Reflection.TypeExtensions
+
+Type Extensions.
+
+
+### M:DNX.Helpers.Reflection.TypeExtensions.CreateDefaultInstance(type)
+
+Gets a default instance.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+System.Object.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Reflection.TypeExtensions.CreateDefaultInstance``1
+
+Gets a default instance.
+
+
+#### Returns
+
+System.Object.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Reflection.TypeExtensions.GetDefaultValue(type)
+
+Gets the default value.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+System.Object.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
+### M:DNX.Helpers.Reflection.TypeExtensions.IsA(type, baseClassOrInterface)
+
+Determines whether the specified type is a.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+| baseClassOrInterface | *System.Type*<br>The base class or interface. |
+
+
+#### Returns
+
+System.Boolean.
+
+
+### M:DNX.Helpers.Reflection.TypeExtensions.IsA``1(type)
+
+Determines whether the specified type is a.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+true if the specified type is a; otherwise, false.
+
+
+### M:DNX.Helpers.Reflection.TypeExtensions.IsNullable(type)
+
+Determines whether the specified type is nullable.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+true if the specified type is nullable; otherwise, false.
+
+
+#### Remarks
+
+Also available as an extension method
+
+
 ## T:DNX.Helpers.Streams.StreamExtensions
 
 Class StreamProcessor.
@@ -6447,7 +6553,7 @@ Queues a delegate to run on a thread pool thread.
 True if the delegate is queued successfully; False otherwise 
 
 
-## T:DNX.Helpers.Validation.BuiltInTypes.Guard
+## T:DNX.Helpers.Validation.Guard
 
 Guard Extensions.
 
@@ -6473,8 +6579,10 @@ Guard Extensions.
 
 Guard Extensions.
 
+Guard Extensions.
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6484,7 +6592,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.Byte*<br>minimum allowed value |
 | max | *System.Byte*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6495,7 +6603,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.Byte*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6507,7 +6615,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6525,7 +6633,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6535,7 +6643,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.DateTime*<br>minimum allowed value |
 | max | *System.DateTime*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6546,7 +6654,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.DateTime*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6558,7 +6666,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6576,7 +6684,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6586,7 +6694,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.Decimal*<br>minimum allowed value |
 | max | *System.Decimal*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6597,7 +6705,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.Decimal*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6609,7 +6717,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6627,7 +6735,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6637,7 +6745,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.Double*<br>minimum allowed value |
 | max | *System.Double*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6648,7 +6756,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.Double*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6660,7 +6768,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6678,7 +6786,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6688,7 +6796,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.Int16*<br>minimum allowed value |
 | max | *System.Int16*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6699,7 +6807,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.Int16*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6711,7 +6819,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6729,7 +6837,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6739,7 +6847,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.Int32*<br>minimum allowed value |
 | max | *System.Int32*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6750,7 +6858,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.Int32*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6762,7 +6870,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6780,7 +6888,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6790,7 +6898,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.Int64*<br>minimum allowed value |
 | max | *System.Int64*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6801,7 +6909,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.Int64*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6813,7 +6921,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6831,7 +6939,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6841,7 +6949,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.SByte*<br>minimum allowed value |
 | max | *System.SByte*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6852,7 +6960,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.SByte*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6864,7 +6972,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6882,7 +6990,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6892,7 +7000,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.Single*<br>minimum allowed value |
 | max | *System.Single*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6903,7 +7011,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.Single*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6915,7 +7023,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6933,7 +7041,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6943,7 +7051,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.UInt16*<br>minimum allowed value |
 | max | *System.UInt16*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6954,7 +7062,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.UInt16*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6966,7 +7074,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -6984,7 +7092,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -6994,7 +7102,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.UInt32*<br>minimum allowed value |
 | max | *System.UInt32*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -7005,7 +7113,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.UInt32*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -7017,7 +7125,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -7035,7 +7143,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max)
 
 Ensures the expression evaluates to between the specified values
 
@@ -7045,7 +7153,7 @@ Ensures the expression evaluates to between the specified values
 | min | *System.UInt64*<br>minimum allowed value |
 | max | *System.UInt64*<br>maximum allowed value |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, min, max, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, min, max, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -7056,7 +7164,7 @@ Ensures the expression and corresponding value evaluates to between the specifie
 | max | *System.UInt64*<br>The maximum. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression evaluates to between the specified values
 
@@ -7068,7 +7176,7 @@ Ensures the expression evaluates to between the specified values
 | allowEitherOrder | *System.Boolean*<br>if set to true [allow either order]. |
 | boundsType | *DNX.Helpers.Maths.IsBetweenBoundsType*<br>Type of the bounds. |
 
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
+### M:DNX.Helpers.Validation.Guard.IsBetween(exp, val, bound1, bound2, allowEitherOrder, boundsType)
 
 Ensures the expression and corresponding value evaluates to between the specified values
 
@@ -7084,1067 +7192,6 @@ Ensures the expression and corresponding value evaluates to between the specifie
 *System.ArgumentOutOfRangeException:* 
 
 *System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| min | *System.Byte*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| val | *System.Byte*<br>The value. |
-| min | *System.Byte*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| min | *System.DateTime*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| val | *System.DateTime*<br>The value. |
-| min | *System.DateTime*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| min | *System.Decimal*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| val | *System.Decimal*<br>The value. |
-| min | *System.Decimal*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| min | *System.Double*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| val | *System.Double*<br>The value. |
-| min | *System.Double*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| min | *System.Int16*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| val | *System.Int16*<br>The value. |
-| min | *System.Int16*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| min | *System.Int32*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| val | *System.Int32*<br>The value. |
-| min | *System.Int32*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| min | *System.Int64*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| val | *System.Int64*<br>The value. |
-| min | *System.Int64*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| min | *System.SByte*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| val | *System.SByte*<br>The value. |
-| min | *System.SByte*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| min | *System.Single*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| val | *System.Single*<br>The value. |
-| min | *System.Single*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| min | *System.UInt16*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| val | *System.UInt16*<br>The value. |
-| min | *System.UInt16*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| min | *System.UInt32*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| val | *System.UInt32*<br>The value. |
-| min | *System.UInt32*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, min)
-
-Ensures the expression evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| min | *System.UInt64*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThan(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| val | *System.UInt64*<br>The value. |
-| min | *System.UInt64*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| min | *System.Byte*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| val | *System.Byte*<br>The value. |
-| min | *System.Byte*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| min | *System.DateTime*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| val | *System.DateTime*<br>The value. |
-| min | *System.DateTime*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| min | *System.Decimal*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| val | *System.Decimal*<br>The value. |
-| min | *System.Decimal*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| min | *System.Double*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| val | *System.Double*<br>The value. |
-| min | *System.Double*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| min | *System.Int16*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| val | *System.Int16*<br>The value. |
-| min | *System.Int16*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| min | *System.Int32*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| val | *System.Int32*<br>The value. |
-| min | *System.Int32*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| min | *System.Int64*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| val | *System.Int64*<br>The value. |
-| min | *System.Int64*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| min | *System.SByte*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| val | *System.SByte*<br>The value. |
-| min | *System.SByte*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| min | *System.Single*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| val | *System.Single*<br>The value. |
-| min | *System.Single*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| min | *System.UInt16*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| val | *System.UInt16*<br>The value. |
-| min | *System.UInt16*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| min | *System.UInt32*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| val | *System.UInt32*<br>The value. |
-| min | *System.UInt32*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, min)
-
-Ensures the expression evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| min | *System.UInt64*<br>The minimum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsGreaterThanOrEqualTo(exp, val, min)
-
-Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| val | *System.UInt64*<br>The value. |
-| min | *System.UInt64*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| max | *System.Byte*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| val | *System.Byte*<br>The value. |
-| max | *System.Byte*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| max | *System.DateTime*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| val | *System.DateTime*<br>The value. |
-| max | *System.DateTime*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| max | *System.Decimal*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| val | *System.Decimal*<br>The value. |
-| max | *System.Decimal*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| max | *System.Double*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| val | *System.Double*<br>The value. |
-| max | *System.Double*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| max | *System.Int16*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| val | *System.Int16*<br>The value. |
-| max | *System.Int16*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| max | *System.Int32*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| val | *System.Int32*<br>The value. |
-| max | *System.Int32*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| max | *System.Int64*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| val | *System.Int64*<br>The value. |
-| max | *System.Int64*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| max | *System.SByte*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| val | *System.SByte*<br>The value. |
-| max | *System.SByte*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| max | *System.Single*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| val | *System.Single*<br>The value. |
-| max | *System.Single*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| max | *System.UInt16*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| val | *System.UInt16*<br>The value. |
-| max | *System.UInt16*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| max | *System.UInt32*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| val | *System.UInt32*<br>The value. |
-| max | *System.UInt32*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, max)
-
-Ensures the expression evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| max | *System.UInt64*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThan(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| val | *System.UInt64*<br>The value. |
-| max | *System.UInt64*<br>The minimum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| max | *System.Byte*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
-| val | *System.Byte*<br>The value. |
-| max | *System.Byte*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| max | *System.DateTime*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
-| val | *System.DateTime*<br>The value. |
-| max | *System.DateTime*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| max | *System.Decimal*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
-| val | *System.Decimal*<br>The value. |
-| max | *System.Decimal*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| max | *System.Double*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
-| val | *System.Double*<br>The value. |
-| max | *System.Double*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| max | *System.Int16*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
-| val | *System.Int16*<br>The value. |
-| max | *System.Int16*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| max | *System.Int32*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
-| val | *System.Int32*<br>The value. |
-| max | *System.Int32*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| max | *System.Int64*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
-| val | *System.Int64*<br>The value. |
-| max | *System.Int64*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| max | *System.SByte*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
-| val | *System.SByte*<br>The value. |
-| max | *System.SByte*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| max | *System.Single*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
-| val | *System.Single*<br>The value. |
-| max | *System.Single*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| max | *System.UInt16*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
-| val | *System.UInt16*<br>The value. |
-| max | *System.UInt16*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| max | *System.UInt32*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
-| val | *System.UInt32*<br>The value. |
-| max | *System.UInt32*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, max)
-
-Ensures the expression evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| max | *System.UInt64*<br>The maximum. |
-
-### M:DNX.Helpers.Validation.BuiltInTypes.Guard.IsLessThanOrEqualTo(exp, val, max)
-
-Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
-
-| Name | Description |
-| ---- | ----------- |
-| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
-| val | *System.UInt64*<br>The value. |
-| max | *System.UInt64*<br>The maximum. |
-
-*System.ArgumentOutOfRangeException:* 
-
-
-## T:DNX.Helpers.Validation.Guard
-
-Guard Extensions.
 
 
 ### M:DNX.Helpers.Validation.Guard.IsEnumOneOf``1(exp, val, allowed)
@@ -8194,6 +7241,1062 @@ Ensures the specified exp is false.
 | ---- | ----------- |
 | exp | *System.Linq.Expressions.Expression{System.Func{System.Boolean}}*<br>The exp. |
 | val | *System.Boolean*<br>The value. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| min | *System.Byte*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| min | *System.DateTime*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| min | *System.Decimal*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| min | *System.Double*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| min | *System.Int16*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| min | *System.Int32*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| min | *System.Int64*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| min | *System.SByte*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| min | *System.Single*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| min | *System.UInt16*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| min | *System.UInt32*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, min)
+
+Ensures the expression evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| min | *System.UInt64*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThan(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| min | *System.Byte*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| min | *System.Byte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| min | *System.DateTime*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| min | *System.DateTime*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| min | *System.Decimal*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| min | *System.Decimal*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| min | *System.Double*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| min | *System.Double*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| min | *System.Int16*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| min | *System.Int16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| min | *System.Int32*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| min | *System.Int32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| min | *System.Int64*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| min | *System.Int64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| min | *System.SByte*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| min | *System.SByte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| min | *System.Single*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| min | *System.Single*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| min | *System.UInt16*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| min | *System.UInt16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| min | *System.UInt32*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| min | *System.UInt32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, min)
+
+Ensures the expression evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| min | *System.UInt64*<br>The minimum. |
+
+### M:DNX.Helpers.Validation.Guard.IsGreaterThanOrEqualTo(exp, val, min)
+
+Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| min | *System.UInt64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| max | *System.Byte*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| max | *System.Byte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| max | *System.DateTime*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| max | *System.DateTime*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| max | *System.Decimal*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| max | *System.Decimal*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| max | *System.Double*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| max | *System.Double*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| max | *System.Int16*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| max | *System.Int16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| max | *System.Int32*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| max | *System.Int32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| max | *System.Int64*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| max | *System.Int64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| max | *System.SByte*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| max | *System.SByte*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| max | *System.Single*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| max | *System.Single*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| max | *System.UInt16*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| max | *System.UInt16*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| max | *System.UInt32*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| max | *System.UInt32*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, max)
+
+Ensures the expression evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| max | *System.UInt64*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThan(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| max | *System.UInt64*<br>The minimum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| max | *System.Byte*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Byte}}*<br>The exp. |
+| val | *System.Byte*<br>The value. |
+| max | *System.Byte*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| max | *System.DateTime*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.DateTime}}*<br>The exp. |
+| val | *System.DateTime*<br>The value. |
+| max | *System.DateTime*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| max | *System.Decimal*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Decimal}}*<br>The exp. |
+| val | *System.Decimal*<br>The value. |
+| max | *System.Decimal*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| max | *System.Double*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Double}}*<br>The exp. |
+| val | *System.Double*<br>The value. |
+| max | *System.Double*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| max | *System.Int16*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int16}}*<br>The exp. |
+| val | *System.Int16*<br>The value. |
+| max | *System.Int16*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| max | *System.Int32*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int32}}*<br>The exp. |
+| val | *System.Int32*<br>The value. |
+| max | *System.Int32*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| max | *System.Int64*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Int64}}*<br>The exp. |
+| val | *System.Int64*<br>The value. |
+| max | *System.Int64*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| max | *System.SByte*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.SByte}}*<br>The exp. |
+| val | *System.SByte*<br>The value. |
+| max | *System.SByte*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| max | *System.Single*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.Single}}*<br>The exp. |
+| val | *System.Single*<br>The value. |
+| max | *System.Single*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| max | *System.UInt16*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt16}}*<br>The exp. |
+| val | *System.UInt16*<br>The value. |
+| max | *System.UInt16*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| max | *System.UInt32*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt32}}*<br>The exp. |
+| val | *System.UInt32*<br>The value. |
+| max | *System.UInt32*<br>The maximum. |
+
+*System.ArgumentOutOfRangeException:* 
+
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, max)
+
+Ensures the expression evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| max | *System.UInt64*<br>The maximum. |
+
+### M:DNX.Helpers.Validation.Guard.IsLessThanOrEqualTo(exp, val, max)
+
+Ensures the expression and corresponding value evaluates to less than or equal to the specified minimum
+
+| Name | Description |
+| ---- | ----------- |
+| exp | *System.Linq.Expressions.Expression{System.Func{System.UInt64}}*<br>The exp. |
+| val | *System.UInt64*<br>The value. |
+| max | *System.UInt64*<br>The maximum. |
 
 *System.ArgumentOutOfRangeException:* 
 
@@ -8305,111 +8408,5 @@ Ensures the expression is a valid Enum value
 | val | *``0*<br>The value. |
 
 *System.ArgumentException:* 
-
-
-## T:DNX.Helpers.Validation.TypeExtensions
-
-Type Extensions.
-
-
-### M:DNX.Helpers.Validation.TypeExtensions.CreateDefaultInstance(type)
-
-Gets a default instance.
-
-| Name | Description |
-| ---- | ----------- |
-| type | *System.Type*<br>The type. |
-
-
-#### Returns
-
-System.Object.
-
-
-#### Remarks
-
-Also available as an extension method
-
-
-### M:DNX.Helpers.Validation.TypeExtensions.CreateDefaultInstance``1
-
-Gets a default instance.
-
-
-#### Returns
-
-System.Object.
-
-
-#### Remarks
-
-Also available as an extension method
-
-
-### M:DNX.Helpers.Validation.TypeExtensions.GetDefaultValue(type)
-
-Gets the default value.
-
-| Name | Description |
-| ---- | ----------- |
-| type | *System.Type*<br>The type. |
-
-
-#### Returns
-
-System.Object.
-
-
-#### Remarks
-
-Also available as an extension method
-
-
-### M:DNX.Helpers.Validation.TypeExtensions.IsA(type, baseClassOrInterface)
-
-Determines whether the specified type is a.
-
-| Name | Description |
-| ---- | ----------- |
-| type | *System.Type*<br>The type. |
-| baseClassOrInterface | *System.Type*<br>The base class or interface. |
-
-
-#### Returns
-
-System.Boolean.
-
-
-### M:DNX.Helpers.Validation.TypeExtensions.IsA``1(type)
-
-Determines whether the specified type is a.
-
-| Name | Description |
-| ---- | ----------- |
-| type | *System.Type*<br>The type. |
-
-
-#### Returns
-
-true if the specified type is a; otherwise, false.
-
-
-### M:DNX.Helpers.Validation.TypeExtensions.IsNullable(type)
-
-Determines whether the specified type is nullable.
-
-| Name | Description |
-| ---- | ----------- |
-| type | *System.Type*<br>The type. |
-
-
-#### Returns
-
-true if the specified type is nullable; otherwise, false.
-
-
-#### Remarks
-
-Also available as an extension method
 
 

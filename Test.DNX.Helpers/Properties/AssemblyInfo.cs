@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Test.DNX.Helpers")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("DNX Solutions Ltd")]
 [assembly: AssemblyProduct("Test.DNX.Helpers")]
 [assembly: AssemblyCopyright("Copyright © 2016 DNX Solutions Ltd")]
 [assembly: AssemblyTrademark("")]
@@ -31,6 +31,6 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.19.0")]
-[assembly: AssemblyFileVersion("1.0.19.0")]
-[assembly: AssemblyInformationalVersion("1.0.19.0")]
+[assembly: AssemblyVersion("1.0.20.0")]
+[assembly: AssemblyFileVersion("1.0.20.0")]
+[assembly: AssemblyInformationalVersion("1.0.20.0")]

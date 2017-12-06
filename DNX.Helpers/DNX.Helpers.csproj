@@ -199,50 +199,50 @@
     <Compile Include="Threading\ProducerConsumerQueue.cs" />
     <Compile Include="Threading\ProducerConsumerQueueAction.cs" />
     <Compile Include="Threading\ThreadHelper.cs" />
-    <Compile Include="Validation\BuiltInTypes\GuardBuiltInTypesTemplate.cs">
+    <Compile Include="Validation\GuardBuiltInTypesTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardByteBulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardByteBulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardDateTimeBulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardDateTimeBulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardDecimalBulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardDecimalBulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardDoubleBulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardDoubleBulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardFloatBulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardFloatBulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardInt16BulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardInt16BulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardInt32BulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardInt32BulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardInt64BulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardInt64BulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardSByteBulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardSByteBulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardUInt16BulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardUInt16BulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardUInt32BulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardUInt32BulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Include="Validation\BuiltInTypes\GuardUInt64BulitInTypes.generated.cs">
+    <Compile Include="Validation\GuardUInt64BulitInTypes.generated.cs">
       <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Validation\Guard.cs" />
     <Compile Include="Validation\GuardEnums.cs" />
-    <Compile Include="Validation\TypeExtensions.cs" />
+    <Compile Include="Reflection\TypeExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
@@ -264,7 +264,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
     </None>
-    <None Include="Validation\BuiltInTypes\GuardBuiltInTypesTemplate.tt">
+    <None Include="Validation\GuardBuiltInTypesTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardBuiltInTypesTemplate.cs</LastGenOutput>
       <RunCustomToolOnBuild>True</RunCustomToolOnBuild>

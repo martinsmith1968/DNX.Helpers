@@ -74,5 +74,7 @@ By Martin Smith, 2001 onwards
 
 | Project | Location |
 | --- | --- |
-| [DNX.Helpers.Console](http://github.com/martinsmith1968/DNX.Helpers.Console) | For working with console applications. Includes CommandLine parser support |
+| [DNX.Helpers](http://github.com/martinsmith1968/DNX.Helpers) | General purpose .NET standard library helpers |
+| [DNX.Helpers.Console](http://github.com/martinsmith1968/DNX.Helpers.Console) | For working with console applications |
+| [DNX.Helpers.CommandLine](http://github.com/martinsmith1968/DNX.Helpers.Console) | For working with Command Line parsing |
 | [DNX.Helpers.Log4Net](http://github.com/martinsmith1968/DNX.Helpers.Log4Net) | For working with Log4Net |

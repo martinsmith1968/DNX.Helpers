@@ -4,7 +4,7 @@ using System.Linq;
 using DNX.Helpers.Reflection;
 using FizzWare.NBuilder;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Reflection
 {
@@ -50,11 +50,11 @@ namespace Test.DNX.Helpers.Reflection
             result.ContainsKey("FloatingPoint").ShouldBeTrue();
             result.ContainsKey("DateAndTime").ShouldBeTrue();
             result.ContainsKey("Enum1Value").ShouldBeTrue();
-            result["Name"].ShouldEqual(instance.Name);
-            result["Integer"].ShouldEqual(instance.Integer);
-            result["FloatingPoint"].ShouldEqual(instance.FloatingPoint);
-            result["DateAndTime"].ShouldEqual(instance.DateAndTime);
-            result["Enum1Value"].ShouldEqual(instance.Enum1Value);
+            result["Name"].ShouldBe(instance.Name);
+            result["Integer"].ShouldBe(instance.Integer);
+            result["FloatingPoint"].ShouldBe(instance.FloatingPoint);
+            result["DateAndTime"].ShouldBe(instance.DateAndTime);
+            result["Enum1Value"].ShouldBe(instance.Enum1Value);
         }
 
         [Test]
@@ -75,11 +75,11 @@ namespace Test.DNX.Helpers.Reflection
 
             // Assert
             result.ShouldNotBeNull();
-            result.Name.ShouldEqual(dict["Name"]);
-            result.Integer.ShouldEqual(dict["Integer"]);
-            result.FloatingPoint.ShouldEqual(dict["FloatingPoint"]);
-            result.DateAndTime.ShouldEqual(dict["DateAndTime"]);
-            result.Enum1Value.ShouldEqual(dict["Enum1Value"]);
+            result.Name.ShouldBe(dict["Name"]);
+            result.Integer.ShouldBe(dict["Integer"]);
+            result.FloatingPoint.ShouldBe(dict["FloatingPoint"]);
+            result.DateAndTime.ShouldBe(dict["DateAndTime"]);
+            result.Enum1Value.ShouldBe(dict["Enum1Value"]);
         }
     }
 }

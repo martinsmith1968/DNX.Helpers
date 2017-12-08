@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using DNX.Helpers.Exceptions;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Exceptions
 {
@@ -19,7 +19,7 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             ex.ShouldNotBeNull();
-            ex.List.ShouldEqual(list);
+            ex.List.ShouldBe(list);
         }
     }
 }

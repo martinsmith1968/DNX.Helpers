@@ -5,7 +5,7 @@ using DNX.Helpers.Exceptions;
 using DNX.Helpers.Linq;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Linq
 {
@@ -41,7 +41,7 @@ namespace Test.DNX.Helpers.Linq
                 );
 
             ex.ShouldNotBeNull();
-            ex.ParamName.ShouldEqual("dictionary");
+            ex.ParamName.ShouldBe("dictionary");
         }
 
         [TestCase("a=1;b=2;c=3", null, ExpectedResult = false)]
@@ -55,7 +55,7 @@ namespace Test.DNX.Helpers.Linq
             }
             catch (ArgumentNullException ex)
             {
-                ex.ParamName.ShouldEqual("keyName");
+                ex.ParamName.ShouldBe("keyName");
 
                 return false;
             }
@@ -94,7 +94,7 @@ namespace Test.DNX.Helpers.Linq
                 );
 
             ex.ShouldNotBeNull();
-            ex.ParamName.ShouldEqual("dictionary");
+            ex.ParamName.ShouldBe("dictionary");
         }
 
         [TestCase("a=1;b=2;c=3", null, "4", ExpectedResult = false)]
@@ -108,7 +108,7 @@ namespace Test.DNX.Helpers.Linq
             }
             catch (ArgumentNullException ex)
             {
-                ex.ParamName.ShouldEqual("keyName");
+                ex.ParamName.ShouldBe("keyName");
 
                 return false;
             }
@@ -189,21 +189,21 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result1.ShouldNotBeNull();
-            result1.Count.ShouldEqual(dict1.Count + dict2.Count + dict3.Count);
+            result1.Count.ShouldBe(dict1.Count + dict2.Count + dict3.Count);
             foreach (var kvp1 in dict1)
             {
                 result1.ContainsKey(kvp1.Key).ShouldBeTrue();
-                result1[kvp1.Key].ShouldEqual(kvp1.Value);
+                result1[kvp1.Key].ShouldBe(kvp1.Value);
             }
             foreach (var kvp2 in dict2)
             {
                 result1.ContainsKey(kvp2.Key).ShouldBeTrue();
-                result1[kvp2.Key].ShouldEqual(kvp2.Value);
+                result1[kvp2.Key].ShouldBe(kvp2.Value);
             }
             foreach (var kvp3 in dict3)
             {
                 result1.ContainsKey(kvp3.Key).ShouldBeTrue();
-                result1[kvp3.Key].ShouldEqual(kvp3.Value);
+                result1[kvp3.Key].ShouldBe(kvp3.Value);
             }
 
             CollectionAssert.AreEqual(result1, result2);
@@ -286,21 +286,21 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result1.ShouldNotBeNull();
-            result1.Count.ShouldEqual(dict1.Count + dict2.Count + dict2.Count);
+            result1.Count.ShouldBe(dict1.Count + dict2.Count + dict2.Count);
             foreach (var kvp1 in dict1)
             {
                 result1.ContainsKey(kvp1.Key).ShouldBeTrue();
-                result1[kvp1.Key].ShouldEqual(kvp1.Value);
+                result1[kvp1.Key].ShouldBe(kvp1.Value);
             }
             foreach (var kvp2 in dict2)
             {
                 result1.ContainsKey(kvp2.Key).ShouldBeTrue();
-                result1[kvp2.Key].ShouldEqual(kvp2.Value);
+                result1[kvp2.Key].ShouldBe(kvp2.Value);
             }
             foreach (var kvp3 in dict3)
             {
                 result1.ContainsKey(kvp3.Key).ShouldBeTrue();
-                result1[kvp3.Key].ShouldEqual(kvp3.Value);
+                result1[kvp3.Key].ShouldBe(kvp3.Value);
             }
 
             CollectionAssert.AreEqual(result1, result2);
@@ -339,7 +339,7 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result1.ShouldNotBeNull();
-            result1.Count.ShouldEqual(dict1.Select(d => d.Key).Union(dict2.Select(d => d.Key)).Union(dict3.Select(d => d.Key)).Distinct().Count());
+            result1.Count.ShouldBe(dict1.Select(d => d.Key).Union(dict2.Select(d => d.Key)).Union(dict3.Select(d => d.Key)).Distinct().Count());
             foreach (var kvp1 in dict1)
             {
                 result1.ContainsKey(kvp1.Key).ShouldBeTrue();
@@ -352,12 +352,12 @@ namespace Test.DNX.Helpers.Linq
             {
                 result1.ContainsKey(kvp3.Key).ShouldBeTrue();
             }
-            result1["A1"].ShouldEqual(1);
-            result1["A2"].ShouldEqual(2);
-            result1["A3"].ShouldEqual(3);
-            result1["A4"].ShouldEqual(4);
-            result1["A5"].ShouldEqual(5);
-            result1["A6"].ShouldEqual(16);
+            result1["A1"].ShouldBe(1);
+            result1["A2"].ShouldBe(2);
+            result1["A3"].ShouldBe(3);
+            result1["A4"].ShouldBe(4);
+            result1["A5"].ShouldBe(5);
+            result1["A6"].ShouldBe(16);
 
             CollectionAssert.AreEqual(result1, result2);
         }
@@ -395,21 +395,21 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result1.ShouldNotBeNull();
-            result1.Count.ShouldEqual(dict1.Count + dict2.Count + dict2.Count);
+            result1.Count.ShouldBe(dict1.Count + dict2.Count + dict2.Count);
             foreach (var kvp1 in dict1)
             {
                 result1.ContainsKey(kvp1.Key).ShouldBeTrue();
-                result1[kvp1.Key].ShouldEqual(kvp1.Value);
+                result1[kvp1.Key].ShouldBe(kvp1.Value);
             }
             foreach (var kvp2 in dict2)
             {
                 result1.ContainsKey(kvp2.Key).ShouldBeTrue();
-                result1[kvp2.Key].ShouldEqual(kvp2.Value);
+                result1[kvp2.Key].ShouldBe(kvp2.Value);
             }
             foreach (var kvp3 in dict3)
             {
                 result1.ContainsKey(kvp3.Key).ShouldBeTrue();
-                result1[kvp3.Key].ShouldEqual(kvp3.Value);
+                result1[kvp3.Key].ShouldBe(kvp3.Value);
             }
 
             CollectionAssert.AreEqual(result1, result2);
@@ -448,7 +448,7 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result1.ShouldNotBeNull();
-            result1.Count.ShouldEqual(dict1.Select(d => d.Key).Union(dict2.Select(d => d.Key)).Union(dict3.Select(d => d.Key)).Distinct().Count());
+            result1.Count.ShouldBe(dict1.Select(d => d.Key).Union(dict2.Select(d => d.Key)).Union(dict3.Select(d => d.Key)).Distinct().Count());
             foreach (var kvp1 in dict1)
             {
                 result1.ContainsKey(kvp1.Key).ShouldBeTrue();
@@ -461,12 +461,12 @@ namespace Test.DNX.Helpers.Linq
             {
                 result1.ContainsKey(kvp3.Key).ShouldBeTrue();
             }
-            result1["A1"].ShouldEqual(21);
-            result1["A2"].ShouldEqual(12);
-            result1["A3"].ShouldEqual(23);
-            result1["A4"].ShouldEqual(14);
-            result1["A5"].ShouldEqual(25);
-            result1["A6"].ShouldEqual(16);
+            result1["A1"].ShouldBe(21);
+            result1["A2"].ShouldBe(12);
+            result1["A3"].ShouldBe(23);
+            result1["A4"].ShouldBe(14);
+            result1["A5"].ShouldBe(25);
+            result1["A6"].ShouldBe(16);
 
             CollectionAssert.AreEqual(result1, result2);
         }
@@ -495,10 +495,10 @@ namespace Test.DNX.Helpers.Linq
             var result = dict1.MergeWith(dict2, MergeTechnique.Unique);
 
             // Assert
-            dict1.Count.ShouldEqual(5);
-            dict2.Count.ShouldEqual(3);
+            dict1.Count.ShouldBe(5);
+            dict2.Count.ShouldBe(3);
             result.ShouldNotBeNull();
-            result.Count.ShouldEqual(dict1.Count + dict2.Count);
+            result.Count.ShouldBe(dict1.Count + dict2.Count);
             foreach (var kvp1 in dict1)
             {
                 result.ContainsKey(kvp1.Key).ShouldBeTrue();
@@ -507,14 +507,14 @@ namespace Test.DNX.Helpers.Linq
             {
                 result.ContainsKey(kvp2.Key).ShouldBeTrue();
             }
-            result["A1"].ShouldEqual(1);
-            result["A2"].ShouldEqual(2);
-            result["A3"].ShouldEqual(3);
-            result["A4"].ShouldEqual(4);
-            result["A5"].ShouldEqual(5);
-            result["B1"].ShouldEqual(11);
-            result["B2"].ShouldEqual(12);
-            result["B3"].ShouldEqual(13);
+            result["A1"].ShouldBe(1);
+            result["A2"].ShouldBe(2);
+            result["A3"].ShouldBe(3);
+            result["A4"].ShouldBe(4);
+            result["A5"].ShouldBe(5);
+            result["B1"].ShouldBe(11);
+            result["B2"].ShouldBe(12);
+            result["B3"].ShouldBe(13);
         }
 
         [Test]
@@ -550,11 +550,11 @@ namespace Test.DNX.Helpers.Linq
                 ;
 
             // Assert
-            dict1.Count.ShouldEqual(5);
-            dict2.Count.ShouldEqual(3);
-            dict3.Count.ShouldEqual(2);
+            dict1.Count.ShouldBe(5);
+            dict2.Count.ShouldBe(3);
+            dict3.Count.ShouldBe(2);
             result.ShouldNotBeNull();
-            result.Count.ShouldEqual(dict1.Count + dict2.Count + dict3.Count);
+            result.Count.ShouldBe(dict1.Count + dict2.Count + dict3.Count);
             foreach (var kvp1 in dict1)
             {
                 result.ContainsKey(kvp1.Key).ShouldBeTrue();
@@ -567,16 +567,16 @@ namespace Test.DNX.Helpers.Linq
             {
                 result.ContainsKey(kvp3.Key).ShouldBeTrue();
             }
-            result["A1"].ShouldEqual(1);
-            result["A2"].ShouldEqual(2);
-            result["A3"].ShouldEqual(3);
-            result["A4"].ShouldEqual(4);
-            result["A5"].ShouldEqual(5);
-            result["B1"].ShouldEqual(11);
-            result["B2"].ShouldEqual(12);
-            result["B3"].ShouldEqual(13);
-            result["C1"].ShouldEqual(21);
-            result["C2"].ShouldEqual(22);
+            result["A1"].ShouldBe(1);
+            result["A2"].ShouldBe(2);
+            result["A3"].ShouldBe(3);
+            result["A4"].ShouldBe(4);
+            result["A5"].ShouldBe(5);
+            result["B1"].ShouldBe(11);
+            result["B2"].ShouldBe(12);
+            result["B3"].ShouldBe(13);
+            result["C1"].ShouldBe(21);
+            result["C2"].ShouldBe(22);
         }
 
         [Test]
@@ -610,8 +610,8 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             ex.ShouldNotBeNull();
-            ex.Value.ShouldEqual(mergeTechnique);
-            ex.Type.ShouldEqual(typeof(MergeTechnique));
+            ex.Value.ShouldBe(mergeTechnique);
+            ex.Type.ShouldBe(typeof(MergeTechnique));
         }
     }
 }

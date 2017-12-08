@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Strings
 {
@@ -95,10 +95,10 @@ namespace Test.DNX.Helpers.Strings
 
             var regex = new Regex(fieldNameRegex);
 
-            regex.GetGroupName(0).ShouldEqual("0");
-            regex.GetGroupName(1).ShouldEqual("FieldName");
-            regex.GetGroupName(2).ShouldEqual("IndexerName");
-            regex.GetGroupName(3).ShouldEqual("3");
+            regex.GetGroupName(0).ShouldBe("0");
+            regex.GetGroupName(1).ShouldBe("FieldName");
+            regex.GetGroupName(2).ShouldBe("IndexerName");
+            regex.GetGroupName(3).ShouldBe("3");
         }
     }
 }

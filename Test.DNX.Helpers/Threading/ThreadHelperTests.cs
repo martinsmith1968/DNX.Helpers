@@ -2,7 +2,7 @@
 using System.Threading;
 using DNX.Helpers.Threading;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Threading
 {
@@ -19,7 +19,7 @@ namespace Test.DNX.Helpers.Threading
             var ex = Assert.Throws<ArgumentNullException>(() => ThreadHelper.Start(start));
 
             // Assert
-            ex.ParamName.ShouldEqual("start");
+            ex.ParamName.ShouldBe("start");
         }
 
         [Test]
@@ -32,7 +32,7 @@ namespace Test.DNX.Helpers.Threading
             var ex = Assert.Throws<ArgumentNullException>(() => ThreadHelper.StartOnThreadPool(start));
 
             // Assert
-            ex.ParamName.ShouldEqual("start");
+            ex.ParamName.ShouldBe("start");
         }
     }
 }

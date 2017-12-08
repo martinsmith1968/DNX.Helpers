@@ -1,6 +1,6 @@
 ﻿using DNX.Helpers.Exceptions;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Exceptions
 {
@@ -19,8 +19,8 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             ex.ShouldNotBeNull();
-            value.ShouldEqual(ex.Value);
-            message.ShouldEqual(ex.Message);
+            value.ShouldBe(ex.Value);
+            message.ShouldBe(ex.Message);
             ex.ConvertType.ShouldBeNull();
         }
 
@@ -37,9 +37,9 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             ex.ShouldNotBeNull();
-            value.ShouldEqual(ex.Value);
-            message.ShouldEqual(ex.Message);
-            type.ShouldEqual(ex.ConvertType);
+            value.ShouldBe(ex.Value);
+            message.ShouldBe(ex.Message);
+            type.ShouldBe(ex.ConvertType);
 
             Assert.IsNotNull(ex);
             Assert.AreEqual(value, ex.Value);

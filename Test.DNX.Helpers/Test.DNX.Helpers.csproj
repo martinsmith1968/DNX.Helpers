@@ -38,8 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bogus, Version=20.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bogus.20.0.2\lib\net40\Bogus.dll</HintPath>
+    <Reference Include="Bogus, Version=21.0.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.21.0.2\lib\net40\Bogus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="FizzWare.NBuilder, Version=5.0.0.138, Culture=neutral, processorArchitecture=MSIL">
@@ -51,8 +51,8 @@
       <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Should, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Should.1.1.20\lib\Should.dll</HintPath>
+    <Reference Include="Shouldly, Version=2.8.3.0, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
+      <HintPath>..\packages\Shouldly.2.8.3\lib\net451\Shouldly.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

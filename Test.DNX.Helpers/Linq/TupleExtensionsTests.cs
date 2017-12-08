@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DNX.Helpers.Linq;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Linq
 {
@@ -26,9 +26,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
 #if CSHARP6
-            result.Count.ShouldEqual(2);
+            result.Count.ShouldBe(2);
 #else
-            result.Count.ShouldEqual(1);
+            result.Count.ShouldBe(1);
 #endif
         }
 
@@ -49,9 +49,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
 #if CSHARP6
-            result.Count.ShouldEqual(2);
+            result.Count.ShouldBe(2);
 #else
-            result.Count.ShouldEqual(1);
+            result.Count.ShouldBe(1);
 #endif
         }
 
@@ -72,9 +72,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
 #if CSHARP6
-            result.Count.ShouldEqual(2);
+            result.Count.ShouldBe(2);
 #else
-            result.Count.ShouldEqual(1);
+            result.Count.ShouldBe(1);
 #endif
         }
 
@@ -95,9 +95,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
 #if CSHARP6
-            result.Count.ShouldEqual(2);
+            result.Count.ShouldBe(2);
 #else
-            result.Count.ShouldEqual(1);
+            result.Count.ShouldBe(1);
 #endif
         }
 
@@ -118,9 +118,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
 #if CSHARP6
-            result.Count.ShouldEqual(2);
+            result.Count.ShouldBe(2);
 #else
-            result.Count.ShouldEqual(1);
+            result.Count.ShouldBe(1);
 #endif
         }
     }

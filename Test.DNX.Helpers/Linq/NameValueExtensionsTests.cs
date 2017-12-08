@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using DNX.Helpers.Linq;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Linq
 {
@@ -28,12 +28,12 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result.ShouldNotBeNull();
-            result.Count.ShouldEqual(collection.Count);
+            result.Count.ShouldBe(collection.Count);
 
             foreach (var key in collection.AllKeys)
             {
                 result.ContainsKey(key).ShouldBeTrue();
-                result[key].ShouldEqual(collection[key]);
+                result[key].ShouldBe(collection[key]);
             }
         }
 
@@ -55,11 +55,11 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result.ShouldNotBeNull();
-            result.Count.ShouldEqual(collection.AllKeys.Distinct().Count());
+            result.Count.ShouldBe(collection.AllKeys.Distinct().Count());
 
-            result["One"].ShouldEqual("1");
-            result["Two"].ShouldEqual("2");
-            result["Three"].ShouldEqual("5");
+            result["One"].ShouldBe("1");
+            result["Two"].ShouldBe("2");
+            result["Three"].ShouldBe("5");
         }
 
         [Test]
@@ -80,11 +80,11 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             result.ShouldNotBeNull();
-            result.Count.ShouldEqual(collection.AllKeys.Distinct().Count());
+            result.Count.ShouldBe(collection.AllKeys.Distinct().Count());
 
-            result["One"].ShouldEqual("3");
-            result["Two"].ShouldEqual("4");
-            result["Three"].ShouldEqual("5");
+            result["One"].ShouldBe("3");
+            result["Two"].ShouldBe("4");
+            result["Three"].ShouldBe("5");
         }
 
         [Test]

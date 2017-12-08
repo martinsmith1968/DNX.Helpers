@@ -2,7 +2,7 @@
 using System.Reflection;
 using DNX.Helpers.Assemblies;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Assemblies
 {
@@ -20,21 +20,21 @@ namespace Test.DNX.Helpers.Assemblies
 
             // Assert
             assemblyDetails.ShouldNotBeNull();
-            assemblyDetails.AssemblyName.Name.ShouldEqual(targetAssembly.GetName().Name);
-            assemblyDetails.Name.ShouldEqual(targetAssembly.GetName().Name);
-            assemblyDetails.Location.ShouldEqual(targetAssembly.Location);
+            assemblyDetails.AssemblyName.Name.ShouldBe(targetAssembly.GetName().Name);
+            assemblyDetails.Name.ShouldBe(targetAssembly.GetName().Name);
+            assemblyDetails.Location.ShouldBe(targetAssembly.Location);
             assemblyDetails.FileName.ShouldNotBeNull();
             assemblyDetails.FileName.ShouldNotBeEmpty();
-            assemblyDetails.Title.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyTitleAttribute>().First().Title);
-            assemblyDetails.Product.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyProductAttribute>().First().Product);
-            assemblyDetails.Copyright.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyCopyrightAttribute>().First().Copyright);
-            assemblyDetails.Company.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyCompanyAttribute>().First().Company);
-            assemblyDetails.Description.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyDescriptionAttribute>().First().Description);
-            assemblyDetails.Trademark.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().First().Trademark);
-            assemblyDetails.Configuration.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyConfigurationAttribute>().First().Configuration);
-            assemblyDetails.Version.ShouldEqual(targetAssembly.GetName().Version);
-            assemblyDetails.FileVersion.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
-            assemblyDetails.InformationalVersion.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().First().InformationalVersion);
+            assemblyDetails.Title.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTitleAttribute>().First().Title);
+            assemblyDetails.Product.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyProductAttribute>().First().Product);
+            assemblyDetails.Copyright.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCopyrightAttribute>().First().Copyright);
+            assemblyDetails.Company.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCompanyAttribute>().First().Company);
+            assemblyDetails.Description.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyDescriptionAttribute>().First().Description);
+            assemblyDetails.Trademark.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().First().Trademark);
+            assemblyDetails.Configuration.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyConfigurationAttribute>().First().Configuration);
+            assemblyDetails.Version.ShouldBe(targetAssembly.GetName().Version);
+            assemblyDetails.FileVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
+            assemblyDetails.InformationalVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().First().InformationalVersion);
         }
 
         [Test]
@@ -48,20 +48,20 @@ namespace Test.DNX.Helpers.Assemblies
 
             // Assert
             assemblyDetails.ShouldNotBeNull();
-            assemblyDetails.AssemblyName.Name.ShouldEqual(targetAssembly.GetName().Name);
-            assemblyDetails.Name.ShouldEqual(targetAssembly.GetName().Name);
-            assemblyDetails.Location.ShouldEqual(targetAssembly.Location);
+            assemblyDetails.AssemblyName.Name.ShouldBe(targetAssembly.GetName().Name);
+            assemblyDetails.Name.ShouldBe(targetAssembly.GetName().Name);
+            assemblyDetails.Location.ShouldBe(targetAssembly.Location);
             assemblyDetails.FileName.ShouldNotBeNull();
             assemblyDetails.FileName.ShouldNotBeEmpty();
-            assemblyDetails.Title.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyTitleAttribute>().First().Title);
-            assemblyDetails.Product.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyProductAttribute>().First().Product);
-            assemblyDetails.Copyright.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyCopyrightAttribute>().First().Copyright);
-            assemblyDetails.Company.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyCompanyAttribute>().First().Company);
-            assemblyDetails.Description.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyDescriptionAttribute>().First().Description);
-            assemblyDetails.Trademark.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().First().Trademark);
-            assemblyDetails.Configuration.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyConfigurationAttribute>().First().Configuration);
-            assemblyDetails.Version.ShouldEqual(targetAssembly.GetName().Version);
-            assemblyDetails.FileVersion.ShouldEqual(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
+            assemblyDetails.Title.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTitleAttribute>().First().Title);
+            assemblyDetails.Product.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyProductAttribute>().First().Product);
+            assemblyDetails.Copyright.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCopyrightAttribute>().First().Copyright);
+            assemblyDetails.Company.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCompanyAttribute>().First().Company);
+            assemblyDetails.Description.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyDescriptionAttribute>().First().Description);
+            assemblyDetails.Trademark.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().First().Trademark);
+            assemblyDetails.Configuration.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyConfigurationAttribute>().First().Configuration);
+            assemblyDetails.Version.ShouldBe(targetAssembly.GetName().Version);
+            assemblyDetails.FileVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
             assemblyDetails.InformationalVersion.ShouldBeNull();
         }
     }

@@ -3,7 +3,7 @@ using System;
 using DNX.Helpers.Maths;
 using DNX.Helpers.Validation;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 using Test.DNX.Helpers.Validation.TestsDataSource;
 
 namespace Test.DNX.Helpers.Validation

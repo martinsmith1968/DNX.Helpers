@@ -5,7 +5,7 @@ using System.Text;
 using Bogus;
 using DNX.Helpers.Streams;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Streams
 {
@@ -36,7 +36,7 @@ namespace Test.DNX.Helpers.Streams
             // Assert
             result.ShouldNotBeNull();
             result.ShouldNotBeEmpty();
-            result.ShouldEqual(text);
+            result.ShouldBe(text);
         }
 
         [Test]
@@ -70,8 +70,8 @@ namespace Test.DNX.Helpers.Streams
             // Assert
             result.ShouldNotBeNull();
             result.Count.ShouldBeGreaterThan(0);
-            result.Count.ShouldEqual(textLines.Count);
-            result.ShouldEqual(textLines);
+            result.Count.ShouldBe(textLines.Count);
+            result.ShouldBe(textLines);
         }
 
         [Test]
@@ -103,7 +103,7 @@ namespace Test.DNX.Helpers.Streams
             // Assert
             result.ShouldNotBeNull();
             result.Length.ShouldBeGreaterThan(0);
-            result.ShouldEqual(bytes);
+            result.ShouldBe(bytes);
         }
 
         [Test]

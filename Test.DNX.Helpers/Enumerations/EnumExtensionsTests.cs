@@ -1,7 +1,7 @@
 ﻿using System;
 using DNX.Helpers.Enumerations;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Enumerations
 {
@@ -117,8 +117,8 @@ namespace Test.DNX.Helpers.Enumerations
             var max1 = EnumExtensions.GetMaxValue<MyTestEnum1>();
             var max2 = EnumExtensions.GetMaxValue<MyTestEnum2>();
 
-            ((int)max1).ShouldEqual((int)MyTestEnum1.Five);
-            ((int)max2).ShouldEqual((int)MyTestEnum2.Flag5);
+            ((int)max1).ShouldBe((int)MyTestEnum1.Five);
+            ((int)max2).ShouldBe((int)MyTestEnum2.Flag5);
         }
 
         [Test]
@@ -127,8 +127,8 @@ namespace Test.DNX.Helpers.Enumerations
             var max1 = EnumExtensions.GetMinValue<MyTestEnum1>();
             var max2 = EnumExtensions.GetMinValue<MyTestEnum2>();
 
-            ((int)max1).ShouldEqual((int)MyTestEnum1.One);
-            ((int)max2).ShouldEqual((int)MyTestEnum2.Flag1);
+            ((int)max1).ShouldBe((int)MyTestEnum1.One);
+            ((int)max2).ShouldBe((int)MyTestEnum2.Flag1);
         }
 
         [Test]
@@ -155,8 +155,8 @@ namespace Test.DNX.Helpers.Enumerations
             flags2 = flags2.ManipulateFlag(MyTestEnum2.Flag4, false);
 
             // Assert
-            flags1.ShouldEqual(MyTestEnum2.Flag2 | MyTestEnum2.Flag3 | MyTestEnum2.Flag4);
-            flags2.ShouldEqual(MyTestEnum2.Flag2);
+            flags1.ShouldBe(MyTestEnum2.Flag2 | MyTestEnum2.Flag3 | MyTestEnum2.Flag4);
+            flags2.ShouldBe(MyTestEnum2.Flag2);
         }
 
         [Test]
@@ -169,7 +169,7 @@ namespace Test.DNX.Helpers.Enumerations
             flags = flags.SetFlag(MyTestEnum2.Flag3);
 
             // Assert
-            flags.ShouldEqual(MyTestEnum2.Flag2 | MyTestEnum2.Flag3 | MyTestEnum2.Flag4);
+            flags.ShouldBe(MyTestEnum2.Flag2 | MyTestEnum2.Flag3 | MyTestEnum2.Flag4);
         }
 
         [Test]
@@ -182,7 +182,7 @@ namespace Test.DNX.Helpers.Enumerations
             flags = flags.UnsetFlag(MyTestEnum2.Flag2);
 
             // Assert
-            flags.ShouldEqual(MyTestEnum2.Flag4 | MyTestEnum2.Flag5);
+            flags.ShouldBe(MyTestEnum2.Flag4 | MyTestEnum2.Flag5);
         }
 
         [Test]
@@ -195,7 +195,7 @@ namespace Test.DNX.Helpers.Enumerations
             var setFlags = EnumExtensions.GetSetValuesList<MyTestEnum2>(flags);
 
             // Assert
-            setFlags.Count.ShouldEqual(3);
+            setFlags.Count.ShouldBe(3);
             setFlags.Contains(MyTestEnum2.Flag2).ShouldBeTrue();
             setFlags.Contains(MyTestEnum2.Flag4).ShouldBeTrue();
             setFlags.Contains(MyTestEnum2.Flag5).ShouldBeTrue();
@@ -207,12 +207,12 @@ namespace Test.DNX.Helpers.Enumerations
             var dict = EnumExtensions.ToDictionaryByName<MyTestEnum1>();
 
             dict.ShouldNotBeNull();
-            dict.Count.ShouldEqual(5);
-            dict[MyTestEnum1.One.ToString()].ShouldEqual(MyTestEnum1.One);
-            dict[MyTestEnum1.Two.ToString()].ShouldEqual(MyTestEnum1.Two);
-            dict[MyTestEnum1.Three.ToString()].ShouldEqual(MyTestEnum1.Three);
-            dict[MyTestEnum1.Four.ToString()].ShouldEqual(MyTestEnum1.Four);
-            dict[MyTestEnum1.Five.ToString()].ShouldEqual(MyTestEnum1.Five);
+            dict.Count.ShouldBe(5);
+            dict[MyTestEnum1.One.ToString()].ShouldBe(MyTestEnum1.One);
+            dict[MyTestEnum1.Two.ToString()].ShouldBe(MyTestEnum1.Two);
+            dict[MyTestEnum1.Three.ToString()].ShouldBe(MyTestEnum1.Three);
+            dict[MyTestEnum1.Four.ToString()].ShouldBe(MyTestEnum1.Four);
+            dict[MyTestEnum1.Five.ToString()].ShouldBe(MyTestEnum1.Five);
         }
 
         [Test]
@@ -221,12 +221,12 @@ namespace Test.DNX.Helpers.Enumerations
             var dict = EnumExtensions.ToDictionaryByName<MyTestEnum2>();
 
             dict.ShouldNotBeNull();
-            dict.Count.ShouldEqual(5);
-            dict[MyTestEnum2.Flag1.ToString()].ShouldEqual(MyTestEnum2.Flag1);
-            dict[MyTestEnum2.Flag2.ToString()].ShouldEqual(MyTestEnum2.Flag2);
-            dict[MyTestEnum2.Flag3.ToString()].ShouldEqual(MyTestEnum2.Flag3);
-            dict[MyTestEnum2.Flag4.ToString()].ShouldEqual(MyTestEnum2.Flag4);
-            dict[MyTestEnum2.Flag5.ToString()].ShouldEqual(MyTestEnum2.Flag5);
+            dict.Count.ShouldBe(5);
+            dict[MyTestEnum2.Flag1.ToString()].ShouldBe(MyTestEnum2.Flag1);
+            dict[MyTestEnum2.Flag2.ToString()].ShouldBe(MyTestEnum2.Flag2);
+            dict[MyTestEnum2.Flag3.ToString()].ShouldBe(MyTestEnum2.Flag3);
+            dict[MyTestEnum2.Flag4.ToString()].ShouldBe(MyTestEnum2.Flag4);
+            dict[MyTestEnum2.Flag5.ToString()].ShouldBe(MyTestEnum2.Flag5);
         }
 
         [TestCase(MyTestEnum1.One, ExpectedResult = "First")]

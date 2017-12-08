@@ -1,6 +1,6 @@
 ﻿using DNX.Helpers.Exceptions;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Exceptions
 {
@@ -27,8 +27,8 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             ex.ShouldNotBeNull();
-            ex.Type.ShouldEqual(value.GetType());
-            ex.Value.ShouldEqual(value);
+            ex.Type.ShouldBe(value.GetType());
+            ex.Value.ShouldBe(value);
             ex.Message.ShouldContain(typeof(MyEnumValueTestEnum).Name);
             ex.Message.ShouldContain(value.ToString());
         }
@@ -45,8 +45,8 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             ex.ShouldNotBeNull();
-            ex.Type.ShouldEqual(value.GetType());
-            ex.Message.ShouldEqual(ex.Message.Replace("{0}", value.ToString()).Replace("{1}", value.GetType().Name));
+            ex.Type.ShouldBe(value.GetType());
+            ex.Message.ShouldBe(ex.Message.Replace("{0}", value.ToString()).Replace("{1}", value.GetType().Name));
         }
 
         [Test]
@@ -60,8 +60,8 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             ex.ShouldNotBeNull();
-            ex.Type.ShouldEqual(value.GetType());
-            ex.Value.ShouldEqual(value);
+            ex.Type.ShouldBe(value.GetType());
+            ex.Value.ShouldBe(value);
             ex.Message.ShouldContain(typeof(MyEnumValueTestEnum).Name);
             ex.Message.ShouldContain(value.ToString());
         }
@@ -78,8 +78,8 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             ex.ShouldNotBeNull();
-            ex.Type.ShouldEqual(value.GetType());
-            ex.Message.ShouldEqual(ex.Message.Replace("{0}", value.ToString()).Replace("{1}", value.GetType().Name));
+            ex.Type.ShouldBe(value.GetType());
+            ex.Message.ShouldBe(ex.Message.Replace("{0}", value.ToString()).Replace("{1}", value.GetType().Name));
         }
     }
 }

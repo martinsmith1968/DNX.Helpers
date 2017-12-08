@@ -1,7 +1,7 @@
 ﻿using System;
 using DNX.Helpers.Exceptions;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Exceptions
 {
@@ -22,11 +22,11 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             list.ShouldNotBeNull();
-            list.Count.ShouldEqual(4);
-            list[0].ShouldEqual(ex4);
-            list[1].ShouldEqual(ex3);
-            list[2].ShouldEqual(ex2);
-            list[3].ShouldEqual(ex1);
+            list.Count.ShouldBe(4);
+            list[0].ShouldBe(ex4);
+            list[1].ShouldBe(ex3);
+            list[2].ShouldBe(ex2);
+            list[3].ShouldBe(ex1);
         }
 
         [Test]
@@ -43,11 +43,11 @@ namespace Test.DNX.Helpers.Exceptions
 
             // Assert
             list.ShouldNotBeNull();
-            list.Count.ShouldEqual(4);
-            list[0].ShouldEqual(ex4.Message);
-            list[1].ShouldEqual(ex3.Message);
-            list[2].ShouldEqual(ex2.Message);
-            list[3].ShouldEqual(ex1.Message );
+            list.Count.ShouldBe(4);
+            list[0].ShouldBe(ex4.Message);
+            list[1].ShouldBe(ex3.Message);
+            list[2].ShouldBe(ex2.Message);
+            list[3].ShouldBe(ex1.Message );
         }
     }
 }

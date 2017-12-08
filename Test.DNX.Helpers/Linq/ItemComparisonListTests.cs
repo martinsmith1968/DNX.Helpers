@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using DNX.Helpers.Linq;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Linq
 {
@@ -32,9 +32,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             itemComparisonList.ShouldNotBeNull();
-            itemComparisonList.Count(ic => ic.Matched).ShouldEqual(4);
-            itemComparisonList.Count(ic => ic.SourceOnly).ShouldEqual(0);
-            itemComparisonList.Count(ic => ic.TargetOnly).ShouldEqual(0);
+            itemComparisonList.Count(ic => ic.Matched).ShouldBe(4);
+            itemComparisonList.Count(ic => ic.SourceOnly).ShouldBe(0);
+            itemComparisonList.Count(ic => ic.TargetOnly).ShouldBe(0);
         }
 
         [Test]
@@ -60,9 +60,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             itemComparisonList.ShouldNotBeNull();
-            itemComparisonList.Count(ic => ic.Matched).ShouldEqual(2);
-            itemComparisonList.Count(ic => ic.SourceOnly).ShouldEqual(2);
-            itemComparisonList.Count(ic => ic.TargetOnly).ShouldEqual(0);
+            itemComparisonList.Count(ic => ic.Matched).ShouldBe(2);
+            itemComparisonList.Count(ic => ic.SourceOnly).ShouldBe(2);
+            itemComparisonList.Count(ic => ic.TargetOnly).ShouldBe(0);
         }
 
         [Test]
@@ -92,9 +92,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             itemComparisonList.ShouldNotBeNull();
-            itemComparisonList.Count(ic => ic.Matched).ShouldEqual(4);
-            itemComparisonList.Count(ic => ic.SourceOnly).ShouldEqual(0);
-            itemComparisonList.Count(ic => ic.TargetOnly).ShouldEqual(2);
+            itemComparisonList.Count(ic => ic.Matched).ShouldBe(4);
+            itemComparisonList.Count(ic => ic.SourceOnly).ShouldBe(0);
+            itemComparisonList.Count(ic => ic.TargetOnly).ShouldBe(2);
         }
 
         [Test]
@@ -122,9 +122,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             itemComparisonList.ShouldNotBeNull();
-            itemComparisonList.Count(ic => ic.Matched).ShouldEqual(4);
-            itemComparisonList.Count(ic => ic.SourceOnly).ShouldEqual(0);
-            itemComparisonList.Count(ic => ic.TargetOnly).ShouldEqual(0);
+            itemComparisonList.Count(ic => ic.Matched).ShouldBe(4);
+            itemComparisonList.Count(ic => ic.SourceOnly).ShouldBe(0);
+            itemComparisonList.Count(ic => ic.TargetOnly).ShouldBe(0);
         }
 
         [Test]
@@ -150,9 +150,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             itemComparisonList.ShouldNotBeNull();
-            itemComparisonList.Count(ic => ic.Matched).ShouldEqual(2);
-            itemComparisonList.Count(ic => ic.SourceOnly).ShouldEqual(2);
-            itemComparisonList.Count(ic => ic.TargetOnly).ShouldEqual(0);
+            itemComparisonList.Count(ic => ic.Matched).ShouldBe(2);
+            itemComparisonList.Count(ic => ic.SourceOnly).ShouldBe(2);
+            itemComparisonList.Count(ic => ic.TargetOnly).ShouldBe(0);
         }
 
         [Test]
@@ -182,9 +182,9 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             itemComparisonList.ShouldNotBeNull();
-            itemComparisonList.Count(ic => ic.Matched).ShouldEqual(4);
-            itemComparisonList.Count(ic => ic.SourceOnly).ShouldEqual(0);
-            itemComparisonList.Count(ic => ic.TargetOnly).ShouldEqual(2);
+            itemComparisonList.Count(ic => ic.Matched).ShouldBe(4);
+            itemComparisonList.Count(ic => ic.SourceOnly).ShouldBe(0);
+            itemComparisonList.Count(ic => ic.TargetOnly).ShouldBe(2);
         }
     }
 }

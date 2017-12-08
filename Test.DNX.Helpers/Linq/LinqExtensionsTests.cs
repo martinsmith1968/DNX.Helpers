@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DNX.Helpers.Comparisons;
 using DNX.Helpers.Linq;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Linq
 {

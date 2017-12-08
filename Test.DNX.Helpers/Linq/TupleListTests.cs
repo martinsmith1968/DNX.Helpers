@@ -1,6 +1,6 @@
 ﻿using DNX.Helpers.Linq;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Linq
 {
@@ -24,7 +24,7 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             list.ShouldNotBeNull();
-            list.Count.ShouldEqual(2);
+            list.Count.ShouldBe(2);
         }
 
         [Test]
@@ -44,7 +44,7 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             list.ShouldNotBeNull();
-            list.Count.ShouldEqual(2);
+            list.Count.ShouldBe(2);
         }
 
         [Test]
@@ -64,7 +64,7 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             list.ShouldNotBeNull();
-            list.Count.ShouldEqual(2);
+            list.Count.ShouldBe(2);
         }
 
         [Test]
@@ -84,7 +84,7 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             list.ShouldNotBeNull();
-            list.Count.ShouldEqual(2);
+            list.Count.ShouldBe(2);
         }
 
         [Test]
@@ -104,7 +104,7 @@ namespace Test.DNX.Helpers.Linq
 
             // Assert
             list.ShouldNotBeNull();
-            list.Count.ShouldEqual(2);
+            list.Count.ShouldBe(2);
         }
     }
 }

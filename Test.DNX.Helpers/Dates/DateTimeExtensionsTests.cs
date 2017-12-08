@@ -2,7 +2,7 @@
 using System.Globalization;
 using DNX.Helpers.Dates;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Dates
 {
@@ -51,14 +51,14 @@ namespace Test.DNX.Helpers.Dates
             var epoch = DateTimeExtensions.UnixEpoch;
 
             // Assert
-            epoch.Kind.ShouldEqual(DateTimeKind.Utc);
-            epoch.Year.ShouldEqual(1970);
-            epoch.Month.ShouldEqual(1);
-            epoch.Day.ShouldEqual(1);
-            epoch.Hour.ShouldEqual(0);
-            epoch.Minute.ShouldEqual(0);
-            epoch.Second.ShouldEqual(0);
-            epoch.Millisecond.ShouldEqual(0);
+            epoch.Kind.ShouldBe(DateTimeKind.Utc);
+            epoch.Year.ShouldBe(1970);
+            epoch.Month.ShouldBe(1);
+            epoch.Day.ShouldBe(1);
+            epoch.Hour.ShouldBe(0);
+            epoch.Minute.ShouldBe(0);
+            epoch.Second.ShouldBe(0);
+            epoch.Millisecond.ShouldBe(0);
         }
 
         [Test]
@@ -72,15 +72,15 @@ namespace Test.DNX.Helpers.Dates
             var parsedDateTime = dateTimeString.ParseDateAsUtc();
 
             // Assert
-            theDateTime.Kind.ShouldEqual(DateTimeKind.Local);
-            parsedDateTime.Kind.ShouldEqual(DateTimeKind.Utc);
-            parsedDateTime.Year.ShouldEqual(theDateTime.Year);
-            parsedDateTime.Month.ShouldEqual(theDateTime.Month);
-            parsedDateTime.Day.ShouldEqual(theDateTime.Day);
-            parsedDateTime.Hour.ShouldEqual(theDateTime.Hour);
-            parsedDateTime.Minute.ShouldEqual(theDateTime.Minute);
-            parsedDateTime.Second.ShouldEqual(theDateTime.Second);
-            parsedDateTime.Millisecond.ShouldEqual(0);
+            theDateTime.Kind.ShouldBe(DateTimeKind.Local);
+            parsedDateTime.Kind.ShouldBe(DateTimeKind.Utc);
+            parsedDateTime.Year.ShouldBe(theDateTime.Year);
+            parsedDateTime.Month.ShouldBe(theDateTime.Month);
+            parsedDateTime.Day.ShouldBe(theDateTime.Day);
+            parsedDateTime.Hour.ShouldBe(theDateTime.Hour);
+            parsedDateTime.Minute.ShouldBe(theDateTime.Minute);
+            parsedDateTime.Second.ShouldBe(theDateTime.Second);
+            parsedDateTime.Millisecond.ShouldBe(0);
         }
 
         [Test]
@@ -95,14 +95,14 @@ namespace Test.DNX.Helpers.Dates
             var parsedDateTime = dateTimeString.ParseDateAsUtc(defaultDateTime);
 
             // Assert
-            parsedDateTime.Kind.ShouldEqual(DateTimeKind.Utc);
-            parsedDateTime.Year.ShouldEqual(theDateTime.Year);
-            parsedDateTime.Month.ShouldEqual(theDateTime.Month);
-            parsedDateTime.Day.ShouldEqual(theDateTime.Day);
-            parsedDateTime.Hour.ShouldEqual(theDateTime.Hour);
-            parsedDateTime.Minute.ShouldEqual(theDateTime.Minute);
-            parsedDateTime.Second.ShouldEqual(theDateTime.Second);
-            parsedDateTime.Millisecond.ShouldEqual(0);
+            parsedDateTime.Kind.ShouldBe(DateTimeKind.Utc);
+            parsedDateTime.Year.ShouldBe(theDateTime.Year);
+            parsedDateTime.Month.ShouldBe(theDateTime.Month);
+            parsedDateTime.Day.ShouldBe(theDateTime.Day);
+            parsedDateTime.Hour.ShouldBe(theDateTime.Hour);
+            parsedDateTime.Minute.ShouldBe(theDateTime.Minute);
+            parsedDateTime.Second.ShouldBe(theDateTime.Second);
+            parsedDateTime.Millisecond.ShouldBe(0);
         }
 
         [Test]
@@ -116,14 +116,14 @@ namespace Test.DNX.Helpers.Dates
             var parsedDateTime = dateTimeString.ParseDateAsUtc(defaultDateTime);
 
             // Assert
-            parsedDateTime.Kind.ShouldEqual(DateTimeKind.Utc);
-            parsedDateTime.Year.ShouldEqual(defaultDateTime.Year);
-            parsedDateTime.Month.ShouldEqual(defaultDateTime.Month);
-            parsedDateTime.Day.ShouldEqual(defaultDateTime.Day);
-            parsedDateTime.Hour.ShouldEqual(defaultDateTime.Hour);
-            parsedDateTime.Minute.ShouldEqual(defaultDateTime.Minute);
-            parsedDateTime.Second.ShouldEqual(defaultDateTime.Second);
-            parsedDateTime.Millisecond.ShouldEqual(defaultDateTime.Millisecond);
+            parsedDateTime.Kind.ShouldBe(DateTimeKind.Utc);
+            parsedDateTime.Year.ShouldBe(defaultDateTime.Year);
+            parsedDateTime.Month.ShouldBe(defaultDateTime.Month);
+            parsedDateTime.Day.ShouldBe(defaultDateTime.Day);
+            parsedDateTime.Hour.ShouldBe(defaultDateTime.Hour);
+            parsedDateTime.Minute.ShouldBe(defaultDateTime.Minute);
+            parsedDateTime.Second.ShouldBe(defaultDateTime.Second);
+            parsedDateTime.Millisecond.ShouldBe(defaultDateTime.Millisecond);
         }
 
         [Test]
@@ -139,15 +139,15 @@ namespace Test.DNX.Helpers.Dates
             var parsedDateTime = dateTimeString.ParseDateAsUtc(formatProvider);
 
             // Assert
-            theDateTime.Kind.ShouldEqual(DateTimeKind.Local);
-            parsedDateTime.Kind.ShouldEqual(DateTimeKind.Utc);
-            parsedDateTime.Year.ShouldEqual(theDateTime.Year);
-            parsedDateTime.Month.ShouldEqual(theDateTime.Month);
-            parsedDateTime.Day.ShouldEqual(theDateTime.Day);
-            parsedDateTime.Hour.ShouldEqual(theDateTime.Hour);
-            parsedDateTime.Minute.ShouldEqual(theDateTime.Minute);
-            parsedDateTime.Second.ShouldEqual(theDateTime.Second);
-            parsedDateTime.Millisecond.ShouldEqual(0);
+            theDateTime.Kind.ShouldBe(DateTimeKind.Local);
+            parsedDateTime.Kind.ShouldBe(DateTimeKind.Utc);
+            parsedDateTime.Year.ShouldBe(theDateTime.Year);
+            parsedDateTime.Month.ShouldBe(theDateTime.Month);
+            parsedDateTime.Day.ShouldBe(theDateTime.Day);
+            parsedDateTime.Hour.ShouldBe(theDateTime.Hour);
+            parsedDateTime.Minute.ShouldBe(theDateTime.Minute);
+            parsedDateTime.Second.ShouldBe(theDateTime.Second);
+            parsedDateTime.Millisecond.ShouldBe(0);
         }
 
         [Test]
@@ -164,14 +164,14 @@ namespace Test.DNX.Helpers.Dates
             var parsedDateTime = dateTimeString.ParseDateAsUtc(formatProvider, defaultDateTime);
 
             // Assert
-            parsedDateTime.Kind.ShouldEqual(DateTimeKind.Utc);
-            parsedDateTime.Year.ShouldEqual(theDateTime.Year);
-            parsedDateTime.Month.ShouldEqual(theDateTime.Month);
-            parsedDateTime.Day.ShouldEqual(theDateTime.Day);
-            parsedDateTime.Hour.ShouldEqual(theDateTime.Hour);
-            parsedDateTime.Minute.ShouldEqual(theDateTime.Minute);
-            parsedDateTime.Second.ShouldEqual(theDateTime.Second);
-            parsedDateTime.Millisecond.ShouldEqual(0);
+            parsedDateTime.Kind.ShouldBe(DateTimeKind.Utc);
+            parsedDateTime.Year.ShouldBe(theDateTime.Year);
+            parsedDateTime.Month.ShouldBe(theDateTime.Month);
+            parsedDateTime.Day.ShouldBe(theDateTime.Day);
+            parsedDateTime.Hour.ShouldBe(theDateTime.Hour);
+            parsedDateTime.Minute.ShouldBe(theDateTime.Minute);
+            parsedDateTime.Second.ShouldBe(theDateTime.Second);
+            parsedDateTime.Millisecond.ShouldBe(0);
         }
 
         [Test]
@@ -187,14 +187,14 @@ namespace Test.DNX.Helpers.Dates
             var parsedDateTime = dateTimeString.ParseDateAsUtc(formatProvider, defaultDateTime);
 
             // Assert
-            parsedDateTime.Kind.ShouldEqual(DateTimeKind.Utc);
-            parsedDateTime.Year.ShouldEqual(defaultDateTime.Year);
-            parsedDateTime.Month.ShouldEqual(defaultDateTime.Month);
-            parsedDateTime.Day.ShouldEqual(defaultDateTime.Day);
-            parsedDateTime.Hour.ShouldEqual(defaultDateTime.Hour);
-            parsedDateTime.Minute.ShouldEqual(defaultDateTime.Minute);
-            parsedDateTime.Second.ShouldEqual(defaultDateTime.Second);
-            parsedDateTime.Millisecond.ShouldEqual(defaultDateTime.Millisecond);
+            parsedDateTime.Kind.ShouldBe(DateTimeKind.Utc);
+            parsedDateTime.Year.ShouldBe(defaultDateTime.Year);
+            parsedDateTime.Month.ShouldBe(defaultDateTime.Month);
+            parsedDateTime.Day.ShouldBe(defaultDateTime.Day);
+            parsedDateTime.Hour.ShouldBe(defaultDateTime.Hour);
+            parsedDateTime.Minute.ShouldBe(defaultDateTime.Minute);
+            parsedDateTime.Second.ShouldBe(defaultDateTime.Second);
+            parsedDateTime.Millisecond.ShouldBe(defaultDateTime.Millisecond);
         }
     }
 }

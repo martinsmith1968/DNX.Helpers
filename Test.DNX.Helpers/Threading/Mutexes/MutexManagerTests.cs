@@ -5,7 +5,7 @@ using System.Threading;
 using DNX.Helpers.Threading;
 using DNX.Helpers.Threading.Mutexes;
 using NUnit.Framework;
-using Should;
+using Shouldly;
 using Mutex = DNX.Helpers.Threading.Mutexes.Mutex;
 
 namespace Test.DNX.Helpers.Threading.Mutexes
@@ -24,7 +24,7 @@ namespace Test.DNX.Helpers.Threading.Mutexes
 
             // Assert
             result.ShouldNotBeNull();
-            result.Name.ShouldEqual(name);
+            result.Name.ShouldBe(name);
 
             result.Dispose();
         }
@@ -39,11 +39,11 @@ namespace Test.DNX.Helpers.Threading.Mutexes
             using (var mutex = new Mutex(mutexName))
             {
                 // Assert
-                mutex.Name.ShouldEqual(mutexName);
+                mutex.Name.ShouldBe(mutexName);
                 MutexManager.Mutexes.ContainsKey(mutexName).ShouldBeTrue();
-                MutexManager.Mutexes[mutexName].State.ShouldEqual(MutexState.Acquired);
+                MutexManager.Mutexes[mutexName].State.ShouldBe(MutexState.Acquired);
                 MutexManager.Mutexes[mutexName].Timestamp.ShouldBeGreaterThan(DateTime.MinValue);
-                MutexManager.Mutexes[mutexName].ThreadId.ShouldEqual(Thread.CurrentThread.ManagedThreadId);
+                MutexManager.Mutexes[mutexName].ThreadId.ShouldBe(Thread.CurrentThread.ManagedThreadId);
             }
 
             // Assert
@@ -60,11 +60,11 @@ namespace Test.DNX.Helpers.Threading.Mutexes
             using (var mutex = MutexManager.Acquire(mutexName))
             {
                 // Assert
-                mutex.Name.ShouldEqual(mutexName);
+                mutex.Name.ShouldBe(mutexName);
                 MutexManager.Mutexes.ContainsKey(mutexName).ShouldBeTrue();
-                MutexManager.Mutexes[mutexName].State.ShouldEqual(MutexState.Acquired);
+                MutexManager.Mutexes[mutexName].State.ShouldBe(MutexState.Acquired);
                 MutexManager.Mutexes[mutexName].Timestamp.ShouldBeGreaterThan(DateTime.MinValue);
-                MutexManager.Mutexes[mutexName].ThreadId.ShouldEqual(Thread.CurrentThread.ManagedThreadId);
+                MutexManager.Mutexes[mutexName].ThreadId.ShouldBe(Thread.CurrentThread.ManagedThreadId);
             }
 
             // Assert
@@ -118,7 +118,7 @@ namespace Test.DNX.Helpers.Threading.Mutexes
             }
 
             // Assert
-            MutexManager.Mutexes.Count.ShouldEqual(0);
+            MutexManager.Mutexes.Count.ShouldBe(0);
         }
 
         [Test]
@@ -164,8 +164,8 @@ namespace Test.DNX.Helpers.Threading.Mutexes
             thread4.Join();
 
             // Assert
-            starts.Count.ShouldEqual(4);
-            stops.Count.ShouldEqual(4);
+            starts.Count.ShouldBe(4);
+            stops.Count.ShouldBe(4);
 
             var keys = starts
                 .Where(s => s.Key != "4")   // Bob only

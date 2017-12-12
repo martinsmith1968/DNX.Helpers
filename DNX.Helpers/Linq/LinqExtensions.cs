@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DNX.Helpers.Comparisons;
 
 // ReSharper disable InvertIf
 namespace DNX.Helpers.Linq
@@ -99,6 +100,34 @@ namespace DNX.Helpers.Linq
             return comparer == null
                 ? !list.Contains(value)
                 : !list.Contains(value, comparer);
+        }
+
+        /// <summary>
+        /// Appends the specified instance.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <param name="instance">The instance.</param>
+        /// <returns>IEnumerable&lt;T&gt;.</returns>
+        public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, T instance)
+        {
+            var falseComparer = EqualityComparerFunc<T>.Create((arg1, arg2) => false);
+
+            return enumerable.Append(instance, falseComparer);
+        }
+
+        /// <summary>
+        /// Appends the specified instance.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="enumerable">The enumerable.</param>
+        /// <param name="instance">The instance.</param>
+        /// <param name="comparer">The comparer.</param>
+        /// <returns>IEnumerable&lt;T&gt;.</returns>
+        public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, T instance, IEqualityComparer<T> comparer)
+        {
+            return (enumerable ?? Enumerable.Empty<T>())
+                .Union(new[] { instance }, comparer);
         }
     }
 }

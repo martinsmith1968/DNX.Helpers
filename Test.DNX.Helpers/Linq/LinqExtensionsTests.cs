@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Linq;
 using DNX.Helpers.Comparisons;
 using DNX.Helpers.Linq;
 using NUnit.Framework;
@@ -159,6 +159,41 @@ namespace Test.DNX.Helpers.Linq
 
             string nullString = null;
             nullString.IsIn("a", "b", "c").ShouldBeFalse();
+        }
+
+        [TestCase("a,b,c", "d", ExpectedResult = "a,b,c,d")]
+        [TestCase("a,b,c", "a", ExpectedResult = "a,b,c,a")]
+        [TestCase(null, "a", ExpectedResult = "a")]
+        [TestCase("", "a", ExpectedResult = "a")]
+        public string Test_Append(string commaDelimitedArray, string value)
+        {
+            var enumerable = commaDelimitedArray == null
+                ? null
+                : commaDelimitedArray.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            var result = enumerable.Append(value);
+
+            return string.Join(",", result);
+        }
+
+        [TestCase("a,b,c", "d", ExpectedResult = "a,b,c,d")]
+        [TestCase("a,b,c", "D", ExpectedResult = "a,b,c,D")]
+        [TestCase("a,b,c", "a", ExpectedResult = "a,b,c")]
+        [TestCase(null, "a", ExpectedResult = "a")]
+        [TestCase("", "a", ExpectedResult = "a")]
+        public string Test_Append_TrueComparer(string commaDelimitedArray, string value)
+        {
+            var comparer = EqualityComparerFunc<string>.Create(
+                (s1, s2) => string.Equals(s1, s2, StringComparison.OrdinalIgnoreCase)
+                );
+
+            var enumerable = commaDelimitedArray == null
+                ? null
+                : commaDelimitedArray.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+
+            var result = enumerable.Append(value, comparer);
+
+            return string.Join(",", result);
         }
     }
 }

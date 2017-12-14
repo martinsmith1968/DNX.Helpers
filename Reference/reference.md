@@ -2693,6 +2693,37 @@ IList<ItemComparison<T1, T2>>.
 Linq Extensions.
 
 
+### M:DNX.Helpers.Linq.LinqExtensions.Append``1(enumerable, instance)
+
+Appends the specified instance.
+
+| Name | Description |
+| ---- | ----------- |
+| enumerable | *System.Collections.Generic.IEnumerable{``0}*<br>The enumerable. |
+| instance | *``0*<br>The instance. |
+
+
+#### Returns
+
+IEnumerable<T>.
+
+
+### M:DNX.Helpers.Linq.LinqExtensions.Append``1(enumerable, instance, comparer)
+
+Appends the specified instance.
+
+| Name | Description |
+| ---- | ----------- |
+| enumerable | *System.Collections.Generic.IEnumerable{``0}*<br>The enumerable. |
+| instance | *``0*<br>The instance. |
+| comparer | *System.Collections.Generic.IEqualityComparer{``0}*<br>The comparer. |
+
+
+#### Returns
+
+IEnumerable<T>.
+
+
 ### M:DNX.Helpers.Linq.LinqExtensions.HasAny``1(enumerable)
 
 Determines whether the specified enumerable has any elements and is not null

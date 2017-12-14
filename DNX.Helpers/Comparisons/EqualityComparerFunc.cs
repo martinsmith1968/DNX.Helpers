@@ -35,7 +35,7 @@ namespace DNX.Helpers.Comparisons
         /// <returns>A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table.</returns>
         public int GetHashCode(T obj)
         {
-            return obj.GetHashCode();
+            return 0;
         }
 
         /// <summary>

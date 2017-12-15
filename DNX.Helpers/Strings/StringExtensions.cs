@@ -150,6 +150,84 @@ namespace DNX.Helpers.Strings
         }
 
         /// <summary>
+        /// Gets the text between the specified start and end text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="startText">The start text.</param>
+        /// <param name="endText">The end text.</param>
+        /// <returns>System.String.</returns>
+        public static string Between(this string text, string startText, string endText)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return null;
+            }
+
+            var startIndex = string.IsNullOrEmpty(startText)
+                ? -1
+                : text.IndexOf(startText) + startText.Length;
+
+            var endIndex = string.IsNullOrEmpty(endText)
+                ? -1
+                : text.IndexOf(endText);
+
+            var result = startIndex >= 0 && endIndex >= 0 && endIndex > startIndex
+                ? text.Substring(startIndex, endIndex - startIndex)
+                : null;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the text before the specified end text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="endText">The end text.</param>
+        /// <returns>System.String.</returns>
+        public static string Before(this string text, string endText)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return null;
+            }
+
+            var endIndex = string.IsNullOrEmpty(endText)
+                ? -1
+                : text.IndexOf(endText);
+
+            var result = endIndex >= 0
+                ? text.Substring(0, endIndex)
+                : null;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Gets the text after the specified start text.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="startText">The start text.</param>
+        /// <returns>System.String.</returns>
+        public static string After(this string text, string startText)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return null;
+            }
+
+            var startIndex = string.IsNullOrEmpty(startText)
+                ? -1
+                : text.IndexOf(startText) + startText.Length;
+
+
+            var result = startIndex >= 0
+                ? text.Substring(startIndex)
+                : null;
+
+            return result;
+        }
+
+        /// <summary>
         /// Determines whether the text contains the specified search text.
         /// </summary>
         /// <param name="text">The text.</param>

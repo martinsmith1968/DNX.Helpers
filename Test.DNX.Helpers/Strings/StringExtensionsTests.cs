@@ -126,6 +126,48 @@ namespace Test.DNX.Helpers.Strings
             return result;
         }
 
+        [TestCase("[Section Name]", "[", "]", ExpectedResult = "Section Name")]
+        [TestCase("[[Red]]This is some text[[/Red]]", "[[Red]]", "[[/Red]]", ExpectedResult = "This is some text")]
+        [TestCase("[Section Name]", "", "]", ExpectedResult = null)]
+        [TestCase("[Section Name]", "[", "", ExpectedResult = null)]
+        [TestCase("[Section Name]", null, "]", ExpectedResult = null)]
+        [TestCase("[Section Name]", "[", null, ExpectedResult = null)]
+        [TestCase("[Section Name]", null, null, ExpectedResult = null)]
+        [TestCase("", "[", "]", ExpectedResult = null)]
+        [TestCase(null, "[", "]", ExpectedResult = null)]
+        public string Test_Between(string text, string startText, string endText)
+        {
+            var result = text.Between(startText, endText);
+
+            return result;
+        }
+
+        [TestCase("This is some text", "some", ExpectedResult = "This is ")]
+        [TestCase("This is some [[Red]]text[[/Red]]", "[[", ExpectedResult = "This is some ")]
+        [TestCase("This is some text", " ", ExpectedResult = "This")]
+        [TestCase("This is some text", "", ExpectedResult = null)]
+        [TestCase("This is some text", null, ExpectedResult = null)]
+        [TestCase(null, "o", ExpectedResult = null)]
+        public string Test_Before(string text, string endText)
+        {
+            var result = text.Before(endText);
+
+            return result;
+        }
+
+        [TestCase("This is some text", "some", ExpectedResult = " text")]
+        [TestCase("This is some [[Red]]text[[/Red]]", "[[", ExpectedResult = "Red]]text[[/Red]]")]
+        [TestCase("This is some text", " ", ExpectedResult = "is some text")]
+        [TestCase("This is some text", "", ExpectedResult = null)]
+        [TestCase("This is some text", null, ExpectedResult = null)]
+        [TestCase(null, "o", ExpectedResult = null)]
+        public string Test_After(string text, string startText)
+        {
+            var result = text.After(startText);
+
+            return result;
+        }
+
         [TestCase("bob", "b", StringComparison.CurrentCultureIgnoreCase, ExpectedResult = true)]
         [TestCase("BOB", "o", StringComparison.CurrentCultureIgnoreCase, ExpectedResult = true)]
         [TestCase("bob", "b", StringComparison.CurrentCulture, ExpectedResult = true)]

@@ -5515,6 +5515,52 @@ KeyValuePair<System.String, System.String>.
 String Extensions
 
 
+### M:DNX.Helpers.Strings.StringExtensions.After(text, startText)
+
+Gets the text after the specified start text.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| startText | *System.String*<br>The start text. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Before(text, endText)
+
+Gets the text before the specified end text.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| endText | *System.String*<br>The end text. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Between(text, startText, endText)
+
+Gets the text between the specified start and end text.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| startText | *System.String*<br>The start text. |
+| endText | *System.String*<br>The end text. |
+
+
+#### Returns
+
+System.String.
+
+
 ### M:DNX.Helpers.Strings.StringExtensions.BuildNumberValidationRegexForCulture(cultureInfo)
 
 Builds the number validation regex for the specified cultureinfo

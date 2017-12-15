@@ -2,6 +2,7 @@
 using System.Linq;
 using DNX.Helpers.Comparisons;
 using NUnit.Framework;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Comparisons
 {
@@ -26,13 +27,13 @@ namespace Test.DNX.Helpers.Comparisons
             return contains;
         }
 
-        [TestCase("1,2,3,4,5", ExpectedResult = 5)]
-        [TestCase("2,-2,2,-2,2", ExpectedResult = 2)]
-        public int GetHashCode_generates_consistent_and_unique_values(string valueList)
+        [TestCase("1,2,3,4,5")]
+        [TestCase("2,-2,2,-2,2")]
+        public void GetHashCode_generates_constant_values(string valueList)
         {
             Func<int, int, bool> absoluteEqualityFunc = (x, y) =>
             {
-                return Math.Abs(x) == Math.Abs(y);
+                return x == y;
             };
 
             var comparer = EqualityComparerFunc<int>.Create(absoluteEqualityFunc);
@@ -41,9 +42,11 @@ namespace Test.DNX.Helpers.Comparisons
                 .Select(x => Convert.ToInt32(x))
                 .ToList();
 
-            var hashCodes = list.Select(x => comparer.GetHashCode(x));
+            var hashCodes = list
+                .Select(x => comparer.GetHashCode(x));
 
-            return hashCodes.Distinct().Count();
+            hashCodes
+                .All(hc => hc.Equals(0)).ShouldBeTrue();
         }
     }
 }

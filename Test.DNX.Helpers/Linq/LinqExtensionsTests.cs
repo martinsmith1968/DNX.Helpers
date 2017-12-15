@@ -177,11 +177,11 @@ namespace Test.DNX.Helpers.Linq
         }
 
         [TestCase("a,b,c", "d", ExpectedResult = "a,b,c,d")]
-        [TestCase("a,b,c", "D", ExpectedResult = "a,b,c,D")]
+        [TestCase("a,b,c,d", "D", ExpectedResult = "a,b,c,d")]
         [TestCase("a,b,c", "a", ExpectedResult = "a,b,c")]
         [TestCase(null, "a", ExpectedResult = "a")]
         [TestCase("", "a", ExpectedResult = "a")]
-        public string Test_Append_TrueComparer(string commaDelimitedArray, string value)
+        public string Test_Append_CaseInsensitiveComparer(string commaDelimitedArray, string value)
         {
             var comparer = EqualityComparerFunc<string>.Create(
                 (s1, s2) => string.Equals(s1, s2, StringComparison.OrdinalIgnoreCase)

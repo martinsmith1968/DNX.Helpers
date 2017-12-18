@@ -182,6 +182,7 @@
     </Compile>
     <Compile Include="Objects\ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\FormatProviderFunc.cs" />
     <Compile Include="Reflection\AttributeExtensions.cs" />
     <Compile Include="Reflection\ExpressionExtensions.cs" />
     <Compile Include="Reflection\InstanceResolutionExtensions.cs" />

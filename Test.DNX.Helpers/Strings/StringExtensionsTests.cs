@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
 
@@ -10,6 +9,38 @@ namespace Test.DNX.Helpers.Strings
     [TestFixture]
     public class StringExtensionsTests
     {
+        [TestCase("Value: {0}", 45, ExpectedResult = "Value: 45")]
+        [TestCase("{0} red balloons", 99, ExpectedResult = "99 red balloons")]
+        [TestCase("Nothing to format", 1, ExpectedResult = "Nothing to format")]
+        public string Test_Format_arg1(string format, object arg1)
+        {
+            return format.Format(arg1);
+        }
+
+        [TestCase("Value: {0}/{1}", 45, 90, ExpectedResult = "Value: 45/90")]
+        [TestCase("{0} cats, {1} dogs", 3, 2, ExpectedResult = "3 cats, 2 dogs")]
+        [TestCase("Nothing to format", 1, 2, ExpectedResult = "Nothing to format")]
+        public string Test_Format_arg1_arg2(string format, object arg1, object arg2)
+        {
+            return format.Format(arg1, arg2);
+        }
+
+        [TestCase("Value: {0}/{1}/{2}", 45, 90, 135, ExpectedResult = "Value: 45/90/135")]
+        [TestCase("{0} cats, {1} dogs, {2} goldfish", 3, 2, 1, ExpectedResult = "3 cats, 2 dogs, 1 goldfish")]
+        [TestCase("Nothing to format", 1, 2, 3, ExpectedResult = "Nothing to format")]
+        public string Test_Format_arg1_arg2_arg3(string format, object arg1, object arg2, object arg3)
+        {
+            return format.Format(arg1, arg2, arg3);
+        }
+
+        [TestCase("Value: {0}/{1}/{2}/{3}", 45, 90, 135, 180, ExpectedResult = "Value: 45/90/135/180")]
+        [TestCase("{0} cats, {1} dogs, {2} goldfish, {3} camels", 3, 2, 1, 0, ExpectedResult = "3 cats, 2 dogs, 1 goldfish, 0 camels")]
+        [TestCase("Nothing to format", 1, 2, 3, 4, ExpectedResult = "Nothing to format")]
+        public string Test_Format_args(string format, object arg1, object arg2, object arg3, object arg4)
+        {
+            return format.Format(arg1, arg2, arg3, arg4);
+        }
+
         [TestCase(null, "hello", ExpectedResult = "hello")]
         [TestCase("", "", ExpectedResult = "")]
         [TestCase("hello", null, ExpectedResult = "hello")]

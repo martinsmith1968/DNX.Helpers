@@ -16,6 +16,65 @@ namespace DNX.Helpers.Strings
     public static class StringExtensions
     {
         /// <summary>
+        /// Formats the specified arguments and text
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="args">The arguments.</param>
+        /// <returns>System.String.</returns>
+        public static string Format(this string text, params object[] args)
+        {
+            return string.Format(text, args);
+        }
+
+        /// <summary>
+        /// Formats the specified arguments and text
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="arg1">The arg1.</param>
+        /// <returns>System.String.</returns>
+        public static string Format(this string text, object arg1)
+        {
+            return string.Format(text, arg1);
+        }
+
+        /// <summary>
+        /// Formats the specified arguments and text
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="arg1">The arg1.</param>
+        /// <param name="arg2">The arg2.</param>
+        /// <returns>System.String.</returns>
+        public static string Format(this string text, object arg1, object arg2)
+        {
+            return string.Format(text, arg1, arg2);
+        }
+
+        /// <summary>
+        /// Formats the specified arguments and text
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="arg1">The arg1.</param>
+        /// <param name="arg2">The arg2.</param>
+        /// <param name="arg3">The arg3.</param>
+        /// <returns>System.String.</returns>
+        public static string Format(this string text, object arg1, object arg2, object arg3)
+        {
+            return string.Format(text, arg1, arg2, arg3);
+        }
+
+        /// <summary>
+        /// Formats the specified arguments and text
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="formatProvider">The format provider.</param>
+        /// <param name="args">The arguments.</param>
+        /// <returns>System.String.</returns>
+        public static string Format(this string text, IFormatProvider formatProvider, params object[] args)
+        {
+            return string.Format(text, formatProvider, args);
+        }
+
+        /// <summary>
         /// Ensure a string starts with a prefix string
         /// </summary>
         /// <param name="text"></param>

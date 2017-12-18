@@ -4686,6 +4686,39 @@ Gets the unique instance identifier.
 System.String.
 
 
+## T:DNX.Helpers.Providers.FormatProviderFunc
+
+Class FormatProviderFunc.
+
+
+### M:DNX.Helpers.Providers.FormatProviderFunc.Create(System.Func{System.Type,System.Object})
+
+Creates the specified function.
+
+| Name | Description |
+| ---- | ----------- |
+| func | *Unknown type*<br>The function. |
+
+
+#### Returns
+
+FormatProviderFunc.
+
+
+### M:DNX.Helpers.Providers.FormatProviderFunc.GetFormat(formatType)
+
+Returns an object that provides formatting services for the specified type.
+
+| Name | Description |
+| ---- | ----------- |
+| formatType | *System.Type*<br>An object that specifies the type of format object to return. |
+
+
+#### Returns
+
+An instance of the object specified by , if the implementation can supply that type of object; otherwise, null.
+
+
 ## T:DNX.Helpers.Reflection.AttributeExtensions
 
 Attribute Extensions.
@@ -5829,6 +5862,85 @@ System.String.
 #### Remarks
 
 Also available as an extension method
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Format(text, formatProvider, args)
+
+Formats the specified arguments and text
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| formatProvider | *System.IFormatProvider*<br>The format provider. |
+| args | *System.Object[]*<br>The arguments. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Format(text, arg1)
+
+Formats the specified arguments and text
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| arg1 | *System.Object*<br>The arg1. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Format(text, arg1, arg2)
+
+Formats the specified arguments and text
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| arg1 | *System.Object*<br>The arg1. |
+| arg2 | *System.Object*<br>The arg2. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Format(text, arg1, arg2, arg3)
+
+Formats the specified arguments and text
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| arg1 | *System.Object*<br>The arg1. |
+| arg2 | *System.Object*<br>The arg2. |
+| arg3 | *System.Object*<br>The arg3. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.Format(text, args)
+
+Formats the specified arguments and text
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| args | *System.Object[]*<br>The arguments. |
+
+
+#### Returns
+
+System.String.
 
 
 ### M:DNX.Helpers.Strings.StringExtensions.IsValidNumber(text)

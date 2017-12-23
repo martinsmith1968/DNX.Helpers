@@ -75,6 +75,26 @@ namespace DNX.Helpers.Strings
         }
 
         /// <summary>
+        /// Determines whether the specified text is null or empty
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns><c>true</c> if [is null or empty] [the specified text]; otherwise, <c>false</c>.</returns>
+        public static bool IsNullOrEmpty(this string text)
+        {
+            return string.IsNullOrEmpty(text);
+        }
+
+        /// <summary>
+        /// Determines whether the specified text is null or white space
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <returns><c>true</c> if [is null or white space] [the specified text]; otherwise, <c>false</c>.</returns>
+        public static bool IsNullOrWhiteSpace(this string text)
+        {
+            return string.IsNullOrWhiteSpace(text);
+        }
+
+        /// <summary>
         /// Ensure a string starts with a prefix string
         /// </summary>
         /// <param name="text"></param>

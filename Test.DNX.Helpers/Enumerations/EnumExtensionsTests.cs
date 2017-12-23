@@ -1,10 +1,22 @@
 ﻿using System;
 using DNX.Helpers.Enumerations;
+using DNX.Helpers.Exceptions;
 using NUnit.Framework;
 using Shouldly;
 
 namespace Test.DNX.Helpers.Enumerations
 {
+    [AttributeUsage(AttributeTargets.Field)]
+    internal class MultiplierAttribute : Attribute
+    {
+        public int Multiplier { get; set; }
+
+        public MultiplierAttribute(int multiplier)
+        {
+            Multiplier = multiplier;
+        }
+    }
+
     internal enum MyTestEnum1
     {
         [System.ComponentModel.Description("First")]
@@ -31,6 +43,22 @@ namespace Test.DNX.Helpers.Enumerations
         Flag3 = 4,
         Flag4 = 8,
         Flag5 = 16
+    }
+
+    internal enum MyTestEnum3
+    {
+        [Multiplier(10)]
+        Ten = 10,
+
+        Twenty = 20,
+
+        [Multiplier(15)]
+        Thirty = 30,
+
+        Fourty = 40,
+
+        [Multiplier(1000)]
+        Fifty = 50
     }
 
     [TestFixture]
@@ -240,6 +268,18 @@ namespace Test.DNX.Helpers.Enumerations
             var result = value.GetDescription();
 
             return result;
+        }
+
+        [TestCase(MyTestEnum3.Ten, ExpectedResult = 10)]
+        [TestCase(MyTestEnum3.Twenty, ExpectedResult = null)]
+        [TestCase(MyTestEnum3.Thirty, ExpectedResult = 15)]
+        [TestCase(MyTestEnum3.Fourty, ExpectedResult = null)]
+        [TestCase(MyTestEnum3.Fifty, ExpectedResult = 1000)]
+        public int? GetAttributeTest(Enum value)
+        {
+            var attribute = value.GetAttribute<MultiplierAttribute>();
+
+            return attribute == null ? (int?)null : attribute.Multiplier;
         }
     }
 }

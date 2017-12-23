@@ -90,23 +90,84 @@ namespace DNX.Helpers.Enumerations
         }
 
         /// <summary>
-        /// Gets the description.
+        /// Gets the specified attributes from an enum value
         /// </summary>
+        /// <typeparam name="T"></typeparam>
         /// <param name="value">The value.</param>
-        /// <returns>System.String.</returns>
-        public static string GetDescription(this Enum value)
+        /// <returns>IList&lt;T&gt;.</returns>
+        public static IList<T> GetAttributes<T>(this Enum value)
+        {
+            return value.GetAttributes<T>(false);
+        }
+
+        /// <summary>
+        /// Gets the specified attributes from an enum value
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="inherit">if set to <c>true</c> [inherit].</param>
+        /// <returns>IList&lt;T&gt;.</returns>
+        public static IList<T> GetAttributes<T>(this Enum value, bool inherit)
         {
             var type = value.GetType();
 
             var memInfo = type.GetMember(value.ToString())
                 .SingleOrDefault();
 
-            var description = memInfo == null
+            var attributes = memInfo == null
                 ? null
-                : memInfo.GetMemberAttributes<DescriptionAttribute>(true);
+                : memInfo.GetMemberAttributes<T>(inherit);
 
-            return description.HasAny()
-                ? description.First().Description
+            return attributes;
+        }
+
+        /// <summary>
+        /// Gets the specified attribute from an enum value
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <returns>T.</returns>
+        public static T GetAttribute<T>(this Enum value)
+        {
+            return value.GetAttribute<T>(false);
+        }
+
+        /// <summary>
+        /// Gets the specified attribute from an enum value
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="value">The value.</param>
+        /// <param name="inherit">if set to <c>true</c> [inherit].</param>
+        /// <returns>T.</returns>
+        public static T GetAttribute<T>(this Enum value, bool inherit)
+        {
+            var attributes = value.GetAttributes<T>(inherit);
+
+            return attributes.FirstOrDefault();
+        }
+
+        /// <summary>
+        /// Gets the description property from the Description attribute from an enum value
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns>System.String.</returns>
+        public static string GetDescription(this Enum value)
+        {
+            return value.GetDescription(false);
+        }
+
+        /// <summary>
+        /// Gets the description property from the Description attribute from an enum value
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="inherit">if set to <c>true</c> [inherit].</param>
+        /// <returns>System.String.</returns>
+        public static string GetDescription(this Enum value, bool inherit)
+        {
+            var descriptionAttributes = value.GetAttributes<DescriptionAttribute>(inherit);
+
+            return descriptionAttributes.HasAny()
+                ? descriptionAttributes.First().Description
                 : null;
         }
 

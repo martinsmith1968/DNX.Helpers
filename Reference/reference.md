@@ -1830,13 +1830,86 @@ Gets the unix epoch.
 Enum Extensions.
 
 
-### M:DNX.Helpers.Enumerations.EnumExtensions.GetDescription(value)
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetAttribute``1(value)
 
-Gets the description.
+Gets the specified attribute from an enum value
 
 | Name | Description |
 | ---- | ----------- |
 | value | *System.Enum*<br>The value. |
+
+
+#### Returns
+
+T.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetAttribute``1(value, inherit)
+
+Gets the specified attribute from an enum value
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+| inherit | *System.Boolean*<br>if set to true [inherit]. |
+
+
+#### Returns
+
+T.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetAttributes``1(value)
+
+Gets the specified attributes from an enum value
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+
+
+#### Returns
+
+IList<T>.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetAttributes``1(value, inherit)
+
+Gets the specified attributes from an enum value
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+| inherit | *System.Boolean*<br>if set to true [inherit]. |
+
+
+#### Returns
+
+IList<T>.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetDescription(value)
+
+Gets the description property from the Description attribute from an enum value
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Enumerations.EnumExtensions.GetDescription(value, inherit)
+
+Gets the description property from the Description attribute from an enum value
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Enum*<br>The value. |
+| inherit | *System.Boolean*<br>if set to true [inherit]. |
 
 
 #### Returns
@@ -5941,6 +6014,34 @@ Formats the specified arguments and text
 #### Returns
 
 System.String.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.IsNullOrEmpty(text)
+
+Determines whether the specified text is null or empty
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if [is null or empty] [the specified text]; otherwise, false.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.IsNullOrWhiteSpace(text)
+
+Determines whether the specified text is null or white space
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+
+
+#### Returns
+
+true if [is null or white space] [the specified text]; otherwise, false.
 
 
 ### M:DNX.Helpers.Strings.StringExtensions.IsValidNumber(text)

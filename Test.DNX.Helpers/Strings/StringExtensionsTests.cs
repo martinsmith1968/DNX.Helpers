@@ -41,6 +41,28 @@ namespace Test.DNX.Helpers.Strings
             return format.Format(arg1, arg2, arg3, arg4);
         }
 
+        [TestCase(null, ExpectedResult = true)]
+        [TestCase("", ExpectedResult = true)]
+        [TestCase(" ", ExpectedResult = false)]
+        [TestCase("a", ExpectedResult = false)]
+        [TestCase(" A ", ExpectedResult = false)]
+        [TestCase("ABC", ExpectedResult = false)]
+        public bool Test_IsNullOrEmpty(string text)
+        {
+            return text.IsNullOrEmpty();
+        }
+
+        [TestCase(null, ExpectedResult = true)]
+        [TestCase("", ExpectedResult = true)]
+        [TestCase(" ", ExpectedResult = true)]
+        [TestCase("a", ExpectedResult = false)]
+        [TestCase(" A ", ExpectedResult = false)]
+        [TestCase("ABC", ExpectedResult = false)]
+        public bool Test_IsNullOrWhiteSpace(string text)
+        {
+            return text.IsNullOrWhiteSpace();
+        }
+
         [TestCase(null, "hello", ExpectedResult = "hello")]
         [TestCase("", "", ExpectedResult = "")]
         [TestCase("hello", null, ExpectedResult = "hello")]

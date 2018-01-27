@@ -1678,6 +1678,21 @@ Also available as an extension method
 Conversion Extensions.
 
 
+### M:DNX.Helpers.Converters.ConvertExtensions.ChangeType(value, type)
+
+Changes the value to the specified type
+
+| Name | Description |
+| ---- | ----------- |
+| value | *System.Object*<br>The value. |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+object
+
+
 ### M:DNX.Helpers.Converters.ConvertExtensions.ChangeType``1(value)
 
 Changes the value to the specified type
@@ -2903,6 +2918,20 @@ true if the value is not in the list; otherwise, false.
 ## T:DNX.Helpers.Linq.ListExtensions
 
 List Extensions.
+
+
+### M:DNX.Helpers.Linq.ListExtensions.CreateList``1(values)
+
+Create a list from an arbitrary supplied list of arguments
+
+| Name | Description |
+| ---- | ----------- |
+| values | *``0[]*<br> |
+
+
+#### Returns
+
+
 
 
 ### M:DNX.Helpers.Linq.ListExtensions.GetAbsoluteIndex``1(list, index)

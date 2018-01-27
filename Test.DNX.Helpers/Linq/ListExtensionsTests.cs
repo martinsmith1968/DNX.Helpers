@@ -3,6 +3,7 @@ using System.Linq;
 using DNX.Helpers.Exceptions;
 using DNX.Helpers.Linq;
 using NUnit.Framework;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Linq
 {
@@ -240,6 +241,51 @@ namespace Test.DNX.Helpers.Linq
 
                 return false;
             }
+        }
+
+        [Test]
+        public void CreateList_can_create_appropriate_lists()
+        {
+            // Arrange
+
+
+            // Act
+            var list1 = ListExtensions.CreateList(1);
+            var list2 = ListExtensions.CreateList(1, 2);
+            var list3 = ListExtensions.CreateList(1, 2, 3);
+            var list4 = ListExtensions.CreateList(1, 2, 3, 4);
+            var list5 = ListExtensions.CreateList(1, 2, 3, 4, 5);
+
+            // Assert
+            list1.ShouldNotBeNull();
+            list1.Count.ShouldBe(1);
+            list1[0].ShouldBe(1);
+
+            list2.ShouldNotBeNull();
+            list2.Count.ShouldBe(2);
+            list2[0].ShouldBe(1);
+            list2[1].ShouldBe(2);
+
+            list3.ShouldNotBeNull();
+            list3.Count.ShouldBe(3);
+            list3[0].ShouldBe(1);
+            list3[1].ShouldBe(2);
+            list3[2].ShouldBe(3);
+
+            list4.ShouldNotBeNull();
+            list4.Count.ShouldBe(4);
+            list4[0].ShouldBe(1);
+            list4[1].ShouldBe(2);
+            list4[2].ShouldBe(3);
+            list4[3].ShouldBe(4);
+
+            list5.ShouldNotBeNull();
+            list5.Count.ShouldBe(5);
+            list5[0].ShouldBe(1);
+            list5[1].ShouldBe(2);
+            list5[2].ShouldBe(3);
+            list5[3].ShouldBe(4);
+            list5[4].ShouldBe(5);
         }
     }
 }

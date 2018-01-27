@@ -136,5 +136,16 @@ namespace DNX.Helpers.Linq
             list[newIndex] = list[oldIndex];
             list[oldIndex] = item;
         }
+
+        /// <summary>
+        /// Create a list from an arbitrary supplied list of arguments
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public static IList<T> CreateList<T>(params T[] values)
+        {
+            return values.ToConcreteList();
+        }
     }
 }

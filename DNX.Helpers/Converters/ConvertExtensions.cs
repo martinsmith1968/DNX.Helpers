@@ -19,6 +19,17 @@ namespace DNX.Helpers.Converters
         }
 
         /// <summary>
+        /// Changes the value to the specified type
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="type">The type.</param>
+        /// <returns>object</returns>
+        public static object ChangeType(this object value, Type type)
+        {
+            return Convert.ChangeType(value, type);
+        }
+
+        /// <summary>
         /// Changes the value to the specified type, with a default value if conversion fails
         /// </summary>
         /// <typeparam name="T"></typeparam>

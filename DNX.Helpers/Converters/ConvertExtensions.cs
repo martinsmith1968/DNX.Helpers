@@ -15,7 +15,7 @@ namespace DNX.Helpers.Converters
         /// <returns>T.</returns>
         public static T ChangeType<T>(this object value)
         {
-            return (T)Convert.ChangeType(value, typeof(T));
+            return (T)ChangeType(value, typeof(T));
         }
 
         /// <summary>

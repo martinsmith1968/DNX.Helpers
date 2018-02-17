@@ -10,4 +10,4 @@ script:
   - xbuild /p:Configuration=$CONFIGURATION $SOLUTION_NAME.sln
   - ls -la -R testrunner
   #- ls -la -R Test.$SOLUTION_NAME/bin/$CONFIGURATION
-  - mono ./testrunner/NUnit.Runners.3.8.0/tools/nunit3-console.exe ./Test.$SOLUTION_NAME/bin/$CONFIGURATION/Test.$SOLUTION_NAME.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Test.$SOLUTION_NAME/bin/$CONFIGURATION/Test.$SOLUTION_NAME.dll

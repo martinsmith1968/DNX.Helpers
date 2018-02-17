@@ -22,11 +22,20 @@ namespace DNX.Helpers.Reflection
         {
             Guard.IsNotNull(() => type);
 
-            var attributes = type.GetCustomAttributes(typeof(T), inherit);
-
-            return attributes
+            var attributes = type.GetCustomAttributes(typeof(T), inherit)
                 .Cast<T>()
                 .ToList();
+
+            if (inherit)
+            {
+                attributes.AddRange(
+                    type.GetInterfaces()
+                        .SelectMany(i => i.GetTypeAttributes<T>(inherit))
+                        .ToList()
+                );
+            }
+
+            return attributes;
         }
 
         /// <summary>

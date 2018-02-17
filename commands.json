@@ -8,12 +8,12 @@
     "NuGet.Package": {
       "fileName": "cmd.exe",
       "workingDirectory": ".",
-      "arguments": "/c NuGet.Package.cmd"
+      "arguments": "/c NuGet.Pack.cmd"
     },
     "NuGet.Publish": {
       "fileName": "cmd.exe",
       "workingDirectory": ".",
-      "arguments": "/c NuGet.Publish.cmd"
+      "arguments": "/c NuGet.Push.cmd"
     }
   }
 }

@@ -1,13 +1,19 @@
 ﻿env:
-    SOLUTION_NAME=DNX.Helpers
+    APPNAME=DNX.Helpers
     CONFIGURATION=Release
+    NUGET_API_URL=https://www.nuget.org/api/v2
 language: csharp
-solution: $SOLUTION_NAME.sln
+solution: $APPNAME.sln
 install:
-  - nuget restore $SOLUTION_NAME.sln
+  - nuget restore $APPNAME.sln
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=$CONFIGURATION $SOLUTION_NAME.sln
-  - ls -la -R testrunner
-  #- ls -la -R Test.$SOLUTION_NAME/bin/$CONFIGURATION
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Test.$SOLUTION_NAME/bin/$CONFIGURATION/Test.$SOLUTION_NAME.dll
+  - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
+  - nuget pack ./$APPNAME/$APPNAME.csproj -Verbosity detailed -BasePath $APPNAME -Properties Configuration=$CONFIGURATION
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: nuget push $APPNAME.*.nupkg -Source $NUGET_API_URL -ApiKey $NUGET_API_KEY
+  on:
+    branch: master

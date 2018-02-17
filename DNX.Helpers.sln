@@ -21,12 +21,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFi
 		todo.md = todo.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Commands", "Commands", "{FB47A44B-A670-480D-8B11-6D02072596D4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".commands", ".commands", "{FB47A44B-A670-480D-8B11-6D02072596D4}"
 	ProjectSection(SolutionItems) = preProject
 		commands.json = commands.json
 		GenerateMarkdown.cmd = GenerateMarkdown.cmd
-		NuGet.Package.cmd = NuGet.Package.cmd
-		NuGet.Publish.cmd = NuGet.Publish.cmd
+		NuGet.Pack.cmd = NuGet.Pack.cmd
+		NuGet.Push.cmd = NuGet.Push.cmd
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docs", "Docs", "{2236A3F2-35BF-46D9-B5C6-E30761EEFA66}"
@@ -78,7 +78,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FB47A44B-A670-480D-8B11-6D02072596D4} = {E52234A5-6012-4188-B216-87C7D41306B5}
 		{2236A3F2-35BF-46D9-B5C6-E30761EEFA66} = {E52234A5-6012-4188-B216-87C7D41306B5}
 		{BF2F6407-DA12-4C4B-B852-1D4BF3627122} = {E52234A5-6012-4188-B216-87C7D41306B5}
 	EndGlobalSection

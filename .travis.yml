@@ -10,6 +10,7 @@ install:
 script:
   - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
+  - nuget pack -?
   - nuget pack $APPNAME/$APPNAME.csproj -Verbosity detailed -BasePath $APPNAME -Properties Configuration=$CONFIGURATION
 deploy:
   skip_cleanup: true

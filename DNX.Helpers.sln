@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNX.Helpers", "DNX.Helpers\DNX.Helpers.csproj", "{BC278532-83D1-4AC0-BA01-E16F237BCBF9}"
 EndProject
@@ -54,6 +54,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reference", "Reference", "{
 		Reference\reference.md = Reference\reference.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{BDB7BF4E-2B89-4EA1-AB87-00D926C29D97}"
+	ProjectSection(SolutionItems) = preProject
+		.travis.yml = .travis.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,5 +81,8 @@ Global
 		{FB47A44B-A670-480D-8B11-6D02072596D4} = {E52234A5-6012-4188-B216-87C7D41306B5}
 		{2236A3F2-35BF-46D9-B5C6-E30761EEFA66} = {E52234A5-6012-4188-B216-87C7D41306B5}
 		{BF2F6407-DA12-4C4B-B852-1D4BF3627122} = {E52234A5-6012-4188-B216-87C7D41306B5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59F858F4-B132-4090-8A05-85FC6D02D008}
 	EndGlobalSection
 EndGlobal

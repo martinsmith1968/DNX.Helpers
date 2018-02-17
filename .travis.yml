@@ -1,4 +1,5 @@
-﻿env:
+﻿# https://stackoverflow.com/questions/41509608/how-do-i-deploy-nuget-packages-in-travis-ci
+env:
     APPNAME=DNX.Helpers
     CONFIGURATION=Release
     NUGET_API_URL=https://www.nuget.org/api/v2
@@ -11,7 +12,7 @@ script:
   - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
 #  - nuget pack $APPNAME/$APPNAME.csproj -Verbosity detailed -BasePath $APPNAME -Properties Configuration=$CONFIGURATION
-  - nuget pack $APPNAME/$APPNAME.csproj -Verbosity detailed -Properties Configuration=$CONFIGURATION
+  - nuget pack $APPNAME/$APPNAME.csproj -Verbosity detailed -BasePath $APPNAME
 deploy:
   skip_cleanup: true
   provider: script

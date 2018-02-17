@@ -1,12 +1,13 @@
-﻿language: csharp
-solution: DNX.Helpers.sln
-env:
+﻿env:
     SOLUTION_NAME=DNX.Helpers
+    CONFIGURATION=Release
+language: csharp
+solution: $SOLUTION_NAME.sln
 install:
   - nuget restore $SOLUTION_NAME.sln
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release $SOLUTION_NAME.sln
-  - ls -la -R testrunner/tools
-  - ls -la -R Test.$SOLUTION_NAME
-  - mono ./testrunner/NUnit.Runners.3.8.0/tools/nunit3-console.exe ./Test.$SOLUTION_NAME/bin/Release/Test.$SOLUTION_NAME.dll
+  - xbuild /p:Configuration=$CONFIGURATION $SOLUTION_NAME.sln
+  - ls -la -R testrunner
+  #- ls -la -R Test.$SOLUTION_NAME/bin/$CONFIGURATION
+  - mono ./testrunner/NUnit.Runners.3.8.0/tools/nunit3-console.exe ./Test.$SOLUTION_NAME/bin/$CONFIGURATION/Test.$SOLUTION_NAME.dll

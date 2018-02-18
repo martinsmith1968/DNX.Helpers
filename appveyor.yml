@@ -1,8 +1,9 @@
 ﻿environment:
+  APPNAME: DNX.Helpers
   NUGET_API_KEY:
     secure: 8Ga/MkTMHthG2tYqJHRRuA6sNB+NUwM7GRtI4fEAAn/iYkyTzAb+f1+2nbZonYEQ
 
-version: 1.0.{build}
+version: 1.1.0.{build}
 image: Visual Studio 2017
 
 # Do not build on tags (GitHub and BitBucket)
@@ -18,6 +19,14 @@ deploy:
   server: https://www.nuget.org/api/v2
   api_key:
     secure: cSupvbpArILkSYPW88y+Ow==
-#  artifact: DNX.Helpers.*.nupkg
+  artifact: $APPNAME.*.nupkg
   on:
     branch: master
+
+notifications:
+- provider: Email
+  to:
+  - martinsmith1968+appveyor@gmail.com
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: false

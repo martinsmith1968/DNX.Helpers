@@ -8,6 +8,7 @@ solution: $APPNAME.sln
 install:
   - nuget restore $APPNAME.sln
   - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
+#  - nuget install DNX.NuSpec.Updater -OutputDirectory nuspecupdater
 script:
   - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll

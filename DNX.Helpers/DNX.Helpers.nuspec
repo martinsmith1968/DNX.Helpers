@@ -16,4 +16,7 @@
     <copyright>Copyright 2016 DNX Solutions Ltd</copyright>
     <tags>DNX helpers extensions string array linq</tags>
   </metadata>
+  <files>
+    <file src="bin\Release\DNX.Helpers.dll" target="lib" />
+  </files>
 </package>

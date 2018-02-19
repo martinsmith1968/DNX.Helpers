@@ -17,6 +17,6 @@
     <tags>DNX helpers extensions string array linq</tags>
   </metadata>
   <files>
-    <file src="bin\**\DNX.Helpers.dll" target="lib" />
+    <file src="DNX.Helpers\bin\Release\DNX.Helpers.dll" target="lib" />
   </files>
 </package>

@@ -52,7 +52,7 @@ Also, check out the [Unit Test](Test.DNX.Helpers) project for some usage example
 
 ### Reference
 
-[Full Namespace reference](Reference/reference.md)
+[Full Namespace reference](reference/reference.md)
 
 ### To Do
 

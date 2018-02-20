@@ -32,21 +32,21 @@ Helpers are divided into the following namespaces:
 
 | Namespace | Descripion |
 | --- | --- |
-| [Assemblies](Docs/Assemblies.md) | Classes for interrogating Assemblies in a easier way |
-| [Comparisons](Docs/Comparisons.md) | Make working with or implementing an IComparer much simpler |
-| [Converters](Docs/Converters.md) | Simplify converting textual data to the built in types |
-| [Dates](Docs/Dates.md) | Simplify working with Dates, especially when UTC or not is a consideration |
-| [Enumerations](Docs/Enumerations.md) | The `enum` parsing and manipulation functionality that .NET forgot |
-| [Exceptions](Docs/Exceptions.md) | The custom exceptions that can get thrown by these functions |
-| [Interfaces](Docs/Interfaces.md) | Common useful interfaces that promote conformity |
-| [Linq](Docs/Linq.md) | Some useful extension methods and classes for working with enumerables |
-| [Maths](Docs/Maths.md) | Some useful extension methods for math comparisons across the built in types |
-| [Objects](Docs/Objects.md) | Some extension methods that apply to any object |
-| [Reflection](Docs/Reflection.md) | Makes querying your own code at runtime so much simpler |
-| [Streams](Docs/Streams.md) | Some useful helpers for working with streams without having to remember how to setup readers, etc |
-| [Strings](Docs/Strings.md) | Extensions to the `string` class to simplify working with textual data |
-| [Threading](Docs/Threading.md) | Helper methods for working with asynchronous code. Includes a Mutex manager and a Pub/Sub queue |
-| [Validation](Docs/Validation.md) | Guard classes and methods to simplify argument validation |
+| [Assemblies](docs/Assemblies.md) | Classes for interrogating Assemblies in a easier way |
+| [Comparisons](docs/Comparisons.md) | Make working with or implementing an IComparer much simpler |
+| [Converters](docs/Converters.md) | Simplify converting textual data to the built in types |
+| [Dates](docs/Dates.md) | Simplify working with Dates, especially when UTC or not is a consideration |
+| [Enumerations](docs/Enumerations.md) | The `enum` parsing and manipulation functionality that .NET forgot |
+| [Exceptions](docs/Exceptions.md) | The custom exceptions that can get thrown by these functions |
+| [Interfaces](docs/Interfaces.md) | Common useful interfaces that promote conformity |
+| [Linq](docs/Linq.md) | Some useful extension methods and classes for working with enumerables |
+| [Maths](docs/Maths.md) | Some useful extension methods for math comparisons across the built in types |
+| [Objects](docs/Objects.md) | Some extension methods that apply to any object |
+| [Reflection](docs/Reflection.md) | Makes querying your own code at runtime so much simpler |
+| [Streams](docs/Streams.md) | Some useful helpers for working with streams without having to remember how to setup readers, etc |
+| [Strings](docs/Strings.md) | Extensions to the `string` class to simplify working with textual data |
+| [Threading](docs/Threading.md) | Helper methods for working with asynchronous code. Includes a Mutex manager and a Pub/Sub queue |
+| [Validation](docs/Validation.md) | Guard classes and methods to simplify argument validation |
 
 Also, check out the [Unit Test](Test.DNX.Helpers) project for some usage examples.
 

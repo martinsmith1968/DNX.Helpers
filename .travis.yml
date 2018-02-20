@@ -2,7 +2,7 @@
 env:
     APPNAME=DNX.Helpers
     CONFIGURATION=Release
-    NUGET_API_URL=https://www.nuget.org/api/v2
+    NUGET_API_URL=https://www.nuget.org/api/v2/package
 language: csharp
 solution: $APPNAME.sln
 install:

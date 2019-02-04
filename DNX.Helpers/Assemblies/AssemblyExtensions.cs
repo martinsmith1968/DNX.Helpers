@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using DNX.Helpers.Reflection;
 
 namespace DNX.Helpers.Assemblies
 {
@@ -29,7 +30,7 @@ namespace DNX.Helpers.Assemblies
         public static IList<Type> FindTypesThatImplementType<T>(this Assembly assembly)
         {
             var types = assembly.GetTypes()
-                .Where(t => t.GetInterfaces().Contains(typeof(T)))
+                .Where(t => t.IsA(typeof(T)))
                 .ToList();
 
             return types;

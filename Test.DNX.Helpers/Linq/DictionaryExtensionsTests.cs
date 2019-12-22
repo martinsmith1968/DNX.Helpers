@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using DNX.Helpers.Exceptions;
 using DNX.Helpers.Linq;
@@ -612,6 +613,85 @@ namespace Test.DNX.Helpers.Linq
             ex.ShouldNotBeNull();
             ex.Value.ShouldBe(mergeTechnique);
             ex.Type.ShouldBe(typeof(MergeTechnique));
+        }
+
+        [Test]
+        public void ToExpando_can_convert_simple_dictionary()
+        {
+            // Arrange
+            var dict = new Dictionary<string, object>()
+            {
+                { "Key1", Guid.NewGuid() },
+                { "Key2", Guid.NewGuid() },
+                { "Key3", Guid.NewGuid() },
+            };
+
+            // Act
+            dynamic expando = dict.ToExpando();
+
+            // Assert
+            ((object)expando).ShouldNotBeNull();
+            ((object)expando.Key1).ShouldBe(dict["Key1"]);
+            ((object)expando.Key2).ShouldBe(dict["Key2"]);
+            ((object)expando.Key3).ShouldBe(dict["Key3"]);
+        }
+
+        [Test]
+        public void ToExpando_can_convert_dictionary_containing_dictionary_properties()
+        {
+            // Arrange
+            var dict = new Dictionary<string, object>()
+            {
+                { "Key1", Guid.NewGuid() },
+                {
+                    "Key2", new Dictionary<string, object>()
+                    {
+                        { "Key21", Guid.NewGuid() },
+                        { "Key22", Guid.NewGuid() },
+                    }
+                },
+                { "Key3", Guid.NewGuid() },
+            };
+
+            // Act
+            dynamic expando = dict.ToExpando();
+
+            // Assert
+            ((object)expando).ShouldNotBeNull();
+            ((object)expando.Key1).ShouldBe(dict["Key1"]);
+            ((object)expando.Key2).ShouldBe(dict["Key2"]);
+            ((object)expando.Key3).ShouldBe(dict["Key3"]);
+            ((object)expando.Key2.Key21).ShouldBe(((Dictionary<string, object>)dict["Key2"])["Key21"]);
+            ((object)expando.Key2.Key22).ShouldBe(((Dictionary<string, object>)dict["Key2"])["Key22"]);
+        }
+
+        [Test]
+        public void ToExpando_can_convert_dictionary_containing_collection_properties()
+        {
+            // Arrange
+            var dict = new Dictionary<string, object>()
+            {
+                { "Key1", Guid.NewGuid() },
+                {
+                    "Key2", new Collection<string>()
+                    {
+                        Guid.NewGuid().ToString(),
+                        Guid.NewGuid().ToString(),
+                    }
+                },
+                { "Key3", Guid.NewGuid() },
+            };
+
+            // Act
+            dynamic expando = dict.ToExpando();
+
+            // Assert
+            ((object)expando).ShouldNotBeNull();
+            ((object)expando.Key1).ShouldBe(dict["Key1"]);
+            ((object)expando.Key2).ShouldBe(dict["Key2"]);
+            ((object)expando.Key3).ShouldBe(dict["Key3"]);
+            ((object)expando.Key2[0]).ShouldBe(((Collection<string>)dict["Key2"])[0]);
+            ((object)expando.Key2[1]).ShouldBe(((Collection<string>)dict["Key2"])[1]);
         }
     }
 }

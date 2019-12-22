@@ -41,6 +41,17 @@ namespace Test.DNX.Helpers.Strings
             return format.Format(arg1, arg2, arg3, arg4);
         }
 
+        [TestCase("{0:#,##0.00}", "en-GB", 1234.56, ExpectedResult = "1,234.56")]
+        [TestCase("{0:#,##0.00}", "de-DE", 1234.56, ExpectedResult = "1.234,56")]
+        public string Test_Format_IFormatProvider_args(string text, string cultureInfoName, double arg1)
+        {
+            var cultureInfo = CultureInfo.GetCultureInfo(cultureInfoName);
+
+            var result = text.Format(cultureInfo, arg1);
+
+            return result;
+        }
+
         [TestCase(null, ExpectedResult = true)]
         [TestCase("", ExpectedResult = true)]
         [TestCase(" ", ExpectedResult = false)]
@@ -292,6 +303,48 @@ namespace Test.DNX.Helpers.Strings
             var result = text.RemoveAnyExcept(charsToKeep);
 
             return result;
+        }
+
+        // GB
+        [TestCase("0", "en-gb", ExpectedResult = true)]
+        [TestCase("1", "en-gb", ExpectedResult = true)]
+        [TestCase("-1", "en-gb", ExpectedResult = true)]
+        [TestCase("+1", "en-gb", ExpectedResult = true)]
+        [TestCase("123.72", "en-gb", ExpectedResult = true)]
+        [TestCase("-123.72", "en-gb", ExpectedResult = true)]
+        [TestCase("+123.72", "en-gb", ExpectedResult = true)]
+        [TestCase("3,123.451", "en-gb", ExpectedResult = true)]
+        [TestCase("-3,123.451", "en-gb", ExpectedResult = true)]
+        [TestCase("+3,123.451", "en-gb", ExpectedResult = true)]
+        [TestCase("3412123.76543", "en-gb", ExpectedResult = true)]
+        [TestCase("-3412123.76543", "en-gb", ExpectedResult = true)]
+        [TestCase("+3412123.76543", "en-gb", ExpectedResult = true)]
+        [TestCase("7,034.989", "en-gb", ExpectedResult = true)]
+        [TestCase("-7,034.989", "en-gb", ExpectedResult = true)]
+        [TestCase("+7,034.989", "en-gb", ExpectedResult = true)]
+        // DE
+        [TestCase("3,123.451", "de-DE", ExpectedResult = false)]
+        [TestCase("3.123,451", "de-DE", ExpectedResult = true)]
+        public bool Test_IsValidNumber_default_culture(string text, string cultureInfoName)
+        {
+            var previousCulture = CultureInfo.DefaultThreadCurrentCulture;
+
+            try
+            {
+                CultureInfo.DefaultThreadCurrentCulture = CultureInfo.GetCultureInfo(cultureInfoName);
+
+                var result = text.IsValidNumber();
+
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            finally
+            {
+                CultureInfo.DefaultThreadCurrentCulture = previousCulture;
+            }
         }
 
         // GB

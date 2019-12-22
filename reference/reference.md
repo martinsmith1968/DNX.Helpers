@@ -177,6 +177,48 @@ Gets the assembly version.
 Class AssemblyExtensions.
 
 
+### M:DNX.Helpers.Assemblies.AssemblyExtensions.CreateInstancesOfConcreteTypesThatImplementType``1(assembly)
+
+Create instances of concrete types in an assembly that implement the specified type
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly to search |
+
+
+#### Returns
+
+List of instances of T>
+
+
+### M:DNX.Helpers.Assemblies.AssemblyExtensions.FindConcreteTypesThatImplementType``1(assembly)
+
+Find the concrete types in the Assembly that implement the specified Type
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly to search |
+
+
+#### Returns
+
+List of 
+
+
+### M:DNX.Helpers.Assemblies.AssemblyExtensions.FindTypesThatImplementType``1(assembly)
+
+Find the types in the Assembly that implement the specified Type
+
+| Name | Description |
+| ---- | ----------- |
+| assembly | *System.Reflection.Assembly*<br>The assembly. |
+
+
+#### Returns
+
+IList<Type>.
+
+
 ### M:DNX.Helpers.Assemblies.AssemblyExtensions.GetAssemblyDetails(assembly)
 
 Gets the assembly details.
@@ -1840,6 +1882,31 @@ System.DateTime.
 Gets the unix epoch.
 
 
+## T:DNX.Helpers.Defaults
+
+Default values
+
+
+### F:DNX.Helpers.Defaults.FieldInfoReaderBindingFlags
+
+The default field information binding flags for reading via reflection
+
+
+### F:DNX.Helpers.Defaults.FieldInfoWriterBindingFlags
+
+The default field information binding flags for writing via reflection
+
+
+### F:DNX.Helpers.Defaults.PropertyInfoReaderBindingFlags
+
+The default property information binding flags for reading via reflection
+
+
+### F:DNX.Helpers.Defaults.PropertyInfoWriterBindingFlags
+
+The default property information binding flags for writing via reflection
+
+
 ## T:DNX.Helpers.Enumerations.EnumExtensions
 
 Enum Extensions.
@@ -2607,7 +2674,7 @@ Dictionary<TK, TV>.
 
 ### M:DNX.Helpers.Linq.DictionaryExtensions.MergeWith``2(System.Collections.Generic.IDictionary{``0,``1},System.Collections.Generic.IDictionary{``0,``1},DNX.Helpers.Linq.MergeTechnique)
 
-Merges the with.
+Merges this dictionary with another one
 
 | Name | Description |
 | ---- | ----------- |
@@ -2650,6 +2717,11 @@ Sets the value.
 | value | *`0*<br>The value. |
 
 *System.ArgumentNullException:* dictionary or keyName
+
+
+### M:DNX.Helpers.Linq.DictionaryExtensions.ToExpando``1(System.Collections.Generic.IDictionary{System.String,``0})
+
+Extension method that turns a dictionary of string and object to an ExpandoObject
 
 
 ## T:DNX.Helpers.Linq.EnumerableExtensions
@@ -5009,81 +5081,99 @@ Determines whether Determines whether the expression is a unary expression
 Instance Resolution Extensions.
 
 
-### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetConcreteTypesThatImplementInterface``1(assembly)
+### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.ResolveInstancesOfTypeWithAttributeAndCondition``2(System.Collections.Generic.IList{``0},System.Func{``1,System.Boolean},System.Boolean)
 
-Find all concrete classes in an assembly that implement a given interface
-
-| Name | Description |
-| ---- | ----------- |
-| assembly | *System.Reflection.Assembly*<br>The assembly to search |
-
-
-#### Returns
-
-List of 
-
-
-### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetInstanceOfClassesThatImplementInterfaceWithAttribute``2(System.Collections.Generic.IList{``0},System.Func{``1,System.Boolean})
-
-Find instances of classes in an assembly that implement a given interface and are decorated with an attribute that passes the given func test
+Find the instances of a Type that are decorated with an attribute that satisfies the given func condition
 
 | Name | Description |
 | ---- | ----------- |
 | instances | *Unknown type*<br>The instances. |
 | func | *Unknown type*<br>The func to run against the decoration attribute |
+| inherit | *System.Boolean*<br>if set to true include inherited attributes. |
 
 
 #### Returns
 
-Instance of T or null
-
-
-### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetInstancesOfClassesThatImplementInterface``1(assembly)
-
-Find instances of classes in an assembly that implement a given interface
-
-| Name | Description |
-| ---- | ----------- |
-| assembly | *System.Reflection.Assembly*<br>The assembly to search |
-
-
-#### Returns
-
-List of instances of T>
-
-
-### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.GetTypesThatImplementInterface``1(assembly)
-
-Finds the types that implement interface.
-
-| Name | Description |
-| ---- | ----------- |
-| assembly | *System.Reflection.Assembly*<br>The assembly. |
-
-
-#### Returns
-
-IList<Type>.
-
-
-### M:DNX.Helpers.Reflection.InstanceResolutionExtensions.ResolveImplementationOfInterfaceWithAttribute``2(System.Reflection.Assembly,System.Func{``1,System.Boolean})
-
-Find instances of classes in an assembly that implement a given interface and are decorated with an attribute that passes the given func test
-
-| Name | Description |
-| ---- | ----------- |
-| assembly | *System.Reflection.Assembly*<br>The assembly to search |
-| func | *Unknown type*<br>The func to run against the decoration attribute |
-
-
-#### Returns
-
-List of instances of T
+List of T
 
 
 ## T:DNX.Helpers.Reflection.ReflectionExtensions
 
 Reflection Extensions.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.AsDictionary(instance, bindingFlags)
+
+Serialises an object instance to a Dictionary
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *System.Object*<br>The instance. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IDictionary<System.String, System.Object>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.AsDictionaryTyped``1(instance, bindingFlags)
+
+Serialises an object instance to a Dictionary
+
+| Name | Description |
+| ---- | ----------- |
+| instance | *``0*<br>The instance. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IDictionary<System.String, System.Object>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.AsInstance``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.Reflection.BindingFlags)
+
+Creates a populated object instance from a Dictionary
+
+| Name | Description |
+| ---- | ----------- |
+| dict | *Unknown type*<br>The dictionary. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+T.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetFieldsForType(type)
+
+Gets the fields for the specified type.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+
+
+#### Returns
+
+IList<PropertyInfo>.
+
+
+### M:DNX.Helpers.Reflection.ReflectionExtensions.GetFieldsForType(type, bindingFlags)
+
+Gets the fields for the specified type.
+
+| Name | Description |
+| ---- | ----------- |
+| type | *System.Type*<br>The type. |
+| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
+
+
+#### Returns
+
+IList<PropertyInfo>.
 
 
 ### M:DNX.Helpers.Reflection.ReflectionExtensions.GetPropertiesDictionary(obj)
@@ -5225,51 +5315,6 @@ Populates an object instance from a Dictionary
 | Name | Description |
 | ---- | ----------- |
 | instance | *System.Object*<br>The instance. |
-| dict | *Unknown type*<br>The dictionary. |
-| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
-
-
-#### Returns
-
-T.
-
-
-### M:DNX.Helpers.Reflection.ReflectionExtensions.ToDictionary(instance, bindingFlags)
-
-Serialises an object instance to a Dictionary
-
-| Name | Description |
-| ---- | ----------- |
-| instance | *System.Object*<br>The instance. |
-| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
-
-
-#### Returns
-
-IDictionary<System.String, System.Object>.
-
-
-### M:DNX.Helpers.Reflection.ReflectionExtensions.ToDictionaryTyped``1(instance, bindingFlags)
-
-Serialises an object instance to a Dictionary
-
-| Name | Description |
-| ---- | ----------- |
-| instance | *``0*<br>The instance. |
-| bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
-
-
-#### Returns
-
-IDictionary<System.String, System.Object>.
-
-
-### M:DNX.Helpers.Reflection.ReflectionExtensions.ToInstance``1(System.Collections.Generic.IDictionary{System.String,System.Object},System.Reflection.BindingFlags)
-
-Creates a populated object instance from a Dictionary
-
-| Name | Description |
-| ---- | ----------- |
 | dict | *Unknown type*<br>The dictionary. |
 | bindingFlags | *System.Reflection.BindingFlags*<br>The binding flags. |
 
@@ -5434,38 +5479,52 @@ Reads the entire stream as text
 System.String.
 
 
-## T:DNX.Helpers.Strings.Interpolation.InterpolatableProperty
+## T:DNX.Helpers.Strings.ArgumentParser
 
-An InterpolatableProperty
+Support for consistent argument parsing
 
 
-### M:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.GetVariableName(namePrefix)
+### M:DNX.Helpers.Strings.ArgumentParser.ParseArguments(text)
 
-Gets the name of the variable for substitution
+Parses a raw command line string into an array of parts
 
 | Name | Description |
 | ---- | ----------- |
-| namePrefix | *System.String*<br>The name prefix. |
+| text | *System.String*<br>The text. |
 
 
 #### Returns
 
-System.String.
+IList<System.String>.
 
 
-### P:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.IsStatic
+#### Remarks
 
-Gets or sets a value indicating whether this instance is static.
-
-
-### P:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.Name
-
-Gets or sets the name.
+ See: https://stackoverflow.com/questions/14655023/split-a-string-that-has-white-spaces-unless-they-are-enclosed-within-quotes 
 
 
-### P:DNX.Helpers.Strings.Interpolation.InterpolatableProperty.PropertyInfo
+## T:DNX.Helpers.Strings.Interpolation.Interfaces.INamedInstance
 
-Gets the property information.
+Interface INamedInstance
+
+
+### M:DNX.Helpers.Strings.Interpolation.Interfaces.INamedInstance.GetValue(propertyName)
+
+Gets the value.
+
+| Name | Description |
+| ---- | ----------- |
+| propertyName | *System.String*<br>Name of the property. |
+
+
+#### Returns
+
+System.Object.
+
+
+### P:DNX.Helpers.Strings.Interpolation.Interfaces.INamedInstance.Name
+
+Gets the name.
 
 
 ## T:DNX.Helpers.Strings.Interpolation.NamedInstance
@@ -5492,12 +5551,22 @@ Gets or sets the instance.
 Gets or sets the name.
 
 
+### M:DNX.Helpers.Strings.Interpolation.NamedInstance.ToDictionary
+
+Returns the named instance as a Dictionary
+
+
+#### Returns
+
+IDictionary<System.String, System.Object>.
+
+
 ## T:DNX.Helpers.Strings.Interpolation.StringInterpolator
 
 StringInterpolator to simulate and extend named string interpolation available in C# 6.0
 
 
-### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.BuildParameterValuesForNamedInstance(System.Collections.Generic.IDictionary{System.String,System.Object},System.String,System.Object,System.String)
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.FilterParameterValues(System.Collections.Generic.IDictionary{System.String,System.Object},System.String)
 
 Builds the parameter values for named instance.
 
@@ -5505,8 +5574,6 @@ Builds the parameter values for named instance.
 | ---- | ----------- |
 | parameterValues | *Unknown type*<br>The parameter values. |
 | format | *Unknown type*<br>The format. |
-| instance | *System.Object*<br>The instance. |
-| namePrefix | *System.String*<br>The name prefix. |
 
 
 #### Returns
@@ -5514,18 +5581,20 @@ Builds the parameter values for named instance.
 System.String.
 
 
-### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.GetInterpolatableProperties(type)
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWith(text, namedInstance, ignoreErrors)
 
-Gets the list of interpolatable properties from a type
+Interpolates the text with the named instance
 
 | Name | Description |
 | ---- | ----------- |
-| type | *System.Type*<br>The type. |
+| text | *System.String*<br>The text. |
+| namedInstance | *DNX.Helpers.Strings.Interpolation.NamedInstance*<br>The named instance. |
+| ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
 
 
 #### Returns
 
-IList<InterpolatableProperty>.
+System.String.
 
 
 ### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWith(text, instance, namePrefix, ignoreErrors)
@@ -5553,6 +5622,22 @@ Interpolates text with properties from a list of object instances
 | ---- | ----------- |
 | text | *System.String*<br>The text. |
 | namedInstances | *System.Collections.Generic.IList{DNX.Helpers.Strings.Interpolation.NamedInstance}*<br>The named instances. |
+| ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
+
+
+#### Returns
+
+System.String.
+
+
+### M:DNX.Helpers.Strings.Interpolation.StringInterpolator.InterpolateWithAll``1(System.String,System.Collections.Generic.IDictionary{System.String,``0},System.Boolean)
+
+Interpolates text with properties from a Dictionary of parameter names and values
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| paramValues | *Unknown type*<br>The parameter values. |
 | ignoreErrors | *System.Boolean*<br>if set to true [ignore errors]. |
 
 

@@ -81,12 +81,12 @@ namespace DNX.Helpers.Linq
 
             if (!list.IsIndexValid(oldIndex))
             {
-                throw new ArgumentOutOfRangeException("oldIndex");
+                throw new ArgumentOutOfRangeException(nameof(oldIndex));
             }
 
             if (!list.IsIndexValid(newIndex))
             {
-                throw new ArgumentOutOfRangeException("newIndex");
+                throw new ArgumentOutOfRangeException(nameof(newIndex));
             }
 
             if (list.IsReadOnly)
@@ -119,12 +119,12 @@ namespace DNX.Helpers.Linq
 
             if (!list.IsIndexValid(oldIndex))
             {
-                throw new ArgumentOutOfRangeException("oldIndex");
+                throw new ArgumentOutOfRangeException(nameof(oldIndex));
             }
 
             if (!list.IsIndexValid(newIndex))
             {
-                throw new ArgumentOutOfRangeException("newIndex");
+                throw new ArgumentOutOfRangeException(nameof(newIndex));
             }
 
             if (list.IsReadOnly)

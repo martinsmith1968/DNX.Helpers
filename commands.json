@@ -16,4 +16,5 @@
       "arguments": "/c NuGet.Push.cmd"
     }
   }
+, "-vs-binding":{"AfterBuild":["GenerateMarkdown"]}
 }

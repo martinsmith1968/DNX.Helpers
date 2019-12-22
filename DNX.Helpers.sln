@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNX.Helpers", "DNX.Helpers\DNX.Helpers.csproj", "{BC278532-83D1-4AC0-BA01-E16F237BCBF9}"
 EndProject
@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35364F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{E52234A5-6012-4188-B216-87C7D41306B5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{E52234A5-6012-4188-B216-87C7D41306B5}"
 	ProjectSection(SolutionItems) = preProject
 		licence.txt = licence.txt
 		readme.md = readme.md
@@ -59,6 +59,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{BDB7BF
 		.travis.yml = .travis.yml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Images", "Images", "{ED58C975-9E2F-4720-9634-62BE33EB58B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,6 +82,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2236A3F2-35BF-46D9-B5C6-E30761EEFA66} = {E52234A5-6012-4188-B216-87C7D41306B5}
 		{BF2F6407-DA12-4C4B-B852-1D4BF3627122} = {E52234A5-6012-4188-B216-87C7D41306B5}
+		{ED58C975-9E2F-4720-9634-62BE33EB58B3} = {E52234A5-6012-4188-B216-87C7D41306B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59F858F4-B132-4090-8A05-85FC6D02D008}

@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Reflection;
+using DNX.Helpers.Linq;
+
+// ReSharper disable InconsistentNaming
 
 // ReSharper disable once ConvertIfStatementToReturnStatement
 namespace DNX.Helpers.Reflection
@@ -19,7 +24,7 @@ namespace DNX.Helpers.Reflection
         public static IDictionary<string, object> GetPropertiesDictionary(object obj)
         {
             var dictionary = GetPropertiesDictionary(obj,
-                BindingFlags.GetProperty | BindingFlags.Public | BindingFlags.Instance
+                Defaults.PropertyInfoReaderBindingFlags
                 );
 
             return dictionary;
@@ -38,11 +43,20 @@ namespace DNX.Helpers.Reflection
                 return null;
             }
 
-            var dictionary = GetPropertiesForType(obj.GetType(), bindingFlags)
+            var properties = GetPropertiesForType(obj.GetType(), bindingFlags)
                 .ToDictionary(
                     pi => pi.Name,
                     pi => pi.GetValue(obj)
                 );
+
+            var fields = GetFieldsForType(obj.GetType(), bindingFlags)
+                .ToDictionary(
+                    fi => fi.Name,
+                    fi => fi.GetValue(obj)
+                );
+
+            var dictionary = properties
+                .MergeWith(fields, MergeTechnique.TakeFirst);
 
             return dictionary;
         }
@@ -56,7 +70,7 @@ namespace DNX.Helpers.Reflection
         {
             var list = GetPropertiesForType(
                 type,
-                BindingFlags.GetProperty | BindingFlags.Public | BindingFlags.Instance
+                Defaults.PropertyInfoReaderBindingFlags
                 );
 
             return list;
@@ -84,7 +98,7 @@ namespace DNX.Helpers.Reflection
         {
             var list = GetPropertiesForTypes(
                 types,
-                BindingFlags.GetProperty | BindingFlags.Public | BindingFlags.Instance
+                Defaults.PropertyInfoReaderBindingFlags
                 );
 
             return list;
@@ -192,20 +206,48 @@ namespace DNX.Helpers.Reflection
         }
 
         /// <summary>
+        /// Gets the fields for the specified type.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <returns>IList&lt;PropertyInfo&gt;.</returns>
+        public static IList<FieldInfo> GetFieldsForType(Type type)
+        {
+            var list = GetFieldsForType(
+                type,
+                Defaults.FieldInfoReaderBindingFlags
+            );
+
+            return list;
+        }
+
+        /// <summary>
+        /// Gets the fields for the specified type.
+        /// </summary>
+        /// <param name="type">The type.</param>
+        /// <param name="bindingFlags">The binding flags.</param>
+        /// <returns>IList&lt;PropertyInfo&gt;.</returns>
+        public static IList<FieldInfo> GetFieldsForType(Type type, BindingFlags bindingFlags)
+        {
+            var fieldInfos = type.GetFields(bindingFlags);
+
+            return fieldInfos;
+        }
+
+        /// <summary>
         /// Serialises an object instance to a Dictionary
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="instance">The instance.</param>
         /// <param name="bindingFlags">The binding flags.</param>
         /// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
-        public static IDictionary<string, object> ToDictionaryTyped<T>(this T instance, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty)
+        public static IDictionary<string, object> AsDictionaryTyped<T>(this T instance, BindingFlags bindingFlags = Defaults.PropertyInfoReaderBindingFlags)
         {
             if (instance == null)
             {
                 return null;
             }
 
-            return instance.ToDictionary();
+            return instance.AsDictionary(bindingFlags);
         }
 
         /// <summary>
@@ -214,20 +256,46 @@ namespace DNX.Helpers.Reflection
         /// <param name="instance">The instance.</param>
         /// <param name="bindingFlags">The binding flags.</param>
         /// <returns>IDictionary&lt;System.String, System.Object&gt;.</returns>
-        public static IDictionary<string, object> ToDictionary(this object instance, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.GetProperty)
+        public static IDictionary<string, object> AsDictionary(this object instance, BindingFlags bindingFlags = Defaults.PropertyInfoReaderBindingFlags)
         {
             if (instance == null)
             {
                 return null;
             }
 
-            var properties = instance.GetType().GetProperties(bindingFlags);
-
             var dict = new Dictionary<string, object>();
 
-            foreach (var property in properties)
+            switch (instance)
             {
-                dict.Add(property.Name, property.GetValue(instance));
+                case IDictionary instanceDict:
+                {
+                    foreach(DictionaryEntry kvp in instanceDict)
+                    {
+                        var key = Convert.ToString(kvp.Key);
+
+                        if (!string.IsNullOrWhiteSpace(key))
+                        {
+                            dict[key] = kvp.Value;
+                        }
+                    }
+
+                    break;
+                }
+                case ExpandoObject expando:
+                {
+                    foreach (var kvp in expando)
+                    {
+                        dict[kvp.Key] = kvp.Value;
+                    }
+
+                    break;
+                }
+                default:
+                {
+                    dict = (Dictionary<string, object>) GetPropertiesDictionary(instance, bindingFlags);
+
+                    break;
+                }
             }
 
             return dict;
@@ -240,7 +308,7 @@ namespace DNX.Helpers.Reflection
         /// <param name="dict">The dictionary.</param>
         /// <param name="bindingFlags">The binding flags.</param>
         /// <returns>T.</returns>
-        public static T ToInstance<T>(this IDictionary<string, object> dict, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty)
+        public static T AsInstance<T>(this IDictionary<string, object> dict, BindingFlags bindingFlags = Defaults.PropertyInfoWriterBindingFlags)
             where T : new()
         {
             if (dict == null)
@@ -263,7 +331,7 @@ namespace DNX.Helpers.Reflection
         /// <param name="dict">The dictionary.</param>
         /// <param name="bindingFlags">The binding flags.</param>
         /// <returns>T.</returns>
-        public static T PopulateFrom<T>(this T instance, IDictionary<string, object> dict, BindingFlags bindingFlags = BindingFlags.Instance | BindingFlags.Public | BindingFlags.SetProperty)
+        public static T PopulateFrom<T>(this T instance, IDictionary<string, object> dict, BindingFlags bindingFlags = Defaults.PropertyInfoWriterBindingFlags)
             where T : new()
         {
             if (dict == null)

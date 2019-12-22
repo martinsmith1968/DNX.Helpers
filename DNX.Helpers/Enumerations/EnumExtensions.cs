@@ -408,6 +408,7 @@ namespace DNX.Helpers.Enumerations
 
             var dictionary = Enum.GetValues(typeof(T))
                 .Cast<T>()
+                .Distinct()
                 .ToDictionary(
                     t => t.ToString(),
                     t => t
@@ -432,6 +433,7 @@ namespace DNX.Helpers.Enumerations
 
             var dictionary = Enum.GetValues(typeof(T))
                 .Cast<T>()
+                .Distinct()
                 .ToDictionary(
                     t => t,
                     t => t.ToString()

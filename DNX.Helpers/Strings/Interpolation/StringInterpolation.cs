@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Reflection;
+using DNX.Helpers.Linq;
+using DNX.Helpers.Reflection;
 
 namespace DNX.Helpers.Strings.Interpolation
 {
@@ -10,29 +13,6 @@ namespace DNX.Helpers.Strings.Interpolation
     /// </summary>
     public static class StringInterpolator
     {
-        /// <summary>
-        /// Gets the list of interpolatable properties from a type
-        /// </summary>
-        /// <param name="type">The type.</param>
-        /// <returns>IList&lt;InterpolatableProperty&gt;.</returns>
-        public static IList<InterpolatableProperty> GetInterpolatableProperties(Type type)
-        {
-            if (type == null)
-            {
-                return null;
-            }
-
-            var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.GetProperty | BindingFlags.GetField)
-                .Union(type.GetProperties(BindingFlags.Public | BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.GetField))
-                .ToList();
-
-            var propertyList = properties
-                .Select(p => new InterpolatableProperty(p))
-                .ToList();
-
-            return propertyList;
-        }
-
         /// <summary>
         /// Interpolates the text with the optionally named instance
         /// </summary>
@@ -43,9 +23,23 @@ namespace DNX.Helpers.Strings.Interpolation
         /// <returns>System.String.</returns>
         public static string InterpolateWith(this string text, object instance, string namePrefix = null, bool ignoreErrors = false)
         {
+            var namedInstance = new NamedInstance(instance, namePrefix);
+
+            return InterpolateWith(text, namedInstance, ignoreErrors);
+        }
+
+        /// <summary>
+        /// Interpolates the text with the named instance
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="namedInstance">The named instance.</param>
+        /// <param name="ignoreErrors">if set to <c>true</c> [ignore errors].</param>
+        /// <returns>System.String.</returns>
+        public static string InterpolateWith(this string text, NamedInstance namedInstance, bool ignoreErrors = false)
+        {
             var namedInstances = new List<NamedInstance>()
             {
-                new NamedInstance(instance, namePrefix)
+                namedInstance
             };
 
             return InterpolateWithAll(text, namedInstances, ignoreErrors);
@@ -60,14 +54,29 @@ namespace DNX.Helpers.Strings.Interpolation
         /// <returns>System.String.</returns>
         public static string InterpolateWithAll(this string text, IList<NamedInstance> namedInstances, bool ignoreErrors = false)
         {
-            var paramValues = new Dictionary<string, object>();
+            var dictionaries = namedInstances
+                .Select(d => d.ToDictionary())
+                .ToArray();
 
-            foreach (var namedInstance in namedInstances)
-            {
-                BuildParameterValuesForNamedInstance(paramValues, text, namedInstance.Instance, namedInstance.Name);
-            }
+            var paramValues = DictionaryExtensions.MergeFirst(dictionaries);
 
-            if (!paramValues.Any())
+            FilterParameterValues(paramValues, text);
+
+            var result = text.InterpolateWithAll(paramValues, ignoreErrors);
+
+            return result;
+        }
+
+        /// <summary>
+        /// Interpolates text with properties from a Dictionary of parameter names and values
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="paramValues">The parameter values.</param>
+        /// <param name="ignoreErrors">if set to <c>true</c> [ignore errors].</param>
+        /// <returns>System.String.</returns>
+        public static string InterpolateWithAll<T>(this string text, IDictionary<string, T> paramValues, bool ignoreErrors = false)
+        {
+            if (!paramValues.HasAny())
             {
                 return text;
             }
@@ -89,7 +98,10 @@ namespace DNX.Helpers.Strings.Interpolation
 
             try
             {
-                var formattedText = string.Format(format, paramValues.Values.ToArray());
+                var values = paramValues
+                    .Select(x => (object)x.Value);
+
+                var formattedText = string.Format(format, values.ToArray());
 
                 return formattedText;
             }
@@ -109,27 +121,19 @@ namespace DNX.Helpers.Strings.Interpolation
         /// </summary>
         /// <param name="parameterValues">The parameter values.</param>
         /// <param name="format">The format.</param>
-        /// <param name="instance">The instance.</param>
-        /// <param name="namePrefix">The name prefix.</param>
         /// <returns>System.String.</returns>
-        public static void BuildParameterValuesForNamedInstance(IDictionary<string, object> parameterValues, string format, object instance, string namePrefix)
+        internal static void FilterParameterValues(IDictionary<string, object> parameterValues, string format)
         {
-            var properties = instance == null
-                ? new List<InterpolatableProperty>()
-                : GetInterpolatableProperties(instance.GetType());
+            if (parameterValues == null || string.IsNullOrEmpty(format))
+                return;
 
-            foreach (var property in properties)
+            var unwantedKeys = parameterValues
+                .Where(pv => !format.Contains("{" + pv.Key))
+                .ToArray();
+
+            foreach (var unwantedKey in unwantedKeys)
             {
-                var variableName = property.GetVariableName(namePrefix);
-
-                var variableIdentifier = "{" + variableName;
-
-                if (format.Contains(variableIdentifier))
-                {
-                    var value = property.PropertyInfo.GetValue(instance, null);
-
-                    parameterValues.Add(variableName, value);
-                }
+                parameterValues.Remove(unwantedKey);
             }
         }
     }

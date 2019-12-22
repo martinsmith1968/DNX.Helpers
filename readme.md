@@ -1,6 +1,6 @@
 # DNX.Helpers
 
-![DNX Solutions Logo](http://dnx-solutions.co.uk/favicon-32x32.png)
+![DNX Solutions Logo](images/favicon-32x32.png)
 [DNX.Helpers](http://github.com/martinsmith1968/DNX.Helpers) is a .NET package that contains the bits that I've found lacking or missing from the .NET standard library. It has minimal dependencies on other packages and so is designed to be included to your projects with little or no disruption.
 
 It is designed around the premise that code should be as readable as possible at the highest level possible.

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>DNX.Helpers</id>
-    <version>1.2.0.0</version>
+    <version>1.2.1.0</version>
     <authors>Martin Smith</authors>
     <owners>DNX Solutions Ltd</owners>
   <!--

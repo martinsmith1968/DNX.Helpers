@@ -2,12 +2,12 @@
 <package >
   <metadata>
     <id>DNX.Helpers</id>
-    <version>1.1.1.0</version>
+    <version>1.2.0.0</version>
     <authors>Martin Smith</authors>
     <owners>DNX Solutions Ltd</owners>
-	<!--
+  <!--
     <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-	-->
+  -->
     <projectUrl>https://github.com/martinsmith1968/DNX.Helpers</projectUrl>
     <iconUrl>http://www.dnx-solutions.co.uk/favicon-32x32.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

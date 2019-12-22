@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.DNX.Helpers", "Test.DN
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35364FCB-E4C1-488F-B918-19EDE8CD1A5C}"
 	ProjectSection(SolutionItems) = preProject
+		DNX.Helpers\DNX.Helpers.nuspec = DNX.Helpers\DNX.Helpers.nuspec
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets

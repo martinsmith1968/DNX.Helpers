@@ -71,7 +71,7 @@ namespace DNX.Helpers.Strings
         /// <returns>System.String.</returns>
         public static string Format(this string text, IFormatProvider formatProvider, params object[] args)
         {
-            return string.Format(text, formatProvider, args);
+            return string.Format(formatProvider, text, args);
         }
 
         /// <summary>
@@ -265,12 +265,12 @@ namespace DNX.Helpers.Strings
         /// <returns>System.String.</returns>
         public static string Before(this string text, string endText)
         {
-            if (string.IsNullOrEmpty(text))
+            if (text.IsNullOrEmpty())
             {
                 return null;
             }
 
-            var endIndex = string.IsNullOrEmpty(endText)
+            var endIndex = endText.IsNullOrEmpty()
                 ? -1
                 : text.IndexOf(endText);
 
@@ -584,7 +584,7 @@ namespace DNX.Helpers.Strings
         /// </summary>
         /// <param name="cultureInfo">The culture information.</param>
         /// <returns>System.String.</returns>
-        private static string BuildNumberValidationRegexForCulture(CultureInfo cultureInfo)
+        internal static string BuildNumberValidationRegexForCulture(CultureInfo cultureInfo)
         {
             var pattern =string.Format(
                     @"^[\{2}\{3}]?(0|[1-9][0-9]*|[1-9][0-9]{{0,{4}}}(\{0}[0-9]{{{5},{5}}})*)([\{1}]+[0-9]+)?$",
@@ -606,7 +606,7 @@ namespace DNX.Helpers.Strings
         /// <returns><c>true</c> if the specified culture information is numeric; otherwise, <c>false</c>.</returns>
         public static bool IsValidNumber(this string text)
         {
-            var pattern = BuildNumberValidationRegexForCulture(CultureInfo.CurrentCulture);
+            var pattern = BuildNumberValidationRegexForCulture(CultureInfo.DefaultThreadCurrentCulture);
 
             return Regex.IsMatch(text, pattern);
         }

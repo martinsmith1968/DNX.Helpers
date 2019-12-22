@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using DNX.Helpers.Exceptions;
 using DNX.Helpers.Validation;
+// ReSharper disable InconsistentNaming
 
 namespace DNX.Helpers.Linq
 {
@@ -26,7 +29,7 @@ namespace DNX.Helpers.Linq
 
             if (keyName == null)
             {
-                throw new ArgumentNullException("keyName");
+                throw new ArgumentNullException(nameof(keyName));
             }
 
             if (dictionary.ContainsKey(keyName))
@@ -55,7 +58,7 @@ namespace DNX.Helpers.Linq
 
             if (keyName == null)
             {
-                throw new ArgumentNullException("keyName");
+                throw new ArgumentNullException(nameof(keyName));
             }
 
             return dictionary.ContainsKey(keyName)
@@ -75,11 +78,11 @@ namespace DNX.Helpers.Linq
         {
             if (fromKeyName == null)
             {
-                throw new ArgumentNullException("fromKeyName");
+                throw new ArgumentNullException(nameof(fromKeyName));
             }
             if (toKeyName == null)
             {
-                throw new ArgumentNullException("toKeyName");
+                throw new ArgumentNullException(nameof(toKeyName));
             }
 
             if (dictionary == null || !dictionary.ContainsKey(fromKeyName) || dictionary.ContainsKey(toKeyName))
@@ -93,7 +96,7 @@ namespace DNX.Helpers.Linq
         }
 
         /// <summary>
-        /// Merges the with.
+        /// Merges this dictionary with another one
         /// </summary>
         /// <typeparam name="TK">The type of the tk.</typeparam>
         /// <typeparam name="TV">The type of the tv.</typeparam>
@@ -181,6 +184,54 @@ namespace DNX.Helpers.Linq
                 .ToDictionary(group => group.Key, group => group.Last());
 
             return result;
+        }
+
+        /// <summary>
+        /// Extension method that turns a dictionary of string and object to an ExpandoObject
+        /// </summary>
+        public static ExpandoObject ToExpando<T>(this IDictionary<string, T> dictionary)
+        {
+            // TODO: Should really use AsDictionary
+
+            var expando = new ExpandoObject();
+            var expandoDict = (IDictionary<string, object>)expando;
+
+            // go through the items in the dictionary and copy over the key value pairs)
+            foreach (var kvp in dictionary)
+            {
+                // if the value can also be turned into an ExpandoObject, then do it!
+                if (kvp.Value is IDictionary<string, object> valueDictionary)
+                {
+                    var expandoValue = valueDictionary.ToExpando();
+                    expandoDict.Add(kvp.Key, expandoValue);
+                }
+                else if (kvp.Value is ICollection valueCollection)
+                {
+                    // iterate through the collection and convert any strin-object dictionaries
+                    // along the way into expando objects
+                    var itemList = new List<object>();
+                    foreach (var item in valueCollection)
+                    {
+                        if (item is IDictionary<string, object> itemDictionary)
+                        {
+                            var expandoItem = itemDictionary.ToExpando();
+                            itemList.Add(expandoItem);
+                        }
+                        else
+                        {
+                            itemList.Add(item);
+                        }
+                    }
+
+                    expandoDict.Add(kvp.Key, itemList);
+                }
+                else
+                {
+                    expandoDict.Add(kvp.Key, kvp.Value);
+                }
+            }
+
+            return expando;
         }
     }
 }

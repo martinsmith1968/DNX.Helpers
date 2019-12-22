@@ -1,58 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using DNX.Helpers.Enumerations;
 using DNX.Helpers.Strings.Interpolation;
 using NUnit.Framework;
+using Shouldly;
+using Test.DNX.Helpers.Strings.Interpolation.Data;
 
 namespace Test.DNX.Helpers.Strings.Interpolation
 {
-    #region Internal classes
-
-    internal class Person
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public DateTime DateOfBirth { get; set; }
-
-        public int YearOfBirth
-        {
-            get { return DateOfBirth.Year; }
-        }
-
-        private int? _fakeAge;
-        public int AgeInYears
-        {
-            get { return _fakeAge ?? Convert.ToInt32(DateTime.UtcNow.Subtract(DateOfBirth).TotalDays / 365); }
-            set { _fakeAge = value; }
-        }
-
-        public static int Number
-        {
-            get { return DateTime.UtcNow.Millisecond; }
-        }
-    }
-
-    internal class Club
-    {
-        public string Name { get; set; }
-    }
-
-    #endregion
-
     [TestFixture]
     public class StringInterpolatorTests
     {
-        [TestCase(typeof(Person), ExpectedResult = "FirstName,LastName,DateOfBirth,YearOfBirth,AgeInYears,Number")]
-        [TestCase(typeof(Club), ExpectedResult = "Name")]
-        public string GetInterpolatablePropertiesTest(Type type)
-        {
-            var properties = StringInterpolator.GetInterpolatableProperties(type);
-
-            var propertyNames = properties.Select(p => p.Name);
-
-            return string.Join(",", propertyNames);
-        }
-
         [TestCase("Hello {FirstName}", "Martin", "Smith", "2017-08-11", null, ExpectedResult = "Hello Martin")]
         [TestCase("{FirstName} {LastName} {DateOfBirth:MMM-dd} {YearOfBirth}", "Martin", "Smith", "2017-08-11", null, ExpectedResult = "Martin Smith Aug-11 2017")]
         [TestCase("Hello {user.FirstName}", "Martin", "Smith", "2017-08-11", "user", ExpectedResult = "Hello Martin")]
@@ -88,6 +48,39 @@ namespace Test.DNX.Helpers.Strings.Interpolation
             var result = format.InterpolateWith(person, instanceName);
 
             return result;
+        }
+
+        [Test]
+        public void InterpolateWithAll_Environment_SpecialFolders()
+        {
+            // Arrange
+            var text = "{SpecialFolder.System}\\Shell32.dll";
+
+            var dict = new Dictionary<string, object>()
+            {
+                { $"{nameof(Environment.SpecialFolder)}.{nameof(Environment.SpecialFolder.System)}", Environment.GetFolderPath(Environment.SpecialFolder.System) }
+            };
+
+            // Act
+            var result = text.InterpolateWithAll(dict);
+
+            // Assert
+            result.ShouldBe(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "Shell32.dll"));
+        }
+
+        [TestCase("{One}{Two}{Three}{Four}{Five}", "12345")]
+        public void InterpolateWithAll_Dictionary(string text, string expectedValue)
+        {
+            // Arrange
+            var dict = Enum.GetNames(typeof(OneToTen))
+                    .ToDictionary(x => x, x => (int) Enum.Parse(typeof(OneToTen), x))
+                ;
+
+            // Act
+            var result = text.InterpolateWithAll(dict);
+
+            // Assert
+            result.ShouldBe(expectedValue);
         }
 
         [TestCase("{person1.FirstName} {person1.LastName} and {person2.FirstName} {person2.LastName}", "Tommy", "Cannon", "1935-10-01", "person1", "Bobby", "Ball", "1936-07-04", "person2", ExpectedResult = "Tommy Cannon and Bobby Ball")]
@@ -141,6 +134,29 @@ namespace Test.DNX.Helpers.Strings.Interpolation
             var result = format.InterpolateWithAll(instanceList);
 
             return result;
+        }
+
+        [Test]
+        public void InterpolateWithAll_FileName_Test()
+        {
+            // Arrange
+            const string myFileName = "myFileName.txt";
+            var specialFolder = Environment.SpecialFolder.CommonProgramFiles;
+            var fileName = $"{{Environment.{specialFolder}}}\\{myFileName}";
+
+            var values = EnumExtensions.ToDictionaryByName<Environment.SpecialFolder>()
+                .ToDictionary(x => x.Key, x => Environment.GetFolderPath(x.Value));
+            values.Add(nameof(Environment.SystemDirectory), Environment.SystemDirectory);
+            values.Add(nameof(Environment.CurrentDirectory), Environment.CurrentDirectory);
+
+            var namedInstance = new NamedInstance(values, nameof(Environment));
+
+            // Act
+            var result = fileName.InterpolateWith(namedInstance);
+
+            // Assert
+            result.ShouldNotBeNull();
+            result.ShouldBe(Path.Combine(Environment.GetFolderPath(specialFolder), myFileName));
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using DNX.Helpers.Enumerations;
 using DNX.Helpers.Strings.Interpolation;
@@ -65,7 +64,7 @@ namespace Test.DNX.Helpers.Strings.Interpolation
             var result = text.InterpolateWithAll(dict);
 
             // Assert
-            result.ShouldBe(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), "Shell32.dll"));
+            result.ShouldBe(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.System), "\\Shell32.dll"));
         }
 
         [TestCase("{One}{Two}{Three}{Four}{Five}", "12345")]
@@ -156,7 +155,7 @@ namespace Test.DNX.Helpers.Strings.Interpolation
 
             // Assert
             result.ShouldNotBeNull();
-            result.ShouldBe(Path.Combine(Environment.GetFolderPath(specialFolder), myFileName));
+            result.ShouldBe(string.Concat(Environment.GetFolderPath(specialFolder), "\\", myFileName));
         }
     }
 }

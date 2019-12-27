@@ -337,10 +337,6 @@ namespace Test.DNX.Helpers.Strings
 
                 return result;
             }
-            catch (Exception e)
-            {
-                throw;
-            }
             finally
             {
                 CultureInfo.DefaultThreadCurrentCulture = previousCulture;

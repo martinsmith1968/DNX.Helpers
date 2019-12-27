@@ -16,4 +16,6 @@ CALL SetNuGetServerAPIKey.cmd "%APPNAME%"
 
 IF EXIST *.nupkg DEL *.nupkg
 
+@ECHO ON
 "%NUGETEXE%" pack "%SCRIPTPATH%\%APPNAME%\%APPNAME%.csproj"
+@ECHO OFF

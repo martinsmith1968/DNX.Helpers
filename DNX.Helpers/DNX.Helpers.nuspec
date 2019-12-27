@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+<!--
+https://stackoverflow.com/questions/14797525/differences-between-nuget-packing-a-csproj-vs-nuspec
+-->
 <package >
   <metadata>
     <id>DNX.Helpers</id>

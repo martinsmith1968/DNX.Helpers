@@ -35,6 +35,7 @@ namespace Test.DNX.Helpers.Assemblies
             assemblyDetails.Version.ShouldBe(targetAssembly.GetName().Version);
             assemblyDetails.FileVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
             assemblyDetails.InformationalVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().First().InformationalVersion);
+            assemblyDetails.SimplifiedVersion.ShouldBe(assemblyDetails.Version.Simplify());
         }
 
         [Test]
@@ -63,6 +64,7 @@ namespace Test.DNX.Helpers.Assemblies
             assemblyDetails.Version.ShouldBe(targetAssembly.GetName().Version);
             assemblyDetails.FileVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
             assemblyDetails.InformationalVersion.ShouldBeNull();
+            assemblyDetails.SimplifiedVersion.ShouldBe(assemblyDetails.Version.Simplify());
         }
     }
 }

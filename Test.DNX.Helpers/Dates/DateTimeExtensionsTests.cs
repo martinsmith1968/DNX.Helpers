@@ -19,19 +19,16 @@ namespace Test.DNX.Helpers.Dates
 
         public string Format(string format, object arg, IFormatProvider formatProvider)
         {
-            if (arg is DateTime)
+            if (arg is DateTime dt)
             {
-                var dt = (DateTime) arg;
-
                 // if user supplied own format use it
                 return string.IsNullOrEmpty(format)
                     ? dt.ToString(FormatString)
-                    : ((DateTime)arg).ToString(format);
+                    : dt.ToString(format);
             }
 
             // format everything else normally
-            var formattable = arg as IFormattable;
-            return formattable != null
+            return arg is IFormattable formattable
                 ? formattable.ToString(format, formatProvider)
                 : arg.ToString();
         }

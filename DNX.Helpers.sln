@@ -25,6 +25,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".commands", ".commands", "{FB47A44B-A670-480D-8B11-6D02072596D4}"
 	ProjectSection(SolutionItems) = preProject
 		commands.json = commands.json
+		deploy.sh = deploy.sh
 		GenerateMarkdown.cmd = GenerateMarkdown.cmd
 		NuGet.Pack.cmd = NuGet.Pack.cmd
 		NuGet.Push.cmd = NuGet.Push.cmd

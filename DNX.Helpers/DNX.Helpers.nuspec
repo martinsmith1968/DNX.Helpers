@@ -2,21 +2,21 @@
 <package >
   <metadata>
     <id>DNX.Helpers</id>
-    <version>1.2.1.0</version>
+    <version>$version$</version>
     <authors>Martin Smith</authors>
     <owners>DNX Solutions Ltd</owners>
-  <!--
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
-  -->
+    <licenseUrl>https://raw.githubusercontent.com/martinsmith1968/DNX.Helpers/master/licence.txt</licenseUrl>
     <projectUrl>https://github.com/martinsmith1968/DNX.Helpers</projectUrl>
-    <iconUrl>http://www.dnx-solutions.co.uk/favicon-32x32.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/martinsmith1968/DNX.Helpers/master/images/favicon-32x32.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>.NET Extensions and helpers for Core and Common .NET types</description>
-    <releaseNotes>Initial release</releaseNotes>
-    <copyright>Copyright 2016 DNX Solutions Ltd</copyright>
+    <releaseNotes>
+      Interpolation to a working version and some preparation for moving to .NET Standard
+    </releaseNotes>
+    <copyright>Copyright 2016 $owners$</copyright>
     <tags>DNX helpers extensions string array linq</tags>
   </metadata>
   <files>
-    <file src="**/bin/**/DNX.Helpers.dll" target="lib" />
+    <file src="**/bin/**/$id$.dll" target="lib" />
   </files>
 </package>

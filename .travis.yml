@@ -1,20 +1,27 @@
 ﻿# https://stackoverflow.com/questions/41509608/how-do-i-deploy-nuget-packages-in-travis-ci
+# https://docs.travis-ci.com/user/languages/csharp/
+
 env:
     APPNAME=DNX.Helpers
     CONFIGURATION=Release
     NUGET_API_URL=https://www.nuget.org/api/v2/package
+    NUNIT_RUNNERS_VERSION=3.10.0
+
 language: csharp
+
 solution: $APPNAME.sln
+
 install:
   - nuget restore $APPNAME.sln
-  - nuget install NUnit.Runners -Version 3.8.0 -OutputDirectory testrunner
+  - nuget install NUnit.Runners -Version $NUNIT_RUNNERS_VERSION -OutputDirectory testrunner
 #  - nuget install DNX.NuSpec.Updater -OutputDirectory nuspecupdater
+
 script:
   - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.8.0/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.$NUNIT_RUNNERS_VERSION/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
   - ls -laR ./$APPNAME
-#  - nuget pack $APPNAME/$APPNAME.csproj -Verbosity detailed -BasePath $APPNAME -Properties Configuration=$CONFIGURATION
   - nuget pack ./$APPNAME/$APPNAME.nuspec -Verbosity detailed
+
 deploy:
   skip_cleanup: true
   provider: script

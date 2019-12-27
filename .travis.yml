@@ -20,7 +20,7 @@ script:
   - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
   - mono ./testrunner/NUnit.ConsoleRunner.$NUNIT_RUNNERS_VERSION/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
   - ls -laR ./$APPNAME
-  - nuget pack ./$APPNAME/$APPNAME.nuspec -Verbosity detailed
+  - nuget pack ./$APPNAME/$APPNAME.csproj -Verbosity detailed
 
 deploy:
   skip_cleanup: true

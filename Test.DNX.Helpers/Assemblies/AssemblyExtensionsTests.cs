@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Reflection;
 using DNX.Helpers.Assemblies;
+using NUnit.Framework;
 using Shouldly;
 
 // ReSharper disable InconsistentNaming
@@ -24,6 +25,7 @@ namespace Test.DNX.Helpers.Assemblies
     {
         public class GetTypesThatImplementInterface_ITypeA
         {
+            [Test]
             public void FindTypesThatImplementType_should_find_all_that_implement_interface()
             {
                 // Act
@@ -31,7 +33,8 @@ namespace Test.DNX.Helpers.Assemblies
 
                 // Assert
                 result.ShouldNotBeNull();
-                result.Count.ShouldBe(6);
+                result.Count.ShouldBe(7);
+                result.Count(x => x == typeof(ITypeA)).ShouldBe(1);
                 result.Count(x => x == typeof(ITypeD)).ShouldBe(1);
                 result.Count(x => x == typeof(CTypeA)).ShouldBe(1);
                 result.Count(x => x == typeof(CTypeD)).ShouldBe(1);
@@ -40,6 +43,7 @@ namespace Test.DNX.Helpers.Assemblies
                 result.Count(x => x == typeof(CTypeCA)).ShouldBe(1);
             }
 
+            [Test]
             public void FindConcreteTypesThatImplementType_should_find_all_that_implement_interface()
             {
                 // Act
@@ -55,6 +59,7 @@ namespace Test.DNX.Helpers.Assemblies
                 result.Count(x => x == typeof(CTypeCA)).ShouldBe(1);
             }
 
+            [Test]
             public void CreateInstancesOfClassesThatImplementInterface_should_create_instances_for_all_that_implement_interface()
             {
                 // Act

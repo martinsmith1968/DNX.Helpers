@@ -1,6 +1,7 @@
 ﻿using System;
 using DNX.Helpers.Assemblies;
 using NUnit.Framework;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Assemblies
 {
@@ -40,6 +41,19 @@ namespace Test.DNX.Helpers.Assemblies
             {
                 return false;
             }
+        }
+
+        [Test]
+        public void Simplify_for_null_returns_expected()
+        {
+            // Arrange
+            Version version = null;
+
+            // Act
+            var result = version.Simplify();
+
+            // Assert
+            result.ShouldBeNull();
         }
     }
 }

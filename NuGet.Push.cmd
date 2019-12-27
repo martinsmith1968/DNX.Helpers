@@ -18,5 +18,7 @@ CALL SetNuGetServerAPIKey.cmd "%APPNAME%"
 
 FOR %%F IN (*.nupkg) DO (
     ECHO.Pushing: %%~F
+    @ECHO ON
     %NUGETEXE% push "%%~F" -Source "%NUGETSERVERAPIURL%" -ApiKey "%NUGETSERVERAPIKEY%"
+    @ECHO OFF
 )

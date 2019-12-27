@@ -67,6 +67,32 @@ namespace Test.DNX.Helpers.Strings.Interpolation
             result.ShouldBe(string.Concat(Environment.GetFolderPath(Environment.SpecialFolder.System), "\\Shell32.dll"));
         }
 
+        [Test]
+        public void InterpolateWithAll_Environment_Folders()
+        {
+            // Arrange
+            var folderLocations = new Dictionary<string, string>()
+            {
+                { nameof(Environment.SystemDirectory), Environment.SystemDirectory },
+                { nameof(Environment.CurrentDirectory), Environment.CurrentDirectory },
+                { $"{nameof(Environment.SpecialFolder)}.{nameof(Environment.SpecialFolder.Windows)}", Environment.GetFolderPath(Environment.SpecialFolder.Windows) },
+                { $"{nameof(Environment.SpecialFolder)}.{nameof(Environment.SpecialFolder.Personal)}", Environment.GetFolderPath(Environment.SpecialFolder.Personal) }
+            };
+
+            var interpolationInstances = new[]
+            {
+                new NamedInstance(folderLocations, nameof(Environment)),
+            };
+
+            var text = "{Environment.SystemDirectory}\\Shell32.dll";
+
+            // Act
+            var result = text.InterpolateWithAll(interpolationInstances);
+
+            // Assert
+            result.ShouldBe(string.Concat(Environment.SystemDirectory, "\\Shell32.dll"));
+        }
+
         [TestCase("{One}{Two}{Three}{Four}{Five}", "12345")]
         public void InterpolateWithAll_Dictionary(string text, string expectedValue)
         {
@@ -156,6 +182,40 @@ namespace Test.DNX.Helpers.Strings.Interpolation
             // Assert
             result.ShouldNotBeNull();
             result.ShouldBe(string.Concat(Environment.GetFolderPath(specialFolder), "\\", myFileName));
+        }
+
+        [Test]
+        public void InterpolateWithAll_null_dictionary()
+        {
+            // Arrange
+            const string myFileName = "myFileName.txt";
+            var specialFolder = Environment.SpecialFolder.CommonProgramFiles;
+            var fileName = $"{{Environment.{specialFolder}}}\\{myFileName}";
+
+            IDictionary<string, object> dict = null;
+
+            // Act
+            var result = fileName.InterpolateWithAll(dict);
+
+            // Assert
+            result.ShouldBe(fileName);
+        }
+
+        [Test]
+        public void InterpolateWithAll_empty_dictionary()
+        {
+            // Arrange
+            const string myFileName = "myFileName.txt";
+            var specialFolder = Environment.SpecialFolder.CommonProgramFiles;
+            var fileName = $"{{Environment.{specialFolder}}}\\{myFileName}";
+
+            var dict = new Dictionary<string, object>();
+
+            // Act
+            var result = fileName.InterpolateWithAll(dict);
+
+            // Assert
+            result.ShouldBe(fileName);
         }
     }
 }

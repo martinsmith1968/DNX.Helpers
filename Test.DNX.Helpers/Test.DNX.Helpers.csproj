@@ -1,455 +1,61 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3666B7C-ADF3-46B1-8955-D3224F4A9C8D}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Test.DNX.Helpers</RootNamespace>
-    <AssemblyName>Test.DNX.Helpers</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
-    <IsCodedUITest>False</IsCodedUITest>
-    <TestProjectType>UnitTest</TestProjectType>
-    <TargetFrameworkProfile />
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Version>2.0.0</Version>
+    <Authors>Martin Smith</Authors>
+    <Description>Tests for DNX.Helpers</Description>
+    <Copyright>Copyright © 2016-2019 DNX Solutions Ltd</Copyright>
+    <PackageLicenseFile>licence.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/martinsmith1968/DNX.Helpers</PackageProjectUrl>
+    <PackageIcon>favicon-32x32.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bogus, Version=28.4.4.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bogus.28.4.4\lib\net40\Bogus.dll</HintPath>
-    </Reference>
-    <Reference Include="FizzWare.NBuilder, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5651b03e12e42c12, processorArchitecture=MSIL">
-      <HintPath>..\packages\NBuilder.6.1.0\lib\net40\FizzWare.NBuilder.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Shouldly, Version=3.0.2.0, Culture=neutral, PublicKeyToken=6042cbcb05cbc941, processorArchitecture=MSIL">
-      <HintPath>..\packages\Shouldly.3.0.2\lib\net451\Shouldly.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Runtime.Remoting" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Xml.Serialization" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="Bogus" version="28.4.4" />
+    <PackageReference Include="NBuilder" version="6.1.0" />
+    <PackageReference Include="NUnit" version="3.12.0" />
+    <PackageReference Include="NUnit.Console" Version="3.10.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="Shouldly" version="3.0.2" />
   </ItemGroup>
-  <Choose>
-    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-      </ItemGroup>
-    </When>
-    <Otherwise />
-  </Choose>
   <ItemGroup>
-    <Compile Include="Assemblies\AssemblyDetailsTests.cs" />
-    <Compile Include="Assemblies\AssemblyExtensionsTests.cs" />
-    <Compile Include="Assemblies\VersionExtensionsTests.cs" />
-    <Compile Include="Comparisons\EqualityComparerFuncTests.cs" />
-    <Compile Include="Comparisons\ComparerFuncTests.cs" />
-    <Compile Include="Converters\BuiltInTypeConvertExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertInt16ExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertInt32ExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertInt64ExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt16ExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt32ExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt64ExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensionsTests.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Exceptions\EnumValueExceptionTests.cs" />
-    <Compile Include="Linq\EnumerableExtensionsTests.cs" />
-    <Compile Include="Linq\ItemComparisonListTests.cs" />
-    <Compile Include="Linq\ItemComparisonTests.cs" />
-    <Compile Include="Linq\NameValueExtensionsTests.cs" />
-    <Compile Include="Linq\TupleExtensionsTests.cs" />
-    <Compile Include="Linq\TupleListTests.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathsDateTimeExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsDecimalExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsDoubleExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsByteExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsFloatExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsInt16ExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsInt32ExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsInt64ExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsSByteExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsUInt16ExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsUInt32ExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsUInt64ExtensionsTests.generated.cs">
-      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsByteExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDateTimeExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDecimalExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsDoubleExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsFloatExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsInt16ExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsInt32ExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsInt64ExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsSByteExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsUInt16ExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsUInt32ExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\TestsDataSource\MathsUInt64ExtensionsTestsSource.generated.cs">
-      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\IsBetweenTypeExtensionsTests.cs" />
-    <Compile Include="MultipleOutputHelper1.cs">
-      <DependentUpon>MultipleOutputHelper.ttinclude</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Objects\ObjectExtensionsTests.cs" />
-    <Compile Include="Reflection\InstanceResolutionExtensionsTests.cs" />
-    <Compile Include="Reflection\ReflectionExtensionsTests.cs" />
-    <Compile Include="Streams\StreamExtensionsTests.cs" />
-    <Compile Include="Strings\ArgumentParserTests.cs" />
-    <Compile Include="Strings\Interpolation\Data\Club.cs" />
-    <Compile Include="Strings\Interpolation\Data\OneToTen.cs" />
-    <Compile Include="Strings\Interpolation\Data\Person.cs" />
-    <Compile Include="Strings\Interpolation\NamedInstanceTests.cs" />
-    <Compile Include="Strings\Interpolation\StringInterpolatorTests.cs" />
-    <Compile Include="Threading\Mutexes\MutexManagerTests.cs" />
-    <Compile Include="Threading\ThreadHelperTests.cs" />
-    <Compile Include="Validation\TestsDataSource\GuardTestsSourceTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardByteTests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardDateTimeTests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardDecimalTests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardDoubleTests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardEnumsTests.cs" />
-    <Compile Include="Validation\GuardFloatTests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardInt16Tests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardInt32Tests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardInt64Tests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardSByteTests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardTests.cs" />
-    <Content Include="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MathsExtensionsTestsSourceTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Validation\GuardBuiltInTypesTests.tt">
+    <ProjectReference Include="..\DNX.Helpers\DNX.Helpers.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\images\favicon-32x32.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\licence.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Validation\GuardBuiltInTypesTests.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardBuiltInTypesTests.cs</LastGenOutput>
-      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
-      <AlwaysRun>True</AlwaysRun>
-      <TransformOnBuild>True</TransformOnBuild>
-    </Content>
-    <Compile Include="Validation\GuardBuiltInTypesTests.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardByteTestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardDateTimeTestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardDecimalTestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardDoubleTestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardFloatTestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardInt16TestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardInt32TestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardInt64TestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardSByteTestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardUInt16TestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardUInt32TestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\TestsDataSource\GuardUInt64TestsSource.generated.cs">
-      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardUInt16Tests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardUInt32Tests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardUInt64Tests.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Reflection\TypeExtensionsTests.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertBoolExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDateTimeExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertShortExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUIntExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertULongExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUShortExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUInt32ExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUInt16ExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertUInt64ExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertSingleExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertInt16ExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertInt32ExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertInt64ExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertSByteExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertLongExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertIntExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertFloatExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDoubleExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertDecimalExtensionsTestsSource.cs" />
-    <Compile Include="Converters\BuiltInTypes\TestsDataSource\ConvertByteExtensionsTestsSource.cs" />
-    <Compile Include="Converters\ConvertExtensionsTests.cs" />
-    <Compile Include="Dates\DateTimeExtensionsTests.cs" />
-    <Compile Include="Enumerations\EnumExtensionsTests.cs" />
-    <Compile Include="Exceptions\ExceptionExtensionsTests.cs" />
-    <Compile Include="Exceptions\ReadOnlyListExceptionTests.cs" />
-    <Compile Include="Exceptions\EnumTypeExceptionTests.cs" />
-    <Compile Include="Exceptions\ConversionExceptionTests.cs" />
-    <Compile Include="Linq\DictionaryExtensionsTests.cs" />
-    <Compile Include="Linq\ListExtensionsTests.cs" />
-    <Compile Include="Linq\LinqExtensionsTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strings\RegexStringExtensionsTests.cs" />
-    <Compile Include="Strings\StringExtensionsTests.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DNX.Helpers\DNX.Helpers.csproj">
-      <Project>{BC278532-83D1-4AC0-BA01-E16F237BCBF9}</Project>
-      <Name>DNX.Helpers</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="MultipleOutputHelper.ttinclude">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
     </None>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
-      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
-      <AlwaysRun>True</AlwaysRun>
-      <TransformOnBuild>True</TransformOnBuild>
-    </Content>
-    <Content Include="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MathsExtensionsTestsTemplate.cs</LastGenOutput>
-      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
-      <AlwaysRun>True</AlwaysRun>
-      <TransformOnBuild>True</TransformOnBuild>
-    </Content>
-    <Content Include="Validation\TestsDataSource\GuardTestsSourceTemplate.tt">
+    <None Update="Validation\TestsDataSource\GuardTestsSourceTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardTestsSourceTemplate.cs</LastGenOutput>
-      <AlwaysRun>True</AlwaysRun>
-      <TransformOnBuild>True</TransformOnBuild>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-  <ItemGroup />
-  <Choose>
-    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </When>
-  </Choose>
-  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Compile Update="Validation\GuardBuiltInTypesTests.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GuardBuiltInTypesTests.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Validation\TestsDataSource\GuardTestsSourceTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GuardTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

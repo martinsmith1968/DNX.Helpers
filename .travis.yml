@@ -9,25 +9,18 @@ env:
 
 language: csharp
 mono: none
-dotnet: 2.1.502
+dotnet: latest
 
 solution: $APPNAME.sln
 
-# install:
-#   - nuget restore $APPNAME.sln
-#   - nuget install NUnit.Runners -Version $NUNIT_RUNNERS_VERSION -OutputDirectory testrunner
+install:
+  - dotnet restore
 
 script:
-  - dotnet restore
   - dotnet build -c $CONFIGURATION
   - dotnet test -v normal
   - dotnet pack -c $CONFIGURATION
-  # - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
-  # - msbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
-  # - mono ./testrunner/NUnit.ConsoleRunner.$NUNIT_RUNNERS_VERSION/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
-  - ls -laR ./$APPNAME
-  # https://stackoverflow.com/questions/14797525/differences-between-nuget-packing-a-csproj-vs-nuspec
-  # - nuget pack ./$APPNAME/$APPNAME.csproj -Verbosity detailed
+  # - ls -laR ./$APPNAME
 
 deploy:
   skip_cleanup: true

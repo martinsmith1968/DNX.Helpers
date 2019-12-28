@@ -9,7 +9,7 @@ env:
 
 language: csharp
 mono: none
-dotnet: latest
+dotnet: 2.2.102
 
 solution: $APPNAME.sln
 

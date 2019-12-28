@@ -25,6 +25,6 @@ script:
 deploy:
   skip_cleanup: true
   provider: script
-  script: nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -Source $NUGET_API_URL -ApiKey $NUGET_API_KEY
+  script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
   on:
     branch: master

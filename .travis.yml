@@ -13,9 +13,9 @@ dotnet: 2.1.502
 
 solution: $APPNAME.sln
 
-install:
-  - nuget restore $APPNAME.sln
-  - nuget install NUnit.Runners -Version $NUNIT_RUNNERS_VERSION -OutputDirectory testrunner
+# install:
+#   - nuget restore $APPNAME.sln
+#   - nuget install NUnit.Runners -Version $NUNIT_RUNNERS_VERSION -OutputDirectory testrunner
 
 script:
   - dotnet restore

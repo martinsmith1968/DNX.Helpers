@@ -103,17 +103,17 @@ namespace DNX.Helpers.Linq
         }
 
         /// <summary>
-        /// Appends the specified instance.
+        /// Appends the specified item instance.
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="enumerable">The enumerable.</param>
         /// <param name="instance">The instance.</param>
         /// <returns>IEnumerable&lt;T&gt;.</returns>
-        public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, T instance)
+        public static IEnumerable<T> AppendItem<T>(this IEnumerable<T> enumerable, T instance)
         {
             var falseComparer = EqualityComparerFunc<T>.Create((arg1, arg2) => false);
 
-            return enumerable.Append(instance, falseComparer);
+            return enumerable.AppendItem(instance, falseComparer);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace DNX.Helpers.Linq
         /// <param name="instance">The instance.</param>
         /// <param name="comparer">The comparer.</param>
         /// <returns>IEnumerable&lt;T&gt;.</returns>
-        public static IEnumerable<T> Append<T>(this IEnumerable<T> enumerable, T instance, IEqualityComparer<T> comparer)
+        public static IEnumerable<T> AppendItem<T>(this IEnumerable<T> enumerable, T instance, IEqualityComparer<T> comparer)
         {
             return (enumerable ?? Enumerable.Empty<T>())
                 .Union(new[] { instance }, comparer);

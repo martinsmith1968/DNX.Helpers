@@ -60,7 +60,7 @@ namespace DNX.Helpers.Validation
 
         /// <summary>
         /// Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-		/// </summary>
+        /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
         /// <param name="min">The minimum.</param>

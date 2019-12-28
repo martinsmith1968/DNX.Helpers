@@ -8,24 +8,23 @@ env:
     NUNIT_RUNNERS_VERSION=3.10.0
 
 language: csharp
+mono: none
+dotnet: 2.2.102
 
 solution: $APPNAME.sln
 
 install:
-  - nuget restore $APPNAME.sln
-  - nuget install NUnit.Runners -Version $NUNIT_RUNNERS_VERSION -OutputDirectory testrunner
+  - dotnet restore
 
 script:
-  # - xbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
-  - msbuild /p:Configuration=$CONFIGURATION $APPNAME.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.$NUNIT_RUNNERS_VERSION/tools/nunit3-console.exe ./Test.$APPNAME/bin/$CONFIGURATION/Test.$APPNAME.dll
-  - ls -laR ./$APPNAME
-  # https://stackoverflow.com/questions/14797525/differences-between-nuget-packing-a-csproj-vs-nuspec
-  - nuget pack ./$APPNAME/$APPNAME.csproj -Verbosity detailed
+  - dotnet build -c $CONFIGURATION
+  - dotnet test -v normal
+  - dotnet pack -c $CONFIGURATION
+  # - ls -laR ./$APPNAME
 
 deploy:
   skip_cleanup: true
   provider: script
-  script: chmod +x ./deploy.sh && ./deploy.sh $APPNAME $NUGET_API_URL $NUGET_API_KEY
+  script: nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -Source $NUGET_API_URL -ApiKey $NUGET_API_KEY
   on:
     branch: master

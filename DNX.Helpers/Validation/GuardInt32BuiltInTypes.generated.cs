@@ -17,7 +17,7 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="min">The minimum.</param>
-        public static void IsGreaterThan(Expression<Func<ulong>> exp, ulong min)
+        public static void IsGreaterThan(Expression<Func<int>> exp, int min)
         {
             IsGreaterThan(exp, exp.Compile().Invoke(), min);
         }
@@ -29,7 +29,7 @@ namespace DNX.Helpers.Validation
         /// <param name="val">The value.</param>
         /// <param name="min">The minimum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsGreaterThan(Expression<Func<ulong>> exp, ulong val, ulong min)
+        public static void IsGreaterThan(Expression<Func<int>> exp, int val, int min)
         {
             if (val > min)
             {
@@ -53,19 +53,19 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="min">The minimum.</param>
-        public static void IsGreaterThanOrEqualTo(Expression<Func<ulong>> exp, ulong min)
+        public static void IsGreaterThanOrEqualTo(Expression<Func<int>> exp, int min)
         {
             IsGreaterThanOrEqualTo(exp, exp.Compile().Invoke(), min);
         }
 
         /// <summary>
         /// Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-		/// </summary>
+        /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
         /// <param name="min">The minimum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsGreaterThanOrEqualTo(Expression<Func<ulong>> exp, ulong val, ulong min)
+        public static void IsGreaterThanOrEqualTo(Expression<Func<int>> exp, int val, int min)
         {
             if (val >= min)
             {
@@ -89,7 +89,7 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="max">The maximum.</param>
-        public static void IsLessThan(Expression<Func<ulong>> exp, ulong max)
+        public static void IsLessThan(Expression<Func<int>> exp, int max)
         {
             IsLessThan(exp, exp.Compile().Invoke(), max);
         }
@@ -101,7 +101,7 @@ namespace DNX.Helpers.Validation
         /// <param name="val">The value.</param>
         /// <param name="max">The minimum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsLessThan(Expression<Func<ulong>> exp, ulong val, ulong max)
+        public static void IsLessThan(Expression<Func<int>> exp, int val, int max)
         {
             if (val < max)
             {
@@ -125,7 +125,7 @@ namespace DNX.Helpers.Validation
         /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="max">The maximum.</param>
-        public static void IsLessThanOrEqualTo(Expression<Func<ulong>> exp, ulong max)
+        public static void IsLessThanOrEqualTo(Expression<Func<int>> exp, int max)
         {
             IsLessThanOrEqualTo(exp, exp.Compile().Invoke(), max);
         }
@@ -137,7 +137,7 @@ namespace DNX.Helpers.Validation
         /// <param name="val">The value.</param>
         /// <param name="max">The maximum.</param>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsLessThanOrEqualTo(Expression<Func<ulong>> exp, ulong val, ulong max)
+        public static void IsLessThanOrEqualTo(Expression<Func<int>> exp, int val, int max)
         {
             if (val <= max)
             {
@@ -162,7 +162,7 @@ namespace DNX.Helpers.Validation
         /// <param name="exp">The linq expression of the argument to check</param>
         /// <param name="min">minimum allowed value</param>
         /// <param name="max">maximum allowed value</param>
-        public static void IsBetween(Expression<Func<ulong>> exp, ulong min, ulong max)
+        public static void IsBetween(Expression<Func<int>> exp, int min, int max)
         {
             IsBetween(exp, min, max, IsBetweenBoundsType.Inclusive);
         }
@@ -174,7 +174,7 @@ namespace DNX.Helpers.Validation
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <param name="boundsType">Type of the bounds.</param>
-        public static void IsBetween(Expression<Func<ulong>> exp, ulong min, ulong max, IsBetweenBoundsType boundsType)
+        public static void IsBetween(Expression<Func<int>> exp, int min, int max, IsBetweenBoundsType boundsType)
         {
             IsBetween(exp, min, max, false, boundsType);
         }
@@ -187,7 +187,7 @@ namespace DNX.Helpers.Validation
         /// <param name="bound2">The bound2.</param>
         /// <param name="allowEitherOrder">if set to <c>true</c> [allow either order].</param>
         /// <param name="boundsType">Type of the bounds.</param>
-        public static void IsBetween(Expression<Func<ulong>> exp, ulong bound1, ulong bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
+        public static void IsBetween(Expression<Func<int>> exp, int bound1, int bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             IsBetween(exp, exp.Compile().Invoke(), bound1, bound2, allowEitherOrder, boundsType);
         }
@@ -203,7 +203,7 @@ namespace DNX.Helpers.Validation
         /// <param name="boundsType">Type of the bounds.</param>
         /// <exception cref="ArgumentOutOfRangeException"></exception>
         /// <exception cref="System.ArgumentOutOfRangeException"></exception>
-        public static void IsBetween(Expression<Func<ulong>> exp, ulong val, ulong bound1, ulong bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
+        public static void IsBetween(Expression<Func<int>> exp, int val, int bound1, int bound2, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             if (val.IsBetween(bound1, bound2, allowEitherOrder, boundsType))
             {
@@ -218,8 +218,8 @@ namespace DNX.Helpers.Validation
                 string.Format("{0} must be {1}",
                     memberName,
                     string.Format(boundsType.GetLimitDescriptionFormat(),
-                        MathsUInt64Extensions.GetLowerBound(bound1, bound2, allowEitherOrder),
-                        MathsUInt64Extensions.GetUpperBound(bound1, bound2, allowEitherOrder)
+                        MathsInt32Extensions.GetLowerBound(bound1, bound2, allowEitherOrder),
+                        MathsInt32Extensions.GetUpperBound(bound1, bound2, allowEitherOrder)
                         )
                     )
                 );

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
+using Shouldly;
 
 namespace Test.DNX.Helpers.Strings
 {
@@ -197,6 +198,8 @@ namespace Test.DNX.Helpers.Strings
         [TestCase("[Section Name]", null, "]", ExpectedResult = null)]
         [TestCase("[Section Name]", "[", null, ExpectedResult = null)]
         [TestCase("[Section Name]", null, null, ExpectedResult = null)]
+        [TestCase("A123B", "A", "B", ExpectedResult = "123")]
+        [TestCase("[Section Name]", "(", ")", ExpectedResult = null)]
         [TestCase("", "[", "]", ExpectedResult = null)]
         [TestCase(null, "[", "]", ExpectedResult = null)]
         public string Test_Between(string text, string startText, string endText)
@@ -206,7 +209,19 @@ namespace Test.DNX.Helpers.Strings
             return result;
         }
 
+        [TestCase("[Section Name]", "[", "]", StringComparison.CurrentCulture, ExpectedResult = "Section Name")]
+        [TestCase("[Section Name]", "(", ")", StringComparison.CurrentCulture, ExpectedResult = null)]
+        [TestCase("A123B", "a", "b", StringComparison.OrdinalIgnoreCase, ExpectedResult = "123")]
+        [TestCase("A123B", "a", "b", StringComparison.Ordinal, ExpectedResult = null)]
+        public string Test_Between_ComparisonType(string text, string startText, string endText, StringComparison comparison)
+        {
+            var result = text.Between(startText, endText, comparison);
+
+            return result;
+        }
+
         [TestCase("This is some text", "some", ExpectedResult = "This is ")]
+        [TestCase("This is some text", "bob", ExpectedResult = null)]
         [TestCase("This is some [[Red]]text[[/Red]]", "[[", ExpectedResult = "This is some ")]
         [TestCase("This is some text", " ", ExpectedResult = "This")]
         [TestCase("This is some text", "", ExpectedResult = null)]
@@ -219,7 +234,19 @@ namespace Test.DNX.Helpers.Strings
             return result;
         }
 
+        [TestCase("This is some text", "some", StringComparison.CurrentCulture, ExpectedResult = "This is ")]
+        [TestCase("This is some text", "bob", StringComparison.CurrentCulture, ExpectedResult = null)]
+        [TestCase("This is some text", "SOME", StringComparison.Ordinal, ExpectedResult = null)]
+        [TestCase("This is some text", "SOME", StringComparison.OrdinalIgnoreCase, ExpectedResult = "This is ")]
+        public string Test_Before_ComparisonType(string text, string endText, StringComparison comparison)
+        {
+            var result = text.Before(endText, comparison);
+
+            return result;
+        }
+
         [TestCase("This is some text", "some", ExpectedResult = " text")]
+        [TestCase("This is some text", "bob", ExpectedResult = null)]
         [TestCase("This is some [[Red]]text[[/Red]]", "[[", ExpectedResult = "Red]]text[[/Red]]")]
         [TestCase("This is some text", " ", ExpectedResult = "is some text")]
         [TestCase("This is some text", "", ExpectedResult = null)]
@@ -228,6 +255,17 @@ namespace Test.DNX.Helpers.Strings
         public string Test_After(string text, string startText)
         {
             var result = text.After(startText);
+
+            return result;
+        }
+
+        [TestCase("This is some text", "some", StringComparison.CurrentCulture, ExpectedResult = " text")]
+        [TestCase("This is some text", "bob", StringComparison.CurrentCulture, ExpectedResult = null)]
+        [TestCase("This is some text", "SOME", StringComparison.Ordinal, ExpectedResult = null)]
+        [TestCase("This is some text", "SOME", StringComparison.OrdinalIgnoreCase, ExpectedResult = " text")]
+        public string Test_After_ComparisonType(string text, string startText, StringComparison comparison)
+        {
+            var result = text.After(startText, comparison);
 
             return result;
         }
@@ -389,11 +427,46 @@ namespace Test.DNX.Helpers.Strings
         [TestCase("a-b--d-e", "-", StringSplitOptions.RemoveEmptyEntries, ExpectedResult = "a,b,d,e")]
         [TestCase("a-b[]d=e", "-[]=", StringSplitOptions.RemoveEmptyEntries, ExpectedResult = "a,b,d,e")]
         [TestCase("a-b[]d=e", "-[]=", StringSplitOptions.None, ExpectedResult = "a,b,,d,e")]
-        public string Test_Split(string text, string delimiters, StringSplitOptions options)
+        public string Test_SplitText(string text, string delimiters, StringSplitOptions options)
         {
-            var result = text.Split(delimiters, options);
+            var result = text.SplitText(delimiters, options);
 
             return string.Join(",", result);
+        }
+
+        [TestCase("a-b-c-d-e", "-", StringSplitOptions.None, SplitDelimiterType.Any, ExpectedResult = "a,b,c,d,e")]
+        [TestCase("a-b[c]d=e", "-[]=", StringSplitOptions.None, SplitDelimiterType.Any, ExpectedResult = "a,b,c,d,e")]
+        [TestCase("a-b--d-e", "-", StringSplitOptions.RemoveEmptyEntries, SplitDelimiterType.Any, ExpectedResult = "a,b,d,e")]
+        [TestCase("a-b[]d=e", "-[]=", StringSplitOptions.RemoveEmptyEntries, SplitDelimiterType.Any, ExpectedResult = "a,b,d,e")]
+        [TestCase("a-b[]d=e", "-[]=", StringSplitOptions.None, SplitDelimiterType.Any, ExpectedResult = "a,b,,d,e")]
+        [TestCase("a-b-c-d-e", "-", StringSplitOptions.None, SplitDelimiterType.All, ExpectedResult = "a,b,c,d,e")]
+        [TestCase("a-b--d-e", "--", StringSplitOptions.RemoveEmptyEntries, SplitDelimiterType.All, ExpectedResult = "a-b,d-e")]
+        [TestCase("a-b----d-e", "--", StringSplitOptions.None, SplitDelimiterType.All, ExpectedResult = "a-b,,d-e")]
+        [TestCase("a-b[]d=e", "[]", StringSplitOptions.RemoveEmptyEntries, SplitDelimiterType.All, ExpectedResult = "a-b,d=e")]
+        public string Test_SplitText_DelimiterType(string text, string delimiters, StringSplitOptions options, SplitDelimiterType delimiterType)
+        {
+            var result = text.SplitText(delimiters, options, delimiterType);
+
+            return string.Join(",", result);
+        }
+
+        [Test]
+        public void Test_SplitText_InvalidDelimiterType()
+        {
+            // Arrange
+            var text = "a,b,c";
+            var delimiters = ",";
+
+            // Act
+            var ex = Assert.Throws<ArgumentOutOfRangeException>(
+                () => text.SplitText(delimiters, StringSplitOptions.None, (SplitDelimiterType) int.MaxValue)
+            );
+
+            // Assert
+            ex.ShouldNotBeNull();
+            ex.ParamName.ShouldBe("delimiterType");
+            ex.Message.ShouldContain(nameof(SplitDelimiterType.Any));
+            ex.Message.ShouldContain(nameof(SplitDelimiterType.All));
         }
 
         [TestCase("a-b-c-d-e", "-", StringSplitOptions.None, ExpectedResult = "a,b,c,d,e")]

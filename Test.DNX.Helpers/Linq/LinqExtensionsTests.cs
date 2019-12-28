@@ -165,13 +165,13 @@ namespace Test.DNX.Helpers.Linq
         [TestCase("a,b,c", "a", ExpectedResult = "a,b,c,a")]
         [TestCase(null, "a", ExpectedResult = "a")]
         [TestCase("", "a", ExpectedResult = "a")]
-        public string Test_Append(string commaDelimitedArray, string value)
+        public string Test_AppendItem(string commaDelimitedArray, string value)
         {
             var enumerable = commaDelimitedArray == null
                 ? null
                 : commaDelimitedArray.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
-            var result = enumerable.Append(value);
+            var result = enumerable.AppendItem(value);
 
             return string.Join(",", result);
         }
@@ -191,7 +191,7 @@ namespace Test.DNX.Helpers.Linq
                 ? null
                 : commaDelimitedArray.Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
 
-            var result = enumerable.Append(value, comparer);
+            var result = enumerable.AppendItem(value, comparer);
 
             return string.Join(",", result);
         }

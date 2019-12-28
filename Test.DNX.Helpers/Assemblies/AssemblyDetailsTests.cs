@@ -30,7 +30,7 @@ namespace Test.DNX.Helpers.Assemblies
             assemblyDetails.Copyright.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCopyrightAttribute>().First().Copyright);
             assemblyDetails.Company.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCompanyAttribute>().First().Company);
             assemblyDetails.Description.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyDescriptionAttribute>().First().Description);
-            assemblyDetails.Trademark.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().First().Trademark);
+            assemblyDetails.Trademark.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().FirstOrDefault()?.Trademark);
             assemblyDetails.Configuration.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyConfigurationAttribute>().First().Configuration);
             assemblyDetails.Version.ShouldBe(targetAssembly.GetName().Version);
             assemblyDetails.FileVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
@@ -59,11 +59,11 @@ namespace Test.DNX.Helpers.Assemblies
             assemblyDetails.Copyright.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCopyrightAttribute>().First().Copyright);
             assemblyDetails.Company.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyCompanyAttribute>().First().Company);
             assemblyDetails.Description.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyDescriptionAttribute>().First().Description);
-            assemblyDetails.Trademark.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().First().Trademark);
+            assemblyDetails.Trademark.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyTrademarkAttribute>().FirstOrDefault()?.Trademark);
             assemblyDetails.Configuration.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyConfigurationAttribute>().First().Configuration);
             assemblyDetails.Version.ShouldBe(targetAssembly.GetName().Version);
             assemblyDetails.FileVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyFileVersionAttribute>().First().Version);
-            assemblyDetails.InformationalVersion.ShouldBeNull();
+            assemblyDetails.InformationalVersion.ShouldBe(targetAssembly.GetCustomAttributes<AssemblyInformationalVersionAttribute>().First().InformationalVersion);
             assemblyDetails.SimplifiedVersion.ShouldBe(assemblyDetails.Version.Simplify());
         }
     }

@@ -42,7 +42,7 @@ foreach (var kvp in types)
 {
     var typeName = kvp.Value;
     var typeDesc = kvp.Key;
-    var fileName = string.Format("Guard{0}BulitInTypes.generated.cs", typeDesc);
+    var fileName = string.Format("Guard{0}BuiltInTypes.generated.cs", typeDesc);
 
     manager.StartNewFile(fileName);
 #>
@@ -99,7 +99,7 @@ foreach (var kvp in types)
 
         /// <summary>
         /// Ensures the expression and corresponding value evaluates to greater than or equal to the specified minimum
-		/// </summary>
+        /// </summary>
         /// <param name="exp">The exp.</param>
         /// <param name="val">The value.</param>
         /// <param name="min">The minimum.</param>

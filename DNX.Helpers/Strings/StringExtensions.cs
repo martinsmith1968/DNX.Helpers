@@ -11,6 +11,15 @@ using DNX.Helpers.Linq;
 namespace DNX.Helpers.Strings
 {
     /// <summary>
+    /// How the delimiter is to be treated when splitting text
+    /// </summary>
+    public enum SplitDelimiterType
+    {
+        Any = 0,
+        All
+    }
+
+    /// <summary>
     /// String Extensions
     /// </summary>
     public static class StringExtensions
@@ -234,27 +243,14 @@ namespace DNX.Helpers.Strings
         /// <param name="text">The text.</param>
         /// <param name="startText">The start text.</param>
         /// <param name="endText">The end text.</param>
+        /// <param name="comparison">The comparison.</param>
         /// <returns>System.String.</returns>
-        public static string Between(this string text, string startText, string endText)
+        public static string Between(this string text, string startText, string endText, StringComparison comparison = StringComparison.Ordinal)
         {
-            if (string.IsNullOrEmpty(text))
-            {
-                return null;
-            }
-
-            var startIndex = string.IsNullOrEmpty(startText)
-                ? -1
-                : text.IndexOf(startText) + startText.Length;
-
-            var endIndex = string.IsNullOrEmpty(endText)
-                ? -1
-                : text.IndexOf(endText);
-
-            var result = startIndex >= 0 && endIndex >= 0 && endIndex > startIndex
-                ? text.Substring(startIndex, endIndex - startIndex)
-                : null;
-
-            return result;
+            return text
+                .After(startText, comparison)
+                .Before(endText, comparison)
+                ;
         }
 
         /// <summary>
@@ -262,8 +258,9 @@ namespace DNX.Helpers.Strings
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="endText">The end text.</param>
+        /// <param name="comparison">The comparison.</param>
         /// <returns>System.String.</returns>
-        public static string Before(this string text, string endText)
+        public static string Before(this string text, string endText, StringComparison comparison = StringComparison.Ordinal)
         {
             if (text.IsNullOrEmpty())
             {
@@ -272,7 +269,7 @@ namespace DNX.Helpers.Strings
 
             var endIndex = endText.IsNullOrEmpty()
                 ? -1
-                : text.IndexOf(endText);
+                : text.IndexOf(endText, comparison);
 
             var result = endIndex >= 0
                 ? text.Substring(0, endIndex)
@@ -286,21 +283,23 @@ namespace DNX.Helpers.Strings
         /// </summary>
         /// <param name="text">The text.</param>
         /// <param name="startText">The start text.</param>
+        /// <param name="comparison">The comparison.</param>
         /// <returns>System.String.</returns>
-        public static string After(this string text, string startText)
+        public static string After(this string text, string startText, StringComparison comparison = StringComparison.Ordinal)
         {
             if (string.IsNullOrEmpty(text))
             {
                 return null;
             }
 
+            var startTextLength = startText?.Length ?? 0;
+
             var startIndex = string.IsNullOrEmpty(startText)
                 ? -1
-                : text.IndexOf(startText) + startText.Length;
-
+                : text.IndexOf(startText, comparison);
 
             var result = startIndex >= 0
-                ? text.Substring(startIndex)
+                ? text.Substring(startIndex + startTextLength)
                 : null;
 
             return result;
@@ -466,9 +465,20 @@ namespace DNX.Helpers.Strings
         /// <param name="options">The options.</param>
         /// <returns>IEnumerable&lt;System.String&gt;.</returns>
         /// <remarks>Also available as an extension method</remarks>
-        public static IEnumerable<string> Split(this string text, string delimiters, StringSplitOptions options = StringSplitOptions.None)
+        public static IEnumerable<string> SplitText(this string text, string delimiters, StringSplitOptions options = StringSplitOptions.None, SplitDelimiterType delimiterType = SplitDelimiterType.Any)
         {
-            return text.Split(delimiters.ToCharArray(), options);
+            switch (delimiterType)
+            {
+                case SplitDelimiterType.Any:
+                    return text.Split(delimiters.ToCharArray(), options);
+
+                case SplitDelimiterType.All:
+                    // NOTE: A native text.Split(string, ...) is available in NET Core 2.1+
+                    return text.SplitByText(delimiters, options);
+
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(delimiterType), delimiterType, $"Value must be one of {string.Join(",", Enum.GetNames(typeof(SplitDelimiterType)))}");
+            }
         }
 
         /// <summary>

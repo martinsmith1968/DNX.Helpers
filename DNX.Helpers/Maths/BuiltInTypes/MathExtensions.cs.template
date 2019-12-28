@@ -67,7 +67,7 @@ namespace DNX.Helpers.Maths.BuiltInTypes
         /// <param name="boundsType">Control boundary checking.</param>
         /// <returns>
         ///   <c>true</c> if the specified minimum is between min and max; otherwise, <c>false</c>.
-		/// </returns>
+        /// </returns>
         public static bool IsBetween(this #type# value, #type# min, #type# max, bool allowEitherOrder, IsBetweenBoundsType boundsType)
         {
             var lowerBound = GetLowerBound(min, max, allowEitherOrder);

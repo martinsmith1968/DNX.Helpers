@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DNX.Helpers", "DNX.Helpers\DNX.Helpers.csproj", "{BC278532-83D1-4AC0-BA01-E16F237BCBF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNX.Helpers", "DNX.Helpers\DNX.Helpers.csproj", "{BC278532-83D1-4AC0-BA01-E16F237BCBF9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.DNX.Helpers", "Test.DNX.Helpers\Test.DNX.Helpers.csproj", "{B3666B7C-ADF3-46B1-8955-D3224F4A9C8D}"
 EndProject
@@ -25,7 +25,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".commands", ".commands", "{FB47A44B-A670-480D-8B11-6D02072596D4}"
 	ProjectSection(SolutionItems) = preProject
 		commands.json = commands.json
-		deploy.sh = deploy.sh
 		GenerateMarkdown.cmd = GenerateMarkdown.cmd
 		NuGet.Pack.cmd = NuGet.Pack.cmd
 		NuGet.Push.cmd = NuGet.Push.cmd

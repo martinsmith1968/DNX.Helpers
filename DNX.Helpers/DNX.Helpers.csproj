@@ -1,289 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BC278532-83D1-4AC0-BA01-E16F237BCBF9}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DNX.Helpers</RootNamespace>
-    <AssemblyName>DNX.Helpers</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\DNX.Helpers.XML</DocumentationFile>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\DNX.Helpers.XML</DocumentationFile>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Description>.NET Extensions and helpers for Core and Common .NET types</Description>
+    <Authors>Martin Smith</Authors>
+    <Copyright>Copyright © 2016-2019 DNX Solutions Ltd</Copyright>
+    <PackageLicenseFile>licence.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/martinsmith1968/DNX.Helpers</PackageProjectUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIcon>favicon-32x32.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageTags>DNX helpers extensions string array linq</PackageTags>
+    <PackageReleaseNotes>Interpolation to a working version and some preparation for moving to .NET Standard</PackageReleaseNotes>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>1.2.2.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
+    <None Remove="Converters\BuiltInTypes\Build.cmd" />
+    <None Remove="Converters\BuiltInTypes\ConvertExtensions.cs.template" />
+    <None Remove="Maths\BuiltInTypes\Build.cmd" />
+    <None Remove="Maths\BuiltInTypes\MathExtensions.cs.template" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assemblies\AssemblyDetails.cs" />
-    <Compile Include="Assemblies\AssemblyExtensions.cs" />
-    <Compile Include="Assemblies\IAssemblyDetails.cs" />
-    <Compile Include="Assemblies\VersionExtensions.cs" />
-    <Compile Include="Comparisons\ComparerFunc.cs" />
-    <Compile Include="Comparisons\EqualityComparerFunc.cs" />
-    <Compile Include="Defaults.cs" />
-    <Compile Include="Exceptions\EnumValueException.cs" />
-    <Compile Include="Interfaces\IConverter.cs" />
-    <Compile Include="Converters\BuiltInTypes\ConvertBoolExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertByteExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertDateTimeExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertDecimalExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertDoubleExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertFloatExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertInt16Extensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertInt32Extensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertInt64Extensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertIntExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertLongExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertSByteExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertShortExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertSingleExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt16Extensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt32Extensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUInt64Extensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUIntExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertULongExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\BuiltInTypes\ConvertUShortExtensions.generated.cs">
-      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Converters\ConvertObjectExtensions.cs" />
-    <Compile Include="Converters\ConvertExtensions.cs" />
-    <Compile Include="Dates\DateTimeExtensions.cs" />
-    <Compile Include="Enumerations\EnumExtensions.cs" />
-    <Compile Include="Exceptions\ParameterException.cs" />
-    <Compile Include="Exceptions\ConversionException.cs" />
-    <Compile Include="Exceptions\EnumTypeException.cs" />
-    <Compile Include="Exceptions\ExceptionExtensions.cs" />
-    <Compile Include="Exceptions\ParameterInvalidException.cs" />
-    <Compile Include="Exceptions\ReadOnlyListException.cs" />
-    <Compile Include="Interfaces\IExtractable.cs" />
-    <Compile Include="Interfaces\IPopulatable.cs" />
-    <Compile Include="Linq\DictionaryExtensions.cs" />
-    <Compile Include="Linq\EnumerableExtensions.cs" />
-    <Compile Include="Linq\ItemComparison.cs" />
-    <Compile Include="Linq\ItemComparisonList.cs" />
-    <Compile Include="Linq\LinqExtensions.cs" />
-    <Compile Include="Linq\ListExtensions.cs" />
-    <Compile Include="Linq\MergeTechnique.cs" />
-    <Compile Include="Linq\NameValueExtensions.cs" />
-    <Compile Include="Linq\TupleList.cs" />
-    <Compile Include="Linq\TupleExtensions.cs" />
-    <Compile Include="Maths\BuiltInTypes\MathsByteExtensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsDateTimeExtensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsDecimalExtensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsDoubleExtensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsExtensionsTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsFloatExtensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsInt16Extensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsInt32Extensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsInt64Extensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsSByteExtensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsUInt16Extensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsUInt32Extensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\BuiltInTypes\MathsUInt64Extensions.generated.cs">
-      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Maths\IsBetweenBoundsType.cs" />
-    <Compile Include="MultipleOutputHelper1.cs">
-      <DependentUpon>MultipleOutputHelper.ttinclude</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Objects\ObjectExtensions.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\FormatProviderFunc.cs" />
-    <Compile Include="Reflection\AttributeExtensions.cs" />
-    <Compile Include="Reflection\ExpressionExtensions.cs" />
-    <Compile Include="Reflection\InstanceResolutionExtensions.cs" />
-    <Compile Include="Reflection\ReflectionExtensions.cs" />
-    <Compile Include="Streams\StreamExtensions.cs" />
-    <Compile Include="Strings\ArgumentParser.cs" />
-    <Compile Include="Strings\Interpolation\Interfaces\INamedInstance.cs" />
-    <Compile Include="Strings\Interpolation\NamedInstance.cs" />
-    <Compile Include="Strings\RegexStringExtensions.cs" />
-    <Compile Include="Strings\StringExtensions.cs" />
-    <Compile Include="Strings\Interpolation\StringInterpolation.cs" />
-    <Compile Include="Threading\IProducerConsumerQueue.cs" />
-    <Compile Include="Threading\Mutexes\MutexManager.cs" />
-    <Compile Include="Threading\Mutexes\Mutex.cs" />
-    <Compile Include="Threading\Mutexes\MutexState.cs" />
-    <Compile Include="Threading\ProducerConsumerQueue.cs" />
-    <Compile Include="Threading\ProducerConsumerQueueAction.cs" />
-    <Compile Include="Threading\ThreadHelper.cs" />
-    <Compile Include="Validation\GuardBuiltInTypesTemplate.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardByteBulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardDateTimeBulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardDecimalBulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardDoubleBulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardFloatBulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardInt16BulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardInt32BulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardInt64BulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardSByteBulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardUInt16BulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardUInt32BulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\GuardUInt64BulitInTypes.generated.cs">
-      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Validation\Guard.cs" />
-    <Compile Include="Validation\GuardEnums.cs" />
-    <Compile Include="Reflection\TypeExtensions.cs" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
+    <None Update="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
-      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
-      <AlwaysRun>True</AlwaysRun>
-      <TransformOnBuild>True</TransformOnBuild>
     </None>
-    <None Include="DNX.Helpers.nuspec" />
-    <None Include="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
+    <None Update="Maths\BuiltInTypes\MathsExtensionsTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>MathsExtensionsTemplate.cs</LastGenOutput>
-      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
-      <AlwaysRun>True</AlwaysRun>
-      <TransformOnBuild>True</TransformOnBuild>
     </None>
-    <None Include="MultipleOutputHelper.ttinclude">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MultipleOutputHelper1.cs</LastGenOutput>
-    </None>
-    <None Include="Validation\GuardBuiltInTypesTemplate.tt">
+    <None Update="Validation\GuardBuiltInTypesTemplate.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardBuiltInTypesTemplate.cs</LastGenOutput>
-      <RunCustomToolOnBuild>True</RunCustomToolOnBuild>
-      <AlwaysRun>True</AlwaysRun>
-      <TransformOnBuild>True</TransformOnBuild>
+    </None>
+    <None Include="..\images\favicon-32x32.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\licence.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <ItemGroup>
+    <Compile Update="Converters\BuiltInTypes\ConvertExtensionsTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Maths\BuiltInTypes\MathsExtensionsTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MathsExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Validation\GuardBuiltInTypesTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GuardBuiltInTypesTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

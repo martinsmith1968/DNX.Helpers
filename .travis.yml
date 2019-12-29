@@ -32,17 +32,16 @@ jobs:
       dotnet: 2.2.207
       install: dotnet restore
       script: dotnet test -v normal
-
     - name: Linux
       os: linux
       dotnet: 2.2.102
       install: dotnet restore
       script: dotnet test -v normal
-
     - name: Windows
       os: windows
       install: dotnet restore
       script: dotnet test -v normal
+
 
 #    #----- Deploy -----#
 #    - stage: deploy

@@ -18,22 +18,24 @@ mono: none
 stages:
   - name: Build and Test
   - name: Deploy
+    # if: branch = master
 
 jobs:
   include:
     #----- Build and Test -----#
     - stage: Build and Test
-      name: Build on OSX
+    - name: Build on OSX
       os: osx
-      # dotnet: 2.1.300
       dotnet: 2.2.207
       install: dotnet restore
       script: dotnet test -v normal
+
     - name: Build on Linux
       os: linux
       dotnet: 2.2.102
       install: dotnet restore
       script: dotnet test -v normal
+
     - name: Build on Windows
       os: windows
       install: dotnet restore
@@ -41,17 +43,13 @@ jobs:
 
     #----- Deploy -----#
     - stage: Deploy
-      #if: branch = master
-      name: NuGet Deploy
+      skip_cleanup: true
+    - name: NuGet Deploy
       deploy:
+      - provider: script
+        script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
 
-deploy:
-  skip_cleanup: true
-- provider: script
-  script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
-  on:
-    branch: master
-- provider: releases
-  api_key: $GITHUB_TOKEN
-  on:
-    branch: master
+    - name: GitHub Release
+      deploy:
+      - provider: releases
+        api_key: $GITHUB_TOKEN

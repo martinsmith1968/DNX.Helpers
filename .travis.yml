@@ -1,30 +1,62 @@
 ﻿# https://stackoverflow.com/questions/41509608/how-do-i-deploy-nuget-packages-in-travis-ci
 # https://docs.travis-ci.com/user/languages/csharp/
+# https://travis-ci.com/bilal-fazlani/commanddotnet/builds/142334958/config
+# https://travis-ci.com/bilal-fazlani/commanddotnet/builds/142334958/config
 
 env:
     APPNAME=DNX.Helpers
     CONFIGURATION=Release
     NUGET_API_URL=https://www.nuget.org/api/v2/package
-    NUNIT_RUNNERS_VERSION=3.10.0
 
-language: csharp
-mono: none
-dotnet: 2.2.102
+git:
+  depth: false
 
 solution: $APPNAME.sln
 
-install:
-  - dotnet restore
+language: csharp
+mono: none
 
-script:
-  - dotnet build -c $CONFIGURATION
-  - dotnet test -v normal
-  - dotnet pack -c $CONFIGURATION
-  # - ls -laR ./$APPNAME
+#stages:
+  - name: Build and Test
+  - name: Deploy
+    if: branch = master
 
-deploy:
-  skip_cleanup: true
-  provider: script
-  script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
-  on:
-    branch: master
+jobs:
+  include:
+    #----- Build and Test -----#
+    - stage: Build and Test
+      name: Build on linux
+      os: linux
+      dotnet: 2.2.102
+      install: dotnet restore
+      script: dotnet test -v normal
+
+    #----- Deploy -----#
+    - stage: Deploy
+      name: NuGet Deploy
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
+
+      name: GitHub Release
+      deploy:
+        provider: releases
+        skip_cleanup: true
+        api_key: $GITHUB_OAUTH_TOKEN
+
+
+
+
+#deploy:
+#  skip_cleanup: true
+#  provider: script
+#  script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
+#  on:
+#    branch: master
+
+
+# - dotnet build -c $CONFIGURATION
+# - dotnet test -v normal
+# - dotnet pack -c $CONFIGURATION
+# - ls -laR ./$APPNAME

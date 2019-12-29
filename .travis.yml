@@ -7,21 +7,28 @@ env:
     CONFIGURATION=Release
     NUGET_API_URL=https://www.nuget.org/api/v2/package
 
-git:
-  depth: 1
-  quiet: true
+#git:
+#  depth: 1
+#  quiet: true
 
 solution: $APPNAME.sln
 
 language: csharp
 mono: none
 
-stages:
-  - name: build
-  - name: deploy
+#stages:
+#  - name: build
+#  - name: deploy
+#  - name: release
     # if: branch = master
-  - name: release
     # if: branch = master
+
+install:
+  - dotnet restore
+
+script:
+  - dotnet build
+  - dotnet test -v normal
 
 jobs:
   include:
@@ -30,17 +37,11 @@ jobs:
     - name: OSX
       os: osx
       dotnet: 2.2.207
-      install: dotnet restore
-      script: dotnet test -v normal
     - name: Linux
       os: linux
       dotnet: 2.2.102
-      install: dotnet restore
-      script: dotnet test -v normal
     - name: Windows
       os: windows
-      install: dotnet restore
-      script: dotnet test -v normal
 
 
 #    #----- Deploy -----#

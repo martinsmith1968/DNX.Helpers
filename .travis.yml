@@ -1,7 +1,7 @@
 ﻿# https://stackoverflow.com/questions/41509608/how-do-i-deploy-nuget-packages-in-travis-ci
 # https://docs.travis-ci.com/user/languages/csharp/
 # https://travis-ci.com/bilal-fazlani/commanddotnet/builds/142334958/config
-# https://travis-ci.com/bilal-fazlani/commanddotnet/builds/142334958/config
+
 
 env:
     APPNAME=DNX.Helpers
@@ -24,9 +24,19 @@ jobs:
   include:
     #----- Build and Test -----#
     - stage: Build and Test
-      name: Build on linux
+      name: Build on OSX
+      os: osx
+      dotnet: 2.1.300
+      install: dotnet restore
+      script: dotnet test -v normal
+    - name: Build on Linux
       os: linux
       dotnet: 2.2.102
+      install: dotnet restore
+      script: dotnet test -v normal
+    - name: Build on Windows
+      os: windows
+      dotnet: 2.1
       install: dotnet restore
       script: dotnet test -v normal
 
@@ -43,20 +53,5 @@ jobs:
       deploy:
         provider: releases
         skip_cleanup: true
-        api_key: $GITHUB_OAUTH_TOKEN
+        api_key: $GITHUB_TOKEN
 
-
-
-
-#deploy:
-#  skip_cleanup: true
-#  provider: script
-#  script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
-#  on:
-#    branch: master
-
-
-# - dotnet build -c $CONFIGURATION
-# - dotnet test -v normal
-# - dotnet pack -c $CONFIGURATION
-# - ls -laR ./$APPNAME

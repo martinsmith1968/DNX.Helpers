@@ -9,11 +9,11 @@
     <PackageProjectUrl>https://github.com/martinsmith1968/DNX.Helpers</PackageProjectUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageIcon>favicon-32x32.png</PackageIcon>
-    <PackageIconUrl />
+    <PackageIconUrl>https://raw.githubusercontent.com/martinsmith1968/DNX.Helpers/master/images/favicon-32x32.png</PackageIconUrl>
     <PackageTags>DNX helpers extensions string array linq</PackageTags>
     <PackageReleaseNotes>Interpolation to a working version and some preparation for moving to .NET Standard</PackageReleaseNotes>
-    <Version>2.0.0</Version>
-    <AssemblyVersion>1.2.2.0</AssemblyVersion>
+    <Version>2.0.1</Version>
+    <AssemblyVersion>2.0.1</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Converters\BuiltInTypes\Build.cmd" />

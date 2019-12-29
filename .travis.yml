@@ -47,8 +47,8 @@ jobs:
       name: NuGet
       os: linux
       dotnet: 2.2.102
-      #before_deploy:
-      #- dotnet build
+      before_deploy:
+      - dotnet build
       deploy:
       - provider: script
         cleanup: false
@@ -58,7 +58,17 @@ jobs:
     - stage: release
       name: GitHub
       script: skip
+      before_deploy:
+      - FILE=($APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
+      - REGEX="$APPNAME/bin/$CONFIGURATION/$APPNAME.(v[0-9\.]+).nupkg"
+      - [[ $FILE =~ $REGEX ]]
+      - VERSION=${BASH_REMATCH[1]}
+      - git tag -f "$VERSION"
       deploy:
       - provider: releases
         cleanup: false
         api_key: $GITHUB_TOKEN
+        file:
+        - $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg
+        on:
+          tags: true

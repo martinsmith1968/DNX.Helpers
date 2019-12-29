@@ -19,9 +19,9 @@ mono: none
 stages:
   - name: build
   - name: deploy
-    # if: branch = master
-  # - name: release
-    # if: branch = master
+    if: branch = master
+  - name: release
+    if: branch = master
 
 jobs:
   include:
@@ -51,23 +51,11 @@ jobs:
         cleanup: false
         script: dotnet pack && dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
 
-#    #----- Release -----#
-#    - stage: release
-#      name: GitHub
-#      script: skip
-#      deploy:
-#      - provider: releases
-#        cleanup: false
-#        api_key: $GITHUB_TOKEN
-
-
-
-
-
-
-
-#script:
-#  - dotnet build -c $CONFIGURATION
-#  - dotnet test -v normal
-#  - dotnet pack -c $CONFIGURATION
-#  # - ls -laR ./$APPNAME
+    #----- Release -----#
+    - stage: release
+      name: GitHub
+      script: skip
+      deploy:
+      - provider: releases
+        cleanup: false
+        api_key: $GITHUB_TOKEN

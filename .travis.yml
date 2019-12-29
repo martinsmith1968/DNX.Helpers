@@ -48,7 +48,7 @@ jobs:
         skip_cleanup: true
         script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
 
-      name: GitHub Release
+    - name: GitHub Release
       deploy:
         provider: releases
         skip_cleanup: true

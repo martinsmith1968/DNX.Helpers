@@ -66,7 +66,7 @@ jobs:
       - git tag -f "$VERSION"
       deploy:
         provider: releases
-        cleanup: false
+        skip_cleanup: true
         api_key: $GITHUB_TOKEN
         file:
         - $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg

@@ -50,7 +50,7 @@ jobs:
       before_deploy:
       - dotnet build
       deploy:
-      - provider: script
+        provider: script
         cleanup: false
         script: dotnet pack && dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
 
@@ -65,7 +65,7 @@ jobs:
       - VERSION=${BASH_REMATCH[1]}
       - git tag -f "$VERSION"
       deploy:
-      - provider: releases
+        provider: releases
         cleanup: false
         api_key: $GITHUB_TOKEN
         file:

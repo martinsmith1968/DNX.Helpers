@@ -21,7 +21,7 @@ stages:
   - name: deploy
     if: branch = master
   - name: release
-    #if: branch = master
+    if: branch = master
 
 jobs:
   include:

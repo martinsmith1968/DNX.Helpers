@@ -46,6 +46,7 @@ jobs:
     - stage: deploy
       name: NuGet
       script: skip
+      dotnet: 2.2.102
       deploy:
       - provider: script
         cleanup: false

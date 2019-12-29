@@ -8,7 +8,8 @@ env:
     NUGET_API_URL=https://www.nuget.org/api/v2/package
 
 git:
-  depth: false
+  depth: 1
+  quiet: true
 
 solution: $APPNAME.sln
 
@@ -29,17 +30,20 @@ jobs:
     - name: OSX
       os: osx
       dotnet: 2.2.207
+      mono: none
       install: dotnet restore
       script: dotnet test -v normal
 
     - name: Linux
       os: linux
       dotnet: 2.2.102
+      mono: none
       install: dotnet restore
       script: dotnet test -v normal
 
     - name: Windows
       os: windows
+      mono: none
       install: dotnet restore
       script: dotnet test -v normal
 

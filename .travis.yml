@@ -44,13 +44,14 @@ jobs:
       #if: branch = master
       name: NuGet Deploy
       deploy:
-        provider: script
-        skip_cleanup: true
-        script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
 
-    - name: GitHub Release
-      deploy:
-        provider: releases
-        skip_cleanup: true
-        api_key: $GITHUB_TOKEN
-
+deploy:
+  skip_cleanup: true
+- provider: script
+  script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
+  on:
+    branch: master
+- provider: releases
+  api_key: $GITHUB_TOKEN
+  on:
+    branch: master

@@ -51,7 +51,7 @@ jobs:
       #- dotnet build
       deploy:
       - provider: script
-        #cleanup: false
+        cleanup: false
         script: dotnet pack && dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
 
     #----- Release -----#

@@ -30,40 +30,37 @@ jobs:
     - name: OSX
       os: osx
       dotnet: 2.2.207
-      mono: none
       install: dotnet restore
       script: dotnet test -v normal
 
     - name: Linux
       os: linux
       dotnet: 2.2.102
-      mono: none
       install: dotnet restore
       script: dotnet test -v normal
 
     - name: Windows
       os: windows
-      mono: none
       install: dotnet restore
       script: dotnet test -v normal
 
-    #----- Deploy -----#
-    - stage: deploy
-    - name: NuGet
-      script: skip
-      deploy:
-      - provider: script
-        cleanup: false
-        script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
-
-    #----- Release -----#
-    - stage: release
-    - name: GitHub
-      script: skip
-      deploy:
-      - provider: releases
-        cleanup: false
-        api_key: $GITHUB_TOKEN
+#    #----- Deploy -----#
+#    - stage: deploy
+#    - name: NuGet
+#      script: skip
+#      deploy:
+#      - provider: script
+#        cleanup: false
+#        script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
+#
+#    #----- Release -----#
+#    - stage: release
+#    - name: GitHub
+#      script: skip
+#      deploy:
+#      - provider: releases
+#        cleanup: false
+#        api_key: $GITHUB_TOKEN
 
 
 

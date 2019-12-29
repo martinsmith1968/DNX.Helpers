@@ -19,7 +19,7 @@ mono: none
 stages:
   - name: build
   - name: deploy
-    if: branch = master
+    if: branch <> master
   - name: release
     if: branch = master
 
@@ -70,5 +70,3 @@ jobs:
         api_key: $GITHUB_TOKEN
         file:
         - $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg
-        on:
-          tags: true

@@ -2,7 +2,6 @@
 # https://docs.travis-ci.com/user/languages/csharp/
 # https://travis-ci.com/bilal-fazlani/commanddotnet/builds/142334958/config
 
-
 env:
     APPNAME=DNX.Helpers
     CONFIGURATION=Release
@@ -42,7 +41,7 @@ jobs:
 
     #----- Deploy -----#
     - stage: Deploy
-      if: branch = master
+      #if: branch = master
       name: NuGet Deploy
       deploy:
         provider: script

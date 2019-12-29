@@ -26,7 +26,8 @@ jobs:
     - stage: Build and Test
       name: Build on OSX
       os: osx
-      dotnet: 2.1.300
+      # dotnet: 2.1.300
+      dotnet: 2.0.0
       install: dotnet restore
       script: dotnet test -v normal
     - name: Build on Linux

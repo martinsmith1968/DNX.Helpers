@@ -34,7 +34,7 @@ jobs:
   include:
     #----- Build and Test -----#
     - stage: build
-    - name: OSX
+      name: OSX
       os: osx
       dotnet: 2.2.207
     - name: Linux

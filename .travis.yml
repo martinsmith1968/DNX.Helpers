@@ -19,9 +19,9 @@ mono: none
 stages:
   - name: build
   - name: deploy
-    #if: branch = master
-  - name: release
     if: branch = master
+  - name: release
+    #if: branch = master
 
 jobs:
   include:

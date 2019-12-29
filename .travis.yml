@@ -45,7 +45,7 @@ jobs:
     #----- Deploy -----#
     - stage: deploy
       name: NuGet
-      script: skip
+      os: linux
       dotnet: 2.2.102
       deploy:
       - provider: script

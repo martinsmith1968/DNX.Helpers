@@ -24,33 +24,33 @@ jobs:
   include:
     #----- Build and Test -----#
     - stage: Build and Test
-    - name: Build on OSX
-      os: osx
-      dotnet: 2.2.207
-      install: dotnet restore
-      script: dotnet test -v normal
+      - name: Build on OSX
+        os: osx
+        dotnet: 2.2.207
+        install: dotnet restore
+        script: dotnet test -v normal
 
-    - name: Build on Linux
-      os: linux
-      dotnet: 2.2.102
-      install: dotnet restore
-      script: dotnet test -v normal
+      - name: Build on Linux
+        os: linux
+        dotnet: 2.2.102
+        install: dotnet restore
+        script: dotnet test -v normal
 
-    - name: Build on Windows
-      os: windows
-      install: dotnet restore
-      script: dotnet test -v normal
+      - name: Build on Windows
+        os: windows
+        install: dotnet restore
+        script: dotnet test -v normal
 
     #----- Deploy -----#
     - stage: Deploy
-      script: skip
-      skip_cleanup: true
-    - name: NuGet Deploy
-      deploy:
-      - provider: script
-        script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
+        script: skip
+        skip_cleanup: true
+      - name: NuGet Deploy
+        deploy:
+        - provider: script
+          script: dotnet nuget push $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg -s $NUGET_API_URL -k $NUGET_API_KEY --no-service-endpoint
 
-    - name: GitHub Release
-      deploy:
-      - provider: releases
-        api_key: $GITHUB_TOKEN
+      - name: GitHub Release
+        deploy:
+        - provider: releases
+          api_key: $GITHUB_TOKEN

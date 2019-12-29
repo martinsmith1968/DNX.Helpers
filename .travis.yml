@@ -27,7 +27,7 @@ jobs:
       name: Build on OSX
       os: osx
       # dotnet: 2.1.300
-      dotnet: 2.1.103
+      dotnet: 2.2.207
       install: dotnet restore
       script: dotnet test -v normal
     - name: Build on Linux

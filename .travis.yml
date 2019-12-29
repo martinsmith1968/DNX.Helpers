@@ -16,7 +16,7 @@ solution: $APPNAME.sln
 language: csharp
 mono: none
 
-#stages:
+stages:
   - name: Build and Test
   - name: Deploy
 

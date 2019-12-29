@@ -43,6 +43,7 @@ jobs:
 
     #----- Deploy -----#
     - stage: Deploy
+      script: skip
       skip_cleanup: true
     - name: NuGet Deploy
       deploy:

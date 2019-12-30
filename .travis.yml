@@ -64,7 +64,7 @@ jobs:
       before_deploy:
       - FILE=$(ls $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
       - echo $FILE
-      - VERSION=$(echo $FILE | sed -e 's/DNX.Helpers.//g' -e 's/.nupkg//g')
+      - VERSION=$(echo $FILE | sed -e 's/$APPNAME/bin/$CONFIGURATION/$APPNAME.//g' -e 's/.nupkg//g')
       - echo $VERSION
       - git tag -f "v$VERSION"
       deploy:

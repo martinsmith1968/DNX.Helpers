@@ -63,9 +63,9 @@ jobs:
       script: dotnet build
       before_deploy:
       - FILE=$(ls $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
+      - echo $FILE
       - VERSION=$(echo $FILE | sed -e 's/DNX.Helpers.//g' -e 's/.nupkg//g')
-      - echo FILE: $FILE
-      - echo VERSION: $VERSION
+      - echo $VERSION
       - git tag -f "v$VERSION"
       deploy:
         provider: releases

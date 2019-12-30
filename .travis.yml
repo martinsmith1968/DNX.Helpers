@@ -63,7 +63,9 @@ jobs:
       script: dotnet build
       before_deploy:
       - FILE=($APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
+      - echo $FILE
       - REGEX="$APPNAME/bin/$CONFIGURATION/$APPNAME.([0-9\.]+).nupkg"
+      - ls -la $FILE
       - [[ $FILE =~ $REGEX ]]
       - VERSION=${BASH_REMATCH[1]}
       - git tag -f "v$VERSION"

@@ -57,6 +57,8 @@ jobs:
     #----- Release -----#
     - stage: release
       name: GitHub
+      os: linux
+      dotnet: 2.2.102
       install: dotnet restore
       script: dotnet build
       before_deploy:

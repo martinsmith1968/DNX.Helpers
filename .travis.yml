@@ -62,9 +62,10 @@ jobs:
       install: dotnet restore
       script: dotnet build
       before_deploy:
-      - FILE=($APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
-      - echo $FILE
-      - VERSION=$(echo $file | sed -e 's/DNX.Helpers.//g' -e 's/.nupkg//g')
+      - FILE=$(ls $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
+      - VERSION=$(echo $FILE | sed -e 's/DNX.Helpers.//g' -e 's/.nupkg//g')
+      - echo FILE: $FILE
+      - echo VERSION: $VERSION
       - git tag -f "v$VERSION"
       deploy:
         provider: releases

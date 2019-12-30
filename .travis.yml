@@ -57,7 +57,8 @@ jobs:
     #----- Release -----#
     - stage: release
       name: GitHub
-      script: skip
+      install: dotnet restore
+      script: dotnet build
       before_deploy:
       - FILE=($APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
       - REGEX="$APPNAME/bin/$CONFIGURATION/$APPNAME.(v[0-9\.]+).nupkg"

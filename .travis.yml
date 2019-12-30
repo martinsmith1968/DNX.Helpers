@@ -64,11 +64,7 @@ jobs:
       before_deploy:
       - FILE=($APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
       - echo $FILE
-      - REGEX="$APPNAME/bin/$CONFIGURATION/$APPNAME.([0-9\.]+).nupkg"
-      - ls -la $FILE
-      - ls -laR
-      - [[ $FILE =~ $REGEX ]]
-      - VERSION=${BASH_REMATCH[1]}
+      - VERSION=$(echo $file | sed -e 's/DNX.Helpers.//g' -e 's/.nupkg//g')
       - git tag -f "v$VERSION"
       deploy:
         provider: releases

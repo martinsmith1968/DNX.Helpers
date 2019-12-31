@@ -16,6 +16,10 @@ solution: $APPNAME.sln
 language: csharp
 mono: none
 
+branches:
+  except:
+  - v*
+
 stages:
   - name: build
   - name: deploy
@@ -49,14 +53,6 @@ jobs:
       dotnet: 2.2.102
       install: dotnet restore
       script: dotnet build
-      before_deploy:
-      - FILE=$(ls $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
-      - echo $FILE
-      - VERSION=$(echo $FILE | sed -e "s/$APPNAME\/bin\/$CONFIGURATION\/$APPNAME.//g" -e 's/.nupkg//g')
-      - echo $VERSION
-      - export TRAVIS_TAG=v$VERSION
-      - echo $TRAVIS_TAG
-      - git tag -f "$TRAVIS_TAG"
       deploy:
         provider: script
         skip_cleanup: true
@@ -70,11 +66,11 @@ jobs:
       install: dotnet restore
       script: dotnet build
       before_deploy:
-      - #FILE=$(ls $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
-      - #echo $FILE
-      - #VERSION=$(echo $FILE | sed -e "s/$APPNAME\/bin\/$CONFIGURATION\/$APPNAME.//g" -e 's/.nupkg//g')
-      - #echo $VERSION
-      - #export TRAVIS_TAG=v$VERSION
+      - FILE=$(ls $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
+      - echo $FILE
+      - VERSION=$(echo $FILE | sed -e "s/$APPNAME\/bin\/$CONFIGURATION\/$APPNAME.//g" -e 's/.nupkg//g')
+      - echo $VERSION
+      - export TRAVIS_TAG=v$VERSION
       - echo $TRAVIS_TAG
       - git tag -f "$TRAVIS_TAG"
       deploy:
@@ -84,5 +80,3 @@ jobs:
         file_glob: true
         file:
           - "$APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg"
-        on:
-          tags: true

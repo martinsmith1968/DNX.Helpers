@@ -12,8 +12,8 @@
     <PackageIconUrl>https://raw.githubusercontent.com/martinsmith1968/DNX.Helpers/master/images/favicon-32x32.png</PackageIconUrl>
     <PackageTags>DNX helpers extensions string array linq</PackageTags>
     <PackageReleaseNotes>Interpolation to a working version and some preparation for moving to .NET Standard</PackageReleaseNotes>
-    <Version>2.0.6</Version>
-    <AssemblyVersion>2.0.6</AssemblyVersion>
+    <Version>2.0.7</Version>
+    <AssemblyVersion>2.0.7</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Converters\BuiltInTypes\Build.cmd" />

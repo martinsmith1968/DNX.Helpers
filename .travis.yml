@@ -67,8 +67,8 @@ jobs:
       name: GitHub
       os: linux
       dotnet: 2.2.102
-      #install: dotnet restore
-      #script: dotnet build
+      install: dotnet restore
+      script: dotnet build
       before_deploy:
       - #FILE=$(ls $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg)
       - #echo $FILE

@@ -66,10 +66,15 @@ jobs:
       - echo $FILE
       - VERSION=$(echo $FILE | sed -e "s/$APPNAME\/bin\/$CONFIGURATION\/$APPNAME.//g" -e 's/.nupkg//g')
       - echo $VERSION
-      - git tag -f "v$VERSION"
+      - export TRAVIS_TAG=v$VERSION
+      - echo $TRAVIS_TAG
+      - git tag -f "$TRAVIS_TAG"
       deploy:
         provider: releases
         skip_cleanup: true
         api_key: $GITHUB_TOKEN
+        file_glob: true
         file:
-        - $APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg
+          - "$APPNAME/bin/$CONFIGURATION/$APPNAME.*.nupkg"
+        on:
+          tags: true

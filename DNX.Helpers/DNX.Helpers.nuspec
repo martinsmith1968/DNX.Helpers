@@ -5,7 +5,7 @@ https://stackoverflow.com/questions/14797525/differences-between-nuget-packing-a
 <package >
   <metadata>
     <id>DNX.Helpers</id>
-    <version>2.0.2</version>
+    <version>2.0.3</version>
     <authors>Martin Smith</authors>
     <owners>DNX Solutions Ltd</owners>
     <licenseUrl>https://raw.githubusercontent.com/martinsmith1968/DNX.Helpers/master/licence.txt</licenseUrl>

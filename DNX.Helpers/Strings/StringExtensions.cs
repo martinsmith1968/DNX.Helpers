@@ -8,6 +8,7 @@ using DNX.Helpers.Linq;
 
 // ReSharper disable InvertIf
 // ReSharper disable LoopCanBeConvertedToQuery
+
 namespace DNX.Helpers.Strings
 {
     /// <summary>
@@ -15,7 +16,14 @@ namespace DNX.Helpers.Strings
     /// </summary>
     public enum SplitDelimiterType
     {
+        /// <summary>
+        /// Any specified value can be a delimiter
+        /// </summary>
         Any = 0,
+
+        /// <summary>
+        /// All specified values are the delimiter
+        /// </summary>
         All
     }
 
@@ -463,7 +471,9 @@ namespace DNX.Helpers.Strings
         /// <param name="text">The text.</param>
         /// <param name="delimiters">The delimiters.</param>
         /// <param name="options">The options.</param>
+        /// <param name="delimiterType">Type of the delimiter.</param>
         /// <returns>IEnumerable&lt;System.String&gt;.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">delimiterType - Value must be one of {string.Join(",", Enum.GetNames(typeof(SplitDelimiterType)))}</exception>
         /// <remarks>Also available as an extension method</remarks>
         public static IEnumerable<string> SplitText(this string text, string delimiters, StringSplitOptions options = StringSplitOptions.None, SplitDelimiterType delimiterType = SplitDelimiterType.Any)
         {

@@ -1,4 +1,7 @@
-﻿# https://stackoverflow.com/questions/41509608/how-do-i-deploy-nuget-packages-in-travis-ci
+﻿# Builds: https://travis-ci.org/martinsmith1968/DNX.Helpers
+#
+# References:
+# https://stackoverflow.com/questions/41509608/how-do-i-deploy-nuget-packages-in-travis-ci
 # https://docs.travis-ci.com/user/languages/csharp/
 # https://travis-ci.com/bilal-fazlani/commanddotnet/builds/142334958/config
 
@@ -18,7 +21,7 @@ mono: none
 
 branches:
   except:
-  - v*
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
 
 stages:
   - name: build

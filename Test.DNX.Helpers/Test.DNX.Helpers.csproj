@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <Version>2.0.0</Version>
     <Authors>Martin Smith</Authors>
     <Description>Tests for DNX.Helpers</Description>
     <Copyright>Copyright © 2016-2019 DNX Solutions Ltd</Copyright>
@@ -9,7 +8,14 @@
     <PackageProjectUrl>https://github.com/martinsmith1968/DNX.Helpers</PackageProjectUrl>
     <PackageIcon>favicon-32x32.png</PackageIcon>
     <PackageIconUrl />
+    <Version>2.0.8</Version>
+    <FileVersion>2.0.8</FileVersion>
+    <AssemblyVersion>2.0.8</AssemblyVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Converters\BuiltInTypes\Build.cmd" />
+    <None Remove="Converters\BuiltInTypes\ConvertExtensionsTests.cs.template" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
@@ -34,6 +40,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Update="Converters\BuiltInTypes\ConvertExtensionsTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConvertExtensionsTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MathsExtensionsTestsTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MathsExtensionsTestsSourceTemplate.cs</LastGenOutput>
+    </None>
     <None Update="Validation\GuardBuiltInTypesTests.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>GuardBuiltInTypesTests.cs</LastGenOutput>
@@ -47,6 +65,21 @@
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Converters\BuiltInTypes\ConvertExtensionsTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ConvertExtensionsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Maths\BuiltInTypes\MathsExtensionsTestsTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MathsExtensionsTestsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Maths\BuiltInTypes\TestsDataSource\MathsExtensionsTestsSourceTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>MathsExtensionsTestsSourceTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="Validation\GuardBuiltInTypesTests.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

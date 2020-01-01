@@ -1,3 +1,13 @@
 @ECHO OFF
 
-xd2md.exe DNX.Helpers\bin\Debug\DNX.Helpers.XML > reference\reference.md
+SETLOCAL
+
+PUSHD "%~dp0"
+
+FOR %%* IN (.) DO SET CURRENTDIRNAME=%%~nx*
+
+SET APPNAME=%CURRENTDIRNAME%
+
+xd2md.exe %APPNAME%\bin\%APPNAME%.XML > reference\reference.md
+
+POPD

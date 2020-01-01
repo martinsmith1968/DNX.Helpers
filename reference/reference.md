@@ -2853,9 +2853,9 @@ IList<ItemComparison<T1, T2>>.
 Linq Extensions.
 
 
-### M:DNX.Helpers.Linq.LinqExtensions.Append``1(enumerable, instance)
+### M:DNX.Helpers.Linq.LinqExtensions.AppendItem``1(enumerable, instance)
 
-Appends the specified instance.
+Appends the specified item instance.
 
 | Name | Description |
 | ---- | ----------- |
@@ -2868,7 +2868,7 @@ Appends the specified instance.
 IEnumerable<T>.
 
 
-### M:DNX.Helpers.Linq.LinqExtensions.Append``1(enumerable, instance, comparer)
+### M:DNX.Helpers.Linq.LinqExtensions.AppendItem``1(enumerable, instance, comparer)
 
 Appends the specified instance.
 
@@ -5730,12 +5730,27 @@ Parses to key value pair.
 KeyValuePair<System.String, System.String>.
 
 
+## T:DNX.Helpers.Strings.SplitDelimiterType
+
+How the delimiter is to be treated when splitting text
+
+
+### F:DNX.Helpers.Strings.SplitDelimiterType.All
+
+All specified values are the delimiter
+
+
+### F:DNX.Helpers.Strings.SplitDelimiterType.Any
+
+Any specified value can be a delimiter
+
+
 ## T:DNX.Helpers.Strings.StringExtensions
 
 String Extensions
 
 
-### M:DNX.Helpers.Strings.StringExtensions.After(text, startText)
+### M:DNX.Helpers.Strings.StringExtensions.After(text, startText, comparison)
 
 Gets the text after the specified start text.
 
@@ -5743,6 +5758,7 @@ Gets the text after the specified start text.
 | ---- | ----------- |
 | text | *System.String*<br>The text. |
 | startText | *System.String*<br>The start text. |
+| comparison | *System.StringComparison*<br>The comparison. |
 
 
 #### Returns
@@ -5750,7 +5766,7 @@ Gets the text after the specified start text.
 System.String.
 
 
-### M:DNX.Helpers.Strings.StringExtensions.Before(text, endText)
+### M:DNX.Helpers.Strings.StringExtensions.Before(text, endText, comparison)
 
 Gets the text before the specified end text.
 
@@ -5758,6 +5774,7 @@ Gets the text before the specified end text.
 | ---- | ----------- |
 | text | *System.String*<br>The text. |
 | endText | *System.String*<br>The end text. |
+| comparison | *System.StringComparison*<br>The comparison. |
 
 
 #### Returns
@@ -5765,7 +5782,7 @@ Gets the text before the specified end text.
 System.String.
 
 
-### M:DNX.Helpers.Strings.StringExtensions.Between(text, startText, endText)
+### M:DNX.Helpers.Strings.StringExtensions.Between(text, startText, endText, comparison)
 
 Gets the text between the specified start and end text.
 
@@ -5774,6 +5791,7 @@ Gets the text between the specified start and end text.
 | text | *System.String*<br>The text. |
 | startText | *System.String*<br>The start text. |
 | endText | *System.String*<br>The end text. |
+| comparison | *System.StringComparison*<br>The comparison. |
 
 
 #### Returns
@@ -6367,27 +6385,6 @@ System.String.
 Also available as an extension method
 
 
-### M:DNX.Helpers.Strings.StringExtensions.Split(text, delimiters, options)
-
-Splits the text by the specified delimiters.
-
-| Name | Description |
-| ---- | ----------- |
-| text | *System.String*<br>The text. |
-| delimiters | *System.String*<br>The delimiters. |
-| options | *System.StringSplitOptions*<br>The options. |
-
-
-#### Returns
-
-IEnumerable<System.String>.
-
-
-#### Remarks
-
-Also available as an extension method
-
-
 ### M:DNX.Helpers.Strings.StringExtensions.SplitByText(text, delimiterText, options, comparison)
 
 Splits the text by the specified text string.
@@ -6403,6 +6400,30 @@ Splits the text by the specified text string.
 #### Returns
 
 IEnumerable<System.String>.
+
+
+### M:DNX.Helpers.Strings.StringExtensions.SplitText(text, delimiters, options, delimiterType)
+
+Splits the text by the specified delimiters.
+
+| Name | Description |
+| ---- | ----------- |
+| text | *System.String*<br>The text. |
+| delimiters | *System.String*<br>The delimiters. |
+| options | *System.StringSplitOptions*<br>The options. |
+| delimiterType | *DNX.Helpers.Strings.SplitDelimiterType*<br>Type of the delimiter. |
+
+
+#### Returns
+
+IEnumerable<System.String>.
+
+*System.ArgumentOutOfRangeException:* delimiterType - Value must be one of {string.Join(",", Enum.GetNames(typeof(SplitDelimiterType)))}
+
+
+#### Remarks
+
+Also available as an extension method
 
 
 ## T:DNX.Helpers.Threading.IProducerConsumerQueue`1

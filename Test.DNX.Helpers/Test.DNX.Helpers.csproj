@@ -8,22 +8,25 @@
     <PackageProjectUrl>https://github.com/martinsmith1968/DNX.Helpers</PackageProjectUrl>
     <PackageIcon>favicon-32x32.png</PackageIcon>
     <PackageIconUrl />
-    <Version>2.0.8</Version>
-    <FileVersion>2.0.8</FileVersion>
-    <AssemblyVersion>2.0.8</AssemblyVersion>
+    <Version>2.1.0</Version>
+    <FileVersion>2.1.0</FileVersion>
+    <AssemblyVersion>2.1.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Converters\BuiltInTypes\Build.cmd" />
     <None Remove="Converters\BuiltInTypes\ConvertExtensionsTests.cs.template" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="Bogus" version="28.4.4" />
+    <PackageReference Include="Bogus" version="29.0.2" />
     <PackageReference Include="NBuilder" version="6.1.0" />
     <PackageReference Include="NUnit" version="3.12.0" />
-    <PackageReference Include="NUnit.Console" Version="3.10.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="NUnit.Console" Version="3.11.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Shouldly" version="3.0.2" />
   </ItemGroup>
   <ItemGroup>

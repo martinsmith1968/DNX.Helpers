@@ -655,18 +655,47 @@ namespace DNX.Helpers.Strings
         /// i.e. insert a space before each uppercase letter that is
         /// either preceded by a lowercase letter or followed by a
         /// lowercase letter (but not for the first char in string).
-        /// This keeps groups of uppercase letters - e.g. acronyms - together.
+        /// This keeps groups of uppercase letters - e.g. preservedWords - together.
         /// </summary>
         /// <param name="titleCaseString">A string in PascalCase</param>
         /// <returns></returns>
         public static string Wordify(this string titleCaseString)
         {
+            return titleCaseString.Wordify(null);
+        }
+
+        /// <summary>
+        /// Add spaces to separate the capitalized words in the string,
+        /// i.e. insert a space before each uppercase letter that is
+        /// either preceded by a lowercase letter or followed by a
+        /// lowercase letter (but not for the first char in string).
+        /// This keeps groups of uppercase letters - e.g. acronyms - together.
+        /// </summary>
+        /// <param name="titleCaseString">A string in PascalCase</param>
+        /// <param name="preservedWords">The preservedWords - beyond acronyms</param>
+        /// <returns>System.String.</returns>
+        public static string Wordify(this string titleCaseString, IList<string> preservedWords)
+        {
             if (string.IsNullOrWhiteSpace(titleCaseString))
                 return titleCaseString;
 
-            return WordifyRegex
+            var text = WordifyRegex
                 .Replace(titleCaseString, " ${x}")
                 .Replace("  ", " ");
+
+            if (preservedWords.HasAny())
+            {
+                var acronymDict = preservedWords
+                        .Distinct()
+                        .ToDictionary(x => x.Wordify(), x => x)
+                    ;
+
+                text = acronymDict.Aggregate(text,
+                    (current, dict) => current.Replace(dict.Key, dict.Value)
+                );
+            }
+
+            return text;
         }
     }
 }

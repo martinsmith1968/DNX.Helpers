@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
 using Shouldly;
@@ -543,6 +544,32 @@ namespace Test.DNX.Helpers.Strings
             var result = StringExtensions.CoalesceNullOrWhitespace(a, b, c);
 
             return result;
+        }
+
+        [TestCase(null, null, null)]
+        [TestCase("", null, "")]
+        [TestCase("TwoWords", null, "Two Words")]
+        [TestCase("ThreeWordsTogether", null, "Three Words Together")]
+        [TestCase("pascalCase", null, "pascal Case")]
+        [TestCase("Already Spaced", null, "Already Spaced")]
+        [TestCase("AnEntireSentenceSquashedTogetherIntoOneSingleWord", null, "An Entire Sentence Squashed Together Into One Single Word")]
+        [TestCase("IsITVDramaBetterThanBBCDrama", null, "Is ITV Drama Better Than BBC Drama")]
+        [TestCase("IsTheHoLAnOutdatedInstitution", null, "Is The Ho L An Outdated Institution")]
+        [TestCase("IsTheHoLAnOutdatedInstitution", "HoL", "Is The HoL An Outdated Institution")]
+        [TestCase("VirusesLikeH1N1AndH5N1WereWarningsForThePanDemicToCome", null, "Viruses Like H1N1 And H5N1 Were Warnings For The Pan Demic To Come")]
+        [TestCase("VirusesLikeH1N1AndH5N1WereWarningsForThePanDemicToCome", "H1N1|H5N1|PanDemic", "Viruses Like H1N1 And H5N1 Were Warnings For The PanDemic To Come")]
+        public void Wordify_Tests(string text, string preservedWordsText, string expected)
+        {
+            // Arrange
+            var preservedWords = preservedWordsText?
+                .Split("|")
+                .ToArray();
+
+            // Act
+            var result = text.Wordify(preservedWords);
+
+            // Assert
+            result.ShouldBe(expected);
         }
     }
 }

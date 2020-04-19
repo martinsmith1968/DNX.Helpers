@@ -544,5 +544,21 @@ namespace Test.DNX.Helpers.Strings
 
             return result;
         }
+
+        [TestCase(null, null)]
+        [TestCase("", "")]
+        [TestCase("TwoWords", "Two Words")]
+        [TestCase("ThreeWordsTogether", "Three Words Together")]
+        [TestCase("pascalCase", "pascal Case")]
+        [TestCase("Already Spaced", "Already Spaced")]
+        [TestCase("AnEntireSentenceSquashedTogetherIntoOneSingleWord", "An Entire Sentence Squashed Together Into One Single Word")]
+        public void Wordify_Tests(string text, string expected)
+        {
+            // Act
+            var result = text.Wordify();
+
+            // Assert
+            result.ShouldBe(expected);
+        }
     }
 }

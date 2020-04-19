@@ -6,6 +6,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using DNX.Helpers.Linq;
 
+// ReSharper disable InconsistentNaming
+
 // ReSharper disable InvertIf
 // ReSharper disable LoopCanBeConvertedToQuery
 
@@ -32,6 +34,10 @@ namespace DNX.Helpers.Strings
     /// </summary>
     public static class StringExtensions
     {
+        private const string SI_WORDIFY_REGEX_TEXT = "(?<=[a-z])(?<x>[A-Z])|(?<=.)(?<x>[A-Z])(?=[a-z])";
+
+        private static readonly Regex WordifyRegex = new Regex(SI_WORDIFY_REGEX_TEXT, RegexOptions.Compiled);
+
         /// <summary>
         /// Formats the specified arguments and text
         /// </summary>
@@ -642,6 +648,25 @@ namespace DNX.Helpers.Strings
             var pattern = BuildNumberValidationRegexForCulture(cultureInfo);
 
             return Regex.IsMatch(text, pattern);
+        }
+
+        /// <summary>
+        /// Add spaces to separate the capitalized words in the string,
+        /// i.e. insert a space before each uppercase letter that is
+        /// either preceded by a lowercase letter or followed by a
+        /// lowercase letter (but not for the first char in string).
+        /// This keeps groups of uppercase letters - e.g. acronyms - together.
+        /// </summary>
+        /// <param name="titleCaseString">A string in PascalCase</param>
+        /// <returns></returns>
+        public static string Wordify(this string titleCaseString)
+        {
+            if (string.IsNullOrWhiteSpace(titleCaseString))
+                return titleCaseString;
+
+            return WordifyRegex
+                .Replace(titleCaseString, " ${x}")
+                .Replace("  ", " ");
         }
     }
 }

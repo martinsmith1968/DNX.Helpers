@@ -51,5 +51,5 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes
         {
             return MathsFloatExtensions.GetUpperBound(min, max, allowEitherOrder);
         }
-    }
+            }
 }

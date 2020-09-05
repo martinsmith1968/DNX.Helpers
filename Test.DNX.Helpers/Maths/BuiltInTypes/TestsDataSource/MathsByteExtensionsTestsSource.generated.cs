@@ -311,5 +311,31 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes.TestsDataSource
                 yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), false).Returns(CreateDataValue(10));
             }
         }
+
+        
+        public static IEnumerable<TestCaseData> ValueToHexString
+        {
+            get
+            {
+                yield return new TestCaseData(CreateDataValue(1)).Returns("01");
+                yield return new TestCaseData(CreateDataValue(10)).Returns("0A");
+                yield return new TestCaseData(CreateDataValue(16)).Returns("10");
+                yield return new TestCaseData(CreateDataValue(32)).Returns("20");
+                yield return new TestCaseData(CreateDataValue(64)).Returns("40");
+                yield return new TestCaseData(CreateDataValue(127)).Returns("7F");
+            }
+        }
+
+        public static IEnumerable<TestCaseData> ValuesToHexString
+        {
+            get
+            {
+                yield return new TestCaseData(new [] { CreateDataValue(1) }.Cast<byte>().ToArray()).Returns("01");
+                yield return new TestCaseData(new [] { CreateDataValue(1), CreateDataValue(10) }.Cast<byte>().ToArray()).Returns("010A");
+                yield return new TestCaseData(new [] { CreateDataValue(1), CreateDataValue(10), CreateDataValue(16) }.Cast<byte>().ToArray()).Returns("010A10");
+                yield return new TestCaseData(new [] { CreateDataValue(16), CreateDataValue(32), CreateDataValue(64) }.Cast<byte>().ToArray()).Returns("102040");
+                yield return new TestCaseData(new [] { CreateDataValue(127), CreateDataValue(10) }.Cast<byte>().ToArray()).Returns("7F0A");
+            }
+        }
     }
 }

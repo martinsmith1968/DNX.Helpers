@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -696,6 +696,25 @@ namespace DNX.Helpers.Strings
             }
 
             return text;
+        }
+
+        /// <summary>
+        /// Remove spaces from before Capital Letters
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string DeWordify(this string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return text;
+
+            var regexText = @"[ ](?<y>[A-Z])";
+
+            var regex = new Regex(regexText);
+
+            var result = regex.Replace(text, "$1");
+
+            return result;
         }
     }
 }

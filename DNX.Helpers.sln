@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DNX.Helpers", "DNX.Helpers\DNX.Helpers.csproj", "{BC278532-83D1-4AC0-BA01-E16F237BCBF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.DNX.Helpers", "Test.DNX.Helpers\Test.DNX.Helpers.csproj", "{B3666B7C-ADF3-46B1-8955-D3224F4A9C8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.DNX.Helpers", "Test.DNX.Helpers\Test.DNX.Helpers.csproj", "{B3666B7C-ADF3-46B1-8955-D3224F4A9C8D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{35364FCB-E4C1-488F-B918-19EDE8CD1A5C}"
 	ProjectSection(SolutionItems) = preProject
@@ -65,6 +65,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".images", ".images", "{E2FA5B06-E65B-4D0E-86EC-6E9F2EC82A5A}"
 	ProjectSection(SolutionItems) = preProject
 		images\favicon-32x32.png = images\favicon-32x32.png
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".code", ".code", "{63F287B2-E460-46BB-9DDF-3F06866405DA}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
 Global

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using DNX.Helpers.Linq;
@@ -115,6 +115,65 @@ namespace DNX.Helpers.Strings
             return groupNames.IsIndexValid(index)
                 ? groupNames[index]
                 : index.ToString();
+        }
+
+        /// <summary>
+        /// Gets the value from a Regex by its group name.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="pattern">The pattern.</param>
+        /// <param name="groupName">Name of the group.</param>
+        /// <param name="options">The options.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        public static string GetRegexValueByGroupName(this string text,
+            string pattern,
+            string groupName,
+            RegexOptions options = RegexOptions.None,
+            string defaultValue = null
+            )
+        {
+            var regex = Regex.IsMatch(text, pattern, options)
+                ? Regex.Match(text, pattern, options)
+                : null;
+
+            var group = regex?.Groups[groupName];
+
+            var value = group == null
+                ? defaultValue
+                : group.Value;
+
+            return value;
+        }
+
+        /// <summary>
+        /// Gets the value from a Regex by its group identifier.
+        /// </summary>
+        /// <param name="text">The text.</param>
+        /// <param name="pattern">The pattern.</param>
+        /// <param name="groupId">The group identifier.</param>
+        /// <param name="options">The options.</param>
+        /// <param name="defaultValue">The default value.</param>
+        /// <returns></returns>
+        public static string GetRegexValueByGroupIndex(this string text,
+            string pattern,
+            int groupId,
+            RegexOptions options = RegexOptions.None,
+            string defaultValue = null
+        )
+        {
+            var regex = Regex.IsMatch(text, pattern, options)
+                ? Regex.Match(text, pattern, options)
+                : null;
+
+            var group = regex?.Groups[groupId]
+                        ?? null;
+
+            var value = group == null
+                ? defaultValue
+                : group.Value;
+
+            return value;
         }
     }
 }

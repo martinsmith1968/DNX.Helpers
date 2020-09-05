@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DNX.Helpers.Comparisons;
@@ -34,6 +34,26 @@ namespace DNX.Helpers.Linq
         public static bool HasAny<T>(this IEnumerable<T> enumerable, Func<T, bool> predicate)
         {
             return enumerable != null && enumerable.Any(predicate);
+        }
+
+        /// <summary>
+        /// Gets the item at an index position, or default
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items">The items.</param>
+        /// <param name="index">The index.</param>
+        /// <returns></returns>
+        public static T GetAt<T>(this IList<T> items, int index)
+        {
+            if (items == null)
+                return default;
+
+            while (index < 0)
+                index += items.Count;
+
+            return index >= items.Count
+                ? default
+                : items[index];
         }
 
         /// <summary>

@@ -1,4 +1,6 @@
-﻿using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using DNX.Helpers.Strings;
 using NUnit.Framework;
@@ -99,6 +101,44 @@ namespace Test.DNX.Helpers.Strings
             regex.GetGroupName(1).ShouldBe("FieldName");
             regex.GetGroupName(2).ShouldBe("IndexerName");
             regex.GetGroupName(3).ShouldBe("3");
+        }
+
+        [Test]
+        [TestCaseSource(nameof(GetRegexValueByGroupName_Data))]
+        public void GetValueByGroupName(string text, string pattern, string groupName, RegexOptions options, string defaultValue, string expectedValue)
+        {
+            var result = text.GetRegexValueByGroupName(pattern, groupName, options, defaultValue);
+
+            result.ShouldBe(expectedValue);
+        }
+
+        [Test]
+        [TestCaseSource(nameof(GetRegexValueByGroupIndex_Data))]
+        public void GetValueByGroupId(string text, string pattern, int groupId, RegexOptions options, string defaultValue, string expectedValue)
+        {
+            var result = text.GetRegexValueByGroupIndex(pattern, groupId, options, defaultValue);
+
+            result.ShouldBe(expectedValue);
+        }
+
+        public static IEnumerable GetRegexValueByGroupName_Data()
+        {
+            yield return new object[] { "Categories[4]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", "index", RegexOptions.None, null, "4" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", "index", RegexOptions.None, null, "bob" };
+            yield return new object[] { "Categories[4]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", "index", RegexOptions.None, "dave", "4" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", "index", RegexOptions.None, "dave", "bob" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", "group1", RegexOptions.None, null, "" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", "group1", RegexOptions.None, "bob", "" };
+        }
+
+        public static IEnumerable GetRegexValueByGroupIndex_Data()
+        {
+            yield return new object[] { "Categories[4]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", 1, RegexOptions.None, null, "4" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", 1, RegexOptions.None, null, "bob" };
+            yield return new object[] { "Categories[4]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", 1, RegexOptions.None, "dave", "4" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", 1, RegexOptions.None, "dave", "bob" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", 99, RegexOptions.None, null, "" };
+            yield return new object[] { "Categories[bob]", "^[^\\[]+\\[(?<index>[^\\]]+)\\]$", 99, RegexOptions.None, "bob", "" };
         }
     }
 }

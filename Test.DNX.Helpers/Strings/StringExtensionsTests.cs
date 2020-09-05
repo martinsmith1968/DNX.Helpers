@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -569,6 +569,15 @@ namespace Test.DNX.Helpers.Strings
             var result = text.Wordify(preservedWords);
 
             // Assert
+            result.ShouldBe(expected);
+        }
+
+        [TestCase("This Is A Capitalized Sentence", "ThisIsACapitalizedSentence")]
+        [TestCase("This Is a not quite Capitalized Sentence", "ThisIs a not quiteCapitalizedSentence")]
+        public void DeWordifyTests(string text, string expected)
+        {
+            var result = text.DeWordify();
+
             result.ShouldBe(expected);
         }
     }

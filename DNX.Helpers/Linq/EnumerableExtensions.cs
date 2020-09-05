@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
+
+// ReSharper disable InconsistentNaming
 
 namespace DNX.Helpers.Linq
 {
@@ -29,9 +31,7 @@ namespace DNX.Helpers.Linq
         /// <returns>IList&lt;T&gt;.</returns>
         public static IList<T> ToListOrNull<T>(this IEnumerable<T> enumerable)
         {
-            return enumerable == null
-                ? null
-                : enumerable.ToList();
+            return enumerable?.ToList();
         }
     }
 }

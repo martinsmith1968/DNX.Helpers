@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Resources;
 using DNX.Helpers.Reflection;
 
 namespace DNX.Helpers.Assemblies
@@ -67,6 +69,37 @@ namespace DNX.Helpers.Assemblies
                 .ToList();
 
             return instances;
+        }
+
+        /// <summary>
+        /// Gets the embedded resource text.
+        /// </summary>
+        /// <param name="assembly">The assembly.</param>
+        /// <param name="relativeResourceName">Name of the relative resource.</param>
+        /// <param name="nameSpace">The name space.</param>
+        /// <returns></returns>
+        /// <exception cref="MissingManifestResourceException"></exception>
+        public static string GetEmbeddedResourceText(this Assembly assembly, string relativeResourceName, string nameSpace = null)
+        {
+            try
+            {
+                nameSpace = string.IsNullOrWhiteSpace(nameSpace)
+                    ? Path.GetFileNameWithoutExtension(assembly.Location)
+                    : nameSpace;
+
+                var resourceName = $"{nameSpace}.{relativeResourceName}";
+
+                using var stream = assembly.GetManifestResourceStream(resourceName);
+                using var reader = new StreamReader(stream);
+
+                var result = reader.ReadToEnd();
+
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new MissingManifestResourceException($"{relativeResourceName} not found", e);
+            }
         }
     }
 }

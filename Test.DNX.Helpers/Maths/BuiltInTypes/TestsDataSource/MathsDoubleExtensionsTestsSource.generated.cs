@@ -311,5 +311,6 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes.TestsDataSource
                 yield return new TestCaseData(CreateDataValue(10), CreateDataValue(10), false).Returns(CreateDataValue(10));
             }
         }
-    }
+
+            }
 }

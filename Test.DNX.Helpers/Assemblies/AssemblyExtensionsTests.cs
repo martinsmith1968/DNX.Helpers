@@ -1,5 +1,7 @@
-﻿using System.Linq;
+using System;
+using System.Linq;
 using System.Reflection;
+using System.Resources;
 using DNX.Helpers.Assemblies;
 using NUnit.Framework;
 using Shouldly;
@@ -73,6 +75,58 @@ namespace Test.DNX.Helpers.Assemblies
                 result.Count(x => x.GetType() == typeof(CTypeAB)).ShouldBe(1);
                 result.Count(x => x.GetType() == typeof(CTypeAC)).ShouldBe(1);
                 result.Count(x => x.GetType() == typeof(CTypeCA)).ShouldBe(1);
+            }
+        }
+
+        public class GetEmbeddedResourceTextTests
+        {
+            [Test]
+            public void GetEmbeddedResourceText_can_read_resource_successfully()
+            {
+                // Arrange
+                var name = "TestData.SampleData.json";
+
+                // Act
+                var result = Assembly.GetExecutingAssembly().GetEmbeddedResourceText(name);
+
+                Console.WriteLine("Result: {0}", result);
+
+                // Assert
+                result.ShouldNotBeNull();
+            }
+
+            [Test]
+            public void GetEmbeddedResourceText_throws_on_unknown_resource_name()
+            {
+                // Arrange
+                var name = $"{Guid.NewGuid()}.json";
+
+                // Act
+                var ex = Assert.Throws<MissingManifestResourceException>(
+                    () => Assembly.GetExecutingAssembly().GetEmbeddedResourceText(name)
+                );
+
+                Console.WriteLine("Exception Message: {0}", ex?.Message);
+
+                // Assert
+                ex.ShouldNotBeNull();
+                ex.Message.ShouldContain(name);
+            }
+
+            [Test]
+            public void GetEmbeddedResourceText_can_read_resource_with_specific_namespace_successfully()
+            {
+                // Arrange
+                var name = "SampleData.json";
+                var nameSpace = $"Test.DNX.Helpers.TestData";
+
+                // Act
+                var result = Assembly.GetExecutingAssembly().GetEmbeddedResourceText(name, nameSpace);
+
+                Console.WriteLine("Result: {0}", result);
+
+                // Assert
+                result.ShouldNotBeNull();
             }
         }
     }

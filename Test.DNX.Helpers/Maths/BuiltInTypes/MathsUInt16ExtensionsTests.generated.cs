@@ -51,5 +51,17 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes
         {
             return MathsUInt16Extensions.GetUpperBound(min, max, allowEitherOrder);
         }
+        
+        [TestCaseSource(typeof(MathsUInt16ExtensionsTestsSource), "ValueToHexString")]
+        public string Test_ValueToHexString(ushort value)
+        {
+            return value.ToHexString();
+        }
+
+        [TestCaseSource(typeof(MathsUInt16ExtensionsTestsSource), "ValuesToHexString")]
+        public string Test_ValuesToHexString(ushort[] values)
+        {
+            return values.ToHexString();
+        }
     }
 }

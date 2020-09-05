@@ -51,5 +51,5 @@ namespace Test.DNX.Helpers.Maths.BuiltInTypes
         {
             return MathsDateTimeExtensions.GetUpperBound(min, max, allowEitherOrder);
         }
-    }
+            }
 }

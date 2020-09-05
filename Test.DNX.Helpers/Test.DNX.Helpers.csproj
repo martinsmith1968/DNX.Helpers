@@ -16,15 +16,19 @@
   <ItemGroup>
     <None Remove="Converters\BuiltInTypes\Build.cmd" />
     <None Remove="Converters\BuiltInTypes\ConvertExtensionsTests.cs.template" />
+    <None Remove="TestData\SampleData.json" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <EmbeddedResource Include="TestData\SampleData.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
     <PackageReference Include="NUnit" Version="3.12.0" />
-    <PackageReference Include="Bogus" version="29.0.2" />
+    <PackageReference Include="Bogus" version="30.0.4" />
     <PackageReference Include="NBuilder" version="6.1.0" />
     <PackageReference Include="NUnit" version="3.12.0" />
     <PackageReference Include="NUnit.Console" Version="3.11.1" />
-    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1">
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

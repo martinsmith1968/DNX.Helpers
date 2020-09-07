@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -89,12 +89,15 @@ namespace DNX.Helpers.Assemblies
 
                 var resourceName = $"{nameSpace}.{relativeResourceName}";
 
-                using var stream = assembly.GetManifestResourceStream(resourceName);
-                using var reader = new StreamReader(stream);
+                using (var stream = assembly.GetManifestResourceStream(resourceName))
+                {
+                    using (var reader = new StreamReader(stream))
+                    {
+                        var result = reader.ReadToEnd();
 
-                var result = reader.ReadToEnd();
-
-                return result;
+                        return result;
+                    }
+                }
             }
             catch (Exception e)
             {
